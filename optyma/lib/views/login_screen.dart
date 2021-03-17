@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:optyma/theme/routes.dart';
+import 'package:optyma/logic/mysql.dart';
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
 
 class Login extends StatefulWidget {
   @override _LoginViewState createState() => _LoginViewState();
@@ -9,7 +12,31 @@ class _LoginViewState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-
+  
+  var db = new Mysql();
+  var response = '';
+  
+  void _checkUser(BuildContext context){
+    String user = _emailController.text;
+    String password = _passwordController.text;
+    var bytes = utf8.encode(password);
+    var digest = sha256.convert(bytes);
+    //print(context);
+    db.getConnection().then((conn) {
+      //print(user);
+      String sql = "SELECT * FROM optyma.usuarios_copy WHERE email ='$user' OR nickname='$user' AND passwrd='$digest' ;" ;
+      print(sql);
+      conn.query(sql).then( ( results) {
+        if(results.length >= 1){
+          print("Login succesfull");
+          print(results);}
+        else
+          print("Error, found no match");   
+      });//then
+      conn.close();
+    });//getConnection().then()
+  }//_checkUser()
+  
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
@@ -96,7 +123,7 @@ class _LoginViewState extends State<Login> {
           ),
         ),
         hintText: "algo@ejemplo.com",
-        labelText: "Correo",
+        labelText: "Correo o nombre de usuario",
         labelStyle: TextStyle(
           color: Colors.white,
         ),
@@ -121,7 +148,6 @@ class _LoginViewState extends State<Login> {
                 color: Colors.white,
               ),
             ),
-            hintText: "Contraseña",
             labelText: "Contraseña",
             labelStyle: TextStyle(
               color: Colors.white,
@@ -181,8 +207,9 @@ class _LoginViewState extends State<Login> {
           ),
         ),
         onPressed: () {
-          print("press");
-        },
+          //print(context);
+          _checkUser(context);
+          },
       ),
     );
 
@@ -243,5 +270,5 @@ class _LoginViewState extends State<Login> {
         ),
       ),
     );
-  }
-}
+  }//Widget Build
+} //class Login View State

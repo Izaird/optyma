@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:optyma/theme/routes.dart';
+import 'package:optyma/logic/mysql.dart';
+import 'package:crypto/crypto.dart';
+import 'dart:convert';
 
 class Register extends StatefulWidget {
   @override
@@ -12,7 +15,27 @@ class _RegisterViewState extends State<Register> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _repasswordController = TextEditingController();
-
+  
+  var db = new Mysql();
+  var response = '';
+  void _newUser(BuildContext context){
+    String userEmail = _emailController.text;
+    String password = _passwordController.text;
+    String userNick = _usernameController.text;
+    String Escolaridad = "Licenciatura";
+    var bytes = utf8.encode(password);
+    var digest = sha256.convert(bytes);
+    //print(context);
+    db.getConnection().then((conn) {
+      //print(user);
+      String sql = "INSERT INTO usuarios_copy (email,nickname,escolaridad,passwrd) VALUES ('$userEmail','$userNick','$Escolaridad','$digest') ;" ;
+      print(sql);
+      conn.query(sql).then( ( results) {
+        print(results);   
+      });//then
+      conn.close();
+    });//getConnection().then()
+  }//_newUser()
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
@@ -147,7 +170,7 @@ class _RegisterViewState extends State<Register> {
           ),
         ),
         onPressed: (){
-
+          _newUser(context);
         },
       ),
     );
