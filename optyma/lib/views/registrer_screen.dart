@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:optyma/theme/routes.dart';
 import 'package:optyma/logic/mysql.dart';
@@ -28,10 +29,11 @@ class _RegisterViewState extends State<Register> {
     //print(context);
     db.getConnection().then((conn) {
       //print(user);
-      String sql = "INSERT INTO usuarios_copy (email,nickname,escolaridad,passwrd) VALUES ('$userEmail','$userNick','$Escolaridad','$digest') ;" ;
+      String sql = "INSERT INTO usuarios_copy (email,nickname,escolaridad,passwrd,created_at) VALUES ('$userEmail','$userNick','$Escolaridad','$digest',NOW()) ;" ;
       print(sql);
-      conn.query(sql).then( ( results) {
-        print(results);   
+      conn.query(sql)
+      .then( ( results) {
+        Navigator.of(context).pushNamed(AppRoutes.authLogin);//print(results);returns empty if succesfull   
       });//then
       conn.close();
     });//getConnection().then()

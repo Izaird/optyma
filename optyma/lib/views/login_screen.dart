@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Interval;
 import 'package:optyma/theme/routes.dart';
 import 'package:optyma/logic/mysql.dart';
 import 'package:crypto/crypto.dart';
 import 'dart:convert';
+import 'dart:math';
+import 'package:math_expressions/math_expressions.dart';
 
 class Login extends StatefulWidget {
   @override _LoginViewState createState() => _LoginViewState();
@@ -15,8 +17,55 @@ class _LoginViewState extends State<Login> {
   
   var db = new Mysql();
   var response = '';
-  
-  void _checkUser(BuildContext context){
+  var express = '2 * a';
+  List rangesExp = [ [750, 1250],
+                      [125,785] ];
+  void _expression_creation_and_evaluation( ) {
+  print('\nExample 1: Expression creation and evaluation\n');
+
+  // You can either create an mathematical expression programmatically or parse
+  // a string.
+  // (1a) Parse expression:
+  Parser p = Parser();
+  Parser p2 = Parser();
+  Random rnd = new Random();
+  List<Variable> vars =[];
+  Expression exp = p.parse('((x^2 + cos(y)) / 3) + t');
+  Expression g = p2.parse('2 * a');
+  IntervalLiteral exp2 = new IntervalLiteral(new Number(2500), new Number(3000));
+  //print('---------------');
+  //print(double.parse(exp2.max.toString()));
+  //print('---------------');
+  Variable t = new Variable('t'); 
+  // (1b) Build expression: (x^2 + cos(y)) / 3
+  Variable x = Variable('x'), y = Variable('y');
+  Variable a = Variable('a');
+  vars.add(a);
+  //Power xSquare = Power(x, 2);
+  //Cos yCos = Cos(y);
+  //Number three = Number(3.0);
+  //exp = (xSquare + yCos) / three;
+
+  // Bind variables and evaluate the expression as real number.
+  // (2) Bind variables:
+  int r1 = rangesExp[0][0]+rnd.nextInt(rangesExp[0][1]-rangesExp[0][0]);
+  ContextModel cm = ContextModel()
+    ..bindVariable(x, Number(2))
+    ..bindVariable(y, Number(pi))
+    ..bindVariable(t, Number(r1));
+  ContextModel cm2 = ContextModel()
+    ..bindVariable(vars[0], Number(r1));
+    //..bindVariable(b, Number(3200.0));
+  // (3) Evaluate expression:
+  double eval = exp.evaluate(EvaluationType.REAL, cm);
+  double gEval = g.evaluate(EvaluationType.REAL,cm2); 
+  //double eval2 = exp2.evaluate(EvaluationType.INTERVAL, cm2);
+  print('Expression: $exp');
+  print('Evaluated expression: $eval\n  (with context: $cm)'); // = 1
+  print('***Expression: $g ***');
+  print('***Evaluated expression: $gEval\n  (with context: $cm2)***'); // = 1
+}
+  void _checkUser(BuildContext context) {
     String user = _emailController.text;
     String password = _passwordController.text;
     var bytes = utf8.encode(password);
@@ -29,7 +78,9 @@ class _LoginViewState extends State<Login> {
       conn.query(sql).then( ( results) {
         if(results.length >= 1){
           print("Login succesfull");
-          print(results);}
+          print(results);
+          Navigator.of(context).pushNamed(AppRoutes.home);
+          }
         else
           print("Error, found no match");   
       });//then
@@ -209,6 +260,7 @@ class _LoginViewState extends State<Login> {
         onPressed: () {
           //print(context);
           _checkUser(context);
+          _expression_creation_and_evaluation();
           },
       ),
     );
