@@ -11,9 +11,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginViewState extends State<Login> {
+  String _email;
+  String _password;
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+
   
   var db = new Mysql();
   var response = '';
@@ -65,15 +66,100 @@ class _LoginViewState extends State<Login> {
   print('***Expression: $g ***');
   print('***Evaluated expression: $gEval\n  (with context: $cm2)***'); // = 1
 }
-  void _checkUser(BuildContext context) {
-    String user = _emailController.text;
-    String password = _passwordController.text;
-    var bytes = utf8.encode(password);
+
+
+
+
+
+
+    Widget _buildEmail() {
+    return TextFormField(
+      style: TextStyle(
+        color: Colors.white,
+      ),
+      cursorColor: Colors.white,
+      decoration: InputDecoration(
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+        labelText: "e-mail",
+        labelStyle: TextStyle(
+          color: Colors.white,
+        ),
+        hintStyle: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      validator: (String value) {
+      
+        if (value.isEmpty) {
+          return 'Se requiere un email';
+        }
+
+        if (!RegExp(
+                r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+            .hasMatch(value)) {
+          return 'Introduce un correo valido';
+        }
+
+        return null;
+      },
+      onSaved: (String value) {
+        _email = value;
+      },
+    );
+  }
+
+  Widget _buildPassword() {
+    return TextFormField(
+      style: TextStyle(
+        color: Colors.white,
+      ),
+      cursorColor: Colors.white,
+      decoration: InputDecoration(
+        counterText: '',
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+        labelText: "Contraseña",
+        labelStyle: TextStyle(
+          color: Colors.white,
+        ),
+        hintStyle: TextStyle(
+          color: Colors.white,
+        ),
+      ),      
+      
+      keyboardType: TextInputType.visiblePassword,
+      maxLength: 18,
+      validator: (String value) {
+        if (value.isEmpty) {
+          return 'Se requiere una contraseña';
+        }
+
+        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$").hasMatch(value)){
+          return "Introduce una contraseña valida";
+        }
+
+        return null;
+      },
+      onSaved: (String value) {
+        _password = value;
+      },
+    );
+  }
+
+  void checkUser(BuildContext context) {
+    var bytes = utf8.encode(_password);
     var digest = sha256.convert(bytes);
     //print(context);
     db.getConnection().then((conn) {
       //print(user);
-      String sql = "SELECT * FROM optyma.usuarios_copy WHERE email ='$user' OR nickname='$user' AND passwrd='$digest' ;" ;
+      String sql = "SELECT * FROM optyma.usuarios_copy WHERE email ='$_email' OR nickname='$_email' AND passwrd='$digest' ;" ;
       print(sql);
       conn.query(sql).then( ( results) {
         if(results.length >= 1){
@@ -86,7 +172,7 @@ class _LoginViewState extends State<Login> {
       });//then
       conn.close();
     });//getConnection().then()
-  }//_checkUser()
+  }//checkUser()
   
   @override
   Widget build(BuildContext context) {
@@ -160,87 +246,6 @@ class _LoginViewState extends State<Login> {
       height: mq.size.height / 4,
     );
 
-    final emailField = TextFormField(
-      controller: _emailController,
-      keyboardType: TextInputType.emailAddress,
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        hintText: "algo@ejemplo.com",
-        labelText: "Correo o nombre de usuario",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-    );
-
-    final passwordField = Column(
-      children: <Widget>[
-        TextFormField(
-          obscureText: true,
-          controller: _passwordController,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-          cursorColor: Colors.white,
-          decoration: InputDecoration(
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.white,
-              ),
-            ),
-            labelText: "Contraseña",
-            labelStyle: TextStyle(
-              color: Colors.white,
-            ),
-            hintStyle: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.all(2.0),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            MaterialButton(
-                child: Text(
-                  "Olvidaste tu contraseña",
-                  style: Theme.of(context)
-                      .textTheme
-                      .caption
-                      .copyWith(color: Colors.white),
-                ),
-                onPressed: () {
-                  print("test");
-                }),
-          ],
-        ),
-      ],
-    );
-
-    final fields = Padding(
-      padding: EdgeInsets.only(top: 10.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          emailField,
-          passwordField,
-        ],
-      ),
-    );
-
     final loginButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(25.0),
@@ -258,9 +263,14 @@ class _LoginViewState extends State<Login> {
           ),
         ),
         onPressed: () {
-          //print(context);
-          _checkUser(context);
-          _expression_creation_and_evaluation();
+          if (!_formKey.currentState.validate()) {
+            return;
+          }
+          
+          
+          _formKey.currentState.save();
+          checkUser(context);
+          // _expression_creation_and_evaluation();
           },
       ),
     );
@@ -311,7 +321,8 @@ class _LoginViewState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 logo,
-                fields,
+                _buildEmail(),
+                _buildPassword(),
                 Padding(
                   padding: EdgeInsets.only(bottom: 150),
                   child: bottom,
