@@ -21,7 +21,7 @@ class _RegisterViewState extends State<Register> {
   String _name;
   String _email;
   String _password;
-  String _escolaridad = "null";
+  String _escolaridad;
 
   final _formKey = GlobalKey<FormState>();
   
@@ -73,7 +73,7 @@ class _RegisterViewState extends State<Register> {
           return 'Se requiere un nombre de usuario';
         }
 
-        if (!RegExp(r"^[a-zA-Z0-9]{8,18}$").hasMatch(value)){
+        if (!RegExp(r"^[a-zA-Z0-9]{4,18}$").hasMatch(value)){
           return 'Introduce un nombre de usuario valido';
         }
         return null;
@@ -153,7 +153,7 @@ class _RegisterViewState extends State<Register> {
           return 'Se requiere una contraseña';
         }
 
-        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$").hasMatch(value)){
+        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,30}$").hasMatch(value)){
           return "Introduce una contraseña valida";
         }
 

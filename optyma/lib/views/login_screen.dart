@@ -14,7 +14,7 @@ class _LoginViewState extends State<Login> {
   String _email;
   String _password;
   final _formKey = GlobalKey<FormState>();
-
+  bool adminFlag = false;
   
   var db = new Mysql();
   var response = '';
@@ -67,7 +67,33 @@ class _LoginViewState extends State<Login> {
   print('***Evaluated expression: $gEval\n  (with context: $cm2)***'); // = 1
 }
 
-
+  void checkUser(BuildContext context) {
+    var bytes = utf8.encode(_password);
+    var digest = sha256.convert(bytes);
+    String sql;
+    //print(context);
+    db.getConnection().then((conn) {
+      print(this.adminFlag);
+      if (this.adminFlag == true){
+        sql = "SELECT * FROM optyma.admins WHERE email ='$_email' OR nickname='$_email' AND passwrd='$digest' ;" ;
+      }
+      else{
+        sql = "SELECT * FROM optyma.usuarios_copy WHERE email ='$_email' OR nickname='$_email' AND passwrd='$digest' ;" ;
+      }
+      
+      print(sql);
+      conn.query(sql).then( ( results) {
+        if(results.length >= 1){
+          print("Login succesfull");
+          print(results);
+          Navigator.of(context).pushNamed(AppRoutes.home);
+          }
+        else
+          print("Error, found no match");   
+      });//then
+      conn.close();
+    });//getConnection().then()
+  }//checkUser()
 
 
 
@@ -153,26 +179,7 @@ class _LoginViewState extends State<Login> {
     );
   }
 
-  void checkUser(BuildContext context) {
-    var bytes = utf8.encode(_password);
-    var digest = sha256.convert(bytes);
-    //print(context);
-    db.getConnection().then((conn) {
-      //print(user);
-      String sql = "SELECT * FROM optyma.usuarios_copy WHERE email ='$_email' OR nickname='$_email' AND passwrd='$digest' ;" ;
-      print(sql);
-      conn.query(sql).then( ( results) {
-        if(results.length >= 1){
-          print("Login succesfull");
-          print(results);
-          Navigator.of(context).pushNamed(AppRoutes.home);
-          }
-        else
-          print("Error, found no match");   
-      });//then
-      conn.close();
-    });//getConnection().then()
-  }//checkUser()
+  
   
   @override
   Widget build(BuildContext context) {
@@ -287,10 +294,18 @@ class _LoginViewState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              "¿No tienes cuenta?",
+              "Como Administrador",
               style: Theme.of(context).textTheme.subtitle1.copyWith(
                     color: Colors.white,
                   ),
+            ),
+            SizedBox(width: 10),
+            Checkbox(value: this.adminFlag,
+              onChanged: (bool value){
+                setState(() {
+                  this.adminFlag = value;  
+                });
+              },
             ),
             MaterialButton(
               onPressed: () {
