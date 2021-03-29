@@ -64,7 +64,7 @@ class OpeningView extends StatelessWidget{
     return raisedButton(
         textColor: Colors.white,
         minWidth: 300,
-        text: "Registrarse",
+        text: "Test",
         height: 50.0,
         borderRadius: 100,
         color: AppTheme.colors.powderBlue,
@@ -78,7 +78,7 @@ class OpeningView extends StatelessWidget{
           letterSpacing: 1.2,
         ),
       onClick: (){
-        Navigator.of(context).pushNamed(AppRoutes.addAdmin);
+        Navigator.of(context).pushNamed(AppRoutes.addPlantilla);
       },
     );
   }

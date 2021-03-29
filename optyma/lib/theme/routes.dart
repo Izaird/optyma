@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:optyma/views/admin/add_plantilla.dart';
+import 'package:optyma/views/admin/modify_plantilla.dart';
 import 'package:optyma/views/login_screen.dart';
 import 'package:optyma/views/registrer_screen.dart';
 import 'package:optyma/views/home_screen.dart';
@@ -11,6 +13,8 @@ class AppRoutes {
   static const String authRegister = '/auth-register';
   static const String home = '/home';
   static const String addAdmin = '/add-admin';
+  static const String addPlantilla = '/add-plantilla';
+  static const String modifyPlantilla = '/modify-plantilla';
 
   static Map<String, WidgetBuilder> define() {
     return {
@@ -18,6 +22,8 @@ class AppRoutes {
       authRegister: (context) => Register(),
       home: (context) => Home(),
       addAdmin: (context) => AddAdmin(),
+      addPlantilla: (context)=> AddPlantilla(),
+      modifyPlantilla: (context)=> ModifyPlantilla(),
     };
   }
 }
