@@ -6,47 +6,47 @@ import 'package:crypto/crypto.dart';
 import 'package:optyma/widgets/button.dart';
 import 'package:optyma/widgets/gradient_back.dart';
 import 'dart:convert';
-
 import 'package:optyma/widgets/tf.dart';
 
-class Register extends StatefulWidget {
+class AddAdmin extends StatefulWidget {
   @override
-  _RegisterViewState createState() => _RegisterViewState();
+  _AddAdminViewState createState() => _AddAdminViewState();
 }
 
 
 
-class _RegisterViewState extends State<Register> {
+class _AddAdminViewState extends State<AddAdmin> {
   //
   List escolaridades = [
     "Primaria", "Secundaria", "Preparatoria", "Universidad"
   ];
   //User data
   String _name;
+  String _apellidoPaterno;
+  String _apellidoMaterno;
   String _email;
   String _password;
-  String _escolaridad;
 
   final _formKey = GlobalKey<FormState>();
   
-  var db = new Mysql();
-  var response = '';
+  // var db = new Mysql();
+  // var response = '';
 
-  void newUser(BuildContext context){
-    var bytes = utf8.encode(_password);
-    var digest = sha256.convert(bytes);
-    //print(context);
-    db.getConnection().then((conn) {
-      //print(user);
-      String sql = "INSERT INTO usuarios_copy (email,nickname,escolaridad,passwrd,created_at) VALUES ('$_email','$_name','$_escolaridad','$digest',NOW()) ;" ;
-      print(sql);
-      conn.query(sql)
-      .then( ( results) {
-        Navigator.of(context).pushNamed(AppRoutes.authLogin);//print(results);returns empty if succesfull   
-      });//then
-      conn.close();
-    });//getConnection().then()
-  }//_newUser()
+  // void newUser(BuildContext context){
+  //   var bytes = utf8.encode(_password);
+  //   var digest = sha256.convert(bytes);
+  //   //print(context);
+  //   db.getConnection().then((conn) {
+  //     //print(user);
+  //     String sql = "INSERT INTO usuarios_copy (email,nickname,escolaridad,passwrd,created_at) VALUES ('$_email','$_name','$_escolaridad','$digest',NOW()) ;" ;
+  //     print(sql);
+  //     conn.query(sql)
+  //     .then( ( results) {
+  //       Navigator.of(context).pushNamed(AppRoutes.authLogin);//print(results);returns empty if succesfull   
+  //     });//then
+  //     conn.close();
+  //   });//getConnection().then()
+  // }//_newUser()
 
   Widget _buildName(){
       return TextFormFieldWidget(
@@ -66,6 +66,50 @@ class _RegisterViewState extends State<Register> {
         return null;
       },
       onSaved: (input)=> _name= input,
+    );
+  }
+
+
+  Widget _buildApellidoP(){
+      return TextFormFieldWidget(
+      hintText: "Apellido Paterno",
+      textInputType: TextInputType.name,
+      actionKeyboard: TextInputAction.done,
+      prefixIcon: Icon(Icons.person),
+      validator: (input){
+        if (input.isEmpty) {
+          return 'Se requiere un apellido';
+        }
+
+        if (!RegExp(r"^[a-zA-Z0-9]{4,18}$").hasMatch(input)){
+          return 'Introduce un apellido valido';
+        }
+
+        return null;
+      },
+      onSaved: (input)=> _apellidoPaterno= input,
+    );
+  }
+
+
+  Widget _buildApellidoM(){
+      return TextFormFieldWidget(
+      hintText: "Apellido Materno",
+      textInputType: TextInputType.name,
+      actionKeyboard: TextInputAction.done,
+      prefixIcon: Icon(Icons.person),
+      validator: (input){
+        if (input.isEmpty) {
+          return 'Se requiere un apellido';
+        }
+
+        if (!RegExp(r"^[a-zA-Z0-9]{4,18}$").hasMatch(input)){
+          return 'Introduce un apellido valido';
+        }
+
+        return null;
+      },
+      onSaved: (input)=> _apellidoMaterno= input,
     );
   }
 
@@ -116,42 +160,17 @@ class _RegisterViewState extends State<Register> {
     );
   }
 
-  Widget _buildEscolaridad(){
-    return DropdownButtonFormField(
-      hint: Text("Escoge una escolaridad"),
-      value: escolaridades[0],
-      onChanged: (newValue){
-        setState(() {
-          _escolaridad = newValue;
-        });
-      },
-      items: escolaridades.map((valueItem){
-        return DropdownMenuItem(
-          value: valueItem,
-          child: Text(valueItem),
-        );
-      }).toList(),
-      
-  );
-  
-  }
 
   @override
   Widget build(BuildContext context) {
 
   final mq = MediaQuery.of(context);
   
-  final logo = Image.asset(
-      "assets/logo.png",
-      height: mq.size.height / 4,
-    );
-
-
   Widget _registerButton(){
     return raisedButton(
         textColor: Colors.white,
         minWidth: 300,
-        text: "Registrarse",
+        text: "Registrar",
         height: 50.0,
         borderRadius: 100,
         color: AppTheme.colors.powderBlue,
@@ -172,7 +191,6 @@ class _RegisterViewState extends State<Register> {
         _formKey.currentState.save();
         print(_name);
         print(_email);
-        newUser(context);
       },
     );
   }
@@ -185,31 +203,10 @@ class _RegisterViewState extends State<Register> {
         Padding(
           padding: EdgeInsets.all(8.0),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Text(
-              "¿Ya tienes cuenta?",
-              style: Theme.of(context).textTheme.subtitle1.copyWith(
-                    color: Colors.white,
-                  ),
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(AppRoutes.authLogin);
-              },
-              child: Text(
-                "Ingresar",
-                style: Theme.of(context).textTheme.subtitle1.copyWith(
-                      color: Colors.white,
-                      decoration: TextDecoration.underline,
-                    ),
-              ),
-            ),
-          ],
-        ),
       ],
     );
+
+
 
     return Scaffold(
       body: Stack(
@@ -226,11 +223,11 @@ class _RegisterViewState extends State<Register> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                logo,
                 _buildName(),
+                _buildApellidoP(),
+                _buildApellidoM(),
                 _buildEmail(),
                 _buildPassword(),
-                _buildEscolaridad(),
                 Padding(
                   padding: EdgeInsets.only(bottom: 150),
                   child: bottom,
@@ -247,3 +244,4 @@ class _RegisterViewState extends State<Register> {
     );
   }
 }
+    

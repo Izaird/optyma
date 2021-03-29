@@ -60,11 +60,34 @@ class OpeningView extends StatelessWidget{
     );
   }
 
+  Widget _testButton(){
+    return raisedButton(
+        textColor: Colors.white,
+        minWidth: 300,
+        text: "Registrarse",
+        height: 50.0,
+        borderRadius: 100,
+        color: AppTheme.colors.powderBlue,
+        borderSideColor: Colors.white,
+        splashColor: Colors.blue[200],
+        style: TextStyle(
+          color: AppTheme.colors.powderBlue,
+          fontSize: 14.0,
+          fontWeight: FontWeight.w500,
+          fontStyle: FontStyle.normal,
+          letterSpacing: 1.2,
+        ),
+      onClick: (){
+        Navigator.of(context).pushNamed(AppRoutes.addAdmin);
+      },
+    );
+  }
 
     final buttons = Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        // _testButton(),
         _loginButton(),
         Padding(
           padding: EdgeInsets.fromLTRB(0, 15, 0, 70),

@@ -54,7 +54,6 @@ class _LoginViewState extends State<Login> {
       hintText: "email",
       textInputType: TextInputType.emailAddress,
       actionKeyboard: TextInputAction.done,
-      parametersValidate: "Introduce tu correo",
       prefixIcon: Icon(Icons.email),
       validator: (input){
         
@@ -79,7 +78,6 @@ class _LoginViewState extends State<Login> {
       hintText: "Contraseña",
       textInputType: TextInputType.visiblePassword,
       actionKeyboard: TextInputAction.done,
-      parametersValidate: "Introduce tu contraseña",
       prefixIcon: Icon(Icons.lock_open),
       validator:(input){
         if (input.isEmpty) {

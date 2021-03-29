@@ -6,7 +6,6 @@ import 'package:optyma/theme/app_theme.dart';
 /// *  prefixIcon - Pass Icon if required
 /// *  defaultText - If there is predefined value is there for a text field
 /// *  obscureText - Is Password field?
-/// *  parametersValidate - Value to vslidate
 /// *  actionKeyboard - Keyboard action eg. next, done, search, etc
 class TextFormFieldWidget extends StatefulWidget {
   final TextInputType textInputType;
@@ -14,7 +13,6 @@ class TextFormFieldWidget extends StatefulWidget {
   final Widget prefixIcon;
   final String defaultText;
   final bool obscureText;
-  final String parametersValidate;
   final TextInputAction actionKeyboard;
   final FormFieldSetter<String> onSaved;
   final FormFieldValidator<String> validator;
@@ -27,7 +25,6 @@ class TextFormFieldWidget extends StatefulWidget {
       this.prefixIcon,
       this.defaultText,
       this.obscureText = false,
-      this.parametersValidate,
       this.actionKeyboard = TextInputAction.next,
       this.validator,
       this.onSaved,
