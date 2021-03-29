@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart' hide Interval;
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:optyma/theme/app_theme.dart';
 import 'package:optyma/theme/routes.dart';
 import 'package:optyma/logic/mysql.dart';
 import 'package:crypto/crypto.dart';
+import 'package:optyma/widgets/button.dart';
+import 'package:optyma/widgets/gradient_back.dart';
 import 'dart:convert';
-import 'dart:math';
-import 'package:math_expressions/math_expressions.dart';
+import 'package:optyma/widgets/tf.dart';
 
 class Login extends StatefulWidget {
   @override _LoginViewState createState() => _LoginViewState();
@@ -17,56 +20,7 @@ class _LoginViewState extends State<Login> {
   bool adminFlag = false;
   
   var db = new Mysql();
-  var response = '';
-  var express = '2 * a';
-  List rangesExp = [ [750, 1250],
-                      [125,785] ];
-  void _expression_creation_and_evaluation( ) {
-  print('\nExample 1: Expression creation and evaluation\n');
-
-  // You can either create an mathematical expression programmatically or parse
-  // a string.
-  // (1a) Parse expression:
-  Parser p = Parser();
-  Parser p2 = Parser();
-  Random rnd = new Random();
-  List<Variable> vars =[];
-  Expression exp = p.parse('((x^2 + cos(y)) / 3) + t');
-  Expression g = p2.parse('2 * a');
-  IntervalLiteral exp2 = new IntervalLiteral(new Number(2500), new Number(3000));
-  //print('---------------');
-  //print(double.parse(exp2.max.toString()));
-  //print('---------------');
-  Variable t = new Variable('t'); 
-  // (1b) Build expression: (x^2 + cos(y)) / 3
-  Variable x = Variable('x'), y = Variable('y');
-  Variable a = Variable('a');
-  vars.add(a);
-  //Power xSquare = Power(x, 2);
-  //Cos yCos = Cos(y);
-  //Number three = Number(3.0);
-  //exp = (xSquare + yCos) / three;
-
-  // Bind variables and evaluate the expression as real number.
-  // (2) Bind variables:
-  int r1 = rangesExp[0][0]+rnd.nextInt(rangesExp[0][1]-rangesExp[0][0]);
-  ContextModel cm = ContextModel()
-    ..bindVariable(x, Number(2))
-    ..bindVariable(y, Number(pi))
-    ..bindVariable(t, Number(r1));
-  ContextModel cm2 = ContextModel()
-    ..bindVariable(vars[0], Number(r1));
-    //..bindVariable(b, Number(3200.0));
-  // (3) Evaluate expression:
-  double eval = exp.evaluate(EvaluationType.REAL, cm);
-  double gEval = g.evaluate(EvaluationType.REAL,cm2); 
-  //double eval2 = exp2.evaluate(EvaluationType.INTERVAL, cm2);
-  print('Expression: $exp');
-  print('Evaluated expression: $eval\n  (with context: $cm)'); // = 1
-  print('***Expression: $g ***');
-  print('***Evaluated expression: $gEval\n  (with context: $cm2)***'); // = 1
-}
-
+ 
   void checkUser(BuildContext context) {
     var bytes = utf8.encode(_password);
     var digest = sha256.convert(bytes);
@@ -95,181 +49,71 @@ class _LoginViewState extends State<Login> {
     });//getConnection().then()
   }//checkUser()
 
-
-
-
-    Widget _buildEmail() {
-    return TextFormField(
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        labelText: "e-mail",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      validator: (String value) {
-      
-        if (value.isEmpty) {
+  Widget _buildEmail(){
+      return TextFormFieldWidget(
+      hintText: "email",
+      textInputType: TextInputType.emailAddress,
+      actionKeyboard: TextInputAction.done,
+      parametersValidate: "Introduce tu correo",
+      prefixIcon: Icon(Icons.email),
+      validator: (input){
+        
+        if (input.isEmpty) {
           return 'Se requiere un email';
         }
 
         if (!RegExp(
                 r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-            .hasMatch(value)) {
+            .hasMatch(input)) {
           return 'Introduce un correo valido';
         }
-
         return null;
       },
-      onSaved: (String value) {
-        _email = value;
-      },
+      onSaved: (input)=> _email = input,
     );
   }
 
-  Widget _buildPassword() {
-    return TextFormField(
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        counterText: '',
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        labelText: "Contraseña",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),      
-      
-      keyboardType: TextInputType.visiblePassword,
-      maxLength: 18,
-      validator: (String value) {
-        if (value.isEmpty) {
+  Widget _buildPassword(){
+    return TextFormFieldWidget(
+      obscureText: true,
+      hintText: "Contraseña",
+      textInputType: TextInputType.visiblePassword,
+      actionKeyboard: TextInputAction.done,
+      parametersValidate: "Introduce tu contraseña",
+      prefixIcon: Icon(Icons.lock_open),
+      validator:(input){
+        if (input.isEmpty) {
           return 'Se requiere una contraseña';
         }
 
-        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$").hasMatch(value)){
+        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$").hasMatch(input)){
           return "Introduce una contraseña valida";
         }
 
         return null;
       },
-      onSaved: (String value) {
-        _password = value;
-      },
+      onSaved: (input)=> _password = input,
     );
   }
 
-  
-  
-  @override
-  Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context);
-
-    // void showAlertDialog(BuildContext context) {
-    //   showDialog(
-    //       context: context,
-    //       builder: (BuildContext context) {
-    //         TextEditingController _emailControllerField =
-    //             TextEditingController();
-    //         return CustomAlertDialog(
-    //           content: Container(
-    //             width: MediaQuery.of(context).size.width / 1.2,
-    //             height: MediaQuery.of(context).size.height / 4.5,
-    //             color: Colors.white,
-    //             child: Column(
-    //               children: <Widget>[
-    //                 Text("Insert Reset Email:"),
-    //                 TextField(
-    //                   controller: _emailControllerField,
-    //                   decoration: InputDecoration(
-    //                     focusedBorder: UnderlineInputBorder(
-    //                       borderSide: BorderSide(
-    //                         color: Colors.black,
-    //                       ),
-    //                     ),
-    //                     hintText: "something@example.com",
-    //                     labelText: "Email",
-    //                     labelStyle: TextStyle(
-    //                       color: Colors.black,
-    //                     ),
-    //                     hintStyle: TextStyle(
-    //                       color: Colors.black,
-    //                     ),
-    //                   ),
-    //                 ),
-    //                 Padding(
-    //                   padding: EdgeInsets.all(15),
-    //                   child: Material(
-    //                     elevation: 5.0,
-    //                     borderRadius: BorderRadius.circular(25.0),
-    //                     color: Color(0xff8c52ff),
-    //                     child: MaterialButton(
-    //                       minWidth: mq.size.width / 2,
-    //                       padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
-    //                       child: Text(
-    //                         "Send Reset Email",
-    //                         textAlign: TextAlign.center,
-    //                         style: TextStyle(
-    //                           fontSize: 20.0,
-    //                           color: Colors.white,
-    //                           fontWeight: FontWeight.bold,
-    //                         ),
-    //                       ),
-    //                       onPressed: (){
-                            
-    //                       },
-    //                     ),
-    //                   ),
-    //                 )
-    //               ],
-    //             ),
-    //           ),
-    //         );
-    //       });
-    // }
-
-    final logo = Image.asset(
-      "assets/logo.png",
-      height: mq.size.height / 4,
-    );
-
-    final loginButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(25.0),
-      color: Colors.white,
-      child: MaterialButton(
-        minWidth: mq.size.width / 1.2,
-        padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
-        child: Text(
-          "Ingresar",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+  Widget _buttonLogin(){
+    return raisedButton(
+        textColor: Colors.white,
+        minWidth: 300,
+        text: "Ingresar",
+        height: 50.0,
+        borderRadius: 100,
+        color: AppTheme.colors.powderBlue,
+        borderSideColor: Colors.white,
+        splashColor: Colors.blue[200],
+        style: TextStyle(
+          color: AppTheme.colors.powderBlue,
+          fontSize: 14.0,
+          fontWeight: FontWeight.w500,
+          fontStyle: FontStyle.normal,
+          letterSpacing: 1.2,
         ),
-        onPressed: () {
+        onClick: () {
           if (!_formKey.currentState.validate()) {
             return;
           }
@@ -279,14 +123,24 @@ class _LoginViewState extends State<Login> {
           checkUser(context);
           // _expression_creation_and_evaluation();
           },
-      ),
     );
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
+    final logo = Image.asset(
+      "assets/logo.png",
+      height: mq.size.height / 4,
+    );
+
 
     final bottom = Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        loginButton,
+        _buttonLogin(),
         Padding(
           padding: EdgeInsets.all(8.0),
         ),
@@ -325,8 +179,12 @@ class _LoginViewState extends State<Login> {
     );
 
     return Scaffold(
-      backgroundColor: Color(0xff8c52ff),
-      body: Form(
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+                GradientBack(height:null),
+
+        Form(
         key: _formKey,
         child: SingleChildScrollView(
           padding: EdgeInsets.all(36),
@@ -346,6 +204,8 @@ class _LoginViewState extends State<Login> {
             ),
           ),
         ),
+      ),
+        ],
       ),
     );
   }//Widget Build

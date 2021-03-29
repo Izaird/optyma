@@ -1,9 +1,13 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:optyma/theme/app_theme.dart';
 import 'package:optyma/theme/routes.dart';
 import 'package:optyma/logic/mysql.dart';
 import 'package:crypto/crypto.dart';
+import 'package:optyma/widgets/button.dart';
+import 'package:optyma/widgets/gradient_back.dart';
 import 'dart:convert';
+
+import 'package:optyma/widgets/tf.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -44,131 +48,81 @@ class _RegisterViewState extends State<Register> {
     });//getConnection().then()
   }//_newUser()
 
-  Widget _buildName() {
-    return TextFormField(
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        counterText: '',
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        labelText: "Usuario",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      maxLength: 18,
-
-
-      validator: (String value) {
-        if (value.isEmpty) {
+  Widget _buildName(){
+      return TextFormFieldWidget(
+      hintText: "Nombre",
+      textInputType: TextInputType.name,
+      actionKeyboard: TextInputAction.done,
+      parametersValidate: "Introduce un nombre usuario",
+      prefixIcon: Icon(Icons.person),
+      validator: (input){
+        if (input.isEmpty) {
           return 'Se requiere un nombre de usuario';
         }
 
-        if (!RegExp(r"^[a-zA-Z0-9]{4,18}$").hasMatch(value)){
+        if (!RegExp(r"^[a-zA-Z0-9]{4,18}$").hasMatch(input)){
           return 'Introduce un nombre de usuario valido';
         }
+
         return null;
       },
-      onSaved: (String value) {
-        _name = value;
-      },
+      onSaved: (input)=> _name= input,
     );
   }
 
-  Widget _buildEmail() {
-    return TextFormField(
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        labelText: "e-mail",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      validator: (String value) {
-      
-        if (value.isEmpty) {
+
+  Widget _buildEmail(){
+      return TextFormFieldWidget(
+      hintText: "email",
+      textInputType: TextInputType.emailAddress,
+      actionKeyboard: TextInputAction.done,
+      parametersValidate: "Introduce tu correo",
+      prefixIcon: Icon(Icons.email),
+      validator: (input){
+        
+        if (input.isEmpty) {
           return 'Se requiere un email';
         }
 
         if (!RegExp(
                 r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-            .hasMatch(value)) {
+            .hasMatch(input)) {
           return 'Introduce un correo valido';
         }
 
         return null;
       },
-      onSaved: (String value) {
-        _email = value;
-      },
+      onSaved: (input)=> _email = input,
     );
   }
 
-  Widget _buildPassword() {
-    return TextFormField(
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        counterText: '',
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        labelText: "Contraseña",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),      
-      
-      keyboardType: TextInputType.visiblePassword,
-      maxLength: 18,
-      validator: (String value) {
-        if (value.isEmpty) {
+  Widget _buildPassword(){
+    return TextFormFieldWidget(
+      obscureText: true,
+      hintText: "Contraseña",
+      textInputType: TextInputType.visiblePassword,
+      actionKeyboard: TextInputAction.done,
+      parametersValidate: "Introduce tu contraseña",
+      prefixIcon: Icon(Icons.lock_open),
+      validator:(input){
+        if (input.isEmpty) {
           return 'Se requiere una contraseña';
         }
 
-        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,30}$").hasMatch(value)){
+        if(!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$").hasMatch(input)){
           return "Introduce una contraseña valida";
         }
 
         return null;
       },
-      onSaved: (String value) {
-        _password = value;
-      },
+      onSaved: (input)=> _password = input,
     );
   }
 
   Widget _buildEscolaridad(){
     return DropdownButtonFormField(
       hint: Text("Escoge una escolaridad"),
-      value: _escolaridad,
+      value: escolaridades[0],
       onChanged: (newValue){
         setState(() {
           _escolaridad = newValue;
@@ -195,23 +149,25 @@ class _RegisterViewState extends State<Register> {
       height: mq.size.height / 4,
     );
 
-  final registerButton = Material(
-    elevation: 5.0,
-    borderRadius: BorderRadius.circular(25.0),
-    color: Colors.white,
-    child: MaterialButton(
-      minWidth: mq.size.width / 1.2,
-      padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
-      child: Text(
-        "Registrarse",
-        textAlign: TextAlign.center,
+
+  Widget _registerButton(){
+    return raisedButton(
+        textColor: Colors.white,
+        minWidth: 300,
+        text: "Registrarse",
+        height: 50.0,
+        borderRadius: 100,
+        color: AppTheme.colors.powderBlue,
+        borderSideColor: Colors.white,
+        splashColor: Colors.blue[200],
         style: TextStyle(
-          fontSize: 20.0,
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
+          color: AppTheme.colors.powderBlue,
+          fontSize: 14.0,
+          fontWeight: FontWeight.w500,
+          fontStyle: FontStyle.normal,
+          letterSpacing: 1.2,
         ),
-      ),
-      onPressed: (){
+      onClick: (){
         if (!_formKey.currentState.validate()) {
           return;
         }
@@ -221,14 +177,14 @@ class _RegisterViewState extends State<Register> {
         print(_email);
         newUser(context);
       },
-    ),
-  );
+    );
+  }
 
   final bottom = Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        registerButton,
+        _registerButton(),
         Padding(
           padding: EdgeInsets.all(8.0),
         ),
@@ -259,8 +215,12 @@ class _RegisterViewState extends State<Register> {
     );
 
     return Scaffold(
-      backgroundColor: Color(0xff8c52ff),
-      body: Form(
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          GradientBack(height:null),
+
+      Form(
         key: _formKey,
         child: SingleChildScrollView(
           padding: EdgeInsets.all(36),
@@ -283,6 +243,10 @@ class _RegisterViewState extends State<Register> {
           ),
         ),
       ),
+
+        ],
+        )
+      
     );
   }
 }
