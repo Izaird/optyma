@@ -4,6 +4,7 @@ import 'package:optyma/theme/routes.dart';
 import 'package:optyma/logic/mysql.dart';
 import 'package:crypto/crypto.dart';
 import 'package:optyma/widgets/button.dart';
+import 'package:optyma/widgets/dropdown.dart';
 import 'package:optyma/widgets/gradient_back.dart';
 import 'dart:convert';
 
@@ -117,22 +118,15 @@ class _RegisterViewState extends State<Register> {
   }
 
   Widget _buildEscolaridad(){
-    return DropdownButtonFormField(
-      hint: Text("Escoge una escolaridad"),
-      value: escolaridades[0],
-      onChanged: (newValue){
-        setState(() {
-          _escolaridad = newValue;
-        });
-      },
-      items: escolaridades.map((valueItem){
-        return DropdownMenuItem(
-          value: valueItem,
-          child: Text(valueItem),
-        );
-      }).toList(),
-      
+    return DropDownWidget(
+      items: ["Primaria", "Secundaria", "Preparatoria", "Universidad"],
+      hintText: "Escoge tu escolaridad",
+      prefixIcon: Icon(Icons.school),
+      onSaved: (input)=> _escolaridad = input,
+      validator: (value) => value == null ? "Escoge una escolaridad" : null,
   );
+
+
   
   }
 

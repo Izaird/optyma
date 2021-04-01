@@ -17,9 +17,6 @@ class AddAdmin extends StatefulWidget {
 
 class _AddAdminViewState extends State<AddAdmin> {
   //
-  List escolaridades = [
-    "Primaria", "Secundaria", "Preparatoria", "Universidad"
-  ];
   //User data
   String _name;
   String _apellidoPaterno;

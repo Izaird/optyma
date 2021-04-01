@@ -4,6 +4,7 @@ import 'package:optyma/theme/routes.dart';
 import 'package:optyma/logic/mysql.dart';
 import 'package:crypto/crypto.dart';
 import 'package:optyma/widgets/button.dart';
+import 'package:optyma/widgets/dropdown.dart';
 import 'package:optyma/widgets/gradient_back.dart';
 import 'dart:convert';
 import 'package:optyma/widgets/tf.dart';
@@ -16,10 +17,6 @@ class ModifyPlantilla extends StatefulWidget {
 
 
 class _ModifyPlantillaViewState extends State<ModifyPlantilla> {
-  //
-  List temas= [
-    "Aritmética", "Algebra", "Diferencial", "Optimización"
-  ];
   //User data
   String _tema;
   String _expresion;
@@ -30,21 +27,12 @@ class _ModifyPlantillaViewState extends State<ModifyPlantilla> {
   final _formKey = GlobalKey<FormState>();
   
   Widget _buildTema(){
-    return DropdownButtonFormField(
-      hint: Text("Escoge una escolaridad"),
-      value: _tema,
-      onChanged: (newValue){
-        setState(() {
-          _tema = newValue;
-        });
-      },
-      items: temas.map((valueItem){
-        return DropdownMenuItem(
-          value: valueItem,
-          child: Text(valueItem),
-        );
-      }).toList(),
-      
+    return DropDownWidget(
+      items: ["Aritmética", "Algebra", "Diferencial", "Optimización"],
+      hintText: "Escoge un tema",
+      prefixIcon: Icon(Icons.school),
+      onSaved: (input)=> _tema= input,
+      validator: (value) => value == null ? "Se requiere escoger un tema" : null,
   );
  }
 

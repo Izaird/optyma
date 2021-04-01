@@ -36,7 +36,7 @@ class OpeningView extends StatelessWidget{
     return raisedButton(
       text: "Test",
       onClick: (){
-        Navigator.of(context).pushNamed(AppRoutes.addPlantilla);
+        Navigator.of(context).pushNamed(AppRoutes.modifyPlantilla);
       },
     );
   }
@@ -45,7 +45,7 @@ class OpeningView extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        // _testButton(),
+        _testButton(),
         _loginButton(),
         Padding(
           padding: EdgeInsets.fromLTRB(0, 15, 0, 70),
