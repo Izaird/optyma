@@ -133,21 +133,7 @@ class _AddPlantillaViewState extends State<AddPlantilla> {
   
   Widget _confirmarButton(){
     return raisedButton(
-        textColor: Colors.white,
-        minWidth: 10,
-        text: "Confirmar",
-        height: 50.0,
-        borderRadius: 100,
-        color: AppTheme.colors.powderBlue,
-        borderSideColor: Colors.white,
-        splashColor: Colors.blue[200],
-        style: TextStyle(
-          color: AppTheme.colors.powderBlue,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          letterSpacing: 1.2,
-        ),
+      text: "Confirmar",
       onClick: (){
         if (!_formKey.currentState.validate()) {
           return;
@@ -162,21 +148,7 @@ class _AddPlantillaViewState extends State<AddPlantilla> {
 
   Widget _descartarButton(){
     return raisedButton(
-        textColor: Colors.white,
-        minWidth: 10,
-        text: "Descartar",
-        height: 50.0,
-        borderRadius: 100,
-        color: AppTheme.colors.powderBlue,
-        borderSideColor: Colors.white,
-        splashColor: Colors.blue[200],
-        style: TextStyle(
-          color: AppTheme.colors.powderBlue,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          letterSpacing: 1.2,
-        ),
+      text: "Descartar",
       onClick: (){
         if (!_formKey.currentState.validate()) {
           return;

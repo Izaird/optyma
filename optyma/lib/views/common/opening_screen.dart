@@ -16,21 +16,7 @@ class OpeningView extends StatelessWidget{
 
   Widget _loginButton(){
     return raisedButton(
-        textColor: Colors.white,
-        minWidth: 300,
-        text: "Ingresar",
-        height: 50.0,
-        borderRadius: 100,
-        color: AppTheme.colors.powderBlue,
-        borderSideColor: Colors.white,
-        splashColor: Colors.blue[200],
-        style: TextStyle(
-          color: AppTheme.colors.powderBlue,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          letterSpacing: 1.2,
-        ),
+      text: "Ingresar",
       onClick: (){
         Navigator.of(context).pushNamed(AppRoutes.authLogin);
       },
@@ -39,21 +25,7 @@ class OpeningView extends StatelessWidget{
 
   Widget _registerButton(){
     return raisedButton(
-        textColor: Colors.white,
-        minWidth: 300,
-        text: "Registrarse",
-        height: 50.0,
-        borderRadius: 100,
-        color: AppTheme.colors.powderBlue,
-        borderSideColor: Colors.white,
-        splashColor: Colors.blue[200],
-        style: TextStyle(
-          color: AppTheme.colors.powderBlue,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          letterSpacing: 1.2,
-        ),
+      text: "Registrarse",
       onClick: (){
         Navigator.of(context).pushNamed(AppRoutes.authRegister);
       },
@@ -62,21 +34,7 @@ class OpeningView extends StatelessWidget{
 
   Widget _testButton(){
     return raisedButton(
-        textColor: Colors.white,
-        minWidth: 300,
-        text: "Test",
-        height: 50.0,
-        borderRadius: 100,
-        color: AppTheme.colors.powderBlue,
-        borderSideColor: Colors.white,
-        splashColor: Colors.blue[200],
-        style: TextStyle(
-          color: AppTheme.colors.powderBlue,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          letterSpacing: 1.2,
-        ),
+      text: "Test",
       onClick: (){
         Navigator.of(context).pushNamed(AppRoutes.addPlantilla);
       },

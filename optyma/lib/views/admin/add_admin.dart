@@ -168,21 +168,7 @@ class _AddAdminViewState extends State<AddAdmin> {
   
   Widget _registerButton(){
     return raisedButton(
-        textColor: Colors.white,
-        minWidth: 300,
         text: "Registrar",
-        height: 50.0,
-        borderRadius: 100,
-        color: AppTheme.colors.powderBlue,
-        borderSideColor: Colors.white,
-        splashColor: Colors.blue[200],
-        style: TextStyle(
-          color: AppTheme.colors.powderBlue,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w500,
-          fontStyle: FontStyle.normal,
-          letterSpacing: 1.2,
-        ),
       onClick: (){
         if (!_formKey.currentState.validate()) {
           return;

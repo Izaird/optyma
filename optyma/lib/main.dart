@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:optyma/views/opening_screen.dart';
+import 'package:optyma/views/common/opening_screen.dart';
 import 'package:optyma/theme/routes.dart';
 
 void main() {

@@ -16,26 +16,24 @@ import 'package:optyma/theme/app_theme.dart';
 ButtonTheme raisedButton(
     {VoidCallback onClick,
     String text,
-    Color textColor,
     Color color,
     Color splashColor,
     double borderRadius,
     double minWidth,
     double height,
     Color borderSideColor,
-    TextStyle style,
+    TextStyle textStyle,
     Widget leadingIcon,
     Widget trailingIcon}) {
   return ButtonTheme(
-    minWidth: minWidth,
-    height: height,
+    minWidth: minWidth ?? 300,
+    height: height ?? 50,
     child: MaterialButton(
-        splashColor: Colors.grey.withOpacity(0.5) ?? AppTheme.colors.black,
+        splashColor: splashColor ?? AppTheme.colors.skyBlueCrayola,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 25),
-            side: BorderSide(color: borderSideColor ?? color)),
-        textColor: Colors.white,
-        color: AppTheme.colors.powderBlue,
+            borderRadius: BorderRadius.circular(borderRadius ?? 20),
+            side: BorderSide(color: borderSideColor ?? Colors.white)),
+        color: color ?? AppTheme.colors.skyBlueCrayolaLight,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           // This is must when you are using Row widget inside Raised Button
@@ -44,12 +42,12 @@ ButtonTheme raisedButton(
             _buildLeadingIcon(leadingIcon),
             Text(
               text ?? '',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14.0,
+              style: textStyle ?? TextStyle(
+                color:Colors.black,
+                fontSize: 16.0,
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
-                letterSpacing: 1.2,
+                letterSpacing: .9,
               ),
             ),
             _buildTrailingIcon(trailingIcon),

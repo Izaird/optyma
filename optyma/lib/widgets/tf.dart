@@ -18,9 +18,8 @@ class TextFormFieldWidget extends StatefulWidget {
   final FormFieldValidator<String> validator;
 
 
-  const TextFormFieldWidget(
-      {@required 
-      this.textInputType,
+  const TextFormFieldWidget({
+      @required this.textInputType,
       this.hintText,
       this.prefixIcon,
       this.defaultText,
@@ -41,7 +40,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        primaryColor: AppTheme.colors.powderBlue,
+        primaryColor: AppTheme.colors.darkCornflowerBlue,
       ),
       child: TextFormField(
         cursorColor: AppTheme.colors.powderBlue,
@@ -51,7 +50,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         style: TextStyle(
           color: AppTheme.colors.black,
           fontSize: 16.0,
-          fontWeight: FontWeight.w200,
+          fontWeight: FontWeight.w300,
           fontStyle: FontStyle.normal,
           letterSpacing: 1.2,
         ),
@@ -63,10 +62,10 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
             borderSide: BorderSide(color: AppTheme.colors.powderBlue),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: AppTheme.colors.powderBlue),
+            borderSide: BorderSide(color: AppTheme.colors.blueGreen),
           ),
           hintStyle: TextStyle(
-            color: Colors.grey,
+            color: AppTheme.colors.black,
             fontSize: 14.0,
             fontWeight: FontWeight.w300,
             fontStyle: FontStyle.normal,
@@ -77,16 +76,16 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           isDense: true,
           errorStyle: TextStyle(
             color: AppTheme.colors.red,
-            fontSize: 12.0,
-            fontWeight: FontWeight.w300,
+            fontSize: 14.0,
+            fontWeight: FontWeight.w400,
             fontStyle: FontStyle.normal,
             letterSpacing: 1.2,
           ),
           errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: AppTheme.colors.powderBlue),
+            borderSide: BorderSide(color: AppTheme.colors.red),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: AppTheme.colors.powderBlue),
+            borderSide: BorderSide(color: AppTheme.colors.blueGreen),
           ),
         ),
         onSaved: widget.onSaved,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:optyma/views/common/login_screen.dart';
+import 'package:optyma/views/common/registrer_screen.dart';
 import 'package:optyma/views/admin/add_plantilla.dart';
 import 'package:optyma/views/admin/modify_plantilla.dart';
-import 'package:optyma/views/login_screen.dart';
-import 'package:optyma/views/registrer_screen.dart';
-import 'package:optyma/views/home_screen.dart';
 import 'package:optyma/views/admin/add_admin.dart';
+import 'package:optyma/views/home_screen.dart';
 
 class AppRoutes {
   AppRoutes._();
