@@ -9,40 +9,96 @@ class Home extends StatefulWidget {
 }
 
 class _HomeViewState extends State<Home>{
-TextEditingController _expController = TextEditingController();
-
+  TextEditingController _expController = TextEditingController();
+  
+  Widget choicebutton(){
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: 15.0,
+        horizontal: 20.0,
+      ),
+      child: MaterialButton(
+        onPressed: (){},
+        child: Text(
+          "Option",
+          style: TextStyle(color: Colors.white,
+          fontSize: 16.0,
+          ),
+        ),
+        color: Colors.indigo,
+        splashColor: Colors.indigoAccent,
+        minWidth: 200.0,
+        height: 45.0,
+        shape: RoundedRectangleBorder (borderRadius: BorderRadius.circular(20.0)),
+      ),
+    );
+  }
 
 @override
   Widget build(BuildContext context) {
-    final expField = TextFormField(
-      controller: _expController,
-      style: TextStyle(
-        color: Colors.white,
-      ),
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-        hintText: "a + b",
-        labelText: "Expresion",
-        labelStyle: TextStyle(
-          color: Colors.white,
-        ),
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-    );
+    
     return Scaffold(
       backgroundColor: Color(0xff8c0000),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(36),
-        child: Container(
-          
-        ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(12.0) ,
+              alignment: Alignment.centerLeft,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      'Racha: ', 
+                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      ),
+                   ), 
+                    Expanded(
+                      child: Text(
+                      'Puntuacion: ', 
+                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child:Container(
+              padding: EdgeInsets.all(16.0),
+              alignment: Alignment.center,
+              child: Expanded(
+                child: Text(
+                  'Pregunta: ', 
+                  style: TextStyle(color: Colors.white, fontSize: 16.0),
+                  ),
+                ),
+            ), 
+          ),  
+          Expanded(
+            flex: 6,
+            child: Container(
+              child: Column(
+                 children: <Widget>[
+                   choicebutton(),
+                   choicebutton(),
+                   choicebutton(),
+                   choicebutton(),
+                 ],
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.teal, 
+              ),
+            ),
+          ),
+        ], 
       ),
     );
   }
