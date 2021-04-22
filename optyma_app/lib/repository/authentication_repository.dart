@@ -3,7 +3,6 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:meta/meta.dart';
 
 
 class AuthenticationRepository{
@@ -60,9 +59,11 @@ class AuthenticationRepository{
     
     return (currentUser != null);
   }
+
+
   // Obtener usuario
-  String getUser() {
-    return _firebaseAuth.currentUser.email;
+  User getUser() {
+    return _firebaseAuth.currentUser;
   }
 }
 
