@@ -7,18 +7,17 @@ abstract class AuthenticationState extends Equatable {
   List<Object> get props => [];
 }
 
-class AuthenticationInitial extends AuthenticationState {}
 
-class Uninitialized extends AuthenticationState{
+class AuthenticationUninitialized extends AuthenticationState{
   @override
   String toString() => 'No inicializado';
 }
 
-class Success extends AuthenticationState {
+class AuthenticationSuccess extends AuthenticationState {
  
   final String displayName;
 
-  const Success(this.displayName);
+  const AuthenticationSuccess(this.displayName);
 
   @override
   List<Object> get props => [displayName];
@@ -27,7 +26,7 @@ class Success extends AuthenticationState {
   String toString() => 'Autenticado - displayName :$displayName';
 }
 
-class Failure  extends AuthenticationState {
+class AuthenticationFailure  extends AuthenticationState {
   @override
   String toString() => 'No autenticado';
 }

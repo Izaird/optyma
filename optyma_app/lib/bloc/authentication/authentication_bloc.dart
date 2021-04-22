@@ -13,7 +13,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
 
   AuthenticationBloc({@required AuthenticationRepository authenticationRepository})
     : assert(authenticationRepository != null),
-    _authenticationRepository = authenticationRepository, super(Uninitialized());
+    _authenticationRepository = authenticationRepository, super(AuthenticationUninitialized());
 
 
   @override
@@ -36,26 +36,27 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       final bool isSignedIn =  _authenticationRepository.isSignedIn();
       if (isSignedIn) {
         final user =  _authenticationRepository.getUser();
-        yield await Future.delayed(Duration(seconds: 5), (){
-          return Success(user);
+
+        yield await Future.delayed(Duration(seconds: 1), (){
+          return AuthenticationSuccess(user.displayName);
         });
       }
       else {
         yield await Future.delayed(Duration(seconds: 5), (){
-          return Failure();
+          return AuthenticationFailure();
         });
       }
     } catch (_) {
-      yield Failure();
+      yield AuthenticationFailure();
     }
   }
 
   Stream<AuthenticationState> _mapLoggedInToState() async* {
-    yield Success(_authenticationRepository.getUser());
+    yield AuthenticationSuccess(_authenticationRepository.getUser().displayName);
   }
 
   Stream<AuthenticationState> _mapLoggedOutToState() async* {
-    yield Failure();
+    yield AuthenticationFailure();
     _authenticationRepository.signOut();
   }
 }
