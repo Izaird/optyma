@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         if(state is UserUnitialized){
           return SplashPage();
         }
-        if(state is UserSuccess){
+        if(state is UserInitialized){
           if(state.admin){
             return HomeAdminPage();
           }
