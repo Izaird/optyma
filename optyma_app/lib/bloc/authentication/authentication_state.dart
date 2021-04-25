@@ -9,24 +9,16 @@ abstract class AuthenticationState extends Equatable {
 
 
 class AuthenticationUninitialized extends AuthenticationState{
-  @override
-  String toString() => 'No inicializado';
+  // @override
+  // String toString() => 'No inicializado';
 }
 
 class AuthenticationSuccess extends AuthenticationState {
- 
-  final String displayName;
-
-  const AuthenticationSuccess(this.displayName);
-
-  @override
-  List<Object> get props => [displayName];
-
-  @override
-  String toString() => 'Autenticado - displayName :$displayName';
+  // @override
+  // String toString() => 'Autenticado - displayName :$displayName';
 }
 
 class AuthenticationFailure  extends AuthenticationState {
-  @override
-  String toString() => 'No autenticado';
+  // @override
+  // String toString() => 'No autenticado';
 }

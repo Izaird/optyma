@@ -7,13 +7,12 @@ abstract class UserState extends Equatable{
   List<Object> get props => [];
 }
 
-
 class UserUnitialized extends UserState{}
 
 class UserInitialized extends UserState{
-  //uId       : Id con la que esta registrado en la base de datos
-  //name      : Nombre de usuario
-  //admin     : Es administrador?
+  //uId       : Google authentication Id
+  //name      : User name
+  //admin     : Is admin?
   final String uId;
   final String name;
   final String email;
@@ -29,18 +28,3 @@ class UserInitialized extends UserState{
   @override
   List<Object> get props => [uId ,name, email, admin];
 }
-
-  // @override
-  // String toString() {
-  //   // TODO: implement toString
-  //   return '''UserState{ 
-  //     uid   : $uId,
-  //     name  : $name,
-  //     admin : $admin,
-  //     email : $email,
-  //   }
-       
-  //   ''';
-  // }
-
-

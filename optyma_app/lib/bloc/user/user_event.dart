@@ -9,4 +9,14 @@ abstract class UserEvent extends Equatable {
 
 class UserLoggedIn extends UserEvent{}
 
+
+class UserSignedUp extends UserEvent{
+  //User's name
+  final String name;
+  UserSignedUp(this.name);
+
+  @override
+  List<Object> get props => [name];
+}
+
 class UserLoggedOut extends UserEvent{}
