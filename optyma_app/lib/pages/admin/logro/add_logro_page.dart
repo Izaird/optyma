@@ -10,14 +10,14 @@ import 'package:optyma_app/utils/validators.dart' as validators;
 final formKey = GlobalKey<FormState>();
 LogroModel logro = new LogroModel();
 
-class LogroPage extends StatefulWidget {
+class AddLogroPage extends StatefulWidget {
 
 
   @override
-  _LogroPageState createState() => _LogroPageState();
+  _AddLogroPageState createState() => _AddLogroPageState();
 }
 
-class _LogroPageState extends State<LogroPage> {
+class _AddLogroPageState extends State<AddLogroPage> {
 
 
 final CloudFirestoreRepository logrosRepository = CloudFirestoreRepository();
