@@ -6,11 +6,6 @@ import 'package:optyma_app/pages/common/signup/signup_form.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key key}) : super(key: key);
-
-  static Route route() {
-    return MaterialPageRoute<void>(builder: (_) => const SignUpPage());
-  }
 
   @override
   Widget build(BuildContext context) {
