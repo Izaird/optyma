@@ -1,7 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:optyma_app/models/forms.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
 
 part 'signup_state.dart';
@@ -11,61 +9,45 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   final AuthenticationRepository _authenticationRepository;
 
-  void emailChanged(String value) {
-    final email = Email.dirty(value);
+  void emailChanged(String email) {
     emit(state.copyWith(
-      email: email,
-      status: Formz.validate([
-        email,
-        state.password,
-        state.confirmedPassword,
-      ]),
+      email : email,
     ));
   }
 
-  void passwordChanged(String value) {
-    final password = Password.dirty(value);
-    final confirmedPassword = ConfirmedPassword.dirty(
-      password: password.value,
-      value: state.confirmedPassword.value,
-    );
+  void passwordChanged(String password) {
     emit(state.copyWith(
-      password: password,
-      confirmedPassword: confirmedPassword,
-      status: Formz.validate([
-        state.email,
-        password,
-        state.confirmedPassword,
-      ]),
+      password : password,
     ));
   }
 
-  void confirmedPasswordChanged(String value) {
-    final confirmedPassword = ConfirmedPassword.dirty(
-      password: state.password.value,
-      value: value,
-    );
+  void confirmedPasswordChanged() {
     emit(state.copyWith(
-      confirmedPassword: confirmedPassword,
-      status: Formz.validate([
-        state.email,
-        state.password,
-        confirmedPassword,
-      ]),
+      confirmedPassword: true,
+    ));
+  }
+
+  void validated(){ 
+    emit(state.copyWith(  
+      status: 1,
     ));
   }
 
   Future<void> signUpFormSubmitted() async {
-    if (!state.status.isValidated) return;
-    emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    // Status is validated
+    if (state.status != 1) return;
+    //Submission in progress
+    emit(state.copyWith(status: 2));
     try {
       await _authenticationRepository.signUp(
-        email: state.email.value,
-        password: state.password.value,
+        email: state.email,
+        password: state.password,
       );
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      //Submission was a success
+      emit(state.copyWith(status: 3));
     } on Exception {
-      emit(state.copyWith(status: FormzStatus.submissionFailure));
+      //Submission was a failure
+      emit(state.copyWith(status: 4));
     }
   }
 }

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:optyma_app/models/forms.dart';
+
 import 'package:optyma_app/repository/authentication_repository.dart';
 
 part 'login_state.dart';
@@ -11,45 +10,55 @@ class LoginCubit extends Cubit<LoginState> {
 
   final AuthenticationRepository _authenticationRepository;
 
-  void emailChanged(String value) {
-    final email = Email.dirty(value);
-    emit(state.copyWith(
+  void emailChanged(String email){ 
+    emit(state.copyWith(  
       email: email,
-      status: Formz.validate([email, state.password]),
     ));
   }
 
-  void passwordChanged(String value) {
-    final password = Password.dirty(value);
-    emit(state.copyWith(
+  void passwordChanged(String password){ 
+    emit(state.copyWith(  
       password: password,
-      status: Formz.validate([state.email, password]),
+    ));
+  }
+
+
+  //The form has been validated
+  void validated(){ 
+    emit(state.copyWith(  
+      status: 1,
     ));
   }
 
   Future<void> logInWithCredentials() async {
-    if (!state.status.isValidated) return;
-    emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    if (state.status != 1) return;
+    //Submission in progress
+    emit(state.copyWith(status: 2));
     try {
       await _authenticationRepository.signInWithCredentials(
-        email: state.email.value,
-        password: state.password.value,
+        email: state.email,
+        password: state.password,
       );
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      //Submission success
+      emit(state.copyWith(status: 3));
     } on Exception {
-      emit(state.copyWith(status: FormzStatus.submissionFailure));
+      //Submission was a failure
+      emit(state.copyWith(status: 4));
     }
   }
 
   Future<void> logInWithGoogle() async {
-    emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    //Submission in progress
+    emit(state.copyWith(status: 2));
     try {
       await _authenticationRepository.signInWithGoogle();
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      //Submission success
+      emit(state.copyWith(status: 3));
     } on Exception {
-      emit(state.copyWith(status: FormzStatus.submissionFailure));
+      //Submission was a failure
+      emit(state.copyWith(status: 4));
     } on NoSuchMethodError {
-      emit(state.copyWith(status: FormzStatus.pure));
+      emit(state.copyWith(status: 0));
     }
   }
 }
