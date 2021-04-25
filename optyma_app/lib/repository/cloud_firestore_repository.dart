@@ -22,8 +22,8 @@ class CloudFirestoreRepository{
 
   //
   Future<void> updateUserData(User user) async { 
-
     DocumentReference refUser = users.doc(user.uid);
+
 
     return await refUser.set({
       'admin'       : user.admin,
@@ -34,6 +34,29 @@ class CloudFirestoreRepository{
     });
 
 
+  }
+
+  Future<String> getUserName(String userId) async{  
+    DocumentReference refUser = users.doc(userId);
+    DocumentSnapshot doc = await refUser.get();
+
+    if(doc.exists){
+      return doc.data()['name'] ?? false;
+    }
+    else{
+      return null;
+    } 
+
+  }
+
+
+  Future<void> updateUserName(String name, String userId) async{  
+    DocumentReference refUser = users.doc(userId);
+
+    return await refUser.set({
+      'name'        : name
+    }); 
+    
   }
 
 
