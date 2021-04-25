@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:optyma_app/pages/admin/admins/add_admin_page.dart';
 import 'package:optyma_app/pages/admin/admins/admins_page.dart';
-import 'package:optyma_app/pages/admin/home/home_admin_paga.dart';
+import 'package:optyma_app/pages/admin/home/home_admin_page.dart';
 import 'package:optyma_app/pages/admin/logro/logros_page.dart';
 import 'package:optyma_app/pages/admin/plantilla/add_plantilla_page.dart';
 import 'package:optyma_app/pages/admin/plantilla/plantillas_page.dart';
