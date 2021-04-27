@@ -11,23 +11,23 @@ String logrosModelToJson(LogroModel data) => json.encode(data.toJson());
 class LogroModel {
     LogroModel({
         this.id,
-        this.nombre,
-        this.descripcion,
+        this.name,
+        this.description,
     });
 
     String id;
-    String nombre;
-    String descripcion;
+    String name;
+    String description;
 
     factory LogroModel.fromJson(Map<String, dynamic> json) => LogroModel(
         id: json["id"],
-        nombre: json["nombre"],
-        descripcion: json["descripcion"],
+        name: json["name"],
+        description: json["description"],
     );
 
     Map<String, dynamic> toJson() => {
         "id": id,
-        "nombre": nombre,
-        "descripcion": descripcion,
+        "name": name,
+        "description": description,
     };
 }

@@ -14,7 +14,7 @@ String plantillaModelToJson(PlantillaModel data) => json.encode(data.toJson());
 class PlantillaModel {
     PlantillaModel({
         this.dificultad,
-        this.expresion,
+        this.exp,
         this.sentencia,
         this.tema,
         this.tiempoAbierta,
@@ -24,7 +24,7 @@ class PlantillaModel {
     });
 
     int dificultad;
-    String expresion;
+    String exp;
     String sentencia;
     String tema;
     int tiempoAbierta;
@@ -34,7 +34,7 @@ class PlantillaModel {
 
     factory PlantillaModel.fromJson(Map<String, dynamic> json) => PlantillaModel(
         dificultad: json["dificultad"],
-        expresion: json["expresion"],
+        exp: json["exp"],
         sentencia: json["sentencia"],
         tema: json["tema"],
         tiempoAbierta: json["tiempoAbierta"],
@@ -45,7 +45,7 @@ class PlantillaModel {
 
     Map<String, dynamic> toJson() => {
         "dificultad": dificultad,
-        "expresion": expresion,
+        "exp": exp,
         "sentencia": sentencia,
         "tema": tema,
         "tiempoAbierta": tiempoAbierta,
