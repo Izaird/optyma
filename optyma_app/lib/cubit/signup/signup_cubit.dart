@@ -34,7 +34,7 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   Future<void> signUpFormSubmitted() async {
-    // Status is validated
+    // Status is not validated
     if (state.status != 1) return;
     //Submission in progress
     emit(state.copyWith(status: 2));
