@@ -5,7 +5,7 @@ import 'package:optyma_app/bloc/user/user_bloc.dart';
 import 'package:optyma_app/cubit/signup/signup_cubit.dart';
 import 'package:optyma_app/widgets/email_field_widget.dart';
 import 'package:optyma_app/utils/validators.dart' as validators;
-import 'package:optyma_app/widgets/text_field_widget.dart';
+import 'package:optyma_app/widgets/name_input_widget.dart';
 
 
 
@@ -39,7 +39,7 @@ class SignUpForm extends StatelessWidget {
         key: formKey,
         child: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               EmailInput(
                 onSaved:(email){
@@ -51,13 +51,13 @@ class SignUpForm extends StatelessWidget {
               const SizedBox(height: 8.0),
               _confirmPasswordInput(context),
               const SizedBox(height: 8.0),
-              TextInput(
+              NameInput(
                 labelText: 'Ingrese su nombre(s)',
                 textEditingController: _nombre,
                 maxLenght: 16,
               ),
               const SizedBox(height: 8.0),
-              TextInput(
+              NameInput(
                 labelText: 'Ingrese su apellido(s)',
                 textEditingController: _apellido,
                 maxLenght: 16,
