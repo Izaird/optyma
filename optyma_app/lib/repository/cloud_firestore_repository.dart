@@ -6,14 +6,14 @@ import 'package:optyma_app/models/user.dart';
 
 class CloudFirestoreRepository{
 
-  CollectionReference logros      = FirebaseFirestore.instance.collection('logros');
-  CollectionReference users       = FirebaseFirestore.instance.collection('users');
-  CollectionReference plantillas  = FirebaseFirestore.instance.collection('plantillas');
+  CollectionReference logrosReference      = FirebaseFirestore.instance.collection('logros');
+  CollectionReference usersReference       = FirebaseFirestore.instance.collection('users');
+  CollectionReference plantillasReference  = FirebaseFirestore.instance.collection('plantillas');
 
 
   //------------------------------------------>User<------------------------------------------------
   Future<void> updateUserData(User user) async { 
-    DocumentReference refUser = users.doc(user.uid);
+    DocumentReference refUser = usersReference.doc(user.uid);
 
     return await refUser.set({
       'admin'       : user.admin,
@@ -25,7 +25,7 @@ class CloudFirestoreRepository{
   }
 
   Future<String> getUserName(String userId) async{  
-    DocumentReference refUser = users.doc(userId);
+    DocumentReference refUser = usersReference.doc(userId);
     DocumentSnapshot doc = await refUser.get();
 
     if(doc.exists){
@@ -38,7 +38,7 @@ class CloudFirestoreRepository{
 
 
   Future<void> updateUserName(String name, String userId) async{  
-    DocumentReference refUser = users.doc(userId);
+    DocumentReference refUser = usersReference.doc(userId);
 
     return await refUser.set({
       'name'        : name
@@ -47,7 +47,7 @@ class CloudFirestoreRepository{
 
 
   Future<bool> isAdmin(userId) async{
-    DocumentReference refUser = users.doc(userId);
+    DocumentReference refUser = usersReference.doc(userId);
     DocumentSnapshot doc = await refUser.get();
 
     if(doc.exists){
@@ -60,7 +60,7 @@ class CloudFirestoreRepository{
 
   //------------------------------------------>Logros<----------------------------------------------
   Future<void> addLogro( LogroModel logro ) async{
-    logros.add({
+    logrosReference.add({
       'nombre'      : logro.name,
       'descripcion'  : logro.description 
     })
@@ -68,25 +68,31 @@ class CloudFirestoreRepository{
       .catchError((error)=> print("Faile to add user: $error"));
   }
 
-  Future<void> updateLogroData(LogroModel logro) async {
-    DocumentReference refLogro = logros.doc(logro.id);
-
-    return await refLogro.set({
-      'name'          : logro.name,
-      'description'   : logro.description,
-      'id'            : logro.id,
+  Stream<List<LogroModel>> getLogros(){
+    return logrosReference.snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => LogroModel.fromSnapshot(doc)).toList();
     });
   }
 
-  Future<void> deleteLogroData(String id) async {
-    DocumentReference refLogro = logros.doc(id);
+  Future<void> updateLogroData(LogroModel logro) async {
+    DocumentReference refLogro = logrosReference.doc(logro.id);
+
+    return await refLogro.set({
+      'nombre'          : logro.name,
+      'descripcion'   : logro.description,
+    });
+  }
+
+  Future<void> deleteLogro(String id) async {
+    DocumentReference refLogro = logrosReference.doc(id);
 
     return await refLogro.delete();
   }
 
+
   //------------------------------------------>Plantillas<------------------------------------------
   Future addPlantilla(PlantillaModel plantilla) async{
-    plantillas.add({
+    plantillasReference.add({
       'dificultad'      : plantilla.dificultad,
       'exp'             : plantilla.exp,
       'sentencia'       : plantilla.sentencia,
