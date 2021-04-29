@@ -39,7 +39,6 @@ class PlantillasRepository{
       'tema'            : plantilla.tema,
       'tiempoAbierta'   : plantilla.tiempoAbierta,
       'tiempoCerrada'   : plantilla.tiempoCerrada,
-      'timeStamp'       : plantilla.timestamp,
     });
   }
 
