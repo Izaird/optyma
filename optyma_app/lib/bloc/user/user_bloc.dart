@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
-import 'package:optyma_app/models/user.dart';
+import 'package:optyma_app/models/user_model.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
 import 'package:optyma_app/repository/users_repository.dart';
 
@@ -43,13 +43,13 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   Stream<UserState> _mapUserLoggedInToState() async *{
     final userFirebase = _authenticationRepository.getUser();
 
-    User user;
+    UserModel user;
 
     // If the user registered with an email the "displayName" 
     // parameter will be null so we will read from the database 
     // where we have previously inserted the user's name
     if (userFirebase.displayName != null){
-      user = User(
+      user = UserModel(
         uid: userFirebase.uid, 
         admin: await _cloudFirestoreRepository.isAdmin(userFirebase.uid), 
         email: userFirebase.email,
@@ -58,7 +58,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
 
     else{
-      user = User(
+      user = UserModel(
         uid: userFirebase.uid, 
         admin: await _cloudFirestoreRepository.isAdmin(userFirebase.uid), 
         email: userFirebase.email,
