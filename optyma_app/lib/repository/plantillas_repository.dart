@@ -5,12 +5,47 @@ import 'package:optyma_app/models/plantilla_model.dart';
 
 class PlantillasRepository{
 
-  CollectionReference plantillas = FirebaseFirestore.instance.collection('plantillas');
+  CollectionReference plantillasReference = FirebaseFirestore.instance.collection('plantillas');
 
 
-  Future<bool> createPlantilla( PlantillaModel plantilla) async{
-    return true;
+  Future<void> addPlantilla( PlantillaModel plantilla ) async{
+    plantillasReference.add({
+      'dificultad'      : plantilla.dificultad,
+      'exp'             : plantilla.exp,
+      'sentencia'       : plantilla.sentencia,
+      'tema'            : plantilla.tema,
+      'tiempoAbierta'   : plantilla.tiempoAbierta,
+      'tiempoCerrada'   : plantilla.tiempoCerrada,
+      'timeStamp'       : plantilla.timestamp,
+      'uId'             : plantilla.uid,
+    })
+      .then((value) => print(value))
+      .catchError((error)=> print("Faile to add user: $error"));
   }
 
+  Stream<List<PlantillaModel>> getPlantillas(){
+    return plantillasReference.snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
+    });
+  }
 
+  Future<void> updatePlantillaData(PlantillaModel plantilla) async {
+    DocumentReference refPlantilla = plantillasReference.doc(plantilla.id);
+
+    return await refPlantilla.update({
+      'dificultad'      : plantilla.dificultad,
+      'exp'             : plantilla.exp,
+      'sentencia'       : plantilla.sentencia,
+      'tema'            : plantilla.tema,
+      'tiempoAbierta'   : plantilla.tiempoAbierta,
+      'tiempoCerrada'   : plantilla.tiempoCerrada,
+      'timeStamp'       : plantilla.timestamp,
+    });
+  }
+
+  Future<void> deletePlantilla(String id) async {
+    DocumentReference refPlantilla = plantillasReference.doc(id);
+
+    return await refPlantilla.delete();
+  }
 }

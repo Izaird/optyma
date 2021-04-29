@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/cubit/logro/logro_cubit.dart';
 import 'package:optyma_app/pages/admin/logro/add_logro_form.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/logros_repository.dart';
 
 
 class AddLogroPage extends StatelessWidget {
@@ -14,7 +14,7 @@ class AddLogroPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: BlocProvider<LogroCubit>(  
-          create: (_) => LogroCubit(RepositoryProvider.of<CloudFirestoreRepository>(context)),
+          create: (_) => LogroCubit(RepositoryProvider.of<LogrosRepository>(context)),
           child: AddLogroForm(),
         ),
       ),

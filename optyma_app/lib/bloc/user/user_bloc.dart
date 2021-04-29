@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 
 import 'package:optyma_app/models/user.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/users_repository.dart';
 
 part 'user_event.dart';
 part 'user_state.dart';
@@ -14,11 +14,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
 
   final AuthenticationRepository _authenticationRepository;
-  final CloudFirestoreRepository _cloudFirestoreRepository;
+  final UsersRepository _cloudFirestoreRepository;
 
   UserBloc({
     @required AuthenticationRepository authenticationRepository,
-    @required CloudFirestoreRepository cloudFirestoreRepository, 
+    @required UsersRepository cloudFirestoreRepository, 
   })
   : assert(authenticationRepository != null),
     assert(cloudFirestoreRepository != null),

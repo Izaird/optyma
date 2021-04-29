@@ -5,19 +5,19 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 import 'package:optyma_app/models/logro_model.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/logros_repository.dart';
 
 part 'logros_event.dart';
 part 'logros_state.dart';
 
 class LogrosBloc extends Bloc<LogrosEvent, LogrosState> {
 
-  final CloudFirestoreRepository _cloudFirestoreRepository;
+  final LogrosRepository _logrosRepository;
   StreamSubscription _logroSubscription;
 
-  LogrosBloc({@required CloudFirestoreRepository cloudFirestoreRepository})
-    : assert(cloudFirestoreRepository != null),
-    _cloudFirestoreRepository = cloudFirestoreRepository,
+  LogrosBloc({@required LogrosRepository logrosRepository})
+    : assert(logrosRepository != null),
+    _logrosRepository = logrosRepository,
     super(LogrosLoadInProgress());
 
   @override
@@ -35,10 +35,10 @@ class LogrosBloc extends Bloc<LogrosEvent, LogrosState> {
     yield LogrosLoadInProgress();
     _logroSubscription?.cancel();
     try {
-      _logroSubscription = _cloudFirestoreRepository.getLogros().listen((logros) {
+      _logroSubscription = _logrosRepository.getLogros().listen((logros) {
         add(LogrosUpdated(logros));
        });
-      // final List<LogroModel> logros = await _cloudFirestoreRepository.getLogros().first;
+      // final List<LogroModel> logros = await _logrosRepository.getLogros().first;
       // yield LogrosLoaded(logros);
     }
     catch (_) {

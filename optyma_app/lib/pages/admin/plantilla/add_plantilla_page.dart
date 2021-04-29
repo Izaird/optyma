@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:optyma_app/cubit/plantilla/plantilla_cubit.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/plantillas_repository.dart';
 import 'package:optyma_app/pages/admin/plantilla/add_plantilla_form.dart';
 
 
@@ -18,7 +18,7 @@ class AddPlantillaPage extends StatelessWidget {
         child: BlocProvider<PlantillaCubit>(  
           create: (_) => PlantillaCubit(
             authenticationRepository: RepositoryProvider.of<AuthenticationRepository>(context),
-            cloudFirestoreRepository: RepositoryProvider.of<CloudFirestoreRepository>(context),
+            plantillasRepository: RepositoryProvider.of<PlantillasRepository>(context),
           ),
           child: AddPlantillaForm(),
         ),

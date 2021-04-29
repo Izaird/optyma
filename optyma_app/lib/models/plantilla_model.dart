@@ -7,6 +7,8 @@
 
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 PlantillaModel plantillaModelFromJson(String str) => PlantillaModel.fromJson(json.decode(str));
 
 String plantillaModelToJson(PlantillaModel data) => json.encode(data.toJson());
@@ -21,6 +23,7 @@ class PlantillaModel {
         this.tiempoCerrada,
         this.timestamp,
         this.uid,
+        this.id,
     });
 
     int dificultad;
@@ -31,6 +34,7 @@ class PlantillaModel {
     int tiempoCerrada;
     DateTime timestamp;
     String uid;
+    String id;
 
     factory PlantillaModel.fromJson(Map<String, dynamic> json) => PlantillaModel(
         dificultad: json["dificultad"],
@@ -42,6 +46,18 @@ class PlantillaModel {
         timestamp: json["timestamp"],
         uid: json["uid"],
     );
+
+    factory PlantillaModel.fromSnapshot(DocumentSnapshot snapshot){
+      return PlantillaModel(
+        id            :snapshot.id,
+        dificultad    : snapshot.data()['dificultad'],
+        exp           : snapshot.data()['exp'],
+        sentencia     : snapshot.data()['sentencia'],
+        tema          : snapshot.data()['tema'],
+        tiempoAbierta : snapshot.data()['tiempoAbierta'],
+        tiempoCerrada : snapshot.data()['tiempoCerrada'],
+      );
+    }
 
     Map<String, dynamic> toJson() => {
         "dificultad": dificultad,

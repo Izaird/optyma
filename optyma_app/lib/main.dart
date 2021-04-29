@@ -9,7 +9,9 @@ import 'package:optyma_app/pages/common/home/home_page.dart';
 import 'package:optyma_app/pages/common/login/login_page.dart';
 import 'package:optyma_app/pages/common/splash/splash_page.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/logros_repository.dart';
+import 'package:optyma_app/repository/plantillas_repository.dart';
+import 'package:optyma_app/repository/users_repository.dart';
 import 'package:optyma_app/routes/routes.dart';
 
 import 'bloc/authentication/authentication_bloc.dart';
@@ -18,13 +20,17 @@ void main() async{
   await Firebase.initializeApp();
   Bloc.observer = MyBlocObserver();
   final AuthenticationRepository authenticationRepository = AuthenticationRepository();
-  final CloudFirestoreRepository cloudFirestoreRepository = CloudFirestoreRepository();
+  final UsersRepository cloudFirestoreRepository = UsersRepository();
+  final LogrosRepository logrosRepository = LogrosRepository();
+  final PlantillasRepository plantillasRepository = PlantillasRepository();
 
   runApp(
     MultiRepositoryProvider(
       providers: [
         RepositoryProvider.value(value: authenticationRepository),
         RepositoryProvider.value(value: cloudFirestoreRepository),
+        RepositoryProvider.value(value: logrosRepository),
+        RepositoryProvider.value(value: plantillasRepository),
       ],
 
       child: MultiBlocProvider(

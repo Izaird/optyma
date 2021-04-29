@@ -4,7 +4,12 @@ import 'package:optyma_app/cubit/logro/logro_cubit.dart';
 import 'package:optyma_app/models/logro_model.dart';
 import 'package:optyma_app/widgets/text_input_widget.dart';
 
-class AddLogroForm extends StatelessWidget{
+class AddLogroForm extends StatefulWidget{
+  @override
+  _AddLogroFormState createState() => _AddLogroFormState();
+}
+
+class _AddLogroFormState extends State<AddLogroForm> {
   final formKey = GlobalKey<FormState>();
 
   LogroModel logro = new LogroModel();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/bloc/logros/logros_bloc.dart';
 import 'package:optyma_app/models/logro_model.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/logros_repository.dart';
 
 class LogrosList extends StatefulWidget {
 
@@ -45,6 +45,7 @@ class _LogrosListState extends State<LogrosList> {
             ),
           );
         }
+        return Container();
       },
     );
   }
@@ -56,7 +57,7 @@ class _LogrosListState extends State<LogrosList> {
         color: Colors.red,
       ),
       onDismissed: (direction) {
-        RepositoryProvider.of<CloudFirestoreRepository>(context).deleteLogro(logro.id);
+        RepositoryProvider.of<LogrosRepository>(context).deleteLogro(logro.id);
       },
       child: ListTile(
         title: Text('${logro.name}'),

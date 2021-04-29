@@ -1,14 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:optyma_app/models/logro_model.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/logros_repository.dart';
 
 part 'logro_state.dart';
 
 class LogroCubit extends Cubit<LogroState> {
-  LogroCubit(this._cloudFirestoreRepository) : super(LogroState());
+  LogroCubit(this._logrosRepository) : super(LogroState());
 
-  final CloudFirestoreRepository _cloudFirestoreRepository;
+  final LogrosRepository _logrosRepository;
 
   void nameChanged(String name){
     emit(state.copyWith(
@@ -35,7 +35,7 @@ class LogroCubit extends Cubit<LogroState> {
     emit(state.copyWith(status: 2));
 
     try {
-      await _cloudFirestoreRepository.addLogro(LogroModel(
+      await _logrosRepository.addLogro(LogroModel(
         name: state.name,
         description: state.description
       ));
@@ -54,7 +54,7 @@ class LogroCubit extends Cubit<LogroState> {
     emit(state.copyWith(status: 2));
 
     try {
-      await _cloudFirestoreRepository.updateLogroData(LogroModel(
+      await _logrosRepository.updateLogroData(LogroModel(
         name: state.name,
         description: state.description,
         id: id

@@ -4,22 +4,22 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/models/plantilla_model.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
-import 'package:optyma_app/repository/cloud_firestore_repository.dart';
+import 'package:optyma_app/repository/plantillas_repository.dart';
 
 part 'plantilla_state.dart';
 
 class PlantillaCubit extends Cubit<PlantillaState> {
   PlantillaCubit({
     @required AuthenticationRepository authenticationRepository,
-    @required CloudFirestoreRepository cloudFirestoreRepository,
+    @required PlantillasRepository plantillasRepository,
     })
     : assert(authenticationRepository != null),
-      assert(cloudFirestoreRepository != null),
+      assert(plantillasRepository != null),
       _authenticationRepository = authenticationRepository,
-      _cloudFirestoreRepository = cloudFirestoreRepository,
+      _plantillasRepository = plantillasRepository,
      super(PlantillaState());
 
-  final CloudFirestoreRepository _cloudFirestoreRepository;
+  final PlantillasRepository _plantillasRepository;
   final AuthenticationRepository _authenticationRepository;
 
   void difficultyChanged(int difficulty){
@@ -71,7 +71,7 @@ class PlantillaCubit extends Cubit<PlantillaState> {
     emit(state.copyWith(status: 2));
 
     try {
-      await _cloudFirestoreRepository.addPlantilla(PlantillaModel(
+      await _plantillasRepository.addPlantilla(PlantillaModel(
         dificultad    : state.difficulty,
         exp           : state.exp,
         sentencia     : state.sentence,
