@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:optyma_app/bloc/plantillas/plantillas_bloc.dart';
+import 'package:optyma_app/pages/admin/plantilla/plantillas_list.dart';
+import 'package:optyma_app/repository/plantillas_repository.dart';
 
 
 class PlantillasPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BlocProvider(
+      create: (context) => PlantillasBloc(
+        plantillasRepository: RepositoryProvider.of<PlantillasRepository>(context))
+        ..add(PlantillasLoaded()),
 
-      appBar: AppBar(),
-      body: Center(
-        child: Text('PlantillasPage'),
-      ),
-      floatingActionButton: FloatingActionButton(  
-        child: Icon(Icons.add),
-        onPressed: (){
-          Navigator.pushNamed(context, 'addPlantilla');
-        },
+      child: Scaffold(
+        appBar: AppBar(),
+        body: PlantillasList(),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: (){
+            Navigator.pushNamed(context, 'addPlantilla');
+          },
+        ),
       ),
     );
   }

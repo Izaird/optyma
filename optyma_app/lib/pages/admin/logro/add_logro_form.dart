@@ -10,9 +10,9 @@ class AddLogroForm extends StatefulWidget{
 }
 
 class _AddLogroFormState extends State<AddLogroForm> {
-  final formKey = GlobalKey<FormState>();
 
   LogroModel logro = new LogroModel();
+  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +44,14 @@ class _AddLogroFormState extends State<AddLogroForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextInput(
-                intialData: logro.name,
+                intialValue: logro.name,
                 labelText: 'Ingrese el nombre del logro',
                 onSaved: (name) {
                   BlocProvider.of<LogroCubit>(context).nameChanged(name);
                 },
               ),
               TextInput(
-                intialData: logro.description,
+                intialValue: logro.description,
                 maxLenght: 50,
                 labelText: 'Ingrese la descripción del logro',
                 onSaved: (description) {
