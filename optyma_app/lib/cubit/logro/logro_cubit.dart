@@ -28,7 +28,7 @@ class LogroCubit extends Cubit<LogroState> {
     ));
   }
 
-  Future<void> logroFormSubmitted() async{
+  Future<void> addLogroFormSubmitted() async{
     //Status is not validated
     if(state.status != 1) return;
     //Submission in progress
@@ -38,6 +38,26 @@ class LogroCubit extends Cubit<LogroState> {
       await _cloudFirestoreRepository.addLogro(LogroModel(
         name: state.name,
         description: state.description
+      ));
+      //Submission was a success
+      emit(state.copyWith(status:3));
+    } on Exception{
+      //Submission was a failure
+      emit(state.copyWith(status:4));
+    }
+  }
+
+  Future<void> updateLogroFormSubmitted(String id) async{
+    //Status is not validated
+    if(state.status != 1) return;
+    //Submission in progress
+    emit(state.copyWith(status: 2));
+
+    try {
+      await _cloudFirestoreRepository.updateLogroData(LogroModel(
+        name: state.name,
+        description: state.description,
+        id: id
       ));
       //Submission was a success
       emit(state.copyWith(status:3));
