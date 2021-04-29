@@ -16,7 +16,6 @@ class LogrosUpdated extends LogrosEvent{
   LogrosUpdated(this.logros);
 
   @override
-  // TODO: implement props
   List<Object> get props => [logros];
 }
 
