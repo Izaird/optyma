@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:optyma_app/bloc/plantillas/plantillas_bloc.dart';
-import 'package:optyma_app/models/plantilla_model.dart';
-import 'package:optyma_app/repository/plantillas_repository.dart';
+import 'package:optyma_app/bloc/admins/admins_bloc.dart';
+import 'package:optyma_app/models/user_model.dart';
+import 'package:optyma_app/repository/users_repository.dart';
 
-class PlantillasList extends StatefulWidget {
+class AdminsList extends StatefulWidget {
 
   @override
-  _PlantillasListState createState() => _PlantillasListState();
+  _AdminsListState createState() => _AdminsListState();
 }
 
-class _PlantillasListState extends State<PlantillasList> {
+class _AdminsListState extends State<AdminsList> {
 
-  List<PlantillaModel> plantillasList = [];
+  List<UserModel> plantillasList = [];
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PlantillasBloc, PlantillasState>(
+    return BlocBuilder<AdminsBloc, AdminsState>(
       builder: (context, state){
-        if(state is PlantillasLoadInProgress){
+        if(state is AdminsLoadInProgress){
           return Center(child: CircularProgressIndicator(),);
         }
-        if(state is PlantillasLoadFailure){
+        if(state is AdminsLoadFailure){
           return Center( 
             child: Column(  
               children: [
@@ -32,11 +32,11 @@ class _PlantillasListState extends State<PlantillasList> {
             ),
           );
         }
-        if(state is PlantillasLoadSuccess){
-          plantillasList = state.plantillas;
+        if(state is AdminsLoadSuccess){
+          plantillasList = state.admins;
           return Container(
             child: plantillasList.length == 0
-            ? Center(child: Text('Logros no disponibles'),)
+            ? Center(child: Text('No hay mas administradores'),)
             : ListView.builder(
               itemCount: plantillasList.length,
               itemBuilder: (context, i){
@@ -51,7 +51,7 @@ class _PlantillasListState extends State<PlantillasList> {
     );
   }
 
-  Widget _createItem(BuildContext context, PlantillaModel plantilla){
+  Widget _createItem(BuildContext context, UserModel admin){
 
     return Dismissible(
       key: UniqueKey(),
@@ -59,12 +59,12 @@ class _PlantillasListState extends State<PlantillasList> {
         color: Colors.red,
       ),
       onDismissed: (direction) {
-        RepositoryProvider.of<PlantillasRepository>(context).deletePlantilla(plantilla.id);
+        RepositoryProvider.of<UsersRepository>(context).updateUserAdminStatus(admin: false, userId: admin.uid);
       },
       child: ListTile(
-        title: Text('${plantilla.exp}'),
-        subtitle: Text('${plantilla.sentencia}'),
-        onTap: () => Navigator.pushNamed(context, 'addPlantilla', arguments: plantilla),
+        title: Text('${admin.name}'),
+        subtitle: Text('${admin.email}'),
+        onTap: () => Navigator.pushNamed(context, 'addPlantilla', arguments: admin),
       ),
     );
   }
