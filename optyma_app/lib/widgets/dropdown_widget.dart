@@ -13,9 +13,11 @@ class DropDownWidget extends StatefulWidget {
   final FormFieldSetter<String> onSaved;
   final FormFieldValidator<String> validator;
   final List<String> items;
+  final String intialValue;
 
 
   const DropDownWidget({
+    this.intialValue,
     this.hintText,
     this.defaultText,
     this.validator,
@@ -33,11 +35,13 @@ class _DropDownWidgetState extends State<DropDownWidget> {
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
+      
       onChanged: (value){
         setState(() {
           
         });  
       },
+      value: widget.intialValue,
       items: widget.items.map((valueItem){
         return DropdownMenuItem(
           value: valueItem,
