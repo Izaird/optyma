@@ -2,7 +2,7 @@ final RegExp _nameRegExp = RegExp(
   r"[A-Za-z]+([\ A-Za-z]+)*");
 
 final RegExp _textRegExp = RegExp(
-  r"^[a-zA-Z ]*$"
+  r"^[a-zA-Z0-9áéíóú ]{4,}"
 );
 
 final RegExp _emailRegExp = RegExp(

@@ -8,8 +8,10 @@ class TextInput extends StatelessWidget {
   final int maxLenght;
   final String labelText;
   final TextEditingController textEditingController;
+  final String intialData;
 
   const TextInput({
+    this.intialData,
     this.onSaved,
     this.maxLenght = 20,
     this.labelText = '',
@@ -19,6 +21,7 @@ class TextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: intialData,
       controller: textEditingController,
       maxLength: maxLenght,
       autovalidateMode: AutovalidateMode.onUserInteraction,
