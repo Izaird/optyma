@@ -116,7 +116,7 @@ class _AddPlantillaFormState extends State<AddPlantillaForm> {
         return state.status == 2
           ? const CircularProgressIndicator()
           : ElevatedButton(
-            child: Text('Agreagar logro'),
+            child: Text('Agreagar Plantilla'),
             onPressed: (){
               if(!formKey.currentState.validate()) return;
               formKey.currentState.save();

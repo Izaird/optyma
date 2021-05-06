@@ -52,7 +52,7 @@ class _AddLogroFormState extends State<AddLogroForm> {
               ),
               TextInput(
                 intialValue: logro.description,
-                maxLenght: 50,
+                maxLenght: 150,
                 labelText: 'Ingrese la descripción del logro',
                 onSaved: (description) {
                   BlocProvider.of<LogroCubit>(context).descriptionChanged(description);

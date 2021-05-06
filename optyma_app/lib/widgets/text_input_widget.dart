@@ -13,7 +13,7 @@ class TextInput extends StatelessWidget {
   const TextInput({
     this.intialValue,
     this.onSaved,
-    this.maxLenght = 20,
+    this.maxLenght = 35,
     this.labelText = '',
     this.textEditingController,
   });
