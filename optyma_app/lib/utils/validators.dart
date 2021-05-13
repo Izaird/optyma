@@ -5,7 +5,7 @@ final RegExp _textRegExp = RegExp(
   r"^[a-zA-Z0-9áéíóú ]{4,}"
 );
 final RegExp _plantillaRegExp = RegExp(
-  r"^[^áéíóú&%$?]"
+  r"^\w*\w(?:[+*-/]\w*\w)+;(\d*-\d*;)*$"
 );
 final RegExp _emailRegExp = RegExp(
   r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
@@ -13,6 +13,10 @@ final RegExp _emailRegExp = RegExp(
 final RegExp _passwordRegExp = RegExp(
   r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
 
+bool isPlantilla(String value){ 
+  if(value.isEmpty) return false;
+  return _plantillaRegExp.hasMatch(value);
+}
 bool isName(String value){ 
   if(value.isEmpty) return false;
   return _nameRegExp.hasMatch(value);

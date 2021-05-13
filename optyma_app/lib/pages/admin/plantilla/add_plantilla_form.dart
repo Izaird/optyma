@@ -5,7 +5,7 @@ import 'package:optyma_app/cubit/plantilla/plantilla_cubit.dart';
 import 'package:optyma_app/models/plantilla_model.dart';
 import 'package:optyma_app/widgets/dropdown_widget.dart';
 import 'package:optyma_app/widgets/text_input_widget.dart';
-
+import 'package:optyma_app/widgets/plantilla_input_widget.dart';
 class AddPlantillaForm extends StatefulWidget {
 
   @override
@@ -57,7 +57,7 @@ class _AddPlantillaFormState extends State<AddPlantillaForm> {
                 },
               ),
               //TODO: change this textinput to validate expresions insted of text
-              TextInput(          
+              PlantillaInput(          
                 intialValue: plantilla?.exp,        
                 labelText: 'Introduzca la expresión',
                 onSaved: (exp) {
