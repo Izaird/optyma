@@ -116,12 +116,12 @@ class _AddPlantillaFormState extends State<AddPlantillaForm> {
         return state.status == 2
           ? const CircularProgressIndicator()
           : ElevatedButton(
-            child: Text('Agreagar Plantilla'),
+            child: Text('Agregar Plantilla'),
             onPressed: (){
               if(!formKey.currentState.validate()) return;
               formKey.currentState.save();
               BlocProvider.of<PlantillaCubit>(context).validated();
-              if(plantilla.id != null){
+              if(plantilla?.id != null){
                 BlocProvider.of<PlantillaCubit>(context).updatePlantillaFormSubmitted(plantilla.id);
               }else{
                 BlocProvider.of<PlantillaCubit>(context).addPlantillaFormSubmitted();

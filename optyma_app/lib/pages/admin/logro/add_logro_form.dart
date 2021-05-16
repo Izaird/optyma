@@ -74,13 +74,13 @@ class _AddLogroFormState extends State<AddLogroForm> {
         return state.status == 2
           ? const CircularProgressIndicator()
           : ElevatedButton(
-            child: Text('Agreagar logro'),
+            child: Text('Agregar logro'),
             onPressed: (){
               if(!formKey.currentState.validate()) return;
 
               formKey.currentState.save();
               BlocProvider.of<LogroCubit>(context).validated();
-              if(logro.id != null){
+              if(logro?.id != null){
                 BlocProvider.of<LogroCubit>(context).updateLogroFormSubmitted(logro.id);
               }else{
                 BlocProvider.of<LogroCubit>(context).addLogroFormSubmitted();

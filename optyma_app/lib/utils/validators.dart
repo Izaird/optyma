@@ -5,7 +5,7 @@ final RegExp _textRegExp = RegExp(
   r"^[a-zA-Z0-9áéíóú ]{4,}"
 );
 final RegExp _plantillaRegExp = RegExp(
-  r"^\w*\w(?:[+*-/]\w*\w)+;(\d*-\d*;)*$"
+  r"^\w*\w(?:[+*-/=]\w*\w)+;(\d*-\d*;)*$"
 );
 final RegExp _emailRegExp = RegExp(
   r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");

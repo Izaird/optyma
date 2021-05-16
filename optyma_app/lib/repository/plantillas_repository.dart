@@ -20,7 +20,7 @@ class PlantillasRepository{
       'uId'             : plantilla.uid,
     })
       .then((value) => print(value))
-      .catchError((error)=> print("Faile to add user: $error"));
+      .catchError((error)=> print("Failed to add plantilla: $error"));
   }
 
   Stream<List<PlantillaModel>> getPlantillas(){

@@ -13,7 +13,7 @@ class AdminsList extends StatefulWidget {
 
 class _AdminsListState extends State<AdminsList> {
 
-  List<UserModel> plantillasList = [];
+  List<UserModel> adminsList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +33,14 @@ class _AdminsListState extends State<AdminsList> {
           );
         }
         if(state is AdminsLoadSuccess){
-          plantillasList = state.admins;
+          adminsList = state.admins;
           return Container(
-            child: plantillasList.length == 0
+            child: adminsList.length == 0
             ? Center(child: Text('No hay mas administradores'),)
             : ListView.builder(
-              itemCount: plantillasList.length,
+              itemCount: adminsList.length,
               itemBuilder: (context, i){
-                return _createItem(context, plantillasList[i]);
+                return _createItem(context, adminsList[i]);
 
               },
             ),
