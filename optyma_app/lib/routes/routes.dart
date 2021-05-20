@@ -8,7 +8,7 @@ import 'package:optyma_app/pages/admin/plantilla/plantillas_page.dart';
 import 'package:optyma_app/pages/admin/logro/logros_page.dart';
 import 'package:optyma_app/pages/admin/home/home_admin_page.dart';
 import 'package:optyma_app/pages/admin/settings/settings_page.dart';
-
+import 'package:optyma_app/pages/user/quiz/quiz_page.dart';
 
 import 'package:optyma_app/pages/common/home/home_page.dart';
 import 'package:optyma_app/pages/common/login/login_page.dart';
@@ -23,8 +23,8 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'splash'        : (_) => SplashPage(),
     'login'         : (_) => LoginPage(),
     'signup'        : (_) => SignUpPage(),
-
-
+    //user pages
+    'quiz'          :(_) => Quiz(),
     //Admin Pages
     'homeAdmin'     : (_) => HomeAdminPage(),
     'logros'        : (_) => LogrosPage(),

@@ -51,7 +51,7 @@ class _AddPlantillaFormState extends State<AddPlantillaForm> {
                 intialValue: (plantilla?.dificultad?.toString()),
                 items: difficultys,
                 hintText: 'Escoge una dificultad',
-                validator: (difficulty) => difficulty == null ? 'Se tiene que escoger una difiultad' : null,
+                validator: (difficulty) => difficulty == null ? 'Se tiene que escoger una dificultad' : null,
                 onSaved: (difficulty){
                   BlocProvider.of<PlantillaCubit>(context).difficultyChanged(int.parse(difficulty));
                 },
