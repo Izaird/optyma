@@ -27,36 +27,36 @@ class HomeUserPage extends StatelessWidget {
         ],
       ),
       body:  Form(
-              key: formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Text("Tema"),
-                    DropDownWidget(items: subjects,
-                      defaultText: "Aritmética",
-                      intialValue: "Aritmética",
-                      validator: (subject) => subject == null ? 'Se tiene que escoger un tema' : null,
-                      onSaved: (tema){
-                      quizData.tema=tema;
-                    }),
-                    Text("Dificultad"),
-                    DropDownWidget(items: difficultys,
-                      defaultText: "1",
-                      intialValue: "1",
-                      validator: (difficulty) => difficulty == null ? 'Se tiene que escoger una dificultad' : null,
-                      onSaved: (difficulty){
-                      quizData.dificultad=(int.parse(difficulty));
-                    }),
-                    _submitButton(context),
-                  ],
-                ),
-          )
-      );
+        key: formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Text("Tema"),
+              DropDownWidget(items: subjects,
+                defaultText: "Aritmética",
+                intialValue: "Aritmética",
+                validator: (subject) => subject == null ? 'Se tiene que escoger un tema' : null,
+                onSaved: (tema){
+                quizData.tema=tema;
+              }),
+              Text("Dificultad"),
+              DropDownWidget(items: difficultys,
+                defaultText: "1",
+                intialValue: "1",
+                validator: (difficulty) => difficulty == null ? 'Se tiene que escoger una dificultad' : null,
+                onSaved: (difficulty){
+                quizData.dificultad=(int.parse(difficulty));
+              }),
+              _submitButton(context),
+          ] ,
+        ),
+      )
+    );
   }
 
     Widget _submitButton(BuildContext context) {
         return ElevatedButton(
-            child: Text('Jugar'),
+            child: Text('Comenzar'),
             onPressed: (){
              formKey.currentState.save(); 
              return Navigator.pushNamed(context, 'quiz', arguments: quizData);

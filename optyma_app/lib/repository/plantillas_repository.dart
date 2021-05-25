@@ -47,4 +47,14 @@ class PlantillasRepository{
 
     return await refPlantilla.delete();
   }
+  getRandomPlantilla (String tema, int dif){
+    print(FirebaseFirestore.instance.collection('plantillas').
+    where('tema', isEqualTo: tema ).
+    where('dificulttad', isLessThanOrEqualTo: dif).
+    get());
+    return FirebaseFirestore.instance.collection('plantillas').
+    where('tema', isEqualTo: tema ).
+    where('dificulttad', isLessThanOrEqualTo: dif).
+    get();
+  }
 }
