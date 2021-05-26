@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/bloc/add_logro/add_logro_bloc.dart';
 import 'package:optyma_app/widgets/text_input_widget.dart';
 
-
 class AddLogroPage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +12,7 @@ class AddLogroPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: BlocProvider<AddLogroBloc>(  
+        child: BlocProvider<AddLogroBloc>(
           create: (_) => AddLogroBloc(),
           child: AddLogroBody(),
         ),
@@ -23,9 +21,7 @@ class AddLogroPage extends StatelessWidget {
   }
 }
 
-
 class AddLogroBody extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,19 +33,17 @@ class AddLogroBody extends StatelessWidget {
   }
 }
 
-
-
-class MenuTypesOfLogros extends StatefulWidget{
+class MenuTypesOfLogros extends StatefulWidget {
   @override
   _MenuTypesOfLogrosState createState() => _MenuTypesOfLogrosState();
 }
 
 class _MenuTypesOfLogrosState extends State<MenuTypesOfLogros> {
-  String _typeOfLogro ;
+  String _typeOfLogro;
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
-      hint: Text('Tipos de logro'), 
+      hint: Text('Tipos de logro'),
       value: _typeOfLogro,
       items: <DropdownMenuItem>[
         DropdownMenuItem(
@@ -90,81 +84,80 @@ class _MenuTypesOfLogrosState extends State<MenuTypesOfLogros> {
       ],
       onChanged: (value) {
         setState(() {
-          _typeOfLogro = value;  
+          _typeOfLogro = value;
         });
       },
     );
   }
 }
 
-
 class AddLogroForm extends StatelessWidget {
-
   final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
-      child: SingleChildScrollView(  
-        child: Column(  
-          children: [
-            TextInput(
-              // intialValue: logro.name,
-              labelText: 'Ingrese el nombre del logro',
-              onSaved: (name) {
-                // BlocProvider.of<LogroCubit>(context).nameChanged(name);
-              },
-            ),
-            AddLogroFormType(key: formKey,),
-          ],
-        ),
-      )
-    );
+        key: formKey,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TextInput(
+                // intialValue: logro.name,
+                labelText: 'Ingrese el nombre del logro',
+                onSaved: (name) {
+                  // BlocProvider.of<LogroCubit>(context).nameChanged(name);
+                },
+              ),
+              AddLogroFormType(),
+              BlocBuilder<AddLogroBloc, AddLogroState>(
+                builder: (context, state) {
+                  if(state is! AddLogroInitial){
+                    return ElevatedButton(
+                      onPressed: (){
+                        if(!formKey.currentState.validate()) return;
+
+                        formKey.currentState.save();
+                        BlocProvider.of<AddLogroBloc>(context).add(AddLogroFormSubmitted());
+                      }, 
+                      child: Text('Agregar logro'));
+                  }
+                  return Container();
+                },
+              )
+            ],
+          ),
+        ));
   }
 }
 
 //Change the form depending on the type of logro that is selected
 class AddLogroFormType extends StatelessWidget {
-
-  final GlobalKey<FormState> formKey;
-
-  const AddLogroFormType({Key key, this.formKey}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddLogroBloc, AddLogroState>(
       builder: (context, state) {
         //Niveles
-        if(state is AddLogroType1InPRogress){
+        if (state is AddLogroType1InProgress) {
           return Column(
             children: [
               DifficultyDropDown(),
               SubjectDropDown(),
-              ElevatedButton(
-                child: Text('Agregar logro'),
-                onPressed: (){
-                  //Don't do anything until everything is validated
-                  if(!formKey.currentState.validate()) return;
-                  
-                  formKey.currentState.save();
-                }, 
-              ),
             ],
           );
         }
         //Racha de respuestas
-        if(state is AddLogroType2InPRogress){
+        if (state is AddLogroType2InProgress) {
           return NumberOfAnswersDropDown();
         }
         //Racha de dias
-        if(state is AddLogroType3InPRogress){
+        if (state is AddLogroType3InProgress) {
           return NumberOfDaysDropDown();
         }
         //Ejercicios realizados
-        if(state is AddLogroType4InPRogress){
+        if (state is AddLogroType4InProgress) {
           return NumberOfExercisesDropDown();
         }
-        if(state is AddLogroType5InPRogress){
+        if (state is AddLogroType5InProgress) {
           return Column(
             children: [
               DifficultyDropDown(),
@@ -178,66 +171,19 @@ class AddLogroFormType extends StatelessWidget {
   }
 }
 
-class DifficultyDropDown extends StatefulWidget {
-
-  @override
-  _DifficultyDropDownState createState() => _DifficultyDropDownState();
-}
-
-class _DifficultyDropDownState extends State<DifficultyDropDown> {
-
-  String _difficulty; 
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      hint: Text('Dificultad'),  
-      value: _difficulty,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('Fácil'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('Medio'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('Difícil'),
-        ),
-      ],
-      onChanged: (value) {
-        setState(() {
-          
-        });
-      },
-      validator: (value) {
-        if(value=!null){
-          return null;
-        }
-        else{
-          return 'Necesitas escoger una dificultad';
-        }
-      },
-    );
-  }
-}
 
 class SubjectDropDown extends StatefulWidget {
-
   @override
   _SubjectDropDownState createState() => _SubjectDropDownState();
 }
 
 class _SubjectDropDownState extends State<SubjectDropDown> {
-
-  String _subject; 
+  String _subject;
 
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
-      hint: Text('Tema'),  
+      hint: Text('Tema'),
       value: _subject,
       items: [
         DropdownMenuItem(
@@ -258,15 +204,12 @@ class _SubjectDropDownState extends State<SubjectDropDown> {
         ),
       ],
       onChanged: (value) {
-        setState(() {
-          
-        });
+        setState(() {});
       },
       validator: (value) {
-        if(value=!null){
+        if (value != null) {
           return null;
-        }
-        else{
+        } else {
           return 'Necesitas escoger un tema';
         }
       },
@@ -274,44 +217,93 @@ class _SubjectDropDownState extends State<SubjectDropDown> {
   }
 }
 
+class DifficultyDropDown extends StatefulWidget {
+  @override
+  _DifficultyDropDownState createState() => _DifficultyDropDownState();
+}
+
+class _DifficultyDropDownState extends State<DifficultyDropDown> {
+  String _difficulty;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonFormField(
+      hint: Text('Dificultad'),
+      value: _difficulty,
+      items: [
+        DropdownMenuItem(
+          value: 1,
+          child: Text('Fácil'),
+        ),
+        DropdownMenuItem(
+          value: 2,
+          child: Text('Medio'),
+        ),
+        DropdownMenuItem(
+          value: 3,
+          child: Text('Difícil'),
+        ),
+      ],
+      onChanged: (value) {
+        setState(() {});
+      },
+      validator: (value) {
+        if (value != null) {
+          return null;
+        } else {
+          return 'Necesitas escoger una dificultad';
+        }
+      },
+    );
+  }
+}
 
 class NumberOfAnswersDropDown extends StatefulWidget {
   NumberOfAnswersDropDown({Key key}) : super(key: key);
 
   @override
-  _NumberOfAnswersDropDownState createState() => _NumberOfAnswersDropDownState();
+  _NumberOfAnswersDropDownState createState() =>
+      _NumberOfAnswersDropDownState();
 }
+
 class _NumberOfAnswersDropDownState extends State<NumberOfAnswersDropDown> {
   int _answers;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
-      hint: Text('Número de respuestas'),  
-      value: _answers,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('1'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('2'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('3'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('4'),
-        ),
-      ],
-      onChanged: (value) {
-        setState(() {
-          
-        });
-      }
+        hint: Text('Número de respuestas'),
+        value: _answers,
+        items: [
+          DropdownMenuItem(
+            value: 1,
+            child: Text('1'),
+          ),
+          DropdownMenuItem(
+            value: 2,
+            child: Text('2'),
+          ),
+          DropdownMenuItem(
+            value: 3,
+            child: Text('3'),
+          ),
+          DropdownMenuItem(
+            value: 4,
+            child: Text('4'),
+          ),
+        ],
+        onChanged: (value) {
+          setState(() {});
+        },
+
+        validator: (value) {
+          if (value != null) {
+            return null;
+          } else {
+            return 'Escoge el número de respuestas';
+          }
+        },
     );
+
   }
 }
 
@@ -319,42 +311,50 @@ class NumberOfExercisesDropDown extends StatefulWidget {
   NumberOfExercisesDropDown({Key key}) : super(key: key);
 
   @override
-  _NumberOfExcercisesDropDownState createState() => _NumberOfExcercisesDropDownState();
+  _NumberOfExcercisesDropDownState createState() =>
+      _NumberOfExcercisesDropDownState();
 }
-class _NumberOfExcercisesDropDownState extends State<NumberOfExercisesDropDown> {
+
+class _NumberOfExcercisesDropDownState
+    extends State<NumberOfExercisesDropDown> {
   int _exercises;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
-      hint: Text('Número de ejercicios'),  
-      value: _exercises,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('1'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('2'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('3'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('4'),
-        ),
-      ],
-      onChanged: (value) {
-        setState(() {
-          
-        });
-      }
+        hint: Text('Número de ejercicios'),
+        value: _exercises,
+        items: [
+          DropdownMenuItem(
+            value: 1,
+            child: Text('1'),
+          ),
+          DropdownMenuItem(
+            value: 2,
+            child: Text('2'),
+          ),
+          DropdownMenuItem(
+            value: 3,
+            child: Text('3'),
+          ),
+          DropdownMenuItem(
+            value: 4,
+            child: Text('4'),
+          ),
+        ],
+        onChanged: (value) {
+          setState(() {});
+        },
+
+        validator: (value) {
+          if (value != null) {
+            return null;
+          } else {
+            return 'Escoge el número de ejercicios';
+          }
+        },
     );
   }
 }
-
 
 class NumberOfDaysDropDown extends StatefulWidget {
   NumberOfDaysDropDown({Key key}) : super(key: key);
@@ -362,36 +362,43 @@ class NumberOfDaysDropDown extends StatefulWidget {
   @override
   _NumberOfDaysDropDownState createState() => _NumberOfDaysDropDownState();
 }
+
 class _NumberOfDaysDropDownState extends State<NumberOfDaysDropDown> {
   int _days;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
-      hint: Text('Número de días'),  
-      value: _days,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('1'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('2'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('3'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('4'),
-        ),
-      ],
-      onChanged: (value) {
-        setState(() {
-          
-        });
-      }
+        hint: Text('Número de días'),
+        value: _days,
+        items: [
+          DropdownMenuItem(
+            value: 1,
+            child: Text('1'),
+          ),
+          DropdownMenuItem(
+            value: 2,
+            child: Text('2'),
+          ),
+          DropdownMenuItem(
+            value: 3,
+            child: Text('3'),
+          ),
+          DropdownMenuItem(
+            value: 4,
+            child: Text('4'),
+          ),
+        ],
+        onChanged: (value) {
+          setState(() {});
+        },
+        
+        validator: (value) {
+          if (value != null) {
+            return null;
+          } else {
+            return 'Escoge el número de días';
+          }
+        },
     );
   }
 }
