@@ -27,26 +27,38 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     if(event is AddLogroType5Selected){
       yield* _mapAddLogroType5SelectedToState();
     }
+    if(event is AddLogroFormSubmitted){
+      yield* _mapAddLogroFormSubmittedToState();
+    }
   }
 
   Stream<AddLogroState> _mapAddLogroType1SelectedToState() async *{
-    yield AddLogroType1InPRogress();
+    yield AddLogroType1InProgress();
   }
 
   Stream<AddLogroState> _mapAddLogroType2SelectedToState() async *{
-    yield AddLogroType2InPRogress();
+    yield AddLogroType2InProgress();
   }
 
   Stream<AddLogroState> _mapAddLogroType3SelectedToState() async *{
-    yield AddLogroType3InPRogress();
+    yield AddLogroType3InProgress();
   }
 
   Stream<AddLogroState> _mapAddLogroType4SelectedToState() async *{
-    yield AddLogroType4InPRogress();
+    yield AddLogroType4InProgress();
   }
 
   Stream<AddLogroState> _mapAddLogroType5SelectedToState() async *{
-    yield AddLogroType5InPRogress();
+    yield AddLogroType5InProgress();
+  }
+
+  Stream<AddLogroState> _mapAddLogroFormSubmittedToState() async *{
+    if(state is AddLogroType1InProgress){
+      print('enviando logro 1');
+    }
+    if(state is AddLogroType2InProgress){
+      print('enviando logro 2');
+    }
   }
 
 }

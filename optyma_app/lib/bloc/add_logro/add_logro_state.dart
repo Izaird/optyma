@@ -8,13 +8,13 @@ abstract class AddLogroState extends Equatable {
 }
 
 class AddLogroInitial extends AddLogroState {}
+//TODO: I need to add the attributes for each type of logro  
+class AddLogroType1InProgress extends AddLogroState {}
 
-class AddLogroType1InPRogress extends AddLogroState {}
+class AddLogroType2InProgress extends AddLogroState {}
 
-class AddLogroType2InPRogress extends AddLogroState {}
+class AddLogroType3InProgress extends AddLogroState {}
 
-class AddLogroType3InPRogress extends AddLogroState {}
+class AddLogroType4InProgress extends AddLogroState {}
 
-class AddLogroType4InPRogress extends AddLogroState {}
-
-class AddLogroType5InPRogress extends AddLogroState {}
+class AddLogroType5InProgress extends AddLogroState {}

@@ -7,7 +7,6 @@ abstract class AddLogroEvent extends Equatable {
   List<Object> get props => [];
 }
 
-
 class AddLogroType1Selected extends AddLogroEvent{}
 
 class AddLogroType2Selected extends AddLogroEvent{}
@@ -17,3 +16,5 @@ class AddLogroType3Selected extends AddLogroEvent{}
 class AddLogroType4Selected extends AddLogroEvent{}
 
 class AddLogroType5Selected extends AddLogroEvent{}
+
+class AddLogroFormSubmitted extends AddLogroEvent{}
