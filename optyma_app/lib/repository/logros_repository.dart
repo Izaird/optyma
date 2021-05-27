@@ -67,8 +67,38 @@ class LogrosRepository{
       .catchError((error)=> print("Failed to add logro: $error"));
   }
 
-  Stream<List<LogroModel>> getLogros(){
-    return logrosReference.snapshots().map((snapshot){
+
+  Stream<List<LogroModel>> getLogrosNive(){
+    return logrosReference.where('type', isEqualTo: 1)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => LogroModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<LogroModel>> getLogrosRres(){
+    return logrosReference.where('type', isEqualTo: 2)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => LogroModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<LogroModel>> getLogrosRdia(){
+    return logrosReference.where('type', isEqualTo: 3)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => LogroModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<LogroModel>> getLogrosEres(){
+    return logrosReference.where('type', isEqualTo: 4)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => LogroModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<LogroModel>> getLogrosLead(){
+    return logrosReference.where('type', isEqualTo: 5)
+    .snapshots().map((snapshot){
       return snapshot.docs.map((doc) => LogroModel.fromSnapshot(doc)).toList();
     });
   }
