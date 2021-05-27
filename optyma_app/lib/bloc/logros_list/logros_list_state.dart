@@ -9,23 +9,26 @@ abstract class LogrosListState extends Equatable {
 
 class LogrosListInitial extends LogrosListState {}
 
+class LogrosListType1 extends LogrosListState {}
+
+class LogrosListType2 extends LogrosListState {}
+
+class LogrosListType3 extends LogrosListState {}
+
+class LogrosListType4 extends LogrosListState {}
+
+class LogrosListType5 extends LogrosListState {}
+
 class LogrosListLoadInProgress extends LogrosListState{}
 
-class LogrosListType1LoadSuccess extends LogrosListState{
-  final List<LogroType1Model> logros;
-  LogrosListType1LoadSuccess(this.logros);
+class LogrosListLoadSuccess extends LogrosListState{
+  final List<LogroModel> logros;
+  LogrosListLoadSuccess(this.logros);
 
   @override
   List<Object> get props => [logros];
 }
 
-class LogrosListType2LoadSuccess extends LogrosListState{
-  final List<LogroType1Model> logros;
-  LogrosListType2LoadSuccess(this.logros);
-
-  @override
-  List<Object> get props => [logros];
-}
 
 class LogrosListLoadFailure extends LogrosListState{}
 

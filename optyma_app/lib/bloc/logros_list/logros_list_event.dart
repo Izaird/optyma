@@ -7,13 +7,21 @@ abstract class LogrosListEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LogrosListType1Loaded extends LogrosListEvent{}
+class LogrosListType1Selected extends LogrosListEvent{}
 
-class LogrosListType2Loaded extends LogrosListEvent{}
+class LogrosListType2Selected extends LogrosListEvent{}
 
-class LogrosListType1Updated extends LogrosListEvent{
-  final List<LogroType1Model> logros;
-  LogrosListType1Updated(this.logros);
+class LogrosListType3Selected extends LogrosListEvent{}
+
+class LogrosListType4Selected extends LogrosListEvent{}
+
+class LogrosListType5Selected extends LogrosListEvent{}
+
+class LogrosListLoaded extends LogrosListEvent{}
+
+class LogrosListUpdated extends LogrosListEvent{
+  final List<LogroModel> logros;
+  LogrosListUpdated(this.logros);
 
   @override
   List<Object> get props => [logros];
