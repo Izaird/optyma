@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:optyma_app/pages/admin/admins/add_admin_page.dart';
 import 'package:optyma_app/pages/admin/admins/admins_page.dart';
-import 'package:optyma_app/pages/admin/plantilla/add_plantilla_page.dart';
-import 'package:optyma_app/pages/admin/plantilla/plantillas_page.dart';
-import 'package:optyma_app/pages/admin/logro/logros_list/logros_page.dart';
+import 'package:optyma_app/pages/admin/logro/logros_list/logros_list_page.dart';
 import 'package:optyma_app/pages/admin/home/home_admin_page.dart';
 import 'package:optyma_app/pages/admin/settings/settings_page.dart';
-import 'package:optyma_app/pages/user/quiz/quiz_page.dart';
 
 import 'package:optyma_app/pages/common/home/home_page.dart';
 import 'package:optyma_app/pages/common/login/login_page.dart';
@@ -24,13 +21,13 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'login'         : (_) => LoginPage(),
     'signup'        : (_) => SignUpPage(),
     //user pages
-    'quiz'          :(_) => Quiz(),
+    // 'quiz'          :(_) => Quiz(),
     //Admin Pages
     'homeAdmin'     : (_) => HomeAdminPage(),
-    'logros'        : (_) => LogrosPage(),
+    'logros'        : (_) => LogrosListPage(),
     'addLogro'      : (_) => AddLogroPage(),
-    'plantillas'    : (_) => PlantillasPage(),
-    'addPlantilla'  : (_) => AddPlantillaPage(),
+    // 'plantillas'    : (_) => PlantillasPage(),
+    // 'addPlantilla'  : (_) => AddPlantillaPage(),
     'admins'        : (_) => AdminsPage(),
     'addAdmin'      : (_) => AddAdminPage(),
     'settings'      : (_) => SettingsPage(),

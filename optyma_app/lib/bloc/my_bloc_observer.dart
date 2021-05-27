@@ -5,14 +5,14 @@ class MyBlocObserver extends BlocObserver {
   @override
   void onCreate(BlocBase bloc) {
     super.onCreate(bloc);
-    print('onCreate -- ${bloc.runtimeType}');
+    print('onCreate  -- ${bloc.runtimeType}');
   }
 
   @override
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
     debugPrint('''
-onChange -- ${bloc.runtimeType} {
+onChange  -- ${bloc.runtimeType} {
   currState: ${change.currentState} 
   nextState: ${change.nextState} 
 }''');
@@ -27,6 +27,6 @@ onChange -- ${bloc.runtimeType} {
   @override
   void onClose(BlocBase bloc) {
     super.onClose(bloc);
-    print('onClose  -- ${bloc.runtimeType}');
+    print('onClose   -- ${bloc.runtimeType}');
   }
 }

@@ -37,7 +37,7 @@ class AddLogroBody extends StatelessWidget {
             const SnackBar(content: Text('Ocurrio un error al agregar el logro')),
           );
         }
-        //Submission was a succes
+        //Submission was a success
         //FIXME: For some reason the pop(context) is popping up 2 screens insted of 1
         //?Should I use a bloc for the navigation ? 
         if(state.status == FormStatus.submissionSuccess){
@@ -298,30 +298,19 @@ class NumberOfAnswersDropDown extends StatefulWidget {
 }
 
 class _NumberOfAnswersDropDownState extends State<NumberOfAnswersDropDown> {
+  List<int> _numberOfAnswers = [1, 2, 3, 4, 5];
   int _answers;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
       hint: Text('Número de respuestas'),
       value: _answers,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('1'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('2'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('3'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('4'),
-        ),
-      ],
+      items: _numberOfAnswers.map((numberOfAnswers) {
+        return DropdownMenuItem(
+          child: Text(numberOfAnswers.toString()),
+          value: numberOfAnswers,
+        );
+      }).toList(),
       onChanged: (value) {
         setState(() {});
       },
@@ -348,32 +337,21 @@ class NumberOfExercisesDropDown extends StatefulWidget {
       _NumberOfExcercisesDropDownState();
 }
 
-class _NumberOfExcercisesDropDownState
-    extends State<NumberOfExercisesDropDown> {
+class _NumberOfExcercisesDropDownState extends State<NumberOfExercisesDropDown> {
+
+  List<int> _numberOfExercises = [1, 2, 4, 5];
   int _exercises;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
       hint: Text('Número de ejercicios'),
       value: _exercises,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('1'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('2'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('3'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('4'),
-        ),
-      ],
+      items: _numberOfExercises.map((numberOfExercises) {
+        return DropdownMenuItem(
+          child: Text(numberOfExercises.toString()),
+          value: numberOfExercises,
+        );
+      }).toList(),
       onChanged: (value) {
         setState(() {});
       },
@@ -401,29 +379,18 @@ class NumberOfDaysDropDown extends StatefulWidget {
 
 class _NumberOfDaysDropDownState extends State<NumberOfDaysDropDown> {
   int _days;
+  List<int> _numberOfDays = [4, 5, 6, 9];
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
       hint: Text('Número de días'),
       value: _days,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('1'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('2'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('3'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('4'),
-        ),
-      ],
+      items: _numberOfDays.map((numberOfDays) {
+        return DropdownMenuItem(
+          child: Text(numberOfDays.toString()),
+          value: numberOfDays,
+        );
+      }).toList(),
       onChanged: (value) {
         setState(() {});
       },
