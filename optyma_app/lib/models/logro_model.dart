@@ -15,23 +15,47 @@ class LogroModel {
         this.id,
         this.name,
         this.description,
+        this.type,
+        this.numberofDays,
+        this.numberofExercises,
+        this.numberofAnswers,
+        this.difficulty,
+        this.subject
     });
 
     String id;
     String name;
     String description;
+    String type;
+    int numberofDays;
+    int numberofAnswers;
+    int numberofExercises;
+    int difficulty;
+    int subject;
 
     factory LogroModel.fromJson(Map<String, dynamic> json) => LogroModel(
-        id: json["id"],
-        name: json["name"],
-        description: json["description"],
+        id: json["id"] ??  null,
+        name: json["name"]??  null,
+        description: json["description"]??  null,
+        type: json["type"],
+        numberofDays: json["numberofDays"]??  null,
+        numberofExercises: json["numberOfExercises"]??  null,
+        numberofAnswers: json["numberofAnswers"]??  null,
+        difficulty: json["difficulty"]??  null,
+        subject: json["subject"]??  null
     );
 
     factory LogroModel.fromSnapshot(DocumentSnapshot snapshot){
       return LogroModel(
-        id          : snapshot.id,
-        name        : snapshot.data()['nombre'],
-        description : snapshot.data()['descripcion'],
+        id                : snapshot.id,
+        name              : snapshot.data()['name']??  null ,
+        description       : snapshot.data()['description']??  null,
+        type              : snapshot.data()["type"]?? null ,
+        numberofDays      : snapshot.data()["numberofDays"]??  null,
+        numberofExercises : snapshot.data()["numberOfExercises"]??  null,
+        numberofAnswers   : snapshot.data()["numberofAnswers"]??  null,
+        difficulty        : snapshot.data()["difficulty"]??  null,
+        subject           : snapshot.data()["subject"]??  null
       );
     }
 
@@ -39,5 +63,11 @@ class LogroModel {
         "id": id,
         "name": name,
         "description": description,
+        "type": type,
+        "numberofDays": numberofDays,
+        "numberofAnswers": numberofAnswers,
+        "numberofExercises": numberofExercises,
+        "difficulty":difficulty,
+        "subject":subject,
     };
 }
