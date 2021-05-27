@@ -5,6 +5,7 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:optyma_app/utils/constants.dart';
 
 LogroModel logrosModelFromJson(String str) => LogroModel.fromJson(json.decode(str));
 
@@ -16,9 +17,9 @@ class LogroModel {
         this.name,
         this.description,
         this.type,
-        this.numberofDays,
-        this.numberofExercises,
-        this.numberofAnswers,
+        this.numberOfDays,
+        this.numberOfExercises,
+        this.numberOfAnswers,
         this.difficulty,
         this.subject
     });
@@ -26,10 +27,10 @@ class LogroModel {
     String id;
     String name;
     String description;
-    String type;
-    int numberofDays;
-    int numberofAnswers;
-    int numberofExercises;
+    int type;
+    int numberOfDays;
+    int numberOfAnswers;
+    int numberOfExercises;
     int difficulty;
     int subject;
 
@@ -37,10 +38,10 @@ class LogroModel {
         id: json["id"] ??  null,
         name: json["name"]??  null,
         description: json["description"]??  null,
-        type: json["type"],
-        numberofDays: json["numberofDays"]??  null,
-        numberofExercises: json["numberOfExercises"]??  null,
-        numberofAnswers: json["numberofAnswers"]??  null,
+        type: json["type"] ?? null,
+        numberOfDays: json["numberOfDays"]??  null,
+        numberOfExercises: json["numberOfExercises"]??  null,
+        numberOfAnswers: json["numberOfAnswers"]??  null,
         difficulty: json["difficulty"]??  null,
         subject: json["subject"]??  null
     );
@@ -48,14 +49,14 @@ class LogroModel {
     factory LogroModel.fromSnapshot(DocumentSnapshot snapshot){
       return LogroModel(
         id                : snapshot.id,
-        name              : snapshot.data()['name']??  null ,
-        description       : snapshot.data()['description']??  null,
-        type              : snapshot.data()["type"]?? null ,
-        numberofDays      : snapshot.data()["numberofDays"]??  null,
-        numberofExercises : snapshot.data()["numberOfExercises"]??  null,
-        numberofAnswers   : snapshot.data()["numberofAnswers"]??  null,
-        difficulty        : snapshot.data()["difficulty"]??  null,
-        subject           : snapshot.data()["subject"]??  null
+        name              : snapshot.data()['name'] ?? null,
+        description       : snapshot.data()['description'] ?? null,
+        type              : snapshot.data()["type"] ?? null,
+        numberOfDays      : snapshot.data()["numberOfDays"] ?? null,
+        numberOfExercises : snapshot.data()["numberOfExercises"] ??  null,
+        numberOfAnswers   : snapshot.data()["numberOfAnswers"] ??  null,
+        difficulty        : snapshot.data()["difficulty"] ??  null,
+        subject           : snapshot.data()["subject"] ??  null,
       );
     }
 
@@ -64,9 +65,9 @@ class LogroModel {
         "name": name,
         "description": description,
         "type": type,
-        "numberofDays": numberofDays,
-        "numberofAnswers": numberofAnswers,
-        "numberofExercises": numberofExercises,
+        "numberofDays": numberOfDays,
+        "numberofAnswers": numberOfAnswers,
+        "numberofExercises": numberOfExercises,
         "difficulty":difficulty,
         "subject":subject,
     };
