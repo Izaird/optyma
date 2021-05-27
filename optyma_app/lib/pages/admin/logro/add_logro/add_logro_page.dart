@@ -30,7 +30,7 @@ class AddLogroBody extends StatelessWidget {
     return BlocListener<AddLogroBloc, AddLogroState>(
       listener: (context, state) {
         //Submission was a failure
-        if(state.status == 4){
+        if(state.status == FormStatus.submissionFailure){
           ScaffoldMessenger.of(context)
           ..hideCurrentSnackBar()
           ..showSnackBar(
@@ -40,7 +40,7 @@ class AddLogroBody extends StatelessWidget {
         //Submission was a succes
         //FIXME: For some reason the pop(context) is popping up 2 screens insted of 1
         //?Should I use a bloc for the navigation ? 
-        if(state.status == 3){
+        if(state.status == FormStatus.submissionSuccess){
           Navigator.pop(context);
         }
       },

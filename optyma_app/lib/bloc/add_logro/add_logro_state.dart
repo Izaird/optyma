@@ -1,6 +1,6 @@
 part of 'add_logro_bloc.dart';
-Map<int,String> difficultys = {1: "facil", 2:"medio", 3:'dificil'};
-Map<int,String> subjects = {1: "aritmetica", 2:"algebra", 3:'diferencial', 4:'optimizacion'};
+Map<int,String> difficultys = {1: "fácil", 2:"medio", 3:'difícil'};
+Map<int,String> subjects = {1: "aritmética", 2:"álgebra", 3:'diferencial', 4:'optimización'};
 
 //  --->  LogroType  <---
 //  nive == niveles
@@ -30,14 +30,7 @@ class AddLogroState extends Equatable {
   // 3 == diferencial 
   // 4 == optimizacion 
   final int subject;
-
-  //  --->  status  <---
-  // 0 == invalid
-  // 1 == isValidated
-  // 2 == submissionInProgress 
-  // 3 == submissionSuccess 
-  // 4 == submissionFailure
-  final int status;
+  final FormStatus status;
 
   AddLogroState({
     this.logroType,
@@ -48,7 +41,7 @@ class AddLogroState extends Equatable {
     this.numberOfExercises, 
     this.difficulty, 
     this.subject, 
-    this.status = 0,
+    this.status = FormStatus.notValidated,
   });
 
   @override
@@ -74,7 +67,7 @@ class AddLogroState extends Equatable {
     int numberOfExercises,
     int difficulty,
     int subject,
-    int status,
+    FormStatus status,
   }){
     return AddLogroState(
       logroType           : logroType ?? this.logroType,  

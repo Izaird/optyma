@@ -111,17 +111,17 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
 
   Stream<AddLogroState> _mapAddLogroFormValidatedToState() async *{
     //Form has been validated
-    yield state.copyWith(status: 1);
+    yield state.copyWith(status: FormStatus.validated);
   }
 
   Stream<AddLogroState> _mapAddLogroFormSubmittedToState() async *{
     if(state.logroType == LogroType.nive){
       yield state.copyWith(description: 'Supera la dificultad ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
       //Form not validated
-      if(state.status != 1) return;
+      if(state.status != FormStatus.validated) return;
 
       //Submission in progress
-      yield state.copyWith(status: 2);
+      yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
         await _logrosRepository.addLogroType1(
@@ -135,12 +135,12 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
         );
 
         //Submission was a success 
-        yield state.copyWith(status:3);
+        yield state.copyWith(status: FormStatus.submissionSuccess);
 
       } on Exception{
 
         //Submission was a failure
-        yield state.copyWith(status:4);
+        yield state.copyWith(status: FormStatus.submissionFailure);
 
       }
 
@@ -149,10 +149,10 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     if(state.logroType == LogroType.rRes){
       yield state.copyWith(description: 'Racha de ${state.numberOfAnswers} respuestas correctas consecutivas en cualquier tema en la máxima dificultad');
       //Form not validated
-      if(state.status != 1) return;
+      if(state.status != FormStatus.validated) return;
 
       //Submission in progress
-      yield state.copyWith(status: 2);
+      yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
         await _logrosRepository.addLogroType2(
@@ -165,12 +165,12 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
         );
 
         //Submission was a success 
-        yield state.copyWith(status:3);
+        yield state.copyWith(status: FormStatus.submissionSuccess);
 
       } on Exception{
 
         //Submission was a failure
-        yield state.copyWith(status:4);
+        yield state.copyWith(status: FormStatus.submissionFailure);
 
       }
 
@@ -178,10 +178,10 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     if(state.logroType == LogroType.rDia){
       yield state.copyWith(description: 'Racha de ${state.numberOfDays} días consecutivos');
       //Form not validated
-      if(state.status != 1) return;
+      if(state.status != FormStatus.validated) return;
 
       //Submission in progress
-      yield state.copyWith(status: 2);
+      yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
         await _logrosRepository.addLogroType3(
@@ -194,12 +194,12 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
         );
 
         //Submission was a success 
-        yield state.copyWith(status:3);
+        yield state.copyWith(status: FormStatus.submissionSuccess);
 
       } on Exception{
 
         //Submission was a failure
-        yield state.copyWith(status:4);
+        yield state.copyWith(status: FormStatus.submissionFailure);
 
       }
 
@@ -207,10 +207,10 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     if(state.logroType == LogroType.eRes){
       yield state.copyWith(description: 'Realiza ${state.numberOfExercises} ejercicios de cualquier tema');
       //Form not validated
-      if(state.status != 1) return;
+      if(state.status != FormStatus.validated) return;
 
       //Submission in progress
-      yield state.copyWith(status: 2);
+      yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
         await _logrosRepository.addLogroType4(
@@ -223,12 +223,12 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
         );
 
         //Submission was a success 
-        yield state.copyWith(status:3);
+        yield state.copyWith(status: FormStatus.submissionSuccess);
 
       } on Exception{
 
         //Submission was a failure
-        yield state.copyWith(status:4);
+        yield state.copyWith(status: FormStatus.submissionFailure);
 
       }
 
@@ -236,10 +236,10 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     if(state.logroType == LogroType.lead){
       yield state.copyWith(description: 'Consigue una puntación dentro de un leaderboard');
       //Form not validated
-      if(state.status != 1) return;
+      if(state.status != FormStatus.validated) return;
 
       //Submission in progress
-      yield state.copyWith(status: 2);
+      yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
         await _logrosRepository.addLogroType5(
@@ -252,12 +252,12 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
         );
 
         //Submission was a success 
-        yield state.copyWith(status:3);
+        yield state.copyWith(status: FormStatus.submissionSuccess);
 
       } on Exception{
 
         //Submission was a failure
-        yield state.copyWith(status:4);
+        yield state.copyWith(status: FormStatus.submissionFailure);
 
       }
 
