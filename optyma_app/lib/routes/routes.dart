@@ -5,14 +5,14 @@ import 'package:optyma_app/pages/admin/admins/add_admin_page.dart';
 import 'package:optyma_app/pages/admin/admins/admins_page.dart';
 import 'package:optyma_app/pages/admin/plantilla/add_plantilla_page.dart';
 import 'package:optyma_app/pages/admin/plantilla/plantillas_page.dart';
-import 'package:optyma_app/pages/admin/logro/logros_page.dart';
+import 'package:optyma_app/pages/admin/logro/logros_list/logros_page.dart';
 import 'package:optyma_app/pages/admin/home/home_admin_page.dart';
 import 'package:optyma_app/pages/admin/settings/settings_page.dart';
 import 'package:optyma_app/pages/user/quiz/quiz_page.dart';
 
 import 'package:optyma_app/pages/common/home/home_page.dart';
 import 'package:optyma_app/pages/common/login/login_page.dart';
-import 'package:optyma_app/pages/admin/logro/add_logro_page.dart';
+import 'package:optyma_app/pages/admin/logro/add_logro/add_logro_page.dart';
 import 'package:optyma_app/pages/common/signup/signup_page.dart';
 import 'package:optyma_app/pages/common/splash/splash_page.dart';
 
