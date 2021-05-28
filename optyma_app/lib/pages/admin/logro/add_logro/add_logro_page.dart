@@ -38,8 +38,6 @@ class AddLogroBody extends StatelessWidget {
           );
         }
         //Submission was a success
-        //FIXME: For some reason the pop(context) is popping up 2 screens insted of 1
-        //?Should I use a bloc for the navigation ? 
         if(state.status == FormStatus.submissionSuccess){
           Navigator.pop(context);
         }

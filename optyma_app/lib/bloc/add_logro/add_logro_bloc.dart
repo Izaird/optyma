@@ -116,9 +116,9 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
 
   Stream<AddLogroState> _mapAddLogroFormSubmittedToState() async *{
     if(state.logroType == LogroType.nive){
-      yield state.copyWith(description: 'Supera la dificultad ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
       //Form not validated
       if(state.status != FormStatus.validated) return;
+      yield state.copyWith(description: 'Supera la dificultad ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
@@ -147,9 +147,9 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     }
 
     if(state.logroType == LogroType.rRes){
-      yield state.copyWith(description: 'Racha de ${state.numberOfAnswers} respuestas correctas consecutivas en cualquier tema en la máxima dificultad');
       //Form not validated
       if(state.status != FormStatus.validated) return;
+      yield state.copyWith(description: 'Racha de ${state.numberOfAnswers} respuestas correctas consecutivas en cualquier tema en la máxima dificultad');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
@@ -176,9 +176,9 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
 
     }
     if(state.logroType == LogroType.rDia){
-      yield state.copyWith(description: 'Racha de ${state.numberOfDays} días consecutivos');
       //Form not validated
       if(state.status != FormStatus.validated) return;
+      yield state.copyWith(description: 'Racha de ${state.numberOfDays} días consecutivos');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
@@ -205,9 +205,9 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
 
     }
     if(state.logroType == LogroType.eRes){
-      yield state.copyWith(description: 'Realiza ${state.numberOfExercises} ejercicios de cualquier tema');
       //Form not validated
       if(state.status != FormStatus.validated) return;
+      yield state.copyWith(description: 'Realiza ${state.numberOfExercises} ejercicios de cualquier tema');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
@@ -234,9 +234,9 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
 
     }
     if(state.logroType == LogroType.lead){
-      yield state.copyWith(description: 'Consigue una puntación dentro de un leaderboard');
       //Form not validated
       if(state.status != FormStatus.validated) return;
+      yield state.copyWith(description: 'Consigue una puntación dentro de un leaderboard');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
