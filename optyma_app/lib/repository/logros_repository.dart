@@ -59,8 +59,8 @@ class LogrosRepository{
   Future<void> addLogroType5( LogroModel logro ) async{
     logrosReference.add({
       'type'        : logro.type,
-      'nombre'      : logro.name,
-      'descripcion' : logro.description,
+      'name'        : logro.name,
+      'description' : logro.description,
       'subject'     : logro.subject
     })
       .then((value) => print(value))
