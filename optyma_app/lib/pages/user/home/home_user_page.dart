@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/bloc/authentication/authentication_bloc.dart';
 import 'package:optyma_app/bloc/user/user_bloc.dart';
-import 'package:optyma_app/widgets/dropdown_widget.dart';
 import 'package:optyma_app/models/quiz_model.dart';
+import 'package:optyma_app/widgets/dd_form_field_str_widget.dart';
 
 class HomeUserPage extends StatelessWidget {
   final formKey = GlobalKey<FormState>();
@@ -31,22 +31,24 @@ class HomeUserPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text("Tema"),
-              DropDownWidget(items: subjects,
-                defaultText: "Aritmética",
-                intialValue: "Aritmética",
-                validator: (subject) => subject == null ? 'Se tiene que escoger un tema' : null,
+              DropdownStrToIntWidget(
+                hint: 'Tema',
+                items: subjects,
+                intialValue: 0,
+                validatorErrorMessage: 'Se tiene que escoger un tema',
                 onSaved: (tema){
-                quizData.tema=tema;
-              }),
-              Text("Dificultad"),
-              DropDownWidget(items: difficultys,
-                defaultText: "1",
-                intialValue: "1",
-                validator: (difficulty) => difficulty == null ? 'Se tiene que escoger una dificultad' : null,
+                  quizData.tema=tema;
+                }
+              ),
+              DropdownStrToIntWidget(
+                hint: 'Dificultad',
+                items: difficultys,
+                intialValue: 0,
+                validatorErrorMessage: 'Se tiene que escoger una dificultad',
                 onSaved: (difficulty){
-                quizData.dificultad=(int.parse(difficulty));
-              }),
+                  quizData.dificultad=(int.parse(difficulty));
+                }
+              ),
               _submitButton(context),
           ] ,
         ),

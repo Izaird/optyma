@@ -21,6 +21,8 @@ class AddLogroFormValidated extends AddLogroEvent{}
 
 class AddLogroFormSubmitted extends AddLogroEvent{}
 
+class UpdateLogroFormSubmitted extends AddLogroEvent{}
+
 class AddLogroNameChanged extends AddLogroEvent{
   final String name;
   AddLogroNameChanged(this.name); 
