@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/bloc/add_logro/add_logro_bloc.dart';
+import 'package:optyma_app/models/logro_model.dart';
 import 'package:optyma_app/repository/logros_repository.dart';
 import 'package:optyma_app/utils/constants.dart';
+import 'package:optyma_app/widgets/dd_form_field_int_widget.dart';
+import 'package:optyma_app/widgets/dd_form_field_str_widget.dart';
 import 'package:optyma_app/widgets/text_input_widget.dart';
 
 class AddLogroPage extends StatelessWidget {
@@ -27,6 +30,28 @@ class AddLogroPage extends StatelessWidget {
 class AddLogroBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  final logro = ModalRoute.of(context).settings.arguments as LogroModel;
+
+  if(logro?.type != null){
+    switch (logro.type) {
+      case 1:
+        BlocProvider.of<AddLogroBloc>(context).add(AddLogroType1Selected());
+        break;
+      case 2:
+        BlocProvider.of<AddLogroBloc>(context).add(AddLogroType2Selected());
+        break;
+      case 3:
+        BlocProvider.of<AddLogroBloc>(context).add(AddLogroType3Selected());
+        break;
+      case 4:
+        BlocProvider.of<AddLogroBloc>(context).add(AddLogroType4Selected());
+        break;
+      case 5:
+        BlocProvider.of<AddLogroBloc>(context).add(AddLogroType5Selected());
+        break;
+      default:
+    }
+  }
     return BlocListener<AddLogroBloc, AddLogroState>(
       listener: (context, state) {
         //Submission was a failure
@@ -44,8 +69,8 @@ class AddLogroBody extends StatelessWidget {
       },
       child: Column(
         children: [
-          MenuTypesOfLogros(),
-          AddLogroForm(),
+          MenuTypesOfLogros(typeOfLogroEdit: logro?.type),
+          AddLogroForm(idLogro: logro?.id),
         ],
       ),
     );
@@ -53,52 +78,47 @@ class AddLogroBody extends StatelessWidget {
 }
 
 class MenuTypesOfLogros extends StatefulWidget {
+  final int typeOfLogroEdit;
+
+  const MenuTypesOfLogros({
+    this.typeOfLogroEdit,
+  });
   @override
   _MenuTypesOfLogrosState createState() => _MenuTypesOfLogrosState();
 }
 
 class _MenuTypesOfLogrosState extends State<MenuTypesOfLogros> {
-  String _typeOfLogro;
+  int _typeOfLogro;
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
       hint: Text('Tipos de logro'),
-      value: _typeOfLogro,
+      value: widget.typeOfLogroEdit ?? _typeOfLogro,
       items: <DropdownMenuItem>[
         DropdownMenuItem(
-          value: 'Niveles',
+          value: 1,
           child: Text('Niveles'),
-          onTap: () {
-            BlocProvider.of<AddLogroBloc>(context).add(AddLogroType1Selected());
-          },
+          onTap: () => BlocProvider.of<AddLogroBloc>(context).add(AddLogroType1Selected()),
         ),
         DropdownMenuItem(
-          value: 'Racha de respuestas',
+          value: 2,
           child: Text('Racha de respuestas'),
-          onTap: () {
-            BlocProvider.of<AddLogroBloc>(context).add(AddLogroType2Selected());
-          },
+          onTap: () => BlocProvider.of<AddLogroBloc>(context).add(AddLogroType2Selected()),
         ),
         DropdownMenuItem(
-          value: 'Racha de días',
+          value: 3,
           child: Text('Racha de días'),
-          onTap: () {
-            BlocProvider.of<AddLogroBloc>(context).add(AddLogroType3Selected());
-          },
+          onTap: () => BlocProvider.of<AddLogroBloc>(context).add(AddLogroType3Selected()),
         ),
         DropdownMenuItem(
-          value: 'Ejercicios realizados',
+          value: 4,
           child: Text('Ejercicios realizados'),
-          onTap: () {
-            BlocProvider.of<AddLogroBloc>(context).add(AddLogroType4Selected());
-          },
+          onTap: () => BlocProvider.of<AddLogroBloc>(context).add(AddLogroType4Selected()),
         ),
         DropdownMenuItem(
-          value: 'Leaderboard',
+          value: 5,
           child: Text('Leaderboard'),
-          onTap: () {
-            BlocProvider.of<AddLogroBloc>(context).add(AddLogroType5Selected());
-          },
+          onTap: () => BlocProvider.of<AddLogroBloc>(context).add(AddLogroType5Selected()),
         ),
       ],
       onChanged: (value) {
@@ -111,8 +131,11 @@ class _MenuTypesOfLogrosState extends State<MenuTypesOfLogros> {
 }
 
 class AddLogroForm extends StatelessWidget {
+  final String idLogro;
+
   final formKey = GlobalKey<FormState>();
 
+  AddLogroForm({this.idLogro});
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -120,27 +143,21 @@ class AddLogroForm extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextInput(
-                // intialValue: logro.name,
-                labelText: 'Ingrese el nombre del logro',
-                onSaved: (name) {
-                  BlocProvider.of<AddLogroBloc>(context)
-                      .add(AddLogroNameChanged(name));
-                },
-              ),
-              AddLogroFormType(),
+              AddLogroBlocBuilder(),
               BlocBuilder<AddLogroBloc, AddLogroState>(
                 builder: (context, state) {
                   if (state.logroType != null) {
                     return ElevatedButton(
                         onPressed: () {
                           if (!formKey.currentState.validate()) return;
-
                           formKey.currentState.save();
-                          BlocProvider.of<AddLogroBloc>(context)
-                              .add(AddLogroFormValidated());
-                          BlocProvider.of<AddLogroBloc>(context)
-                              .add(AddLogroFormSubmitted());
+                          BlocProvider.of<AddLogroBloc>(context).add(AddLogroFormValidated());
+                          if(idLogro != null){
+                            //TODO: Implement this state
+                            BlocProvider.of<AddLogroBloc>(context).add(UpdateLogroFormSubmitted());
+                          }else{
+                            BlocProvider.of<AddLogroBloc>(context).add(AddLogroFormSubmitted());
+                          }
                         },
                         child: Text('Agregar logro'));
                   }
@@ -153,37 +170,56 @@ class AddLogroForm extends StatelessWidget {
   }
 }
 
+
 //Change the form depending on the type of logro that is selected
-class AddLogroFormType extends StatelessWidget {
+class AddLogroBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  final logro = ModalRoute.of(context).settings.arguments as LogroModel;
     return BlocBuilder<AddLogroBloc, AddLogroState>(
       builder: (context, state) {
         //Niveles
         if (state.logroType == LogroType.nive) {
           return Column(
             children: [
-              DifficultyDropDown(),
-              SubjectDropDown(),
+              LogroName(logroNameEdit: logro?.name),
+              DifficultyDropDown(logroDifficultyEdit: logro?.difficulty),
+              SubjectDropDown(logroSubjectEdit: logro?.subject),
             ],
           );
         }
         //Racha de respuestas
         if (state.logroType == LogroType.rRes) {
-          return NumberOfAnswersDropDown();
+          return Column(
+            children: [
+              LogroName(logroNameEdit: logro?.name),
+              NumberOfAnswersDropDown(logroAnswersEdit: logro?.numberOfAnswers),
+            ],
+          );
         }
         //Racha de dias
         if (state.logroType == LogroType.rDia) {
-          return NumberOfDaysDropDown();
+          return Column(
+            children: [
+              LogroName(logroNameEdit: logro?.name),
+              NumberOfDaysDropDown(logroDaysEdit: logro?.numberOfDays),
+            ],
+          );
         }
         //Ejercicios realizados
         if (state.logroType == LogroType.eRes) {
-          return NumberOfExercisesDropDown();
+          return Column(
+            children: [
+              LogroName(logroNameEdit: logro?.name),
+              NumberOfExercisesDropDown(logroExercisesEdit: logro?.numberOfExercises),
+            ],
+          );
         }
         if (state.logroType == LogroType.lead) {
           return Column(
             children: [
-              SubjectDropDown(),
+              LogroName(logroNameEdit: logro?.name),
+              SubjectDropDown(logroSubjectEdit: logro?.subject),
             ],
           );
         }
@@ -193,216 +229,101 @@ class AddLogroFormType extends StatelessWidget {
   }
 }
 
-class SubjectDropDown extends StatefulWidget {
-  @override
-  _SubjectDropDownState createState() => _SubjectDropDownState();
-}
 
-class _SubjectDropDownState extends State<SubjectDropDown> {
-  String _subject;
+class LogroName extends StatelessWidget {
+  final String logroNameEdit;
 
+  const LogroName({this.logroNameEdit});
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      hint: Text('Tema'),
-      value: _subject,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('Aritmética'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('Álgebra'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('Diferencial'),
-        ),
-        DropdownMenuItem(
-          value: 4,
-          child: Text('Optimización'),
-        ),
-      ],
-      onChanged: (value) {
-        setState(() {});
-      },
-      onSaved: (subject) {
-        BlocProvider.of<AddLogroBloc>(context)
-            .add(AddLogroSubjectChanged(subject));
-      },
-      validator: (value) {
-        if (value != null) {
-          return null;
-        } else {
-          return 'Necesitas escoger un tema';
-        }
-      },
+    return TextInput(
+      intialValue: logroNameEdit,
+      labelText: 'Ingrese el nombre del logro',
+      onSaved: (name) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroNameChanged(name)),
     );
   }
 }
 
-class DifficultyDropDown extends StatefulWidget {
-  @override
-  _DifficultyDropDownState createState() => _DifficultyDropDownState();
-}
+class SubjectDropDown extends StatelessWidget {
 
-class _DifficultyDropDownState extends State<DifficultyDropDown> {
-  String _difficulty;
+  final int logroSubjectEdit;
 
+  const SubjectDropDown({this.logroSubjectEdit});
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      hint: Text('Dificultad'),
-      value: _difficulty,
-      items: [
-        DropdownMenuItem(
-          value: 1,
-          child: Text('Fácil'),
-        ),
-        DropdownMenuItem(
-          value: 2,
-          child: Text('Medio'),
-        ),
-        DropdownMenuItem(
-          value: 3,
-          child: Text('Difícil'),
-        ),
-      ],
-      onChanged: (value) {
-        setState(() {});
-      },
-      onSaved: (difficulty) {
-        BlocProvider.of<AddLogroBloc>(context)
-            .add(AddLogroDifficultyChanged(difficulty));
-      },
-      validator: (value) {
-        if (value != null) {
-          return null;
-        } else {
-          return 'Necesitas escoger una dificultad';
-        }
-      },
+    return DropdownStrToIntWidget(
+      items: ['Aritmética', 'Álgebra', 'Diferencial', 'Optimización'],
+      intialValue: logroSubjectEdit,
+      hint: 'Tema',
+      onSaved: (subject) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroSubjectChanged(subject)),
     );
   }
 }
 
-class NumberOfAnswersDropDown extends StatefulWidget {
-  NumberOfAnswersDropDown({Key key}) : super(key: key);
+class DifficultyDropDown extends StatelessWidget {
 
-  @override
-  _NumberOfAnswersDropDownState createState() =>
-      _NumberOfAnswersDropDownState();
-}
+  final int logroDifficultyEdit;
 
-class _NumberOfAnswersDropDownState extends State<NumberOfAnswersDropDown> {
-  List<int> _numberOfAnswers = [1, 2, 3, 4, 5];
-  int _answers;
+  const DifficultyDropDown({this.logroDifficultyEdit});
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      hint: Text('Número de respuestas'),
-      value: _answers,
-      items: _numberOfAnswers.map((numberOfAnswers) {
-        return DropdownMenuItem(
-          child: Text(numberOfAnswers.toString()),
-          value: numberOfAnswers,
-        );
-      }).toList(),
-      onChanged: (value) {
-        setState(() {});
-      },
-      onSaved: (numberOfAnswers) {
-        BlocProvider.of<AddLogroBloc>(context)
-            .add(AddLogroNumberOfAnswersChanged(numberOfAnswers));
-      },
-      validator: (value) {
-        if (value != null) {
-          return null;
-        } else {
-          return 'Escoge el número de respuestas';
-        }
-      },
+    return DropdownStrToIntWidget(
+      items: ['Fácil', 'Medio', 'Difícil'],
+      intialValue: logroDifficultyEdit,
+      hint: 'Dificultad',
+      onSaved: (difficulty) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroDifficultyChanged(difficulty)),
+      validatorErrorMessage: 'Necesitas escoger una dificultad',
     );
   }
 }
 
-class NumberOfExercisesDropDown extends StatefulWidget {
-  NumberOfExercisesDropDown({Key key}) : super(key: key);
+class NumberOfAnswersDropDown extends StatelessWidget {
 
-  @override
-  _NumberOfExcercisesDropDownState createState() =>
-      _NumberOfExcercisesDropDownState();
-}
+  final int logroAnswersEdit;
 
-class _NumberOfExcercisesDropDownState extends State<NumberOfExercisesDropDown> {
-
-  List<int> _numberOfExercises = [1, 2, 4, 5];
-  int _exercises;
+  const NumberOfAnswersDropDown({this.logroAnswersEdit});
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      hint: Text('Número de ejercicios'),
-      value: _exercises,
-      items: _numberOfExercises.map((numberOfExercises) {
-        return DropdownMenuItem(
-          child: Text(numberOfExercises.toString()),
-          value: numberOfExercises,
-        );
-      }).toList(),
-      onChanged: (value) {
-        setState(() {});
-      },
-      onSaved: (numberOfExercises) {
-        BlocProvider.of<AddLogroBloc>(context)
-            .add(AddLogroNumberOfExercisesChanged(numberOfExercises));
-      },
-      validator: (value) {
-        if (value != null) {
-          return null;
-        } else {
-          return 'Escoge el número de ejercicios';
-        }
-      },
+    return DropdownIntToIntWidget(
+      items: [1,2,3,4,5],
+      intialValue: logroAnswersEdit,
+      hint: 'Número de respuestas',
+      onSaved: (numberOfAnswers) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroNumberOfAnswersChanged(numberOfAnswers)),
+      validatorErrorMessage: 'Escoge el numero de respuestas',
     );
   }
 }
 
-class NumberOfDaysDropDown extends StatefulWidget {
-  NumberOfDaysDropDown({Key key}) : super(key: key);
+class NumberOfExercisesDropDown extends StatelessWidget {
 
-  @override
-  _NumberOfDaysDropDownState createState() => _NumberOfDaysDropDownState();
-}
+  final int logroExercisesEdit;
 
-class _NumberOfDaysDropDownState extends State<NumberOfDaysDropDown> {
-  int _days;
-  List<int> _numberOfDays = [4, 5, 6, 9];
+  const NumberOfExercisesDropDown({this.logroExercisesEdit});
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField(
-      hint: Text('Número de días'),
-      value: _days,
-      items: _numberOfDays.map((numberOfDays) {
-        return DropdownMenuItem(
-          child: Text(numberOfDays.toString()),
-          value: numberOfDays,
-        );
-      }).toList(),
-      onChanged: (value) {
-        setState(() {});
-      },
-      onSaved: (numberOfDays) {
-        BlocProvider.of<AddLogroBloc>(context)
-            .add(AddLogroNumberOfDaysChanged(numberOfDays));
-      },
-      validator: (value) {
-        if (value != null) {
-          return null;
-        } else {
-          return 'Escoge el número de días';
-        }
-      },
+    return DropdownIntToIntWidget(
+      items: [1,2,3,4,5],
+      intialValue: logroExercisesEdit,
+      hint: 'Número de ejercicios',
+      onSaved: (numberOfExercises) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroNumberOfExercisesChanged(numberOfExercises)),
+      validatorErrorMessage:'Necesitas escoger el número de ejercicios',
+    );
+  }
+}
+
+class NumberOfDaysDropDown extends StatelessWidget {
+
+  final int logroDaysEdit;
+
+  const NumberOfDaysDropDown({this.logroDaysEdit});
+  @override
+  Widget build(BuildContext context) {
+    return DropdownIntToIntWidget(
+      items: [1,2,3,4,5],
+      intialValue: logroDaysEdit,
+      hint: 'Número de días',
+      onSaved: (numberOfDays) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroNumberOfDaysChanged(numberOfDays)),
+      validatorErrorMessage:'Escoge el número de días',
     );
   }
 }

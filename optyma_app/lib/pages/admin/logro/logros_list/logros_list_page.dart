@@ -4,7 +4,6 @@ import 'package:optyma_app/bloc/logros_list/logros_list_bloc.dart';
 import 'package:optyma_app/models/logro_model.dart';
 import 'package:optyma_app/repository/logros_repository.dart';
 
-
 class LogrosListPage extends StatelessWidget {
 
   @override
@@ -111,10 +110,16 @@ class _MenuTypesOfLogrosState extends State<MenuTypesOfLogros> {
 }
 
 
-//
-class LogrosListBlocBuilder extends StatelessWidget {
 
+class LogrosListBlocBuilder extends StatefulWidget {
+
+  @override
+  _LogrosListBlocBuilderState createState() => _LogrosListBlocBuilderState();
+}
+
+class _LogrosListBlocBuilderState extends State<LogrosListBlocBuilder> {
   List<LogroModel> logrosList = [];
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LogrosListBloc, LogrosListState>(
@@ -177,9 +182,7 @@ class CreateItem extends StatelessWidget {
       child: ListTile(   
         title: Text('${logro.name}'),
         subtitle: Text('${logro.description}'),
-        onTap: () {
-          //TODO: add functionality to edit logro
-        },
+        onTap: () => Navigator.pushNamed(context, 'addLogro', arguments: logro),
       ),
     );
   }
