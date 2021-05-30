@@ -8,7 +8,14 @@ class LogrosRepository{
 
   //Niveles
   Future<void> addLogroType1( LogroModel logro ) async{
-    logrosReference.add({
+    final result =
+            await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      logrosReference.add({
       'type'        : logro.type,
       'name'        : logro.name,
       'description' : logro.description,
@@ -17,54 +24,92 @@ class LogrosRepository{
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add logro: $error"));
+    }
+    
   }
 
   //
   Future<void> addLogroType2( LogroModel logro ) async{
-    logrosReference.add({
-      'type'            : logro.type,
-      'name'            : logro.name,
-      'description'     : logro.description,
-      'numberOfAnswers' : logro.numberOfAnswers,
-    })
-      .then((value) => print(value))
-      .catchError((error)=> print("Failed to add logro: $error"));
-  }
-  
-  //Racha de dias 
-  Future<void> addLogroType3( LogroModel logro ) async{
-    logrosReference.add({
-      'type'            : logro.type,
-      'name'            : logro.name,
-      'description'     : logro.description,
-      'numberOfDays'    : logro.numberOfDays,
-    })
-      .then((value) => print(value))
-      .catchError((error)=> print("Failed to add logro: $error"));
-  }
-
-  //Ejercicios realizados
-  Future<void> addLogroType4( LogroModel logro ) async{
-    logrosReference.add({
-      'type'              : logro.type,
-      'name'              : logro.name,
-      'description'       : logro.description,
-      'numberOfExercises' : logro.numberOfExercises,
-    })
-      .then((value) => print(value))
-      .catchError((error)=> print("Failed to add logro: $error"));
-  }
-
-  //Leaderboard
-  Future<void> addLogroType5( LogroModel logro ) async{
-    logrosReference.add({
+    final result =
+            await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      logrosReference.add({
       'type'        : logro.type,
       'name'        : logro.name,
       'description' : logro.description,
+      'difficulty'  : logro.difficulty,
       'subject'     : logro.subject
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add logro: $error"));
+    }
+  }
+  
+  //Racha de dias 
+  Future<void> addLogroType3( LogroModel logro ) async{
+    final result =
+            await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      logrosReference.add({
+      'type'        : logro.type,
+      'name'        : logro.name,
+      'description' : logro.description,
+      'difficulty'  : logro.difficulty,
+      'subject'     : logro.subject
+    })
+      .then((value) => print(value))
+      .catchError((error)=> print("Failed to add logro: $error"));
+    }
+  }
+
+  //Ejercicios realizados
+  Future<void> addLogroType4( LogroModel logro ) async{
+    final result =
+            await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      logrosReference.add({
+      'type'        : logro.type,
+      'name'        : logro.name,
+      'description' : logro.description,
+      'difficulty'  : logro.difficulty,
+      'subject'     : logro.subject
+    })
+      .then((value) => print(value))
+      .catchError((error)=> print("Failed to add logro: $error"));
+    }
+  }
+
+  //Leaderboard
+  Future<void> addLogroType5( LogroModel logro ) async{
+    final result =
+            await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      logrosReference.add({
+      'type'        : logro.type,
+      'name'        : logro.name,
+      'description' : logro.description,
+      'difficulty'  : logro.difficulty,
+      'subject'     : logro.subject
+    })
+      .then((value) => print(value))
+      .catchError((error)=> print("Failed to add logro: $error"));
+    }
   }
 
 
