@@ -153,8 +153,7 @@ class AddLogroForm extends StatelessWidget {
                           formKey.currentState.save();
                           BlocProvider.of<AddLogroBloc>(context).add(AddLogroFormValidated());
                           if(idLogro != null){
-                            //TODO: Implement this state
-                            BlocProvider.of<AddLogroBloc>(context).add(UpdateLogroFormSubmitted());
+                            BlocProvider.of<AddLogroBloc>(context).add(UpdateLogroFormSubmitted(idLogro));
                           }else{
                             BlocProvider.of<AddLogroBloc>(context).add(AddLogroFormSubmitted());
                           }
@@ -252,9 +251,10 @@ class SubjectDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownStrToIntWidget(
-      items: ['Aritmética', 'Álgebra', 'Diferencial', 'Optimización'],
+      items: ['Cualquier tema', 'Aritmética', 'Álgebra', 'Diferencial', 'Optimización'],
       intialValue: logroSubjectEdit,
       hint: 'Tema',
+      //Counts starts at 0 so we need 
       onSaved: (subject) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroSubjectChanged(subject)),
     );
   }
@@ -268,10 +268,10 @@ class DifficultyDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownStrToIntWidget(
-      items: ['Fácil', 'Medio', 'Difícil'],
+      items: ['Cualquier dificultad', 'Fácil', 'Medio', 'Difícil'],
       intialValue: logroDifficultyEdit,
       hint: 'Dificultad',
-      onSaved: (difficulty) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroDifficultyChanged(difficulty)),
+      onSaved: (difficulty) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroDifficultyChanged(difficulty+1)),
       validatorErrorMessage: 'Necesitas escoger una dificultad',
     );
   }
