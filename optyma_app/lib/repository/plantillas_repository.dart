@@ -10,21 +10,43 @@ class PlantillasRepository{
 
   Future<void> addPlantilla( PlantillaModel plantilla ) async{
     plantillasReference.add({
-      'dificultad'      : plantilla.dificultad,
-      'exp'             : plantilla.exp,
-      'sentencia'       : plantilla.sentencia,
-      'tema'            : plantilla.tema,
-      'tiempoAbierta'   : plantilla.tiempoAbierta,
-      'tiempoCerrada'   : plantilla.tiempoCerrada,
-      'timeStamp'       : plantilla.timestamp,
-      'uId'             : plantilla.uid,
+      // 'dificultad'      : plantilla.dificultad,
+      // 'exp'             : plantilla.exp,
+      // 'sentencia'       : plantilla.sentencia,
+      // 'tema'            : plantilla.tema,
+      // 'tiempoAbierta'   : plantilla.tiempoAbierta,
+      // 'tiempoCerrada'   : plantilla.tiempoCerrada,
+      // 'timeStamp'       : plantilla.timestamp,
+      // 'uId'             : plantilla.uid,
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add plantilla: $error"));
   }
 
-  Stream<List<PlantillaModel>> getPlantillas(){
-    return plantillasReference.snapshots().map((snapshot){
+  Stream<List<PlantillaModel>> getPlantillasArit(){
+    return plantillasReference.where('type', isEqualTo: 1)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<PlantillaModel>> getPlantillasAlge(){
+    return plantillasReference.where('type', isEqualTo: 2)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<PlantillaModel>> getPlantillasDife(){
+    return plantillasReference.where('type', isEqualTo: 3)
+    .snapshots().map((snapshot){
+      return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
+    });
+  }
+
+  Stream<List<PlantillaModel>> getPlantillasOpti(){
+    return plantillasReference.where('type', isEqualTo: 4)
+    .snapshots().map((snapshot){
       return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
     });
   }
@@ -33,12 +55,12 @@ class PlantillasRepository{
     DocumentReference refPlantilla = plantillasReference.doc(plantilla.id);
 
     return await refPlantilla.update({
-      'dificultad'      : plantilla.dificultad,
-      'exp'             : plantilla.exp,
-      'sentencia'       : plantilla.sentencia,
-      'tema'            : plantilla.tema,
-      'tiempoAbierta'   : plantilla.tiempoAbierta,
-      'tiempoCerrada'   : plantilla.tiempoCerrada,
+      // 'dificultad'      : plantilla.dificultad,
+      // 'exp'             : plantilla.exp,
+      // 'sentencia'       : plantilla.sentencia,
+      // 'tema'            : plantilla.tema,
+      // 'tiempoAbierta'   : plantilla.tiempoAbierta,
+      // 'tiempoCerrada'   : plantilla.tiempoCerrada,
     });
   }
 
