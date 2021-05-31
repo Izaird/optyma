@@ -2,6 +2,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:optyma_app/models/logro_model.dart';
 
+class UniqueDescriptionException implements Exception{
+  String _message;
+  UniqueDescriptionException([String message = "Description must be unique"]){
+    this._message = message;
+    print(message);
+  }
+
+  @override
+    String toString() {
+      return _message;
+    }
+}
+
 class LogrosRepository{
 
   CollectionReference logrosReference = FirebaseFirestore.instance.collection('logros');
@@ -11,7 +24,7 @@ class LogrosRepository{
     final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       logrosReference.add({
@@ -33,7 +46,7 @@ class LogrosRepository{
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       logrosReference.add({
@@ -53,7 +66,7 @@ class LogrosRepository{
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       logrosReference.add({
@@ -73,7 +86,7 @@ class LogrosRepository{
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       logrosReference.add({
@@ -93,7 +106,7 @@ class LogrosRepository{
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       logrosReference.add({
@@ -149,7 +162,7 @@ class LogrosRepository{
     final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       return await refLogro.set({
@@ -169,7 +182,7 @@ class LogrosRepository{
     final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       return await refLogro.set({
@@ -188,7 +201,7 @@ class LogrosRepository{
     final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       return await refLogro.set({
@@ -207,7 +220,7 @@ class LogrosRepository{
     final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       return await refLogro.set({
@@ -226,7 +239,7 @@ class LogrosRepository{
     final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
-      print("Description must be unique");
+      throw new UniqueDescriptionException();
     }
     else{
       return await refLogro.set({
