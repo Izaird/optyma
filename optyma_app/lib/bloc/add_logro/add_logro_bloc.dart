@@ -58,7 +58,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       yield* _mapAddLogroFormSubmittedToState();
     }
     if(event is UpdateLogroFormSubmitted){
-      yield* _mapUpdateLogroFormSubmittedToState();
+      yield* _mapUpdateLogroFormSubmittedToState(event);
     }
     if(event is AddLogroFormValidated){
       yield* _mapAddLogroFormValidatedToState();
@@ -118,7 +118,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     if(state.logroType == LogroType.nive){
       //Form not validated
       if(state.status != FormStatus.validated) return;
-      yield state.copyWith(description: 'Supera la dificultad ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
+      yield state.copyWith(description: 'Supera ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
@@ -264,18 +264,19 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
     }
   }
 
-  Stream<AddLogroState> _mapUpdateLogroFormSubmittedToState() async *{
+  Stream<AddLogroState> _mapUpdateLogroFormSubmittedToState(UpdateLogroFormSubmitted event) async *{
     if(state.logroType == LogroType.nive){
       //Form not validated
       if(state.status != FormStatus.validated) return;
-      yield state.copyWith(description: 'Supera la dificultad ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
+      yield state.copyWith(description: 'Supera ${difficultys[state.difficulty]} en un ejercicio de ${subjects[state.subject]}');
 
       //Submission in progress
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _logrosRepository.addLogroNive(
+        await _logrosRepository.updateLogroNive(
           LogroModel(
+            id          : event.id,
             type        : state.logroType.index,
             name        : state.name,
             description : state.description,
@@ -305,8 +306,9 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _logrosRepository.addLogroRres(
+        await _logrosRepository.updateLogroRres(
           LogroModel(
+            id          : event.id,
             type            : state.logroType.index,
             name            : state.name,
             description     : state.description,
@@ -334,7 +336,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _logrosRepository.addLogroRdia(
+        await _logrosRepository.updateLogroRdia(
           LogroModel(
             type        : state.logroType.index,
             name        : state.name,
@@ -363,7 +365,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _logrosRepository.addLogroEres(
+        await _logrosRepository.updateLogroEres(
           LogroModel(
             type              : state.logroType.index,
             name              : state.name,
@@ -392,7 +394,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _logrosRepository.addLogroLead(
+        await _logrosRepository.updateLogroLead(
           LogroModel(
             type        : state.logroType.index,
             name        : state.name,

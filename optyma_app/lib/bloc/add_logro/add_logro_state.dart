@@ -1,6 +1,17 @@
 part of 'add_logro_bloc.dart';
-Map<int,String> difficultys = {1: "fácil", 2:"medio", 3:'difícil'};
-Map<int,String> subjects = {1: "aritmética", 2:"álgebra", 3:'diferencial', 4:'optimización'};
+Map<int,String> difficultys = {
+  0: 'cualquier dificultad', 
+  1: 'la dificultad fácil', 
+  2: 'la dificultad medio', 
+  3: 'la dificultad difícil'
+};
+Map<int,String> subjects = {
+  0: 'cualquier tema',
+  1: 'aritmética', 
+  2: 'álgebra', 
+  3: 'diferencial', 
+  4: 'optimización',
+};
 
 //  --->  LogroType  <---
 //  nive == niveles

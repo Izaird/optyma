@@ -21,7 +21,13 @@ class AddLogroFormValidated extends AddLogroEvent{}
 
 class AddLogroFormSubmitted extends AddLogroEvent{}
 
-class UpdateLogroFormSubmitted extends AddLogroEvent{}
+class UpdateLogroFormSubmitted extends AddLogroEvent{
+  final String id;
+  UpdateLogroFormSubmitted(this.id);
+
+  @override
+  List<Object> get props => [id];
+}
 
 class AddLogroNameChanged extends AddLogroEvent{
   final String name;
