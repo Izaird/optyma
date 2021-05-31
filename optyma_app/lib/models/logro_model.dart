@@ -5,7 +5,6 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:optyma_app/utils/constants.dart';
 
 LogroModel logrosModelFromJson(String str) => LogroModel.fromJson(json.decode(str));
 
