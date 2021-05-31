@@ -6,10 +6,9 @@ class LogrosRepository{
 
   CollectionReference logrosReference = FirebaseFirestore.instance.collection('logros');
 
-  //Niveles
-  Future<void> addLogroType1( LogroModel logro ) async{
-    final result =
-            await logrosReference.where('description',isEqualTo: logro.description).get();
+  //Niveles == type 1
+  Future<void> addLogroNive( LogroModel logro ) async{
+    final result = await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
     if(!isempty){
       print("Description must be unique");
@@ -28,8 +27,8 @@ class LogrosRepository{
     
   }
 
-  //
-  Future<void> addLogroType2( LogroModel logro ) async{
+  //Racha de repuestas == type 2
+  Future<void> addLogroRres( LogroModel logro ) async{
     final result =
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
@@ -38,19 +37,18 @@ class LogrosRepository{
     }
     else{
       logrosReference.add({
-      'type'        : logro.type,
-      'name'        : logro.name,
-      'description' : logro.description,
-      'difficulty'  : logro.difficulty,
-      'subject'     : logro.subject
+      'type'            : logro.type,
+      'name'            : logro.name,
+      'description'     : logro.description,
+      'numberOfAnswers' : logro.numberOfAnswers,
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add logro: $error"));
     }
   }
   
-  //Racha de dias 
-  Future<void> addLogroType3( LogroModel logro ) async{
+  //Racha de dias == type 3
+  Future<void> addLogroRdia( LogroModel logro ) async{
     final result =
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
@@ -59,19 +57,18 @@ class LogrosRepository{
     }
     else{
       logrosReference.add({
-      'type'        : logro.type,
-      'name'        : logro.name,
-      'description' : logro.description,
-      'difficulty'  : logro.difficulty,
-      'subject'     : logro.subject
+      'type'            : logro.type,
+      'name'            : logro.name,
+      'description'     : logro.description,
+      'numberOfDays'    : logro.numberOfDays,
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add logro: $error"));
     }
   }
 
-  //Ejercicios realizados
-  Future<void> addLogroType4( LogroModel logro ) async{
+  //Ejercicios realizados == type 4
+  Future<void> addLogroEres( LogroModel logro ) async{
     final result =
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
@@ -80,19 +77,18 @@ class LogrosRepository{
     }
     else{
       logrosReference.add({
-      'type'        : logro.type,
-      'name'        : logro.name,
-      'description' : logro.description,
-      'difficulty'  : logro.difficulty,
-      'subject'     : logro.subject
+      'type'              : logro.type,
+      'name'              : logro.name,
+      'description'       : logro.description,
+      'numberOfExercises' : logro.numberOfExercises,
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add logro: $error"));
     }
   }
 
-  //Leaderboard
-  Future<void> addLogroType5( LogroModel logro ) async{
+  //Leaderboard == type 5
+  Future<void> addLogroLead( LogroModel logro ) async{
     final result =
             await logrosReference.where('description',isEqualTo: logro.description).get();
     bool isempty = result.docs.isEmpty;
@@ -104,7 +100,6 @@ class LogrosRepository{
       'type'        : logro.type,
       'name'        : logro.name,
       'description' : logro.description,
-      'difficulty'  : logro.difficulty,
       'subject'     : logro.subject
     })
       .then((value) => print(value))
@@ -148,13 +143,100 @@ class LogrosRepository{
     });
   }
 
-  Future<void> updateLogroData(LogroModel logro) async {
+  Future<void> updateLogroNive(LogroModel logro) async {
     DocumentReference refLogro = logrosReference.doc(logro.id);
 
-    return await refLogro.set({
-      'nombre'          : logro.name,
-      'descripcion'   : logro.description,
-    });
+    final result = await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      return await refLogro.set({
+        'type'        : logro.type,
+        'name'        : logro.name,
+        'description' : logro.description,
+        'difficulty'  : logro.difficulty,
+        'subject'     : logro.subject
+      });
+
+    }
+  }
+
+  Future<void> updateLogroRres(LogroModel logro) async {
+    DocumentReference refLogro = logrosReference.doc(logro.id);
+
+    final result = await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      return await refLogro.set({
+        'type'            : logro.type,
+        'name'            : logro.name,
+        'description'     : logro.description,
+        'numberOfAnswers' : logro.numberOfAnswers,
+      });
+
+    }
+  }
+
+  Future<void> updateLogroRdia(LogroModel logro) async {
+    DocumentReference refLogro = logrosReference.doc(logro.id);
+
+    final result = await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      return await refLogro.set({
+        'type'            : logro.type,
+        'name'            : logro.name,
+        'description'     : logro.description,
+        'numberOfDays'    : logro.numberOfDays
+      });
+
+    }
+  }
+
+  Future<void> updateLogroEres(LogroModel logro) async {
+    DocumentReference refLogro = logrosReference.doc(logro.id);
+
+    final result = await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      return await refLogro.set({
+      'type'              : logro.type,
+      'name'              : logro.name,
+      'description'       : logro.description,
+      'numberOfExercises' : logro.numberOfExercises
+      });
+
+    }
+  }
+
+  Future<void> updateLogroLead(LogroModel logro) async {
+    DocumentReference refLogro = logrosReference.doc(logro.id);
+
+    final result = await logrosReference.where('description',isEqualTo: logro.description).get();
+    bool isempty = result.docs.isEmpty;
+    if(!isempty){
+      print("Description must be unique");
+    }
+    else{
+      return await refLogro.set({
+        'type'        : logro.type,
+        'name'        : logro.name,
+        'description' : logro.description,
+        'subject'     : logro.subject
+      });
+
+    }
   }
 
   Future<void> deleteLogro(String id) async {
