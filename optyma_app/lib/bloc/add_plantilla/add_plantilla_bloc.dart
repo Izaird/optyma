@@ -32,18 +32,47 @@ class AddPlantillaBloc extends Bloc<AddPlantillaEvent, AddPlantillaState> {
     if(event is AddPlantillaType4Selected){
       yield state.copyWith(subject: 4);
     }
-    if(event is AddLogroFormValidated){
+    if(event is AddPlantillaFormValidated){
       yield state.copyWith(status: FormStatus.validated);
     }
-    if(event is AddLogroFormSubmitted){
-      yield* _mapAddLogroFormSubmittedToState();
+    if(event is AddPlantillaFormSubmitted){
+      yield* _mapAddPlantillaFormSubmittedToState();
     }
     if(event is UpdatePlantillaFormSubmitted){
-      yield* _mapUpdateLogroFormSubmittedToState();
+      yield* _mapUpdatePlantillaFormSubmittedToState();
+    }
+    if(event is AddPlantillaSentenceChanged){
+      yield* _mapAddPlantillaSentenceChangedtoState(event);
+    }
+    if (event is AddPlantillaDifficultyChanged){
+      yield* _mapAddPlantillaDifficultyChangedToState(event);
+    }
+    if (event is AddPlantillaExpressionChanged){
+      yield* _mapAddPlantillaExpressionChangedToState(event);
+    }
+    if (event is AddPlantillaTimeOpenChanged){
+      yield* _mapAddPlantillaTimeOpenChangedToState(event);
+    }
+    if (event is AddPlantillaTimeCloseChanged){
+      yield* _mapAddPlantillaTimeCloseChangedToState(event);
     }
   }
-
-  Stream<AddPlantillaState> _mapAddLogroFormSubmittedToState() async* {
+  Stream<AddPlantillaState> _mapAddPlantillaSentenceChangedtoState(AddPlantillaSentenceChanged event) async *{
+    yield state.copyWith(sentence: event.sentence);
+  }
+  Stream<AddPlantillaState> _mapAddPlantillaExpressionChangedToState(AddPlantillaExpressionChanged event) async *{
+    yield state.copyWith(expression: event.expression);
+  }
+  Stream<AddPlantillaState> _mapAddPlantillaDifficultyChangedToState(AddPlantillaDifficultyChanged event) async *{
+    yield state.copyWith(difficulty: event.difficulty);
+  }
+  Stream<AddPlantillaState> _mapAddPlantillaTimeOpenChangedToState(AddPlantillaTimeOpenChanged event) async *{
+    yield state.copyWith(timeOpen: event.timeOpen);
+  }
+  Stream<AddPlantillaState> _mapAddPlantillaTimeCloseChangedToState(AddPlantillaTimeCloseChanged event) async *{
+    yield state.copyWith(timeClose: event.timeClose);
+  }
+  Stream<AddPlantillaState> _mapAddPlantillaFormSubmittedToState() async* {
     if(state.subject == 1){
       if(state.status != FormStatus.validated) return;
 
@@ -81,7 +110,7 @@ class AddPlantillaBloc extends Bloc<AddPlantillaEvent, AddPlantillaState> {
     }
   }
 
-  Stream<AddPlantillaState> _mapUpdateLogroFormSubmittedToState() async* {
+  Stream<AddPlantillaState> _mapUpdatePlantillaFormSubmittedToState() async* {
 
   }
 

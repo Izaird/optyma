@@ -19,13 +19,22 @@ class AddPlantillaFormValidated extends AddPlantillaEvent{}
 
 class AddPlantillaFormSubmitted extends AddPlantillaEvent{}
 
-class AddPlantillaNameChanged extends AddPlantillaEvent{
-  final String name;
-  AddPlantillaNameChanged(this.name); 
+class AddPlantillaSentenceChanged extends AddPlantillaEvent{
+  final String sentence;
+  AddPlantillaSentenceChanged(this.sentence); 
 
   @override
-  List<Object> get props => [name];
+  List<Object> get props => [sentence];
 }
+
+class AddPlantillaExpressionChanged extends AddPlantillaEvent{
+  final String expression;
+  AddPlantillaExpressionChanged(this.expression); 
+
+  @override
+  List<Object> get props => [expression];
+}
+
 class AddPlantillaDifficultyChanged extends AddPlantillaEvent{
   final int difficulty;
   AddPlantillaDifficultyChanged(this.difficulty); 
@@ -41,7 +50,20 @@ class AddPlantillaSubjectChanged extends AddPlantillaEvent{
   @override
   List<Object> get props => [subject];
 }
+class AddPlantillaTimeOpenChanged extends AddPlantillaEvent{
+  final int timeOpen;
+  AddPlantillaTimeOpenChanged(this.timeOpen); 
 
+  @override
+  List<Object> get props => [timeOpen];
+}
+class AddPlantillaTimeCloseChanged extends AddPlantillaEvent{
+  final int timeClose;
+  AddPlantillaTimeCloseChanged(this.timeClose); 
+
+  @override
+  List<Object> get props => [timeClose];
+}
 class UpdatePlantillaFormSubmitted extends AddPlantillaEvent{
   final String id;
 
