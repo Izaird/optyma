@@ -205,49 +205,49 @@ class AddLogroBlocBuilder extends StatelessWidget {
 }
 
 
-class LogroName extends StatelessWidget {
-  final String logroNameEdit;
+class PlantillaSentence extends StatelessWidget {
+  final String plantillaSentenceEdit;
 
-  const LogroName({this.logroNameEdit});
+  const PlantillaSentence({this.plantillaSentenceEdit});
   @override
   Widget build(BuildContext context) {
     return TextInput(
-      intialValue: logroNameEdit,
-      labelText: 'Ingrese el nombre del plantilla',
-      onSaved: (name) => BlocProvider.of<AddPlantillaBloc>(context).add(AddLogroNameChanged(name)),
+      intialValue: plantillaSentenceEdit,
+      labelText: 'Ingrese la s del plantilla',
+      onSaved: (name) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaNameChanged(name)),
     );
   }
 }
 
 class SubjectDropDown extends StatelessWidget {
 
-  final int logroSubjectEdit;
+  final int plantillaSubjectEdit;
 
-  const SubjectDropDown({this.logroSubjectEdit});
+  const SubjectDropDown({this.plantillaSubjectEdit});
   @override
   Widget build(BuildContext context) {
     return DropdownStrToIntWidget(
-      items: ['Cualquier tema', 'Aritmética', 'Álgebra', 'Diferencial', 'Optimización'],
-      intialValue: logroSubjectEdit,
+      items: ['Aritmética', 'Álgebra', 'Diferencial', 'Optimización'],
+      intialValue: plantillaSubjectEdit,
       hint: 'Tema',
       //Counts starts at 0 so we need 
-      onSaved: (subject) => BlocProvider.of<AddPlantillaBloc>(context).add(AddLogroSubjectChanged(subject)),
+      onSaved: (subject) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaSubjectChanged(subject)),
     );
   }
 }
 
 class DifficultyDropDown extends StatelessWidget {
 
-  final int logroDifficultyEdit;
+  final int plantillaDifficultyEdit;
 
-  const DifficultyDropDown({this.logroDifficultyEdit});
+  const DifficultyDropDown({this.plantillaDifficultyEdit});
   @override
   Widget build(BuildContext context) {
     return DropdownStrToIntWidget(
-      items: ['Cualquier dificultad', 'Fácil', 'Medio', 'Difícil'],
-      intialValue: logroDifficultyEdit,
+      items: ['Fácil', 'Medio', 'Difícil'],
+      intialValue: plantillaDifficultyEdit,
       hint: 'Dificultad',
-      onSaved: (difficulty) => BlocProvider.of<AddPlantillaBloc>(context).add(AddLogroDifficultyChanged(difficulty)),
+      onSaved: (difficulty) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaDifficultyChanged(difficulty)),
       validatorErrorMessage: 'Necesitas escoger una dificultad',
     );
   }
