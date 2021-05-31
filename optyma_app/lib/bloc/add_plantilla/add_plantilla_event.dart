@@ -18,3 +18,12 @@ class AddPlantillaType4Selected extends AddPlantillaEvent{}
 class AddPlantillaFormValidated extends AddPlantillaEvent{}
 
 class AddPlantillaFormSubmitted extends AddPlantillaEvent{}
+
+class UpdatePlantillaFormSubmitted extends AddPlantillaEvent{
+  final String id;
+
+  UpdatePlantillaFormSubmitted(this.id);
+
+  @override
+  List<Object> get props => super.props;
+}
