@@ -308,7 +308,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       try{
         await _logrosRepository.updateLogroRres(
           LogroModel(
-            id          : event.id,
+            id              : event.id,
             type            : state.logroType.index,
             name            : state.name,
             description     : state.description,
@@ -338,6 +338,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       try{
         await _logrosRepository.updateLogroRdia(
           LogroModel(
+            id          : event.id,
             type        : state.logroType.index,
             name        : state.name,
             description : state.description,
@@ -367,6 +368,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       try{
         await _logrosRepository.updateLogroEres(
           LogroModel(
+            id                : event.id,
             type              : state.logroType.index,
             name              : state.name,
             description       : state.description,
@@ -396,6 +398,7 @@ class AddLogroBloc extends Bloc<AddLogroEvent, AddLogroState> {
       try{
         await _logrosRepository.updateLogroLead(
           LogroModel(
+            id          : event.id,
             type        : state.logroType.index,
             name        : state.name,
             description : state.description,

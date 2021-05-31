@@ -271,7 +271,7 @@ class DifficultyDropDown extends StatelessWidget {
       items: ['Cualquier dificultad', 'Fácil', 'Medio', 'Difícil'],
       intialValue: logroDifficultyEdit,
       hint: 'Dificultad',
-      onSaved: (difficulty) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroDifficultyChanged(difficulty+1)),
+      onSaved: (difficulty) => BlocProvider.of<AddLogroBloc>(context).add(AddLogroDifficultyChanged(difficulty)),
       validatorErrorMessage: 'Necesitas escoger una dificultad',
     );
   }
