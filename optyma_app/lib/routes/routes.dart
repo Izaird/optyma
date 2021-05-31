@@ -5,6 +5,8 @@ import 'package:optyma_app/pages/admin/admins/add_admin_page.dart';
 import 'package:optyma_app/pages/admin/admins/admins_page.dart';
 import 'package:optyma_app/pages/admin/logro/logros_list/logros_list_page.dart';
 import 'package:optyma_app/pages/admin/home/home_admin_page.dart';
+import 'package:optyma_app/pages/admin/plantilla/add_plantilla/add_plantilla_page.dart';
+import 'package:optyma_app/pages/admin/plantilla/plantillas_list/plantillas_list_page.dart';
 import 'package:optyma_app/pages/admin/settings/settings_page.dart';
 
 import 'package:optyma_app/pages/common/home/home_page.dart';
@@ -26,8 +28,8 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'homeAdmin'     : (_) => HomeAdminPage(),
     'logros'        : (_) => LogrosListPage(),
     'addLogro'      : (_) => AddLogroPage(),
-    // 'plantillas'    : (_) => PlantillasPage(),
-    // 'addPlantilla'  : (_) => AddPlantillaPage(),
+    'plantillas'    : (_) => PlantillasListPage(),
+    'addPlantilla'  : (_) => AddPlantillaPage(),
     'admins'        : (_) => AdminsPage(),
     'addAdmin'      : (_) => AddAdminPage(),
     'settings'      : (_) => SettingsPage(),
