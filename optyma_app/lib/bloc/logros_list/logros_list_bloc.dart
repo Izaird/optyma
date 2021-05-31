@@ -5,7 +5,6 @@ import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 import 'package:optyma_app/models/logro_model.dart';
 
-import 'package:optyma_app/models/logros/logro_type1_model.dart';
 import 'package:optyma_app/repository/logros_repository.dart';
 
 part 'logros_list_event.dart';

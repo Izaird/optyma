@@ -26,11 +26,3 @@ class LogrosListUpdated extends LogrosListEvent{
   @override
   List<Object> get props => [logros];
 }
-
-class LogrosListType2Updated extends LogrosListEvent{
-  final List<LogroType1Model> logros;
-  LogrosListType2Updated(this.logros);
-
-  @override
-  List<Object> get props => [logros];
-}
