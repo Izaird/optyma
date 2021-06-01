@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:optyma_app/bloc/add_logro/add_logro_bloc.dart';
 import 'package:optyma_app/bloc/add_plantilla/add_plantilla_bloc.dart';
 import 'package:optyma_app/models/plantilla_model.dart';
+import 'package:optyma_app/repository/authentication_repository.dart';
 import 'package:optyma_app/repository/plantillas_repository.dart';
 import 'package:optyma_app/utils/constants.dart';
-import 'package:optyma_app/widgets/dd_form_field_int_widget.dart';
 import 'package:optyma_app/widgets/dd_form_field_str_widget.dart';
 import 'package:optyma_app/widgets/text_input_widget.dart';
 
@@ -20,7 +19,8 @@ class AddPlantillaPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: BlocProvider<AddPlantillaBloc>(
           create: (_) => AddPlantillaBloc(
-              plantillasRepository:RepositoryProvider.of<PlantillasRepository>(context)),
+              plantillasRepository:RepositoryProvider.of<PlantillasRepository>(context),
+              authenticationRepository: RepositoryProvider.of<AuthenticationRepository>(context)),
           child: SingleChildScrollView(
             child: AddPlantillaBody()
           ),
@@ -69,7 +69,7 @@ class AddPlantillaBody extends StatelessWidget {
       },
       child: Column(
         children: [
-          MenuTypesOfPlantillas(typeOfLogroEdit: plantilla?.subject),
+          MenuTypesOfPlantillas(typeOfPlantillaEdit: plantilla?.subject),
           AddPlantillaForm(idPlantilla: plantilla?.id),
         ],
       ),
@@ -78,22 +78,30 @@ class AddPlantillaBody extends StatelessWidget {
 }
 
 class MenuTypesOfPlantillas extends StatefulWidget {
-  final int typeOfLogroEdit;
+  final int typeOfPlantillaEdit;
 
   const MenuTypesOfPlantillas({
-    this.typeOfLogroEdit,
+    this.typeOfPlantillaEdit,
   });
   @override
   _MenuTypesOfPlantillasState createState() => _MenuTypesOfPlantillasState();
 }
 
 class _MenuTypesOfPlantillasState extends State<MenuTypesOfPlantillas> {
-  int _typeOfLogro;
+  int _typeOfPlantilla;
+
+  @override
+  void initState() {
+    _typeOfPlantilla = widget.typeOfPlantillaEdit;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    // _typeOfPlantilla = widget.typeOfPlantillaEdit; 
     return DropdownButton(
       hint: Text('Tipos de plantilla'),
-      value: widget.typeOfLogroEdit ?? _typeOfLogro,
+      value: _typeOfPlantilla,
       items: <DropdownMenuItem>[
         DropdownMenuItem(
           value: 1,
@@ -107,7 +115,7 @@ class _MenuTypesOfPlantillasState extends State<MenuTypesOfPlantillas> {
         ),
         DropdownMenuItem(
           value: 3,
-          child: Text('Cálculo Differencial'),
+          child: Text('Cálculo Diferencial'),
           onTap: () => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaType3Selected()),
         ),
         DropdownMenuItem(
@@ -118,7 +126,7 @@ class _MenuTypesOfPlantillasState extends State<MenuTypesOfPlantillas> {
       ],
       onChanged: (value) {
         setState(() {
-          _typeOfLogro = value;
+          _typeOfPlantilla = value;
         });
       },
     );
@@ -177,10 +185,10 @@ class AddLogroBlocBuilder extends StatelessWidget {
         //Aritmetica
         if (state.subject == 1) {
           return Column(
-            children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
+            children: [
+              PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
               PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
               DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
-              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
               PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
               PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
             ],
@@ -192,7 +200,6 @@ class AddLogroBlocBuilder extends StatelessWidget {
             children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
               PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
               DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
-              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
               PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
               PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
             ],
@@ -204,7 +211,6 @@ class AddLogroBlocBuilder extends StatelessWidget {
             children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
               PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
               DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
-              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
               PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose), 
               PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),           
             ],
@@ -216,7 +222,6 @@ class AddLogroBlocBuilder extends StatelessWidget {
             children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
               PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
               DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
-              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
               PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
               PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
             ],
@@ -289,8 +294,7 @@ class PlantillaTimeOpen extends StatelessWidget {
 
   const PlantillaTimeOpen({this.plantillaTimeOpen});
   @override
-  Widget build(BuildContext context) {
-    return TextTimeInput(
+  Widget build(BuildContext context) { return TextTimeInput(
       intialValue: plantillaTimeOpen?.toString(),
       labelText: 'Ingrese el tiempo de pregunta abierta',
       onSaved: (timeOpen) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaTimeOpenChanged(int.parse(timeOpen))),
@@ -298,22 +302,6 @@ class PlantillaTimeOpen extends StatelessWidget {
   }
 }
 
-class SubjectDropDown extends StatelessWidget {
-
-  final int plantillaSubjectEdit;
-
-  const SubjectDropDown({this.plantillaSubjectEdit});
-  @override
-  Widget build(BuildContext context) {
-    return DropdownStrToIntWidget(
-      items: ['Aritmética', 'Álgebra', 'Diferencial', 'Optimización'],
-      intialValue: plantillaSubjectEdit,
-      hint: 'Tema',
-      //Counts starts at 0 so we need 
-      onSaved: (subject) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaSubjectChanged(subject)),
-    );
-  }
-}
 
 class DifficultyDropDown extends StatelessWidget {
 
@@ -324,61 +312,10 @@ class DifficultyDropDown extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownStrToIntWidget(
       items: ['Fácil', 'Medio', 'Difícil'],
-      intialValue: plantillaDifficultyEdit,
+      intialValue: (plantillaDifficultyEdit != null) ? plantillaDifficultyEdit -1 : null,
       hint: 'Dificultad',
-      onSaved: (difficulty) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaDifficultyChanged(difficulty)),
+      onSaved: (difficulty) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaDifficultyChanged(difficulty+1)),
       validatorErrorMessage: 'Necesitas escoger una dificultad',
     );
   }
 }
-
-/*class NumberOfAnswersDropDown extends StatelessWidget {
-
-  final int logroAnswersEdit;
-
-  const NumberOfAnswersDropDown({this.logroAnswersEdit});
-  @override
-  Widget build(BuildContext context) {
-    return DropdownIntToIntWidget(
-      items: [1,2,3,4,5],
-      intialValue: logroAnswersEdit,
-      hint: 'Número de respuestas',
-      onSaved: (numberOfAnswers) => BlocProvider.of<AddPlantillaBloc>(context).add(AddLogroNumberOfAnswersChanged(numberOfAnswers)),
-      validatorErrorMessage: 'Escoge el numero de respuestas',
-    );
-  }
-}
-
-class NumberOfExercisesDropDown extends StatelessWidget {
-
-  final int logroExercisesEdit;
-
-  const NumberOfExercisesDropDown({this.logroExercisesEdit});
-  @override
-  Widget build(BuildContext context) {
-    return DropdownIntToIntWidget(
-      items: [1,2,3,4,5],
-      intialValue: logroExercisesEdit,
-      hint: 'Número de ejercicios',
-      onSaved: (numberOfExercises) => BlocProvider.of<AddPlantillaBloc>(context).add(AddLogroNumberOfExercisesChanged(numberOfExercises)),
-      validatorErrorMessage:'Necesitas escoger el número de ejercicios',
-    );
-  }
-}
-
-class NumberOfDaysDropDown extends StatelessWidget {
-
-  final int logroDaysEdit;
-
-  const NumberOfDaysDropDown({this.logroDaysEdit});
-  @override
-  Widget build(BuildContext context) {
-    return DropdownIntToIntWidget(
-      items: [1,2,3,4,5],
-      intialValue: logroDaysEdit,
-      hint: 'Número de días',
-      onSaved: (numberOfDays) => BlocProvider.of<AddPlantillaBloc>(context).add(AddLogroNumberOfDaysChanged(numberOfDays)),
-      validatorErrorMessage:'Escoge el número de días',
-    );
-  }
-}*/

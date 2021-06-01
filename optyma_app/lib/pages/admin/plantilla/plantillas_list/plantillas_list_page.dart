@@ -78,7 +78,7 @@ class _MenuTypesOfPlantillasState extends State<MenuTypesOfPlantillas> {
         ),
         DropdownMenuItem(
           value: 'Diferencial',
-          child: Text('Diferencial'),
+          child: Text('Cálculo Diferencial'),
           onTap: () {
             BlocProvider.of<PlantillasListBloc>(context).add(PlantillasListDifeSelected());
             BlocProvider.of<PlantillasListBloc>(context).add(PlantillasListLoaded());
@@ -134,7 +134,7 @@ class _PlantillasListBlocBuilderState extends State<PlantillasListBlocBuilder> {
           plantillasList = state.plantillas;
           return Container(
             child: plantillasList.length == 0 
-            ?Center(child: Text('Logros no disponibles'))
+            ?Center(child: Text('Plantillas no disponibles'))
             :Expanded(
               child: ListView.builder(
                 itemCount: plantillasList.length,
@@ -170,7 +170,7 @@ class CreateItem extends StatelessWidget {
         color: Colors.red,
       ),
       onDismissed: (direction) {
-        RepositoryProvider.of<LogrosRepository>(context).deleteLogro(plantilla.id);
+        RepositoryProvider.of<PlantillasRepository>(context).deletePlantilla(plantilla.id);
       },
       child: ListTile(   
         title: Text('${plantilla.sentence}'),
