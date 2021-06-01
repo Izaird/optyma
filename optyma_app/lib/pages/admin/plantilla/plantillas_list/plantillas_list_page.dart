@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/bloc/plantillas_list/plantillas_list_bloc.dart';
 import 'package:optyma_app/models/plantilla_model.dart';
-import 'package:optyma_app/repository/logros_repository.dart';
 import 'package:optyma_app/repository/plantillas_repository.dart';
 
 class PlantillasListPage extends StatelessWidget {
