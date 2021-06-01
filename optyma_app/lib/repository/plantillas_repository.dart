@@ -10,57 +10,57 @@ class PlantillasRepository{
 
   Future<void> addPlantilla( PlantillaModel plantilla ) async{
     plantillasReference.add({
-      // 'dificultad'      : plantilla.dificultad,
-      // 'exp'             : plantilla.exp,
-      // 'sentencia'       : plantilla.sentencia,
-      // 'tema'            : plantilla.tema,
-      // 'tiempoAbierta'   : plantilla.tiempoAbierta,
-      // 'tiempoCerrada'   : plantilla.tiempoCerrada,
-      // 'timeStamp'       : plantilla.timestamp,
-      // 'uId'             : plantilla.uid,
+      'difficulty'      : plantilla.difficulty,
+      'expression'      : plantilla.expression,
+      'sentence'        : plantilla.sentence,
+      'subject'         : plantilla.subject,
+      'timeOpen'        : plantilla.timeOpen,
+      'timeClose'       : plantilla.timeClose,
+      'timeStamp'       : Timestamp.now(),
+      'uId'             : plantilla.uid,
     })
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add plantilla: $error"));
   }
 
   Stream<List<PlantillaModel>> getPlantillasArit(){
-    return plantillasReference.where('type', isEqualTo: 1)
+    return plantillasReference.where('subject', isEqualTo: 1)
     .snapshots().map((snapshot){
       return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
     });
   }
 
   Stream<List<PlantillaModel>> getPlantillasAlge(){
-    return plantillasReference.where('type', isEqualTo: 2)
+    return plantillasReference.where('subject', isEqualTo: 2)
     .snapshots().map((snapshot){
       return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
     });
   }
 
   Stream<List<PlantillaModel>> getPlantillasDife(){
-    return plantillasReference.where('type', isEqualTo: 3)
+    return plantillasReference.where('subject', isEqualTo: 3)
     .snapshots().map((snapshot){
       return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
     });
   }
 
   Stream<List<PlantillaModel>> getPlantillasOpti(){
-    return plantillasReference.where('type', isEqualTo: 4)
+    return plantillasReference.where('subject', isEqualTo: 4)
     .snapshots().map((snapshot){
       return snapshot.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList();
     });
   }
 
-  Future<void> updatePlantillaData(PlantillaModel plantilla) async {
+  Future<void> updatePlantilla(PlantillaModel plantilla) async {
     DocumentReference refPlantilla = plantillasReference.doc(plantilla.id);
 
     return await refPlantilla.update({
-      // 'dificultad'      : plantilla.dificultad,
-      // 'exp'             : plantilla.exp,
-      // 'sentencia'       : plantilla.sentencia,
-      // 'tema'            : plantilla.tema,
-      // 'tiempoAbierta'   : plantilla.tiempoAbierta,
-      // 'tiempoCerrada'   : plantilla.tiempoCerrada,
+      'difficulty'      : plantilla.difficulty,
+      'expression'      : plantilla.expression,
+      'sentence'        : plantilla.sentence,
+      'subject'         : plantilla.subject,
+      'timeOpen'        : plantilla.timeOpen,
+      'timeClose'       : plantilla.timeClose,
     });
   }
 
