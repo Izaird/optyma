@@ -95,22 +95,22 @@ class _MenuTypesOfPlantillasState extends State<MenuTypesOfPlantillas> {
       items: <DropdownMenuItem>[
         DropdownMenuItem(
           value: 1,
-          child: Text('Niveles'),
+          child: Text('Aritmética'),
           onTap: () => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaType1Selected()),
         ),
         DropdownMenuItem(
           value: 2,
-          child: Text('Racha de respuestas'),
+          child: Text('Algebra'),
           onTap: () => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaType2Selected()),
         ),
         DropdownMenuItem(
           value: 3,
-          child: Text('Racha de días'),
+          child: Text('Cálculo Differencial'),
           onTap: () => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaType3Selected()),
         ),
         DropdownMenuItem(
           value: 4,
-          child: Text('Ejercicios realizados'),
+          child: Text('Optimización'),
           onTap: () => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaType4Selected()),
         ),
       ],
@@ -134,7 +134,9 @@ class AddPlantillaForm extends StatelessWidget {
     return Form(
         key: formKey,
         child: SingleChildScrollView(
-          child: Column(
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
             children: [
               AddLogroBlocBuilder(),
               BlocBuilder<AddPlantillaBloc, AddPlantillaState>(
@@ -173,28 +175,48 @@ class AddLogroBlocBuilder extends StatelessWidget {
         //Aritmetica
         if (state.subject == 1) {
           return Column(
-            children: [
+            children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
+              PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
+              DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
+              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
+              PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
+              PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
             ],
           );
         }
         //Algebra
         if (state.subject == 2) {
           return Column(
-            children: [
+            children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
+              PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
+              DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
+              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
+              PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
+              PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
             ],
           );
         }
         //Diferencial
         if (state.subject == 3) {
           return Column(
-            children: [
+            children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
+              PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
+              DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
+              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
+              PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose), 
+              PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),           
             ],
           );
         }
         //Optimizacion
         if (state.subject == 4) {
           return Column(
-            children: [
+            children: [PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
+              PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
+              DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
+              SubjectDropDown(plantillaSubjectEdit:  plantilla?.subject),
+              PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
+              PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
             ],
           );
         }
@@ -213,8 +235,63 @@ class PlantillaSentence extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextInput(
       intialValue: plantillaSentenceEdit,
-      labelText: 'Ingrese la s del plantilla',
-      onSaved: (name) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaNameChanged(name)),
+      labelText: 'Ingrese la sentencia de la plantilla',
+      onSaved: (sentence) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaSentenceChanged(sentence)),
+    );
+  }
+}
+class PlantillaValues extends StatelessWidget {
+  final String plantillaValuesEdit;
+
+  const PlantillaValues({this.plantillaValuesEdit});
+  @override
+  Widget build(BuildContext context) {
+    return TextValuesInput(
+      intialValue: plantillaValuesEdit,
+      labelText: 'Ingrese los valores de la plantilla',
+      //onSaved: (sentence) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaValuesChanged(sentence)),
+    );
+  }
+}
+
+class PlantillaExpression extends StatelessWidget {
+  final String plantillaExpressionEdit;
+
+  const PlantillaExpression({this.plantillaExpressionEdit});
+  @override
+  Widget build(BuildContext context) {
+    return TextPlantillaInput(
+      intialValue: plantillaExpressionEdit,
+      labelText: 'Ingrese la expresión de la plantilla',
+      onSaved: (expression) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaExpressionChanged(expression)),
+    );
+  }
+}
+
+class PlantillaTimeClose extends StatelessWidget {
+  final int plantillaTimeClose;
+
+  const PlantillaTimeClose({this.plantillaTimeClose});
+  @override
+  Widget build(BuildContext context) {
+    return TextTimeInput(
+      intialValue: plantillaTimeClose?.toString() ,
+      labelText: 'Ingrese el tiempo de pregunta cerrada',
+      onSaved: (timeClose) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaTimeCloseChanged(int.parse(timeClose))),
+    );
+  }
+}
+
+class PlantillaTimeOpen extends StatelessWidget {
+  final int plantillaTimeOpen;
+
+  const PlantillaTimeOpen({this.plantillaTimeOpen});
+  @override
+  Widget build(BuildContext context) {
+    return TextTimeInput(
+      intialValue: plantillaTimeOpen?.toString(),
+      labelText: 'Ingrese el tiempo de pregunta abierta',
+      onSaved: (timeOpen) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaTimeOpenChanged(int.parse(timeOpen))),
     );
   }
 }
@@ -253,7 +330,7 @@ class DifficultyDropDown extends StatelessWidget {
   }
 }
 
-class NumberOfAnswersDropDown extends StatelessWidget {
+/*class NumberOfAnswersDropDown extends StatelessWidget {
 
   final int logroAnswersEdit;
 
@@ -302,4 +379,4 @@ class NumberOfDaysDropDown extends StatelessWidget {
       validatorErrorMessage:'Escoge el número de días',
     );
   }
-}
+}*/
