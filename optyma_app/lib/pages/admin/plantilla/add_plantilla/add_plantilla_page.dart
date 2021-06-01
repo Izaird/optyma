@@ -21,7 +21,9 @@ class AddPlantillaPage extends StatelessWidget {
         child: BlocProvider<AddPlantillaBloc>(
           create: (_) => AddPlantillaBloc(
               plantillasRepository:RepositoryProvider.of<PlantillasRepository>(context)),
-          child: AddPlantillaBody(),
+          child: SingleChildScrollView(
+            child: AddPlantillaBody()
+          ),
         ),
       ),
     );
