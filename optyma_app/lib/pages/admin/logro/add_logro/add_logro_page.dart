@@ -89,11 +89,18 @@ class MenuTypesOfLogros extends StatefulWidget {
 
 class _MenuTypesOfLogrosState extends State<MenuTypesOfLogros> {
   int _typeOfLogro;
+
+  @override
+  void initState() {
+    _typeOfLogro = widget.typeOfLogroEdit;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
       hint: Text('Tipos de logro'),
-      value: widget.typeOfLogroEdit ?? _typeOfLogro,
+      value: _typeOfLogro,
       items: <DropdownMenuItem>[
         DropdownMenuItem(
           value: 1,
