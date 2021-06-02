@@ -188,6 +188,7 @@ class AddLogroBlocBuilder extends StatelessWidget {
             children: [
               PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
               PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
+              PlantillaValues(plantillaValuesEdit: plantilla?.expression),
               DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
               PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
               PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),

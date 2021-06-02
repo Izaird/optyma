@@ -4,6 +4,6 @@ class QuizModel {
         this.dificultad
     });
 
-    String tema;
+    int tema;
     int dificultad;
 }

@@ -37,7 +37,7 @@ class HomeUserPage extends StatelessWidget {
                 intialValue: 0,
                 validatorErrorMessage: 'Se tiene que escoger un tema',
                 onSaved: (tema){
-                  quizData.tema=tema;
+                  quizData.tema=tema+1;
                 }
               ),
               DropdownStrToIntWidget(
@@ -46,7 +46,7 @@ class HomeUserPage extends StatelessWidget {
                 intialValue: 0,
                 validatorErrorMessage: 'Se tiene que escoger una dificultad',
                 onSaved: (difficulty){
-                  quizData.dificultad=(int.parse(difficulty));
+                  quizData.dificultad=(difficulty+1);
                 }
               ),
               _submitButton(context),

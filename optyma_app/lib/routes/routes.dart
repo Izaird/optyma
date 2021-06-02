@@ -14,6 +14,7 @@ import 'package:optyma_app/pages/common/login/login_page.dart';
 import 'package:optyma_app/pages/admin/logro/add_logro/add_logro_page.dart';
 import 'package:optyma_app/pages/common/signup/signup_page.dart';
 import 'package:optyma_app/pages/common/splash/splash_page.dart';
+import 'package:optyma_app/pages/user/quiz/quiz_page.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes(){
   return <String, WidgetBuilder>{
@@ -23,7 +24,7 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'login'         : (_) => LoginPage(),
     'signup'        : (_) => SignUpPage(),
     //user pages
-    // 'quiz'          :(_) => Quiz(),
+    'quiz'          :(_) => QuizPage(),
     //Admin Pages
     'homeAdmin'     : (_) => HomeAdminPage(),
     'logros'        : (_) => LogrosListPage(),
