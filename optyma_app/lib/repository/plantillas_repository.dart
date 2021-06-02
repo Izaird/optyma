@@ -69,14 +69,11 @@ class PlantillasRepository{
 
     return await refPlantilla.delete();
   }
-  getRandomPlantilla (String tema, int dif){
-    print(FirebaseFirestore.instance.collection('plantillas').
-    where('tema', isEqualTo: tema ).
-    where('dificulttad', isLessThanOrEqualTo: dif).
-    get());
+  Future <List<PlantillaModel>> getRandomPlantilla (int tema, int dif){
+    
     return FirebaseFirestore.instance.collection('plantillas').
     where('tema', isEqualTo: tema ).
     where('dificulttad', isLessThanOrEqualTo: dif).
-    get();
+    get().then((snap) => snap.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList());
   }
 }
