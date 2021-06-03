@@ -6,3 +6,16 @@ abstract class QuizEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class QuizStarted extends QuizEvent{
+  final int difficulty;
+  final int subject;
+
+  QuizStarted({
+    this.difficulty, 
+    this.subject
+  });
+
+  @override
+    List<Object> get props => [difficulty, subject];
+}

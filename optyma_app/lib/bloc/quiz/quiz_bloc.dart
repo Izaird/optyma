@@ -12,16 +12,25 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
   QuizBloc({@required PlantillasRepository plantillasRepository}) : 
   assert(plantillasRepository != null),
   _plantillasRepository = plantillasRepository,
-  super(QuizInitial());
+  super(QuizUninitialized());
   
   final PlantillasRepository _plantillasRepository;
   int score;
   int streak;
   
   @override
-  Stream<QuizState> mapEventToState(
-    QuizEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
+  Stream<QuizState> mapEventToState( QuizEvent event,) async* {
+    if(event is QuizStarted){
+      yield* _mapQuizInitializedToState(event);
+    }
+  }
+
+  Stream<QuizState> _mapQuizInitializedToState(QuizStarted event) async*{
+    yield QuizInitialized(
+      plantillas: await _plantillasRepository.getPlantillasByDifAndSubj(
+        difficulty: event.difficulty,
+        subject: event.subject 
+      ),
+    );
   }
 }
