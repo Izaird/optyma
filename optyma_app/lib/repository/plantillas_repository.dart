@@ -97,11 +97,11 @@ class PlantillasRepository{
 
     return await refPlantilla.delete();
   }
-  Future <List<PlantillaModel>> getPlantillasByDifAndSubj ({int tema, int dif}){
+  Future <List<PlantillaModel>> getPlantillasByDifAndSubj({int subject, int difficulty}){
     
-    return FirebaseFirestore.instance.collection('plantillas').
-    where('tema', isEqualTo: tema ).
-    where('dificulttad', isLessThanOrEqualTo: dif).
+    return plantillasReference.
+    where('subject', isEqualTo: subject ).
+    where('difficulty', isLessThanOrEqualTo: difficulty).
     get().then((snap) => snap.docs.map((doc) => PlantillaModel.fromSnapshot(doc)).toList());
   }
 }
