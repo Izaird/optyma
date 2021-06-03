@@ -283,6 +283,7 @@ class PlantillaTimeClose extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextTimeInput(
+      maxLenght: 9,
       intialValue: plantillaTimeClose?.toString() ,
       labelText: 'Ingrese el tiempo de pregunta cerrada',
       onSaved: (timeClose) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaTimeCloseChanged(int.parse(timeClose))),
@@ -296,6 +297,7 @@ class PlantillaTimeOpen extends StatelessWidget {
   const PlantillaTimeOpen({this.plantillaTimeOpen});
   @override
   Widget build(BuildContext context) { return TextTimeInput(
+      maxLenght: 9,
       intialValue: plantillaTimeOpen?.toString(),
       labelText: 'Ingrese el tiempo de pregunta abierta',
       onSaved: (timeOpen) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaTimeOpenChanged(int.parse(timeOpen))),
