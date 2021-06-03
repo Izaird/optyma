@@ -9,22 +9,26 @@ class QuizPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final quizData = ModalRoute.of(context).settings.arguments as QuizModel;
     return BlocProvider(
-      create: (context) => QuizBloc(plantillasRepository: RepositoryProvider.of<PlantillasRepository>(context)),
+      create: (context) => QuizBloc(plantillasRepository: RepositoryProvider.of<PlantillasRepository>(context))
+      ..add(QuizStarted(difficulty: quizData.dificultad, subject: quizData.tema)),
       child: Scaffold(
           appBar: AppBar(title: Text("QuizPage")),
           body: Padding(
             padding: EdgeInsets.all(8.0),
             child: BlocBuilder<QuizBloc, QuizState>(
               builder: (context, state) {
+                if(state is QuizInitialized){
+                  print(state.plantillas.length);
+                }
                 return Column(
                   children: <Widget>[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Icon(Icons.local_fire_department_outlined),
-                        Text(state.streak.toString()),
+                        // Text(state.streak.toString()),
                         Spacer(),
-                        Text(state.score.toString())
+                        // Text(state.score.toString())
                       ],
                     ),
                 Text(quizData.tema.toString()),
