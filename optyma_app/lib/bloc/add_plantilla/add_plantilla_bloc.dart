@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:optyma_app/models/plantilla_model.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
 import 'package:optyma_app/repository/plantillas_repository.dart';
@@ -53,6 +54,9 @@ class AddPlantillaBloc extends Bloc<AddPlantillaEvent, AddPlantillaState> {
     if (event is AddPlantillaDifficultyChanged){
       yield* _mapAddPlantillaDifficultyChangedToState(event);
     }
+    if(event is AddPlantillaValuesChanged){
+      yield state.copyWith(values: event.values);
+    }
     if (event is AddPlantillaExpressionChanged){
       yield* _mapAddPlantillaExpressionChangedToState(event);
     }
@@ -86,11 +90,12 @@ class AddPlantillaBloc extends Bloc<AddPlantillaEvent, AddPlantillaState> {
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _plantillasRepository.addPlantilla(
+        await _plantillasRepository.addPlantillaArit(
           PlantillaModel(
             difficulty: state.difficulty,
             expression: state.expression,
-            sentence  : state.sentence, 
+            sentence  : state.sentence,
+            values    : state.values, 
             timeOpen  : state.timeOpen,
             timeClose : state.timeClose,
             subject   : state.subject, 
@@ -198,11 +203,12 @@ class AddPlantillaBloc extends Bloc<AddPlantillaEvent, AddPlantillaState> {
       yield state.copyWith(status: FormStatus.submissionInProgress);
 
       try{
-        await _plantillasRepository.updatePlantilla(
+        await _plantillasRepository.updatePlantillaArit(
           PlantillaModel(
             difficulty: state.difficulty,
             expression: state.expression,
             sentence  : state.sentence, 
+            values    : state.values,
             timeOpen  : state.timeOpen,
             timeClose : state.timeClose,
             subject   : state.subject, 

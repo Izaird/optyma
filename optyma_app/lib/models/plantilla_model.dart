@@ -19,6 +19,7 @@ class PlantillaModel {
         this.expression,
         this.sentence,
         this.subject,
+        this.values,
         this.timeOpen,
         this.timeClose,
         this.timestamp,
@@ -29,6 +30,7 @@ class PlantillaModel {
     int difficulty;
     String expression;
     String sentence;
+    String values;
     int subject;
     int timeOpen;
     int timeClose;
@@ -41,6 +43,7 @@ class PlantillaModel {
         expression: json["expression"],
         sentence: json["sentence"],
         subject: json["subject"],
+        values : json["values"],
         timeOpen: json["timeOpen"],
         timeClose: json["timeClose"],
         timestamp: json["timestamp"],
@@ -53,6 +56,7 @@ class PlantillaModel {
         difficulty    : snapshot.data()['difficulty'],
         expression           : snapshot.data()['expression'],
         sentence     : snapshot.data()['sentence'],
+        values: snapshot.data()['values'],
         subject          : snapshot.data()['subject'],
         timeOpen : snapshot.data()['timeOpen'],
         timeClose : snapshot.data()['timeClose'],
@@ -63,6 +67,7 @@ class PlantillaModel {
         "difficulty": difficulty,
         "expression": expression,
         "sentence": sentence,
+        "values": values,
         "subject": subject,
         "timeOpen": timeOpen,
         "timeClose": timeClose,

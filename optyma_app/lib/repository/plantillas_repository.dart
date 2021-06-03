@@ -22,7 +22,21 @@ class PlantillasRepository{
       .then((value) => print(value))
       .catchError((error)=> print("Failed to add plantilla: $error"));
   }
-
+  Future<void> addPlantillaArit( PlantillaModel plantilla ) async{
+    plantillasReference.add({
+      'difficulty'      : plantilla.difficulty,
+      'expression'      : plantilla.expression,
+      'sentence'        : plantilla.sentence,
+      'values'          : plantilla.values,
+      'subject'         : plantilla.subject,
+      'timeOpen'        : plantilla.timeOpen,
+      'timeClose'       : plantilla.timeClose,
+      'timeStamp'       : Timestamp.now(),
+      'uId'             : plantilla.uid,
+    })
+      .then((value) => print(value))
+      .catchError((error)=> print("Failed to add plantilla: $error"));
+  }
   Stream<List<PlantillaModel>> getPlantillasArit(){
     return plantillasReference.where('subject', isEqualTo: 1)
     .snapshots().map((snapshot){
@@ -64,12 +78,26 @@ class PlantillasRepository{
     });
   }
 
+  Future<void> updatePlantillaArit(PlantillaModel plantilla) async {
+    DocumentReference refPlantilla = plantillasReference.doc(plantilla.id);
+
+    return await refPlantilla.update({
+      'difficulty'      : plantilla.difficulty,
+      'expression'      : plantilla.expression,
+      'sentence'        : plantilla.sentence,
+      'values'          : plantilla.values,
+      'subject'         : plantilla.subject,
+      'timeOpen'        : plantilla.timeOpen,
+      'timeClose'       : plantilla.timeClose,
+    });
+  }
+
   Future<void> deletePlantilla(String id) async {
     DocumentReference refPlantilla = plantillasReference.doc(id);
 
     return await refPlantilla.delete();
   }
-  Future <List<PlantillaModel>> getRandomPlantilla (int tema, int dif){
+  Future <List<PlantillaModel>> getPlantillasByDifAndSubj ({int tema, int dif}){
     
     return FirebaseFirestore.instance.collection('plantillas').
     where('tema', isEqualTo: tema ).

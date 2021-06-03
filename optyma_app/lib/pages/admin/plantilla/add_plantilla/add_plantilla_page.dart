@@ -51,7 +51,7 @@ class AddPlantillaBody extends StatelessWidget {
         break;
       default:
     }
-  }
+  }//
     return BlocListener<AddPlantillaBloc, AddPlantillaState>(
       listener: (context, state) {
         //Submission was a failure
@@ -188,7 +188,7 @@ class AddLogroBlocBuilder extends StatelessWidget {
             children: [
               PlantillaSentence(plantillaSentenceEdit: plantilla?.sentence),
               PlantillaExpression(plantillaExpressionEdit: plantilla?.expression),
-              PlantillaValues(plantillaValuesEdit: plantilla?.expression),
+              PlantillaValues(plantillaValuesEdit: plantilla?.values),
               DifficultyDropDown(plantillaDifficultyEdit: plantilla?.difficulty),
               PlantillaTimeClose(plantillaTimeClose: plantilla?.timeClose),
               PlantillaTimeOpen(plantillaTimeOpen: plantilla?.timeOpen),
@@ -257,7 +257,7 @@ class PlantillaValues extends StatelessWidget {
     return TextValuesInput(
       intialValue: plantillaValuesEdit,
       labelText: 'Ingrese los valores de la plantilla',
-      //onSaved: (sentence) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaValuesChanged(sentence)),
+      onSaved: (values) => BlocProvider.of<AddPlantillaBloc>(context).add(AddPlantillaValuesChanged(values)),
     );
   }
 }

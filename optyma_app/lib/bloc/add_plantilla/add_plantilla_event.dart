@@ -35,6 +35,13 @@ class AddPlantillaExpressionChanged extends AddPlantillaEvent{
   List<Object> get props => [expression];
 }
 
+class AddPlantillaValuesChanged extends AddPlantillaEvent{
+  final String values;
+  AddPlantillaValuesChanged(this.values);
+  @override
+    List<Object> get props => [values];
+}
+
 class AddPlantillaDifficultyChanged extends AddPlantillaEvent{
   final int difficulty;
   AddPlantillaDifficultyChanged(this.difficulty); 
