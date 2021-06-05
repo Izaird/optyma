@@ -23,28 +23,39 @@ class QuizPage extends StatelessWidget {
                   print(state.plantillas.length);
                   print(state.plantillas[1].expression);
                   Parser p = Parser();
-                  Expression exp = p.parse(state.plantillas[1].expression);
+                  Expression exp = p.parse(state.plantillas[3].expression);
                   print(exp.toString());  
                   if(state.plantillas[0].subject==1){
-                    List<String> values =state.plantillas[1].values.split(";");
-                    print(values);
-                    List<String> valueA = values[0].split("-");
-                    print(valueA);
-                    List<String> valueB = values[1].split("-");
-                    print(valueB);
+                    List<List<String>> aritvalues=[];
+                    List<String> values =state.plantillas[3].values.split(";");
+                    List<int> rands = [0,0,0,0];
                     Random rnd = new Random();
-                    int r1 = int.parse(valueA[0]) + rnd.nextInt(int.parse(valueA[1]) - int.parse(valueA[0]));
-                    print(r1);
-                    int r2 = int.parse(valueB[0]) + rnd.nextInt(int.parse(valueB[1]) - int.parse(valueB[0]));
-                    print(r2);
-                    Variable a= Variable('a'), b=Variable('b');
+                    List<String>opcs = [];
+                    print(values);
+                    for (int i=0;i<values.length-1;i++){
+                      print( values[i].split("-") );
+                      aritvalues.add(values[i].split("-"));
+                      rands[i] = int.parse(aritvalues[i][0]) + rnd.nextInt(int.parse(aritvalues[i][1]) - int.parse(aritvalues[i][0]));
+                    }
+                    print("Arit values");
+                    print(aritvalues);
+                    int rand = 2+rnd.nextInt(5-2);
+                    //int r1 = int.parse(aritvalues[0][0]) + rnd.nextInt(int.parse(aritvalues[0][1]) - int.parse(aritvalues[0][0]));
+                    print(rands);
+                    //int r2 = int.parse(aritvalues[1][0]) + rnd.nextInt(int.parse(aritvalues[1][1]) - int.parse(aritvalues[1][0]));
+                    Variable a= Variable('a'), b=Variable('b') ;
+                    Variable c= Variable('c'), d=Variable('d');
                     ContextModel cm = ContextModel()
-                    ..bindVariable(a, Number(r1))
-                    ..bindVariable(b, Number(r2));
+                    ..bindVariable(a, Number(rands[0]))
+                    ..bindVariable(b, Number(rands[1]))
+                    ..bindVariable(c, Number(rands[2]))
+                    ..bindVariable(d, Number(rands[3]));
                     double eval = exp.evaluate(EvaluationType.REAL, cm);
-
+                    List<double> expOpc = [eval,eval+1,eval-1,eval+rand]; 
                     print('Expression: $exp');
                     print('Evaluated expression: $eval\n  (with context: $cm)');
+                    expOpc.shuffle();
+                    print(expOpc);
                   }
                   return Column(
                     children: <Widget>[
@@ -71,7 +82,7 @@ class QuizPage extends StatelessWidget {
                         Icon(Icons.local_fire_department_outlined),
                         //Text(state.streak.toString),
                         Spacer(),
-                        //Text(state.score.toString())
+                        //Text(state.score.toString()) 
                       ],
                     ),
                     Text(quizData.tema.toString()),
