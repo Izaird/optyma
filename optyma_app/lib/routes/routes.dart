@@ -14,25 +14,29 @@ import 'package:optyma_app/pages/common/login/login_page.dart';
 import 'package:optyma_app/pages/admin/logro/add_logro/add_logro_page.dart';
 import 'package:optyma_app/pages/common/signup/signup_page.dart';
 import 'package:optyma_app/pages/common/splash/splash_page.dart';
+import 'package:optyma_app/pages/user/logros_list/logros_unlocked_list_page.dart';
 import 'package:optyma_app/pages/user/quiz/quiz_page.dart';
+import 'package:optyma_app/pages/user/settings/settings_page.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes(){
   return <String, WidgetBuilder>{
     //Common pages
-    'home'          : (_) => HomePage(),
-    'splash'        : (_) => SplashPage(),
-    'login'         : (_) => LoginPage(),
-    'signup'        : (_) => SignUpPage(),
+    'home'            : (_) => HomePage(),
+    'splash'          : (_) => SplashPage(),
+    'login'           : (_) => LoginPage(),
+    'signup'          : (_) => SignUpPage(),
     //user pages
-    'quiz'          :(_) => QuizPage(),
+    'quiz'            : (_) => QuizPage(),
+    'logrosUnlocked'  : (_) => LogrosUnlockedListPage(),
+    'userSettings'    : (_) => UserSettingsPage(),
     //Admin Pages
-    'homeAdmin'     : (_) => HomeAdminPage(),
-    'logros'        : (_) => LogrosListPage(),
-    'addLogro'      : (_) => AddLogroPage(),
-    'plantillas'    : (_) => PlantillasListPage(),
-    'addPlantilla'  : (_) => AddPlantillaPage(),
-    'admins'        : (_) => AdminsPage(),
-    'addAdmin'      : (_) => AddAdminPage(),
-    'settings'      : (_) => SettingsPage(),
+    'homeAdmin'       : (_) => HomeAdminPage(),
+    'logros'          : (_) => LogrosListPage(),
+    'addLogro'        : (_) => AddLogroPage(),
+    'plantillas'      : (_) => PlantillasListPage(),
+    'addPlantilla'    : (_) => AddPlantillaPage(),
+    'admins'          : (_) => AdminsPage(),
+    'addAdmin'        : (_) => AddAdminPage(),
+    'settings'        : (_) => AdminSettingsPage(),
   };
 }
