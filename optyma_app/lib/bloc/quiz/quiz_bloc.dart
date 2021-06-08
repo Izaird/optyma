@@ -3,20 +3,18 @@ import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:optyma_app/repository/plantillas_repository.dart';
-import 'package:optyma_app/models/plantilla_model.dart';
+import 'package:optyma_app/models/question_model.dart';
+import 'package:optyma_app/repository/questions_repository.dart';
 part 'quiz_event.dart';
 part 'quiz_state.dart';
 
 class QuizBloc extends Bloc<QuizEvent, QuizState> {
-  QuizBloc({@required PlantillasRepository plantillasRepository}) : 
-  assert(plantillasRepository != null),
-  _plantillasRepository = plantillasRepository,
+  QuizBloc({@required QuestionsRepository questionsRepository}) : 
+  assert(questionsRepository != null),
+  _questionsRepository = questionsRepository,
   super(QuizUninitialized());
   
-  final PlantillasRepository _plantillasRepository;
-  int score;
-  int streak;
+  final QuestionsRepository _questionsRepository;
   
   @override
   Stream<QuizState> mapEventToState( QuizEvent event,) async* {
@@ -26,11 +24,12 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
   }
 
   Stream<QuizState> _mapQuizInitializedToState(QuizStarted event) async*{
-    yield QuizInitialized(
-      plantillas: await _plantillasRepository.getPlantillasByDifAndSubj(
-        difficulty: event.difficulty,
-        subject: event.subject 
-      ),
+    yield(
+      QuizInitialized(
+        questions: await _questionsRepository.getQuestionsArit(difficulty: 1, numberOfQuestions: 5),
+        score: 0,
+        streak: 0,
+      )
     );
   }
 }

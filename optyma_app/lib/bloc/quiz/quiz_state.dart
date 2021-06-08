@@ -12,23 +12,23 @@ class QuizUninitialized extends QuizState {}
 class QuizInitialized extends QuizState{
   final int streak;
   final int score;
-  final List<PlantillaModel> plantillas;
+  final List<QuestionModel> questions;
 
   QuizInitialized({
     this.streak = 0, 
     this.score = 0, 
-    this.plantillas
+    this.questions
   });
 
   QuizInitialized copyWith({
     int streak,
     int score,
-    List<PlantillaModel> plantillas,
+    List<QuestionModel> questions,
   }){
     return QuizInitialized(
       streak        : streak ?? this.streak,
       score         : score ?? this.score,
-      plantillas    : plantillas ?? this.plantillas,
+      questions     : questions ?? this.questions,
     );
   }
 
