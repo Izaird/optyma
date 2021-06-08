@@ -11,6 +11,7 @@ import 'package:optyma_app/pages/common/splash/splash_page.dart';
 import 'package:optyma_app/repository/authentication_repository.dart';
 import 'package:optyma_app/repository/logros_repository.dart';
 import 'package:optyma_app/repository/plantillas_repository.dart';
+import 'package:optyma_app/repository/questions_repository.dart';
 import 'package:optyma_app/repository/users_repository.dart';
 import 'package:optyma_app/routes/routes.dart';
 
@@ -23,6 +24,7 @@ void main() async{
   final UsersRepository cloudFirestoreRepository = UsersRepository();
   final LogrosRepository logrosRepository = LogrosRepository();
   final PlantillasRepository plantillasRepository = PlantillasRepository();
+  final QuestionsRepository questionsRepository = QuestionsRepository(plantillasRepository);
 
   runApp(
     MultiRepositoryProvider(
@@ -31,6 +33,7 @@ void main() async{
         RepositoryProvider.value(value: cloudFirestoreRepository),
         RepositoryProvider.value(value: logrosRepository),
         RepositoryProvider.value(value: plantillasRepository),
+        RepositoryProvider.value(value: questionsRepository),
       ],
 
       child: MultiBlocProvider(
