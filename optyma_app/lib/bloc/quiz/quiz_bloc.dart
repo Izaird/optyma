@@ -12,7 +12,7 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
   QuizBloc({@required QuestionsRepository questionsRepository}) : 
   assert(questionsRepository != null),
   _questionsRepository = questionsRepository,
-  super(QuizUninitialized());
+  super(QuizState());
   
   final QuestionsRepository _questionsRepository;
   
@@ -21,15 +21,108 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
     if(event is QuizStarted){
       yield* _mapQuizInitializedToState(event);
     }
+    if(event is QuizAnswerSelected){
+      yield* _mapQuizAnswerSelectedToState(event);
+    }
+    if(event is QuizTimeOver){
+      yield* _mapQuizTimeOverToState();
+    }
   }
 
   Stream<QuizState> _mapQuizInitializedToState(QuizStarted event) async*{
-    yield(
-      QuizInitialized(
+    state.copyWith(status: QuizStatus.loading);
+    try {
+      yield state.copyWith(
         questions: await _questionsRepository.getQuestionsArit(difficulty: 1, numberOfQuestions: 5),
-        score: 0,
-        streak: 0,
-      )
-    );
+        numberOfQuestions: 5,
+        status: QuizStatus.waitingAnswer,
+      );
+    } catch (e) {
+      yield state.copyWith(
+        status: QuizStatus.error,
+      );
+    }
   }
+
+  Stream<QuizState> _mapQuizAnswerSelectedToState(QuizAnswerSelected event) async*{
+    int _streak;
+    if(state.currentIndex < state.numberOfQuestions - 1){
+      //Answer is correct
+      if(event.answer == state.questions[state.currentIndex].correctAnswer){
+        _streak = state.streak + 1;
+      }else{
+      //Wrong answer
+        _streak = 0;
+      }
+
+      yield state.copyWith(
+        selectedAnswer: event.answer, 
+        status: QuizStatus.answered,
+        streak: _streak,
+      );
+
+
+      yield await Future.delayed(Duration(seconds: 2), (){
+        return state.copyWith(
+          currentIndex: state.currentIndex + 1, 
+          status: QuizStatus.waitingAnswer
+        );
+      });
+    }
+    else{
+      //Answer is correct
+      if(event.answer == state.questions[state.currentIndex].correctAnswer){
+        _streak = state.streak + 1;
+      }else{
+      //Wrong answer
+        _streak = 0;
+      }
+
+      yield state.copyWith(
+        selectedAnswer: event.answer, 
+        status: QuizStatus.answered,
+        streak: _streak,
+      );
+
+
+      yield await Future.delayed(Duration(seconds: 2), (){
+        return state.copyWith(
+          status: QuizStatus.completed
+        );
+      });
+    }
+
+  }
+
+  Stream<QuizState> _mapQuizTimeOverToState() async*{
+    if(state.currentIndex < state.numberOfQuestions - 1){
+
+      yield state.copyWith(
+        selectedAnswer: null, 
+        status: QuizStatus.answered,
+        streak: 0,
+      );
+
+      yield await Future.delayed(Duration(seconds: 2), (){
+        return state.copyWith(
+          currentIndex: state.currentIndex + 1, 
+          status: QuizStatus.waitingAnswer
+        );
+      });
+    }
+    else{
+      yield state.copyWith(
+        selectedAnswer: null, 
+        status: QuizStatus.answered,
+        streak: 0,
+      );
+
+      yield await Future.delayed(Duration(seconds: 2), (){
+        return state.copyWith(
+          status: QuizStatus.completed
+        );
+      });
+    }
+  }
+
 }

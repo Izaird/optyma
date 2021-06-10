@@ -19,3 +19,13 @@ class QuizStarted extends QuizEvent{
   @override
     List<Object> get props => [difficulty, subject];
 }
+
+class QuizAnswerSelected extends QuizEvent{
+  final double answer;
+
+  QuizAnswerSelected(this.answer);
+}
+
+class QuizNextQuestion extends QuizEvent{}
+
+class QuizTimeOver extends QuizEvent{}
