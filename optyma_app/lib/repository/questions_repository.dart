@@ -35,7 +35,7 @@ class QuestionsRepository{
         aritvalues.add(values[i].split("-"));
         rands[i] = int.parse(aritvalues[i][0]) + rnd.nextInt(int.parse(aritvalues[i][1]) - int.parse(aritvalues[i][0]));
       }
-      print(aritvalues);
+      // print(aritvalues);
       int rand = 2+rnd.nextInt(5-2);
       Variable a= Variable('a'), b=Variable('b') ;
       Variable c= Variable('c'), d=Variable('d');
@@ -51,11 +51,11 @@ class QuestionsRepository{
       operation=operation.replaceAll(RegExp(r'b'),rands[1].toString() );
       operation=operation.replaceAll(RegExp(r'c'),rands[2].toString() );
       operation=operation.replaceAll(RegExp(r'd'),rands[3].toString() );
-      print("Operation:"+ operation);
+      // print("Operation:"+ operation);
       expOpc.shuffle();
       expOpc.shuffle(); 
-      print('Expression: $exp');
-      print('Evaluated expression: $eval\n  (with context: $cm)');
+      // print('Expression: $exp');
+      // print('Evaluated expression: $eval\n  (with context: $cm)');
       if(difficulty==3){
         questionTime = plantilla.timeOpen;
       }else{
