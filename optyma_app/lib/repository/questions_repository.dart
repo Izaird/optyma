@@ -46,6 +46,12 @@ class QuestionsRepository{
       ..bindVariable(d, Number(rands[3]));
       double eval = exp.evaluate(EvaluationType.REAL, cm);
       List<double> expOpc = [eval,eval+1,eval-1,eval+rand];
+      String operation = exp.toString();
+      operation=operation.replaceAll(RegExp(r'a'),rands[0].toString() );
+      operation=operation.replaceAll(RegExp(r'b'),rands[1].toString() );
+      operation=operation.replaceAll(RegExp(r'c'),rands[2].toString() );
+      operation=operation.replaceAll(RegExp(r'd'),rands[3].toString() );
+      print("Operation:"+ operation);
       expOpc.shuffle();
       expOpc.shuffle(); 
       print('Expression: $exp');
@@ -58,7 +64,7 @@ class QuestionsRepository{
       questions.add(QuestionModel(
         correctAnswer: eval ,
         options: expOpc,
-        question: plantilla.expression,
+        question: plantilla.sentence+'\n'+operation,
         time: questionTime,
       ));
     });
