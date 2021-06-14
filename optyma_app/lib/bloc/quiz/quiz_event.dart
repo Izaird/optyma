@@ -22,8 +22,9 @@ class QuizStarted extends QuizEvent{
 
 class QuizAnswerSelected extends QuizEvent{
   final double answer;
-
-  QuizAnswerSelected(this.answer);
+  final int duration;
+  final int time;
+  QuizAnswerSelected(this.answer,this.time,this.duration);
 }
 
 class QuizNextQuestion extends QuizEvent{}

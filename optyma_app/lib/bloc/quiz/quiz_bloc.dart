@@ -46,10 +46,12 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
 
   Stream<QuizState> _mapQuizAnswerSelectedToState(QuizAnswerSelected event) async*{
     int _streak;
+    double _score=state.score.toDouble();
     if(state.currentIndex < state.numberOfQuestions - 1){
       //Answer is correct
       if(event.answer == state.questions[state.currentIndex].correctAnswer){
         _streak = state.streak + 1;
+        _score = _score + (event.duration/event.time)*1000;
       }else{
       //Wrong answer
         _streak = 0;
@@ -59,6 +61,7 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
         selectedAnswer: event.answer, 
         status: QuizStatus.answered,
         streak: _streak,
+        score: _score.round()
       );
 
 
@@ -73,6 +76,8 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
       //Answer is correct
       if(event.answer == state.questions[state.currentIndex].correctAnswer){
         _streak = state.streak + 1;
+        _score = _score + (event.duration/event.time)*1000;
+        
       }else{
       //Wrong answer
         _streak = 0;
@@ -82,6 +87,7 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
         selectedAnswer: event.answer, 
         status: QuizStatus.answered,
         streak: _streak,
+        score: _score.round()
       );
 
 

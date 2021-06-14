@@ -81,6 +81,7 @@ class QuizCard extends StatelessWidget {
     final questionModel = context.select((QuizBloc bloc) => bloc.state.questions[bloc.state.currentIndex]);
     final selectedAnswer = context.select((QuizBloc bloc) => bloc.state.selectedAnswer);
     final status = context.select((QuizBloc bloc) => bloc.state.status);
+    final duration = context.select((TimerBloc bloc) => bloc.state.duration);
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(25)),
@@ -96,7 +97,7 @@ class QuizCard extends StatelessWidget {
               isCorrect: answer == questionModel.correctAnswer, 
               isDisplayingAnswer: status == QuizStatus.answered, 
               // isDisplayingAnswer: true, 
-              onTap: () => BlocProvider.of<QuizBloc>(context).add(QuizAnswerSelected(answer)),
+              onTap: () => BlocProvider.of<QuizBloc>(context).add(QuizAnswerSelected(answer,questionModel.time,duration)),
             )).toList(),
           ),
         ],
