@@ -65,6 +65,17 @@ class QuizPageBody extends StatelessWidget {
             ],
           );
         }
+        if(state.status == QuizStatus.completed){
+          return Center(
+            child: Column(
+              children: [
+                Text('Puntuación: ${state.score}'),
+                Text('Racha de respuestas: ${state.streak}'),
+                ElevatedButton(onPressed:() => Navigator.pop(context), child: Text('Nuevo quiz')),
+              ],
+            ),
+          );
+        }
         return Container();
       },
     );
