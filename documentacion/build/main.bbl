@@ -1,0 +1,685 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{carpenter2017psychology}{article}{}
+      \name{author}{2}{}{%
+        {{hash=83eb03f3a1eabc8932b85f412150774c}{%
+           family={Carpenter},
+           familyi={C\bibinitperiod},
+           given={Thomas\bibnamedelima P},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=b3268edc1cd3a3bcc77c1771025af17d}{%
+           family={Kirk},
+           familyi={K\bibinitperiod},
+           given={Roger\bibnamedelima E},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{fullhash}{fbdc8230f88f036011fdce025262d088}
+      \strng{bibnamehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{authorbibnamehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{authornamehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{authorfullhash}{fbdc8230f88f036011fdce025262d088}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Educational Studies}
+      \field{number}{3}
+      \field{title}{Are psychology students getting worse at math?: Trends in the math skills of psychology statistics students across 21 years}
+      \field{volume}{43}
+      \field{year}{2017}
+      \field{pages}{282\bibrangedash 295}
+      \range{pages}{14}
+    \endentry
+    \entry{coronado2016academic}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cad81796d6612a62d9f17138cdf287b4}{%
+           family={Coronado-Hijón},
+           familyi={C\bibinithyphendelim H\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{fullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{bibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorbibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authornamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorfullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Elsevier Ltd}
+      \field{title}{Academic resilience: a transcultural perspective. Procedia - Social and Behavioral Sciences}
+      \field{year}{2016}
+      \verb{doi}
+      \verb http://doi.org/10.1016/j.sbspro.2017.02.013
+      \endverb
+    \endentry
+    \entry{coronado2014estudio}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cad81796d6612a62d9f17138cdf287b4}{%
+           family={Coronado-Hijón},
+           familyi={C\bibinithyphendelim H\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{fullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{bibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorbibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authornamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorfullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0210-5934}
+      \field{journaltitle}{Bordón: Revista de pedagogía}
+      \field{title}{Estudio de prevalencia de dificultades de aprendizaje en el cálculo aritmético}
+      \field{year}{2014}
+      \field{pages}{36\bibrangedash 60}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.13042/Bordon.2014.66303
+      \endverb
+    \endentry
+    \entry{fuson1988children}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b035ab339a4b40323c54947047c3f9eb}{%
+           family={Fuson},
+           familyi={F\bibinitperiod},
+           given={Karen\bibnamedelima C},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag Publishing}%
+      }
+      \strng{namehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{fullhash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{bibnamehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{authorbibnamehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{authornamehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{authorfullhash}{b035ab339a4b40323c54947047c3f9eb}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Children's counting and concepts of number.}
+      \field{year}{1988}
+    \endentry
+    \entry{fuson1992research}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b035ab339a4b40323c54947047c3f9eb}{%
+           family={Fuson},
+           familyi={F\bibinitperiod},
+           given={Karen\bibnamedelima C},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Macmillan Publishing Co, Inc}%
+      }
+      \strng{namehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{fullhash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{bibnamehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{authorbibnamehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{authornamehash}{b035ab339a4b40323c54947047c3f9eb}
+      \strng{authorfullhash}{b035ab339a4b40323c54947047c3f9eb}
+      \field{extraname}{2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Research on whole number addition and subtraction.}
+      \field{year}{1992}
+    \endentry
+    \entry{godino2009sentido}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f5c11b707ce4f25943943fc5f3702870}{%
+           family={Godino},
+           familyi={G\bibinitperiod},
+           given={Juan\bibnamedelima D},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=1bfc4ac5a2318f57b09f4738929f5f71}{%
+           family={Font},
+           familyi={F\bibinitperiod},
+           given={Vicenç},
+           giveni={V\bibinitperiod}}}%
+        {{hash=63de7a8a14597bdb5ffc80309cc1eb15}{%
+           family={Konic},
+           familyi={K\bibinitperiod},
+           given={Patricia},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6421f07f156876aabf02afd287769d00}{%
+           family={Wilhelmi},
+           familyi={W\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{158f0f02d8241b981528d10b1d52fa93}
+      \strng{fullhash}{5f0bef8604162939dfbcb28123903bfc}
+      \strng{bibnamehash}{158f0f02d8241b981528d10b1d52fa93}
+      \strng{authorbibnamehash}{158f0f02d8241b981528d10b1d52fa93}
+      \strng{authornamehash}{158f0f02d8241b981528d10b1d52fa93}
+      \strng{authorfullhash}{5f0bef8604162939dfbcb28123903bfc}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JM Cardeñoso y M. Peñas (2009), Investigación en el aula de Matemáticas. Sentido Numérico}
+      \field{title}{El sentido numérico como articulación flexible de los significados parciales de los números}
+      \field{year}{2009}
+      \field{pages}{117\bibrangedash 184}
+      \range{pages}{68}
+    \endentry
+    \entry{gusty2005importance}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7eb6063b0189ecd3d36c8e2807af3daf}{%
+           family={Gusty},
+           familyi={G\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{7eb6063b0189ecd3d36c8e2807af3daf}
+      \strng{fullhash}{7eb6063b0189ecd3d36c8e2807af3daf}
+      \strng{bibnamehash}{7eb6063b0189ecd3d36c8e2807af3daf}
+      \strng{authorbibnamehash}{7eb6063b0189ecd3d36c8e2807af3daf}
+      \strng{authornamehash}{7eb6063b0189ecd3d36c8e2807af3daf}
+      \strng{authorfullhash}{7eb6063b0189ecd3d36c8e2807af3daf}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The importance of mental calculation skills: a review of the literature}
+      \field{year}{2005}
+    \endentry
+    \entry{huang2013gamification}{article}{}
+      \name{author}{2}{}{%
+        {{hash=93cb8e12219440d30efdaafd6bb7493c}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Wendy\bibnamedelima Hsin-Yuan},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=d373b0815505a8f81e90ce6f5aef06a0}{%
+           family={Soman},
+           familyi={S\bibinitperiod},
+           given={Dilip},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Rotman School of Management, University of Toronto Toronto, Canada}%
+      }
+      \strng{namehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{fullhash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{bibnamehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{authorbibnamehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{authornamehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{authorfullhash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Report Series: Behavioural Economics in Action}
+      \field{title}{Gamification of education}
+      \field{volume}{29}
+      \field{year}{2013}
+    \endentry
+    \entry{mullis2016timss}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7d1c87889dac62f05e0df41fd59e883c}{%
+           family={Ina\bibnamedelimb V.S.\bibnamedelimi Mullis},
+           familyi={I\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Pierre\bibnamedelima Foy},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+           suffix={Michael\bibnamedelimb O.\bibnamedelimi Martin},
+           suffixi={M\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b43e36e1e415243e31a04323b39e1c39}{%
+           family={Hooper},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Boston College , Chestnut Hill, MA}%
+      }
+      \strng{namehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{fullhash}{c495183acd4be5d14273cee8739407f4}
+      \strng{bibnamehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{authorbibnamehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{authornamehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{authorfullhash}{c495183acd4be5d14273cee8739407f4}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{TIMSS 2015 International Results in Mathematics}
+      \field{year}{2016}
+    \endentry
+    \entry{larrazolo2013habilidades}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5814c367deb86b5fe338d27f283f572f}{%
+           family={Larrazolo},
+           familyi={L\bibinitperiod},
+           given={Norma},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a0920124687fc4367b1a43e0fe01aeba}{%
+           family={Backhoff},
+           familyi={B\bibinitperiod},
+           given={Eduardo},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bf0356f0774eeb7ef5d70c4b021d6977}{%
+           family={Tirado},
+           familyi={T\bibinitperiod},
+           given={Felipe},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Consejo Mexicano de Investigación Educativa AC}%
+      }
+      \strng{namehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{fullhash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{bibnamehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{authorbibnamehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{authornamehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{authorfullhash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista mexicana de investigación educativa}
+      \field{number}{59}
+      \field{title}{Habilidades de razonamiento matemático de estudiantes de educación media superior en México}
+      \field{volume}{18}
+      \field{year}{2013}
+      \field{pages}{1137\bibrangedash 1163}
+      \range{pages}{27}
+    \endentry
+    \entry{martin2003loss}{article}{}
+      \name{author}{6}{}{%
+        {{hash=5ecc21bbaa7f6778251e8e5ebc6d9ca6}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={Roy\bibnamedelima C},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=6b91d637e348eb82d067a1bee2423614}{%
+           family={Annis},
+           familyi={A\bibinitperiod},
+           given={Shannon\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=23fe3731d297c4702fa41f0f98445559}{%
+           family={Darling},
+           familyi={D\bibinitperiod},
+           given={Laurie\bibnamedelima Z},
+           giveni={L\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=0a2d2532149c3904f3aa88e57de05922}{%
+           family={Wadley},
+           familyi={W\bibinitperiod},
+           given={Virginia},
+           giveni={V\bibinitperiod}}}%
+        {{hash=67367cac33995135f91cc43a86e6f336}{%
+           family={Harrell},
+           familyi={H\bibinitperiod},
+           given={Lindy},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3f7a730667ecaf8e8a6f532344e18faf}{%
+           family={Marson},
+           familyi={M\bibinitperiod},
+           given={Daniel\bibnamedelima C},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Medical Association}%
+      }
+      \strng{namehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{fullhash}{e71f3f4a0ab1fcb56ef402b128384eed}
+      \strng{bibnamehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{authorbibnamehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{authornamehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{authorfullhash}{e71f3f4a0ab1fcb56ef402b128384eed}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archives of neurology}
+      \field{number}{11}
+      \field{title}{Loss of calculation abilities in patients with mild and moderate Alzheimer disease}
+      \field{volume}{60}
+      \field{year}{2003}
+      \field{pages}{1585\bibrangedash 1589}
+      \range{pages}{5}
+    \endentry
+    \entry{oecd2016low}{article}{}
+      \name{author}{1}{}{%
+        {{hash=bdbed435a416a918aa494017fda4c7fb}{%
+           family={OECD},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{fullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{bibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorbibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authornamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorfullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \field{extraname}{1}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{OECD Publishing, Paris}
+      \field{subtitle}{PISA}
+      \field{title}{Low-Performing Students: Why They Fall Behind and How to Help Them Succeed}
+      \field{year}{2016}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1787/9789264250246-en
+      \endverb
+    \endentry
+    \entry{oecd2014what}{article}{}
+      \name{author}{1}{}{%
+        {{hash=bdbed435a416a918aa494017fda4c7fb}{%
+           family={OECD},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{fullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{bibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorbibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authornamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorfullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \field{extraname}{2}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{OECD Publishing}
+      \field{subtitle}{PISA}
+      \field{title}{PISA 2012 Results: What Students Know and Can Do – Student Performance in Mathematics, Reading and Science (Volume I, Revised edition, February 2014)}
+      \field{year}{2014}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1787/9789264201118-en
+      \endverb
+    \endentry
+    \entry{orrantia2006dificultades}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9f442f97a35b450c9260bd239700f7d7}{%
+           family={Orrantia},
+           familyi={O\bibinitperiod},
+           given={Josetxu},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{fullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{bibnamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authorbibnamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authornamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authorfullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Psi- copedagogía}
+      \field{number}{71}
+      \field{title}{Dificultades en el aprendizaje de las matemáticas: una perspectiva evolutiva}
+      \field{volume}{23}
+      \field{year}{2006}
+      \field{pages}{158\bibrangedash 180}
+      \range{pages}{23}
+    \endentry
+    \entry{resnick1987learning}{book}{}
+      \name{author}{4}{}{%
+        {{hash=2645ec0deb7e9b03cd9101ec3aeb0a60}{%
+           family={Resnick},
+           familyi={R\bibinitperiod},
+           given={L.B.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=38cc64a23fe95df552cc2978190a2403}{%
+           family={Omanson},
+           familyi={O\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=eeab14c3c9ac98c8cc1ecc00eedc5f79}{%
+           family={Pittsburgh.\bibnamedelimi Learning\bibnamedelima Research},
+           familyi={P\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={University},
+           giveni={U\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+        {{hash=f84edf8c011591530534478b07f432de}{%
+           family={Center},
+           familyi={C\bibinitperiod},
+           given={Development},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Learning Research}%
+        {Development Center, University of Pittsburgh}%
+      }
+      \strng{namehash}{414b66d58fa540860247177912ac536f}
+      \strng{fullhash}{163a31e046065031ae3240c4a9b31b0f}
+      \strng{bibnamehash}{414b66d58fa540860247177912ac536f}
+      \strng{authorbibnamehash}{414b66d58fa540860247177912ac536f}
+      \strng{authornamehash}{414b66d58fa540860247177912ac536f}
+      \strng{authorfullhash}{163a31e046065031ae3240c4a9b31b0f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning to Understand Arithmetic}
+      \field{year}{1987}
+      \verb{urlraw}
+      \verb https://books.google.com.mx/books?id=TURSnQEACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.mx/books?id=TURSnQEACAAJ
+      \endverb
+    \endentry
+    \entry{resnick1989developing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a6bb0eee32af1aa58a9f7bbe1d08543e}{%
+           family={Resnick},
+           familyi={R\bibinitperiod},
+           given={Lauren\bibnamedelima B},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{fullhash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{bibnamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authorbibnamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authornamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authorfullhash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Psychologist}
+      \field{number}{2}
+      \field{title}{Developing mathematical knowledge}
+      \field{volume}{44}
+      \field{year}{1989}
+      \field{pages}{162}
+      \range{pages}{1}
+    \endentry
+    \entry{rodrigues2017math}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3f105dafcb527a1bda80744570b7351a}{%
+           family={Rodrigues},
+           familyi={R\bibinitperiod},
+           given={Luiz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=88dac5a554d99ca3fc2c9b66791f5c2e}{%
+           family={Bonidia},
+           familyi={B\bibinitperiod},
+           given={Robson\bibnamedelima Parmezan},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=add3fa394cbc6b272a7a35c8921a051f}{%
+           family={Brancher},
+           familyi={B\bibinitperiod},
+           given={Jacques\bibnamedelima Duílio},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5cefafa7b926e6942f4c23b37c86059}
+      \strng{fullhash}{f5cefafa7b926e6942f4c23b37c86059}
+      \strng{bibnamehash}{f5cefafa7b926e6942f4c23b37c86059}
+      \strng{authorbibnamehash}{f5cefafa7b926e6942f4c23b37c86059}
+      \strng{authornamehash}{f5cefafa7b926e6942f4c23b37c86059}
+      \strng{authorfullhash}{f5cefafa7b926e6942f4c23b37c86059}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Brazilian Symposium on Computers in Education (Simpósio Brasileiro de Informática na Educação-SBIE)}
+      \field{number}{1}
+      \field{title}{A math educacional computer game using procedural content generation}
+      \field{volume}{28}
+      \field{year}{2017}
+      \field{pages}{756}
+      \range{pages}{1}
+    \endentry
+    \entry{rodriguez2017marcadores}{article}{}
+      \name{author}{6}{}{%
+        {{hash=e3315767fcbd966faa970dacf11539f1}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={José\bibnamedelima Orrantia},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=46c16b69d13022113c07040e9226a81c}{%
+           family={Corral},
+           familyi={C\bibinitperiod},
+           given={Sara\bibnamedelimb San\bibnamedelima Romualdo},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2b63fe75d61499bcc15894c5ce12925d}{%
+           family={Cordero},
+           familyi={C\bibinitperiod},
+           given={Laura\bibnamedelima Matilla},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a792f1c6f80de4fc390a9b0de3c6b00e}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={María\bibnamedelimb del\bibnamedelimb Rosario\bibnamedelima Sánchez},
+           giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=7e2a50b232593d73b59b675207852c8a}{%
+           family={Méndez},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima Múñez},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=feaf222635ac484b4e9733fb17407012}{%
+           family={Verschaffel},
+           familyi={V\bibinitperiod},
+           given={Lieven},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad de Almería}%
+      }
+      \strng{namehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{fullhash}{a4001a122c316df65fc2f5e9f96e4095}
+      \strng{bibnamehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{authorbibnamehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{authornamehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{authorfullhash}{a4001a122c316df65fc2f5e9f96e4095}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Psychology, Society \& Education}
+      \field{number}{1}
+      \field{title}{Marcadores nucleares de la competencia aritmética en preescolares}
+      \field{volume}{9}
+      \field{year}{2017}
+      \field{pages}{121\bibrangedash 134}
+      \range{pages}{14}
+    \endentry
+    \entry{ryan1997should}{article}{}
+      \name{author}{2}{}{%
+        {{hash=bba6f5d229b4d6579bbd97c82b3aedeb}{%
+           family={Ryan},
+           familyi={R\bibinitperiod},
+           given={Allison\bibnamedelima M},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5880022ff76d400400020113d377e6b0}{%
+           family={Pintrich},
+           familyi={P\bibinitperiod},
+           given={Paul\bibnamedelima R},
+           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{fullhash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{bibnamehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{authorbibnamehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{authornamehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{authorfullhash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of educational psychology}
+      \field{number}{2}
+      \field{title}{" Should I ask for help?" The role of motivation and attitudes in adolescents' help seeking in math class.}
+      \field{volume}{89}
+      \field{year}{1997}
+      \field{pages}{329}
+      \range{pages}{1}
+    \endentry
+    \entry{tariq2002decline}{article}{}
+      \name{author}{1}{}{%
+        {{hash=92a39a57024cb0322eb4004b0e760025}{%
+           family={Tariq},
+           familyi={T\bibinitperiod},
+           given={Vicki\bibnamedelima N},
+           giveni={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{fullhash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{bibnamehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{authorbibnamehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{authornamehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{authorfullhash}{92a39a57024cb0322eb4004b0e760025}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Biological Education}
+      \field{number}{2}
+      \field{title}{A decline in numeracy skills among bioscienceunder graduates}
+      \field{volume}{36}
+      \field{year}{2002}
+      \field{pages}{76\bibrangedash 83}
+      \range{pages}{8}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

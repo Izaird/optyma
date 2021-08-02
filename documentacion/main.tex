@@ -1,85 +1,276 @@
 \documentclass{article}
+\usepackage{float}
+\usepackage{array}
+\usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage{graphicx}
-\usepackage[utf8]{inputenc}
-\usepackage{wallpaper}
-\usepackage[pdfstartview=FitH]{hyperref}
-\usepackage{tabularx}
-\usepackage{glossaries}
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=30mm,
- top=20mm,
- right=20mm,
- }
-\usepackage{appendix}
-\usepackage{pdfpages}
-\usepackage[
-backend=biber,
-style=alphabetic,
-citestyle=ieee
-]{biblatex}
-\addbibresource{references.bib} 
+\usepackage{csquotes}
+\usepackage[margin=2.55cm]{geometry}
+\usepackage[backend=biber]{biblatex}
+\setlength{\parskip}{1em}
+\parindent 0px
+\addbibresource{references.bib}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\newcommand\signature{
+\noindent\begin{minipage}{10cm}
+    \noindent\vspace{3pt}\par
+    Firma: \rule{7cm}{1pt}
+\end{minipage}}
+
 \begin{document}
-\include{portada}
-\tableofcontents
+
+\begin{center}
+	\begin{Large}
+		\textbf{Aplicación móvil gamificada de aritmética}
+	\end{Large}
+
+	\textbf{Trabajo Terminal No.}
+
+	Alumnos: Pineda Vieyra Itzcoatl Rodrigo, Mothelet Delgado Izaird Alexander
+
+	Directores: Ruiz Ledesma Elena Fabiola, Lorena Chavarría Baez
+
+	e-mail: itzcoatlpv@gmail.com
+\end{center}
+
+\section*{Resumen}
+La intervención educativa requiere de una previa comprensión de la adquisición
+y desarrollo de la competencia aritmética que está en la base de todas las 
+posteriores dificultades y trastornos del aprendizaje matemático. Hay dificultades 
+que pueden surgir a lo largo de este proceso, lo que repercute en la resolución de 
+ejercicios y problemas matemáticos avanzados. Por lo que el desarrollo de la destreza 
+operatoria aritmética es fundamental para que el estudiante pueda enfrentar con éxito  
+situaciones más complejas en el campo de la Matemática, además, se requiere motivar al 
+estudiante al desarrollar trabajo operatorio aritmético, ya que en ocasiones su desarrollo 
+puede resultar monótono y aburrido. Para ayudar al desarrollo de la destreza operatoria 
+de los estudiantes se propone una aplicación gamificada móvil que promueva la resolución 
+de ejercicios Aritméticos.
+
+\textbf{Palabras clave} - Aritmética, Gamificación, Motivación, App móvil.
+
 \section{Introducción}
-\subsection{Motivación}
-Estadísticas del INEGI sobre deserción escolar, muestran niveles realmente impactantes en la Ciudad de México, conforme se avanza en el nivel educativo también se ve un aumento en la tasa de deserción académica. Esta problemática es multifactorial, debido a que hay muchos factores diferentes por los cuales los estudiantes abandonan sus estudios. Dentro del ámbito académico hay factores como no contar con los conocimientos previos necesarios, los métodos de enseñanza y la falta de motivación, por mencionar algunos. 
+La Aritmética como la Geometría son de las disciplinas matemáticas más antiguas y 
+necesarias en la historia del género humano\cite{coronado2014estudio}. Su utilización 
+funcional es requerida para las personas que participamos de esta sociedad, como 
+medio de comunicación y comprensión de multitud de fenómenos que nos rodean, es por 
+ello que el desarrollo de la destreza operatoria aritmética es una de las habilidades 
+más necesitadas en la alfabetización socio instrumental. Los niveles de fracaso en el 
+aprendizaje matemático son preocupantes, especialmente en los últimos cursos de 
+escolaridad obligatoria (secundaria).  Los resultados de estudios internacionales 
+como el Programa Internacional para la Evaluación de Alumnos de la OCDE 
+(PISA)\cite{oecd2014what,oecd2016low}, muestran que el aprendizaje matemático es el 
+que presenta mayor porcentaje de fracaso\cite{coronado2016academic, mullis2016timss}. 
+El cálculo es un componente esencial en la resolución de problemas aritméticos, 
+y éste es uno de los contenidos más importantes de las matemáticas, junto a la geometría, 
+la medida o la probabilidad. Es por ello que un elevado porcentaje de las dificultades de 
+aprendizaje de las matemáticas tiene un origen aritmético, donde el cálculo representa un 
+papel esencial\cite{orrantia2006dificultades}.  Las habilidades numéricas y aritméticas 
+son predictores críticos del futuro éxito o fracaso académico 
+matemático\cite{rodriguez2017marcadores}.  
 
-La motivación no solo es un factor de la deserción escolar, sino que está involucrada en el proceso de enseñanza-aprendizaje. El trabajo en torno a la motivación es muy amplio y con muchas aristas dentro del ámbito educativo. Una de estas aristas es el aprendizaje del estudiante. En relación a éste, diversos estudios, muestran que la motivación está involucrada en el proceso de enseñanza-aprendizaje \cite{MISBAH201579} \cite{2Mot}. Para obtener aprendizajes significativos los alumnos deben sentir cierta motivación hacia el estudio. La cuestión es ¿Cómo motivar a los alumnos para obtener los aprendizajes deseados? Según la teoría de la Autodeterminación (SDT por sus siglas en inglés) la motivación intrínseca (actuar porque el acto en sí es disfrutable, sin la necesidad de ningún estímulo externo) es la que genera mejores aprendizajes. Esto se puede dar presentando actividades y desafíos nuevos o interesantes. Sin embargo, no siempre se puede depender de la motivación intrínseca, cada estudiante es diferente y no encontrarán estimulantes las mismas actividades. Es entonces que se debe recurrir a la motivación extrínseca, lo que incluye actuar por recompensas. SDT indica que entre más se internalice y se entienda el por qué realizar cierta actividad y su utilidad, más autodeterminado se vuelve nuestro actuar, no es igual de bueno que estar motivado intrínsecamente, pero es la segunda mejor opción. 
 
-Con el presente trabajo terminal se pretende apoyar al estudiante en la motivación hacia la resolución de ejercicios en la disciplina de matemáticas, en particular en aritmética, algunos aspectos de álgebra y cálculo diferencial al proporcionar una aplicación móvil con elementos de gamificación para motivar a los estudiantes.   
-Varios autores sostienen que la incorporación de la tecnología está marcada por la motivación que el sujeto o esa tecnología generen [3], [4], [5], [6]. En esta dirección distintos autores [7], [8] sostienen que existe relación positiva entre la motivación generada por los estudiantes frente a una estrategia propuesta por el profesor y los resultados de su aprendizaje. Por ello, se considera de vital importancia el uso de estrategias pedagógicas que motiven en el alumno el interés por su aprendizaje [9], [10]. Sin embargo, esta relación entre el factor motivacional por el uso de la tecnología y los demás resultados de los procesos de la enseñanza y el aprendizaje no siempre es clara dado que éstos, son procesos complejos que involucran diversos aspectos tanto del que aprende y del que enseña como del contexto en el que se dan estos procesos [11], [12]. Es por lo anterior que el solo uso de la tecnología no es garantía para que el estudiante se encuentre motivado para usarla, de ahí el que se requiera de otro ingrediente que en el presente reporte de TT se trabaja y es la gamificación.
+La aritmética es la parte de la matemática, referida a los números y a las operaciones 
+y cálculos básicos que pueden realizarse con ellos: adición, sustracción, multiplicación 
+y división. Su desarrollo es fruto de la madurez cognitiva del sujeto en la interacción 
+con los objetos y la mediación de los instrumentos socioculturales de su contexto.  
+El conocimiento de las operaciones básicas surge a partir de los aprendizajes informales 
+y formales del conocimiento matemático. Las investigaciones cognitivas que han estudiado el 
+desarrollo de las habilidades para el cálculo, han establecido que esta competencia requiere 
+de la integración de una serie de esquemas protocuantitativos\cite{resnick1989developing,resnick1987learning}
+con la experiencia de contar\cite{fuson1992research}.  Esas estrategias de conteo que 
+se utilizan inicialmente para sumar y restar, se van haciendo más complejas con el uso 
+y la práctica, ampliándose a las operaciones de multiplicar y dividir, cuya práctica las 
+hace interiorizarse en esquemas de memoria que posibilitarán posteriormente la recuperación 
+de hechos numéricos (desde la memoria a  largo plazo semántica) para la solución de operaciones 
+de cálculo\cite{fuson1992research,godino2009sentido,fuson1988children}.
 
 
-\subsection{Planteamiento del Problema}
-En el ámbito de la educación, es todo un reto el crear e implementar métodos de enseñanza que motiven a los estudiantes a realizar sus tareas. Dicha problemática se da en todos los niveles educativos. Los alumnos difícilmente encuentran utilidad a lo que hacen más allá de aprobar el curso. Dada la situación actual de confinamiento, debido a la pandemia a causa del COVID-19, los estudiantes de todos los niveles necesitan contar con un actuar autodidacta, el cual se puede facilitar con aplicaciones móviles, que permitan desarrollar competencias matemáticas. Al hacerlo por medio de juegos aumenta la motivación de los estudiantes.
-Las aplicaciones móviles actuales como: Ahora si paso, Prepa en un 2x3 Examen, no suelen incorporar aspectos lúdicos, o que promuevan la asimilación de los contenidos vistos, siendo esto un aspecto necesario para temas que no despiertan interés en el alumno. Dado que, en el ámbito de las aplicaciones móviles educativas para nivel medio superior en adelante, se enfocan más en generar ganancias al ofrecer versiones de prueba gratuitas y bloqueando el resto de preguntas a menos que se pague una suscripción o por la aplicación completa. 
-Si bien existen plataformas educativas bastante competentes como Khan Academy y Brilliant.org. Esta última desafortunadamente, no está en español y tiene un costo mensual, mientras que Khan academy no incorpora aspectos de gamificación. 
-Los alumnos de media superior en adelante cuentan con opciones muy limitadas en cuanto a cómo aprender matemáticas de ese nivel. El método más empleado es el de resolver varias listas de ejercicios, empezando desde lo más elemental hacia lo más complejo. Este método, aunque efectivo, tiene la problemática de que los alumnos no disfruten de realizar dichos ejercicios o no vean la utilidad de realizarlos. 
-Es por eso que se propone como apoyo a dicho método una aplicación móvil, que se apoye en la gamificación para la realización de los ejercicios. Basados en la teoría de la Autodeterminación, se diseñó un modelo de motivación para guiar la aplicación,
-Los usuarios podrán tener diferentes motivos para descargar la app, pero descargarla por cuenta propia ya implica cierta motivación y objetivo. La aplicación, así como muchos juegos, contará con desafíos y recompensas (títulos, iconos, puntuaciones), con la finalidad de atraer y retener a los usuarios, satisfaciendo el nivel más bajo de motivación extrínseca de la teoría. La aplicación al contar con un generador de preguntas podrá proveer una gran variedad de problemas, manteniendo el desafío. Finalmente se pretende demostrar la utilidad de los problemas resueltos al aplicar ese conocimiento en problemas de optimización, con esto se pretende que los usuarios descubran la utilidad de una parte que corresponde al  Cálculo diferencial. 
+La problemática que se pretende atacar es la necesidad de fortalecer la destreza 
+operatoria aritmética de los estudiantes de nivel medio y superior\cite{gusty2005importance,tariq2002decline}, 
+lo cual es importante para el desarrollo del pensamiento matemático de los estudiantes.
 
-\subsection{Objetivos}
-\subsubsection{Objetivo General}
-Desarrollar  una aplicación de software, basada en el enfoque de gamificación, para motivar al estudiante de nivel medio superior y superior en la resolución de ejercicios aritméticos y algebraicos requeridos para trabajar problemas de  optimización.
 
-\subsubsection{Objetivos Específicos}
+Con este proyecto se pretende ayudar al desarrollo de la destreza operatoria en la 
+resolución de ejercicios aritméticos con números enteros y fraccionarios, haciendo 
+uso de ciertos componentes de la gamificación (Logros) y mecánicas (Competición). 
+Como futuros ingenieros en sistemas computacionales tenemos la responsabilidad de usar 
+las habilidades para un beneficio social, por lo que deseamos unir esfuerzos para apoyar 
+al estudiante a mejorar su destreza operatoria.
 
+
+La gamificación no consiste en enseñar por medio de juegos, sino en el uso de mecánicas, 
+dinámicas y componentes propios de los juegos, en actividades de distinta índole, con 
+el fin de ampliar el compromiso y motivación del estudiante\cite{tariq2002decline}. 
+Dichos elementos ya han sido empleados en la educación, particularmente en niveles 
+escolares elementales\cite{rodrigues2017math}. La destreza operatoria será desarrollada 
+por medio de actividades gamificadas.  
+
+
+Los ejercicios podrán presentarse empleando preguntas abiertas o de opción múltiple 
+según la preferencia del usuario, con la puntuación cambiando correspondientemente. 
+Se contará con un sistema de puntuación basado en el tiempo de respuesta para medir 
+el desempeño. Esto con el propósito de fomentar la competitividad, permitiendo al 
+estudiante llevar un registro del progreso de su puntuación.
+
+En la Tabla \ref{tab:software} se muestra una relación de software que hay sobre
+operaciones aritméticas.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|M{6cm}|M{5cm}|}
+\hline
+Software & Características & Precio en el mercado \\ \hline
+
+Fraction Challange & 
+\begin{itemize}
+	\item PVP local
+	\item rondas con tiempos
+\end{itemize} & 
+Gratuito con micro transacciones \\ \hline
+
+
+1+2=3 & 
+\begin{itemize}
+	\item Sumas y restas de enteros
+	\item Tablas de liderato 
+\end{itemize}& 
+Gratuito \\ \hline
+
+
+Fracciones calculadora & 
+\begin{itemize}
+	\item Calculadora de fracciones
+\end{itemize}& 
+Gratuito \\ \hline
+
+
+Math Games & 
+\begin{itemize}
+	\item Logros
+	\item Tablas de liderato
+	\item Estadísticas
+	\item Tutoriales de como realizar operaciones básicas
+\end{itemize} & 
+Gratuito con contenido bloqueado(se puede desbloquear haciendo un pago único) \\ \hline
+
+Arithmetic Practice & 
+\begin{itemize}
+	\item Logros
+	\item Tablas de liderato
+\end{itemize} & 
+Gratuito con contenido bloqueado(se puede desbloquear haciendo un pago único) \\ \hline
+
+
+Mental Arithmetic  & 
+\begin{itemize}
+	\item PVP local
+	\item Logros
+	\item Tablas de liderato
+	\item Estadísticas
+	\item Contenido desbloqueable
+\end{itemize} & 
+Gratuito \\ \hline
+
+\end{tabular}
+\label{tab:software}
+\caption{Comparación con softwares disponibles.}
+\end{table}
+
+
+\section{Objetivo}
+
+Desarrollar una aplicación móvil que apoye al estudiante de nivel medio superior en la 
+adquisición de habilidades y conocimientos elementales, para fortalecer la destreza 
+operatoria en el área de Aritmética, con el uso de la gamificación.
+
+\begin{itemize}
+	% \item Determinar los elementos de la gamificación a emplear.
+	\item Diseñar actividades gamificadas, empleando números enteros y fraccionarios con las 4 operaciones básicas.
+	\item Diseñar la arquitectura de la aplicación.
+	% \item Poblar la base de datos con las actividades construidas.
+	\item Validar la aplicación móvil. 
+\end{itemize}
+
+\section{Justificación}
+
+Se ha observado en declive las habilidades operatorias aritméticas de estudiantes 
+universitarios\cite{tariq2002decline,carpenter2017psychology,huang2013gamification}. 
+El estudiante cree que podrá contar con la calculadora de su celular en todo momento, 
+pero cuando esto no se le permite, como en los exámenes de admisión, la falta del 
+entrenamiento del cálculo mental entorpece la solución correcta de los reactivos 
+de dichos exámenes. Por otra parte, el no fortalecer la destreza operatoria, afecta 
+diferentes procesos cognitivos al llegar a la edad adulta\cite{martin2003loss}.
+El presentar al estudiante los ejercicios de una forma rutinaria muchas veces provoca 
+aburrimiento y desmotivación. 
+
+
+La motivación y estado emocional de los estudiantes es un factor clave en su desempeño 
+académico\cite{larrazolo2013habilidades,ryan1997should}. Si deseamos que los jóvenes 
+mexicanos tengan un mejor desempeño en el área de las Matemáticas, se requiere presentarles 
+distintas formas de aprender y practicar sus conocimientos. Para ello una estrategia de 
+apoyo es la gamificación, la cual se empleará para incentivar a los estudiantes de educación 
+media superior a desarrollar su destreza operatoria.
+
+
+\section{Productos o resultados esperados}
+\begin{itemize}
+	\item Manual de usuario
+	\item Documentación técnica de la aplicación
+	\item Código fuente de la aplicación
+\end{itemize}
+
+
+
+\section{Metodología}
+La metodología que se ha elegido para el desarrollo de este proyecto es Feature planninig 
+(Aquí falta una cita que se refiera a este método), también conocida como Feature Driven 
+Development F.D.D Esta metodología iterativa orientada a objetos, consistente en planear 
+la estructura general del proyecto, realizar una lista de características, planear y finalmente 
+construir cada una de ellas. En nuestro caso podemos ver cada característica como un tema y ciertas 
+funcionalidades adicionales que deseamos integrar. Para garantizar la variedad de ejercicios se 
+pretende usar técnicas de generación por procedimientos.
+
+La lista de características sería la siguiente:
 \begin{enumerate}
-    \item Crear un módulo generador de ejercicios(Aritméticos, algebraicos, diferenciales, problemas de optimización), junto con un evaluador de expresiones.
-    \item Fomentar el desarrollo del cálculo mental de los usuarios.
-    \item Diseñar un modelo de gamificación específico a la aplicación basado en la teoría de autodeterminación. \item Incorporar elementos de juegos para mejorar la experiencia del usuario.
+	\item Sistema de puntuación
+	\item ejercicios de Aritmética
+	\begin{enumerate}
+		\item Adición y sustracción de fracciones
+		\item multiplicación de fracciones
+		\item División de fracciones
+	\end{enumerate}
+	\item Evaluador de expresiones
+	\item Niveles de dificultades
+	\item Leaderboards
+	\item Títulos, Iconos para desbloquear con puntos
+	\item Estadísticas del jugador
 \end{enumerate}
-\subsection{Estado del arte}
-Se han realizado numerosos estudios sobre gamificación en la educación [13] [14], su impacto en la motivación de los estudiantes es alentador, independientemente de factores demográficos como edad o género [15]. 
-Ciertos elementos han  mostrado consistentemente un efecto positivo en la motivación de los estudiantes [16], [17], particularmente en aquellos que ya están familiarizados con videojuegos [15]. Cabe destacar, que la mayoría de los resultados revisados son empíricos, con poblaciones pequeñas (entre 100 y 200 estudiantes) y utilizando distintos métodos de investigación, independientemente todos los estudios revisados reportaron un incremento en la motivación e interés de los estudiantes.
-La gran mayoría de estudios de gamificación, particularmente en matemáticas, se han realizado a nivel de primaria [18], [19], [20] . Sin embargo, la gamificación ha mostrado resultados alentadores aún en niveles superiores [21], [22]. Particularmente se ha destacado la utilidad de la gamificación en ambientes de aprendizaje virtuales y educación en línea [23], particularmente en el caso de México [24].
-En el caso de la materia Cálculo en nivel superior, un estudio [25], destaca la utilidad de la gamificación como estrategia para aumentar la motivación y emoción que promueve el aprendizaje. Concluye también que su potencial educacional puede ser reforzado al incluir procesos de evaluación del desempeño y metaevaluación. 
-Otro antecedente en México [26], donde se realizaron actividades gamificadas por equipos con plastilina y foami, seguida de una actividad integradora para demostrar lo aprendido. Se implementó una tabla de avance donde se registraba el progreso de los equipos.
-El potencial de la gamificación en la educación es enorme, los cambios en la educación suelen ser muy lentos. La educación debe buscar cómo adaptarse a la modernidad tecnológica, al fácil y rápido acceso a información. La gamificación busca explotar las nuevas tecnologías para dar experiencias de aprendizaje que se adapten mejor a las necesidades y características de los estudiantes de hoy en día. 
-\subsection{Propuesta de solución }
-\section{Marco Teórico}
-\subsection{Motivación}
-\subsection{Gamificación}
-\section{Análisis}
-\subsection{Requisitos}
-\subsubsection{Requisitos funcionales} 
-\subsubsection{Requisitos no funcionales} 
-\subsubsection{Requisitos de usuario} 
-\subsubsection{Requisitos del sistema}
-\subsubsection{Requisitos de dominio}
-\subsection{Análisis de interfaces}
-\subsection{Narrativa de la Base de Datos}
 
-\section{Diseño}
-\subsection{Diseño de Base de Datos}
-\subsection{Casos de Uso}
-\subsection{Diseño de Interfaces}
-\subsection{Diseño de Problemas}
-\subsection{Metodología}
+
+\section{Alumnos y directores}
+
+% \begin{table}[H]
+%     \begin{minipage}{.5\linewidth}
+%         \begin{tabular}{p{8cm}}
+% 	Pineda Vieyra Itzcoatl Rodrigo.- Alumno de la carrera de Ing. 
+% 	en Sistemas Computacionales en ESCOM, Especialidad Sistemas, 
+% 	Boleta: 2013090802, Tel. 5518254211, email itzcoatlpv@gmail.com
+% 	\signature\\
+%         \end{tabular}
+%     \end{minipage}%
+%     \begin{minipage}{.5\linewidth}
+%         \begin{tabular}{p{6cm}}
+% 	CARÁCTER: Confidencial FUNDAMENTO LEGAL: Artículo 11 Fracc. 
+% 	V y Artículos 108, 113 y 117 de la Ley Federal de Transparencia 
+% 	y Acceso a la Información Pública. PARTES CONFIDENCIALES: Número 
+% 	de boleta y teléfono.	
+%         \end{tabular}
+%     \end{minipage} 
+% \end{table}
+
+%\printbibliography[title={Bibliografía}]
+\printbibliography
 \end{document}
