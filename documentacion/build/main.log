@@ -1,11 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.6.10)  2 AUG 2021 05:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.7) (preloaded format=pdflatex 2021.8.2)  2 AUG 2021 12:22
 entering extended mode
-**d:/Code/optyma/documentacion/main.tex
-(d:/Code/optyma/documentacion/main.tex
-LaTeX2e <2021-06-01>
-L3 programming layer <2021-06-01> (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+**./main.tex
+(main.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-07-12>
+(B:\Program Files\MikTex\tex/latex/base\article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
-(C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+(B:\Program Files\MikTex\tex/latex/base\size10.clo
 File: size10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count182
@@ -19,17 +20,22 @@ File: size10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+)
+(B:\Program Files\MikTex\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+
+(B:\Program Files\MikTex\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+
+(B:\Program Files\MikTex\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+)
+(B:\Program Files\MikTex\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+
+(B:\Program Files\MikTex\tex/latex/tools\array.sty
 Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
 \col@sep=\dimen139
 \ar@mcellbox=\box50
@@ -52,37 +58,46 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+)
+(B:\Program Files\MikTex\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count191
 \float@exts=\toks18
 \float@box=\box52
 \@float@everytoks=\toks19
 \@floatcapt=\box53
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+)
+(B:\Program Files\MikTex\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+
+(B:\Program Files\MikTex\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+)
+(B:\Program Files\MikTex\tex/latex/graphics\graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+
+(B:\Program Files\MikTex\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+)
+(B:\Program Files\MikTex\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2021/06/02 3.60 The Babel package
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
-File: babel.def 2021/06/02 3.60 Babel common definitions
+)
+(B:\Program Files\MikTex\tex/generic/babel\babel.sty
+Package: babel 2021/07/22 3.63 The Babel package
+
+(B:\Program Files\MikTex\tex/generic/babel\babel.def
+File: babel.def 2021/07/22 3.63 Babel common definitions
 \babel@savecnt=\count192
 \U@D=\dimen143
 \l@unhyphenated=\language79
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+
+(B:\Program Files\MikTex\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 )
 \bbl@dirlevel=\count193
@@ -90,9 +105,11 @@ File: babel.def 2021/06/02 3.60 Babel common definitions
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+(B:\Program Files\MikTex\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(B:\Program Files\MikTex\tex/latex/babel-spanish\spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks21
 \es@quotdepth=\count194
@@ -100,13 +117,16 @@ Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
-)) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+))
+(B:\Program Files\MikTex\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+)
+(B:\Program Files\MikTex\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+
+(B:\Program Files\MikTex\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count195
 )
@@ -117,18 +137,23 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \csq@maxlvl=\count266
 \csq@tshold=\count267
 \csq@ltx@everypar=\toks24
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+
+(B:\Program Files\MikTex\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+
+(B:\Program Files\MikTex\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
-)) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+))
+(B:\Program Files\MikTex\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+
+(B:\Program Files\MikTex\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+
+(B:\Program Files\MikTex\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count268
@@ -143,30 +168,42 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layouthoffset=\dimen150
 \Gm@layoutvoffset=\dimen151
 \Gm@dimlist=\toks25
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+
+(B:\Program Files\MikTex\tex/latex/geometry\geometry.cfg))
+(B:\Program Files\MikTex\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+
+(B:\Program Files\MikTex\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(B:\Program Files\MikTex\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+)
+(B:\Program Files\MikTex\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+)
+(B:\Program Files\MikTex\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
+
+(B:\Program Files\MikTex\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+))
+(B:\Program Files\MikTex\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count271
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+
+(B:\Program Files\MikTex\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+))
+(B:\Program Files\MikTex\tex/latex/base\ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+)
+(B:\Program Files\MikTex\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -228,7 +265,8 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count316
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+
+(B:\Program Files\MikTex\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -317,12 +355,14 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip73
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+
+(B:\Program Files\MikTex\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+
+(B:\Program Files\MikTex\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 \c@textcitecount=\count385
 \c@textcitetotal=\count386
@@ -340,18 +380,21 @@ File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
+
+(B:\Program Files\MikTex\tex/latex/biblatex/bbx\numeric.bbx
 File: numeric.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.bbx
+
+(B:\Program Files\MikTex\tex/latex/biblatex/bbx\standard.bbx
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count394
 \c@bbx:relatedtotal=\count395
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
+
+(B:\Program Files\MikTex\tex/latex/biblatex/cbx\numeric.cbx
 File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -367,20 +410,23 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+
+(B:\Program Files\MikTex\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
+
+(B:\Program Files\MikTex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count396
 \l__pdf_internal_box=\box54
-) (d:\Code\optyma\documentacion\build\main.aux
-LaTeX Info: Redefining \. on input line 46.
-LaTeX Info: Redefining \% on input line 46.
+)
+(B:\Tareas\TT\optyma\documentacion\build\main.aux
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
 )
 \openout1 = `main.aux'.
 
@@ -398,7 +444,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+
+(B:\Program Files\MikTex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count397
 \scratchdimen=\dimen152
@@ -411,18 +458,23 @@ LaTeX Font Info:    ... okay on input line 29.
 \MPnumerator=\count401
 \makeMPintoPDFobject=\count402
 \everyMPtoPDFconversion=\toks27
-) (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (B:\Program Files\MikTex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+
+(B:\Program Files\MikTex\tex/latex/grfext\grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+
+(B:\Program Files\MikTex\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+
+(B:\Program Files\MikTex\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Info: Redefining \. on input line 29.
@@ -464,22 +516,25 @@ LaTeX Info: Redefining \% on input line 29.
 
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
-(C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\spanish.lbx
+(B:\Program Files\MikTex\tex/latex/biblatex/lbx\spanish.lbx
 File: spanish.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2021-06-01 L3 programming layer (loader) 
+
+(B:\Program Files\MikTex\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-07-12 L3 programming layer (loader) 
 )
 Package biblatex Info: ... and expl3
-(biblatex)             2021-06-01 L3 programming layer (loader) 
+(biblatex)             2021-07-12 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
-Package: xparse 2021-06-01 L3 Experimental document command parser
+
+(B:\Program Files\MikTex\tex/latex/biblatex\blx-case-expl3.sty
+(B:\Program Files\MikTex\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2021-06-18 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 )
@@ -487,23 +542,123 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (d:\Code\optyma\documentacion\build\main.bbl)
+
+(B:\Tareas\TT\optyma\documentacion\build\main.bbl)
 Package biblatex Info: Reference section=0 on input line 29.
 Package biblatex Info: Reference segment=0 on input line 29.
- [1
 
-{C:/Users/iza_a/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation 'coronado2014estudio' on page 1 undefined on input line
+ 62.
+
+
+LaTeX Warning: Citation 'oecd2014what' on page 1 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'oecd2016low' on page 1 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'coronado2016academic' on page 1 undefined on input lin
+e 71.
+
+
+LaTeX Warning: Citation 'mullis2016timss' on page 1 undefined on input line 71.
+
+
+
+LaTeX Warning: Citation 'orrantia2006dificultades' on page 1 undefined on input
+ line 76.
+
+
+LaTeX Warning: Citation 'rodriguez2017marcadores' on page 1 undefined on input 
+line 78.
+
+
+LaTeX Warning: Citation 'resnick1989developing' on page 1 undefined on input li
+ne 88.
+
+
+LaTeX Warning: Citation 'resnick1987learning' on page 1 undefined on input line
+ 88.
+
+
+LaTeX Warning: Citation 'fuson1992research' on page 1 undefined on input line 8
+9.
+
+
+LaTeX Warning: Citation 'fuson1992research' on page 1 undefined on input line 9
+4.
+
+
+LaTeX Warning: Citation 'godino2009sentido' on page 1 undefined on input line 9
+4.
+
+
+LaTeX Warning: Citation 'fuson1988children' on page 1 undefined on input line 9
+4.
+
+
+LaTeX Warning: Citation 'gusty2005importance' on page 1 undefined on input line
+ 98.
+
+
+LaTeX Warning: Citation 'tariq2002decline' on page 1 undefined on input line 98
+.
+
+[1
+
+{C:/Users/itz/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation 'tariq2002decline' on page 2 undefined on input line 11
+2.
+
+
+LaTeX Warning: Citation 'rodrigues2017math' on page 2 undefined on input line 1
+14.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 129.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 129.
- [2]
-<img/diagrama_arquitectura.png, id=11, 800.0289pt x 483.2454pt>
+[2]
+
+LaTeX Warning: Citation 'tariq2002decline' on page 3 undefined on input line 20
+6.
+
+
+LaTeX Warning: Citation 'carpenter2017psychology' on page 3 undefined on input 
+line 206.
+
+
+LaTeX Warning: Citation 'martin2003loss' on page 3 undefined on input line 211.
+
+
+
+LaTeX Warning: Citation 'larrazolo2013habilidades' on page 3 undefined on input
+ line 217.
+
+
+LaTeX Warning: Citation 'ryan1997should' on page 3 undefined on input line 217.
+
+
+
+Overfull \hbox (21.96562pt too wide) in paragraph at lines 216--222
+[]\OT1/cmr/m/n/10 La mo-ti-va-cion y es-ta-do emo-cio-nal de los es-tu-dian-te
+s es un fac-tor cla-ve en su des-em-pe~no academi-co [[],
+ []
+
+<img/diagrama_arquitectura.png, id=11, 799.93857pt x 496.85625pt>
 File: img/diagrama_arquitectura.png Graphic file (type png)
 <use img/diagrama_arquitectura.png>
 Package pdftex.def Info: img/diagrama_arquitectura.png  used on input line 236.
-(pdftex.def)             Requested size: 526.0913pt x 317.78528pt.
- [3] [4 <./img/diagrama_arquitectura.png>] [5] [6]
+
+(pdftex.def)             Requested size: 526.0913pt x 326.78893pt.
+[3]
+
+LaTeX Warning: Citation 'hunt2006feature' on page 4 undefined on input line 244
+.
+
+[4 <./img/diagrama_arquitectura.png>] [5] [6]
 Underfull \hbox (badness 3009) in paragraph at lines 460--464
 []\OT1/cmr/m/n/10 Pineda Viey-ra Itz-coatl Rodrigo.- Alumno de la
  []
@@ -598,36 +753,43 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 489--494
 [][] 
  []
 
-[7]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 498.
- (C:\Users\iza_a\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [8]
-Overfull \hbox (0.5318pt too wide) in paragraph at lines 499--499
-\OT1/cmr/m/n/10 edu-ca-cion me-dia su-pe-rior en Mexi-co[]. En: \OT1/cmr/m/it/10 Re-vis-ta me-xi-ca-na de in-ves-ti-ga-cion edu-ca-ti-va \OT1/cmr/m/n/10 18.59 (2013), pags. 1137[]1163. 
- []
+[7] [8]
 
-[9] (d:\Code\optyma\documentacion\build\main.aux
-LaTeX Info: Redefining \sptext on input line 46.
-LaTeX Info: Redefining \. on input line 46.
-LaTeX Info: Redefining \% on input line 46.
+LaTeX Warning: Empty bibliography on input line 498.
+
+(B:\Tareas\TT\optyma\documentacion\build\main.aux
+LaTeX Info: Redefining \sptext on input line 42.
+LaTeX Info: Redefining \. on input line 42.
+LaTeX Info: Redefining \% on input line 42.
 )
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11962 strings out of 478864
- 216136 string characters out of 2848660
- 1004052 words of memory out of 3000000
- 29769 multiletter control sequences out of 15000+600000
- 405264 words of font info for 34 fonts, out of 8000000 for 9000
+ 12019 strings out of 478870
+ 214983 string characters out of 2858700
+ 1003279 words of memory out of 3000000
+ 29825 multiletter control sequences out of 15000+600000
+ 404689 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,13n,70p,766b,1794s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/iza_a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on d:\Code\optyma\documentacion\build\main.pdf (9 pages, 276054 bytes).
+ 61i,13n,70p,929b,1798s stack positions out of 5000i,500n,10000p,200000b,80000s
+<B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><B:/Progra
+m Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><B:/Program Files/MikT
+ex/fonts/type1/public/amsfonts/cm/cmr10.pfb><B:/Program Files/MikTex/fonts/type
+1/public/amsfonts/cm/cmti10.pfb>
+Output written on B:\Tareas\TT\optyma\documentacion\build\main.pdf (8 pages, 15
+1093 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
