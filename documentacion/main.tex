@@ -1,10 +1,12 @@
 \documentclass{article}
+\usepackage[table]{xcolor}
 \usepackage{float}
 \usepackage{array}
+\usepackage{graphicx}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
-\usepackage[margin=2.55cm]{geometry}
+\usepackage[margin=1.55cm]{geometry}
 \usepackage[backend=biber]{biblatex}
 \setlength{\parskip}{1em}
 \parindent 0px
@@ -13,11 +15,15 @@
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
+\newcommand\cronograma{
+	\cellcolor[HTML]{0bd47d}
+}
 
 \newcommand\signature{
 \noindent\begin{minipage}{10cm}
     \noindent\vspace{3pt}\par
     Firma: \rule{7cm}{1pt}
+    \noindent\vspace{15pt}\par
 \end{minipage}}
 
 \begin{document}
@@ -216,31 +222,49 @@ media superior a desarrollar su destreza operatoria.
 
 
 \section{Productos o resultados esperados}
+Aplicación móvil basada en el Diagrama de Arquitectura de la Figura \ref{fig:arquitectura}, 
+gratuita para Android con ejercicios enfocados en temas aritmética con variedad de 
+actividades y su respectiva documentación:
 \begin{itemize}
 	\item Manual de usuario
 	\item Documentación técnica de la aplicación
 	\item Código fuente de la aplicación
 \end{itemize}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{img/diagrama_arquitectura.png}\\
+\caption{Diagrama de arquitectura de la aplicación}
+\label{fig:arquitectura}
+\end{figure}
+
 
 
 \section{Metodología}
-La metodología que se ha elegido para el desarrollo de este proyecto es Feature planninig 
-(Aquí falta una cita que se refiera a este método), también conocida como Feature Driven 
-Development F.D.D Esta metodología iterativa orientada a objetos, consistente en planear 
-la estructura general del proyecto, realizar una lista de características, planear y finalmente 
-construir cada una de ellas. En nuestro caso podemos ver cada característica como un tema y ciertas 
-funcionalidades adicionales que deseamos integrar. Para garantizar la variedad de ejercicios se 
-pretende usar técnicas de generación por procedimientos.
+La metodología que se ha elegido para el desarrollo de este proyecto es Feature planninig\cite{hunt2006feature}, 
+también conocida como Feature Driven Development F.D.D Esta metodología iterativa 
+orientada a objetos, consistente en planear la estructura general del proyecto, 
+realizar una lista de características, planear y finalmente construir cada una de ellas. 
+En nuestro caso podemos ver cada característica como un tema y ciertas funcionalidades 
+adicionales que deseamos integrar. Para garantizar la variedad de ejercicios se pretende 
+usar técnicas de generación por procedimientos.
 
 La lista de características sería la siguiente:
 \begin{enumerate}
 	\item Sistema de puntuación
-	\item ejercicios de Aritmética
+	\item Ejercicios de operaciones básicas con números enteros
 	\begin{enumerate}
-		\item Adición y sustracción de fracciones
-		\item multiplicación de fracciones
-		\item División de fracciones
+		\item Adición
+		\item Sustracción
+		\item Multiplicación
+		\item División
+	\end{enumerate}
+	\item Ejercicios de operaciones básicas con números racionales(fracciones)
+	\begin{enumerate}
+		\item Adición
+		\item Sustracción
+		\item Multiplicación
+		\item División
 	\end{enumerate}
 	\item Evaluador de expresiones
 	\item Niveles de dificultades
@@ -249,27 +273,226 @@ La lista de características sería la siguiente:
 	\item Estadísticas del jugador
 \end{enumerate}
 
+\section{Cronograma}
+
+\begin{table}[H]
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{|M{5cm}|c|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{Nombre:} &\multicolumn{6}{|c|}{Pineda Vieyra Itzcoatl Rodrigo}  \\\hline
+\multicolumn{7}{|c|}{Título del TTR: Aplicación móvil gamificada de aritmética}\\\hline
+Actividad & Agosto & Septiembre & Octubre & Noviembre & Diciembre & Enero \\\hline
+Revisión de la lectura especializada en Matemática educativa 
+&\cronograma& & & & & \\\hline
+
+Definición de requerimientos
+&\cronograma& & & & & \\\hline
+
+Revisión de features
+&\cronograma & & & & & \\\hline
+
+Planeación de features
+&\cronograma{}& & & & & \\\hline
+
+Diseño de features
+&\cronograma{} & & & & & \\\hline
+
+Diseño y documentación de casos de uso
+& &\cronograma{} & & & & \\\hline
+
+Diseño de interfaz gráfica
+& &\cronograma{} & & & & \\\hline
+
+Diseño y planeación de problemas
+& &\cronograma{} & & & & \\\hline
+
+Planeación de pruebas al sistema
+& &\cronograma{} & & & & \\\hline
+
+Documentación técnica
+&\cronograma{} &\cronograma{} &\cronograma{} &\cronograma{} &\cronograma{} &\cronograma{} \\\hline
+
+Evaluador de expresiones
+& & &\cronograma{} & & & \\\hline
+
+Generador de ejercicios de operaciones básicas
+(suma, resta, multiplicación, división) con números enteros
+& & &\cronograma{} & & & \\\hline
+
+Generador de ejercicios de operaciones básicas
+(suma, resta, multiplicación, división) con números racionales
+& & &\cronograma{} & & & \\\hline
+
+Modo de juego infinito
+& & &\cronograma{} & & & \\\hline
+
+Modo de juego por tiempo
+& & &\cronograma{} & & & \\\hline
+
+Modulo de registro
+& & &\cronograma{} & & & \\\hline
+
+Modulo de autecticación
+& & &\cronograma{} & & & \\\hline
+
+Integración de logros
+& & & &\cronograma{} & & \\\hline
+
+Integración de tablas de liderato
+& & & &\cronograma{} & & \\\hline
+
+Integración de elementos de personalización 
+& & & &\cronograma{} & & \\\hline
+
+Pruebas funcionales 
+& & & &\cronograma{} & & \\\hline
+
+Creación de logros y respectiva población a la base de datos
+& & & & &\cronograma{} & \\\hline
+
+Elaboración manual de usuario
+& & & & &\cronograma{} & \\\hline
+
+Evaluación TTR
+& & & & & &\cronograma{} \\\hline
+
+\end{tabular}
+\end{table}
+
+\newpage
+
+\begin{table}[H]
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{|M{5cm}|c|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{Nombre:} &\multicolumn{6}{|c|}{Mothelet Delgado Izaird Alexander}  \\\hline
+\multicolumn{7}{|c|}{Título del TTR: Aplicación móvil gamificada de aritmética}\\\hline
+Actividad & Agosto & Septiembre & Octubre & Noviembre & Diciembre & Enero \\\hline
+Revisión de la lectura especializada en Matemática educativa 
+&\cronograma& & & & & \\\hline
+
+Definición de requerimientos
+&\cronograma& & & & & \\\hline
+
+Revisión de features
+&\cronograma & & & & & \\\hline
+
+Planeación de features
+&\cronograma{}& & & & & \\\hline
+
+Diseño de features
+&\cronograma{} & & & & & \\\hline
+
+Diseño y documentación de casos de uso
+& &\cronograma{} & & & & \\\hline
+
+Diseño de interfaz gráfica
+& &\cronograma{} & & & & \\\hline
+
+Diseño y planeación de problemas
+& &\cronograma{} & & & & \\\hline
+
+Planeación de pruebas al sistema
+& &\cronograma{} & & & & \\\hline
+
+Documentación técnica
+&\cronograma{} &\cronograma{} &\cronograma{} &\cronograma{} &\cronograma{} &\cronograma{} \\\hline
+
+Evaluador de expresiones
+& & &\cronograma{} & & & \\\hline
+
+Generador de ejercicios de operaciones básicas
+(suma, resta, multiplicación, división) con números enteros
+& & &\cronograma{} & & & \\\hline
+
+Generador de ejercicios de operaciones básicas
+(suma, resta, multiplicación, división) con números racionales
+& & &\cronograma{} & & & \\\hline
+
+Modo de juego infinito
+& & &\cronograma{} & & & \\\hline
+
+Creación de logos e iconos 
+& & &\cronograma{} & & & \\\hline
+
+Diseño de sonido
+& & &\cronograma{} & & & \\\hline
+
+Modo de juego por tiempo
+& & &\cronograma{} & & & \\\hline
+
+Modulo de registro
+& & &\cronograma{} & & & \\\hline
+
+Modulo de autecticación
+& & &\cronograma{} & & & \\\hline
+
+Integración de logros
+& & & &\cronograma{} & & \\\hline
+
+Integración de tablas de liderato
+& & & &\cronograma{} & & \\\hline
+
+Integración de elementos de personalización 
+& & & &\cronograma{} & & \\\hline
+
+Pruebas funcionales 
+& & & &\cronograma{} & & \\\hline
+
+Creación de logros y respectiva población a la base de datos
+& & & & &\cronograma{} & \\\hline
+
+Elaboración manual de usuario
+& & & & &\cronograma{} & \\\hline
+
+Evaluación TTR
+& & & & & &\cronograma{} \\\hline
+
+\end{tabular}
+\end{table}
+
 
 \section{Alumnos y directores}
 
-% \begin{table}[H]
-%     \begin{minipage}{.5\linewidth}
-%         \begin{tabular}{p{8cm}}
-% 	Pineda Vieyra Itzcoatl Rodrigo.- Alumno de la carrera de Ing. 
-% 	en Sistemas Computacionales en ESCOM, Especialidad Sistemas, 
-% 	Boleta: 2013090802, Tel. 5518254211, email itzcoatlpv@gmail.com
-% 	\signature\\
-%         \end{tabular}
-%     \end{minipage}%
-%     \begin{minipage}{.5\linewidth}
-%         \begin{tabular}{p{6cm}}
-% 	CARÁCTER: Confidencial FUNDAMENTO LEGAL: Artículo 11 Fracc. 
-% 	V y Artículos 108, 113 y 117 de la Ley Federal de Transparencia 
-% 	y Acceso a la Información Pública. PARTES CONFIDENCIALES: Número 
-% 	de boleta y teléfono.	
-%         \end{tabular}
-%     \end{minipage} 
-% \end{table}
+\begin{minipage}{.45\textwidth}
+Pineda Vieyra Itzcoatl Rodrigo.- Alumno de la carrera de Ing. 
+en Sistemas Computacionales en ESCOM, Especialidad Sistemas, 
+Boleta: 2013090802, Tel. 5518254211, email: itzcoatlpv@gmail.com
+\signature
+
+
+Mothelet Delgado Izaird Alexander.- Alumno de la carrera de Ing. 
+en Sistemas Computacionales en ESCOM, Especialidad Sistemas, 
+Boleta: 2012010743, Tel. 5538488686, email: imotheletd1100@alumno.ipn.mx
+\signature
+
+Ruiz Ledesma Elena Fabiola. - Profesora de matemáticas en la 
+ESCOM del IPN y Profesora Colegiada en el Posgrado. Licenciatura 
+en Matemáticas, Maestría en ciencias, especialidad Matemática y 
+Educativa y Doctorado en ciencias con la misma especialidad (CINVESTAV-IPN). 
+Áreas de interés: Computó educativo, Matemática Educativa. Tel: 5729 6000 ext. 
+52049, email:elenfruiz65@gmail.com
+\signature
+
+Chavarría Báez Lorena. - Profesora del Departamento de Ingeniería en 
+Sistemas Computacionales de la ESCOM – IPN. Doctora en Ciencias en 
+Ingeniería Eléctrica opción Computación por el CINVESTAV – IPN. Áreas de 
+interés: Bases de Datos, Sistemas de Información. Tel: 5729 6000 ext. 52048, 
+email: lorena\_chavarria@yahoo.com.mx
+\signature
+	
+\end{minipage}%
+\hfill
+\begin{minipage}{.4\textwidth}
+\begin{tabular}{p{\textwidth}}
+CARÁCTER: Confidencial FUNDAMENTO LEGAL: Artículo 11 Fracc. V y Artículos 108, 113 
+e 117 de la Ley Federal de Transparencia y Acceso a la Información Pública. PARTES 
+CONFIDENCIALES: Número de boleta y teléfono.
+\end{tabular}
+\end{minipage}
+	
 
 %\printbibliography[title={Bibliografía}]
 \printbibliography

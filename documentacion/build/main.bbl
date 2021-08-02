@@ -249,6 +249,33 @@
       \field{volume}{29}
       \field{year}{2013}
     \endentry
+    \entry{hunt2006feature}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7d9273fa2a92b56a830259d34dfda8fd}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{fullhash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{bibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authorbibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authornamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authorfullhash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Agile Software Construction}
+      \field{title}{Feature-driven development}
+      \field{year}{2006}
+      \field{pages}{161\bibrangedash 182}
+      \range{pages}{22}
+    \endentry
     \entry{mullis2016timss}{book}{}
       \name{author}{2}{}{%
         {{hash=7d1c87889dac62f05e0df41fd59e883c}{%
