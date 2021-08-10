@@ -7,14 +7,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
 \usepackage[margin=1.55cm]{geometry}
-\usepackage[backend=biber]{biblatex}
+\usepackage[
+backend=biber,
+style=numeric,
+]{biblatex}
+\addbibresource{references.bib} 
 \setlength{\parskip}{1em}
 \parindent 0px
-\addbibresource{references.bib}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
-
+ 
 \newcommand\cronograma{
 	\cellcolor[HTML]{0bd47d}
 }
@@ -37,7 +40,7 @@
 
 	Alumnos: Pineda Vieyra Itzcoatl Rodrigo, Mothelet Delgado Izaird Alexander
 
-	Directores: Ruiz Ledesma Elena Fabiola, Lorena Chavarría Baez
+	Directores: Elena Fabiola Ruiz Ledesma, Lorena Chavarría Baez
 
 	e-mail: itzcoatlpv@gmail.com
 \end{center}
@@ -50,8 +53,8 @@ que pueden surgir a lo largo de este proceso, lo que repercute en la resolución
 ejercicios y problemas matemáticos avanzados. Por lo que el desarrollo de la destreza 
 operatoria aritmética es fundamental para que el estudiante pueda enfrentar con éxito  
 situaciones más complejas en el campo de la Matemática, además, se requiere motivar al 
-estudiante al desarrollar trabajo operatorio aritmético, ya que en ocasiones su desarrollo 
-puede resultar monótono y aburrido. Para ayudar al desarrollo de la destreza operatoria 
+estudiante  al desarrollar trabajo operatorio aritmético, ya que en ocasiones su desarrollo 
+puede resultar monótono y aburrido. P ara ayudar al desarrollo de la destreza operatoria 
 de los estudiantes se propone una aplicación gamificada móvil que promueva la resolución 
 de ejercicios Aritméticos.
 
@@ -230,10 +233,10 @@ actividades y su respectiva documentación:
 	\item Documentación técnica de la aplicación
 	\item Código fuente de la aplicación
 \end{itemize}
-La arquitectura se compone de 6 módulos. El primer módulo es el módulo de Registro de Usuario, encarfado de dddar de altaa y validar a los usuarios. El segundo módulo de Lista de ejercicios cuenta con la lista de ejercicios que el usuario puede realizar, los cuales se obtienen de la base de datos de ejercicios. El módulo evaluador de logros y mecánicas, que lleva el control de los logros y actividades gamificadas, lleva el control de la puntuación y los niveles de dificultad. Las estadísticas y progreso del usuario son registradas por el módulo correspondiente. El módulo generador de problemas es donde el administrador crea las plantillas de los ejercicios y actividades, los cuales son almacenados en su respectiva base de datos. Estas plantillas son usadas por dicho módulo para generar expresiones aritméticas las cuales son evaluadas por el módulo Evaluador de expresiones    
+La arquitectura se compone de 6 módulos.  El primer módulo es el de Registro de Usuario y es el encargado de dar de alta y validar a los usuarios. El segundo módulo corresponde a la lista de ejercicios que el usuario puede realizar, los cuales se obtienen de la base de datos de ejercicios. El módulo evaluador de logros y mecánicas, que lleva el control de los logros y actividades gamificadas, lleva el control de la puntuación y los niveles de dificultad. Las estadísticas y progreso del usuario son registradas por el módulo correspondiente. El módulo generador de problemas es donde el administrador crea las plantillas de los ejercicios y actividades, los cuales son almacenados en su respectiva base de datos. Estas plantillas son usadas por dicho módulo para generar expresiones aritméticas las cuales son evaluadas por el módulo Evaluador de expresiones    
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{img/diagrama_arquitectura.png}\\
+\includegraphics[width=1\textwidth]{img/Diagrama_arqui.png}\\
 \caption{Diagrama de arquitectura de la aplicación}
 \label{fig:arquitectura}
 \end{figure}
