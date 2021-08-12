@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[margin=1.55cm]{geometry}
+\usepackage{wallpaper}
+\usepackage[
+backend=biber,
+style=numeric,
+]{biblatex}
+\addbibresource{references.bib} 
+\setlength{\parskip}{1em}
+\parindent 0px
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+ 
+
+\newcommand\signature{
+\noindent\begin{minipage}{10cm}
+    \noindent\vspace{3pt}\par
+    Firma: \rule{7cm}{1pt}
+    \noindent\vspace{15pt}\par
+\end{minipage}}
+
+\begin{document}
+
+\begin{titlepage}
+
+
+    \ThisLRCornerWallPaper{1}{imgs/fondo_tt.png} % Fondo de portada 
+        \begin{center}
+            \LARGE \textbf{Instituto Politécnico Nacional}\\*[0.3cm]
+            \Large \textbf{Escuela Superior de Cómputo}\\
+            \vspace{1cm}
+            \rule{12cm}{0.5mm}\\*[0.3cm]% Línea {Longitud}{Grosor}
+            \hspace{0.9cm} 
+            %\normalsize {\textit{Ingeniería en Sistemas Computacionales}}\\
+            %%%%  TITULO Y NÚMERO DE TRABAJO   %%%%
+    		\LARGE \textbf{ Aplicación móvil gamificada de aritmética\\}
+    		\LARGE \textbf {\emph{Trabajo Terminal No }} 
+    		\vspace{1cm} %Espacio vertical
+    	\LARGE \textbf{\\ Ingeniería en Sistemas Computacionales\\}
+    	Alumnos: *Pineda Vieyra Itzcoatl Rodrigo, Mothelet Delgado Izaird Alexander\\
+	Directores: Elena Fabiola Ruiz Ledesma, Lorena Chavarría Baez\\
+	e-mail: itzcoatlpv@gmail.com
+    \vspace{1cm} %Espacio vertical
+        \end{center}
+
+    \centering %Todo centrado
+    \vspace{1cm} %Espacio vertical
+
+    %%%%   ALUMNOS   %%%%
+   	
+
+
+\end{titlepage}
+
+\tableofcontents
+
+\section{Introducción}
+
+\subsection{Motivación}
+\subsection{Plantamiento del Problema}
+\subsection{Objetivos}
+\subsubsection{Objetivo General}Desarrollar una aplicación móvil que apoye al estudiante de nivel medio superior en la 
+adquisición de habilidades y conocimientos elementales, para fortalecer la destreza 
+operatoria en  Aritmética, con el uso de la gamificación.
+
+\subsubsection{Objetivos Específicos}
+\begin{itemize}
+	\item Diseñar actividades gamificadas, empleando números enteros y fraccionarios con las 4 operaciones básicas.
+	\item Diseñar la arquitectura de la aplicación.
+	\item Validar la aplicación móvil. 
+\end{itemize}
+\subsection{Estado del Arte}
+\subsection{Propuesta de Solución}
+\section{Marco Teórico}
+\subsection{Motivación}
+La motivación se refiere a los procesos que influencian la incitación, fuerza y dirección del comportamiento. “Estar motivado significa estar movido a hacer algo” [26]. Los psicólogos distinguen la motivación intrínseca (hacer algo por gusto o interés propio) y la extrínseca (actuar porque lleva a un resultado separable).\\ 
+La motivación intrínseca ha sido estudiada exhaustivamente en las últimas décadas, particularmente sus aplicaciones en educación, resultando en evidencia de que la motivación intrínseca resulta en aprendizaje de alta calidad y creatividad  [28].\\
+En cuanto a la motivación extrínseca se suele tomar las ideas de la teoría del conductismo al condicionar un comportamiento a través de consecuencias. Se puede reforzar dicho comportamiento mediante premios, cuando una acción da un premio se repetirá esa acción [29].\\
+Una de las teorías más populares y estudiadas es La Teoría de la Autodeterminación (SDT, por sus siglas en inglés), la cual presenta un marco amplio  para el estudio de la motivación y la personalidad humanas. SDT articula una metateoría para enmarcar estudios motivacionales. Establece también una teoría formal que define fuentes intrínsecas y extrínsecas de motivación, sus roles y los  tipos de motivación extrínseca en el desarrollo cognitivo y social. Los autores Deci y Ryan consideran que comprender los distintos tipos de motivación extrínseca y lo que las promueve, es un asunto importante para educadores, quienes no siempre pueden contar con motivación intrínseca para fomentar el aprendizaje. Principalmente porque muchas de las tareas que los educadores esperan de los alumnos no son inherentemente interesantes o disfrutables, por lo que saber cómo promover formas más activas y volicionales, en lugar de pasivas y controladoras, se vuelve una estrategia esencial para la enseñanza [27]\\.
+Dentro de SDT se encuentra la Teoría de la Integración Organísmica (OIT: Organismic integration Theory), la cual detalla las diferentes formas de motivación extrínseca y los factores contextuales que la promueven o dificultan.\\      
+         
+La figura 3 ilustra los diferentes tipos de motivación propuestos por OIT. Al extremo izquierdo se tiene la desmotivación, la cual se define como “el estado de falta de intención de actuar”. El comportamiento de alguien desmotivado carece de intencionalidad y de un sentido de causalidad personal. La desmotivación es el resultado de no valorar una actividad, no sentirse competente para realizarla, o no creer que producirá el resultado deseado.\\
+\includegraphics[scale=1]{imgs/MotivacionDiagrama.png}
+
+\subsection{Gamificación}
+\section{Análisis}
+\subsection{Requisitos Funcionales}
+\subsection{Requisitos No Funcionales}
+\subsection{Analisis de Interfaces}
+\subsection{Narrativa de la Base de Datos}
+\section{Diseño}
+\subsection{Diseño de Base de Datos}
+\subsection{Casos de Uso}
+\subsection{Diseño de Interfaces}
+\subsection{Metodología}
+\subsection{Tecnologías usadas}
+%\section{•}
+\end{document}
