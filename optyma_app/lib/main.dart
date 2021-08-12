@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
- 
-void main() => runApp(MyApp());
- 
+import 'package:injectable/injectable.dart';
+import 'injection.dart';
+
+void main() {
+  configureInjection(Environment.prod);
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,11 +14,11 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: const Text('Material App Bar'),
         ),
         body: Center(
           child: Container(
-            child: Text('Hello World'),
+            child: const Text('Hello World'),
           ),
         ),
       ),
