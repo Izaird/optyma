@@ -16,13 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
-  InvalidEmail<T> invalidEmail<T>({required String failedValue}) {
+  InvalidEmail<T> invalidEmail<T>({required T failedValue}) {
     return InvalidEmail<T>(
       failedValue: failedValue,
     );
   }
 
-  ShortPassword<T> shortPassword<T>({required String failedValue}) {
+  ShortPassword<T> shortPassword<T>({required T failedValue}) {
     return ShortPassword<T>(
       failedValue: failedValue,
     );
@@ -34,18 +34,18 @@ const $ValueFailure = _$ValueFailureTearOff();
 
 /// @nodoc
 mixin _$ValueFailure<T> {
-  String get failedValue => throw _privateConstructorUsedError;
+  T get failedValue => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidEmail,
-    required TResult Function(String failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidEmail,
-    TResult Function(String failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,7 +73,7 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({String failedValue});
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -93,7 +93,7 @@ class _$ValueFailureCopyWithImpl<T, $Res>
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
@@ -105,7 +105,7 @@ abstract class $InvalidEmailCopyWith<T, $Res>
           InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
       _$InvalidEmailCopyWithImpl<T, $Res>;
   @override
-  $Res call({String failedValue});
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -127,7 +127,7 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
@@ -138,7 +138,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   const _$InvalidEmail({required this.failedValue});
 
   @override
-  final String failedValue;
+  final T failedValue;
 
   @override
   String toString() {
@@ -166,8 +166,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidEmail,
-    required TResult Function(String failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return invalidEmail(failedValue);
   }
@@ -175,8 +175,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidEmail,
-    TResult Function(String failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -209,10 +209,10 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 }
 
 abstract class InvalidEmail<T> implements ValueFailure<T> {
-  const factory InvalidEmail({required String failedValue}) = _$InvalidEmail<T>;
+  const factory InvalidEmail({required T failedValue}) = _$InvalidEmail<T>;
 
   @override
-  String get failedValue => throw _privateConstructorUsedError;
+  T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
@@ -226,7 +226,7 @@ abstract class $ShortPasswordCopyWith<T, $Res>
           ShortPassword<T> value, $Res Function(ShortPassword<T>) then) =
       _$ShortPasswordCopyWithImpl<T, $Res>;
   @override
-  $Res call({String failedValue});
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -248,7 +248,7 @@ class _$ShortPasswordCopyWithImpl<T, $Res>
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
@@ -259,7 +259,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   const _$ShortPassword({required this.failedValue});
 
   @override
-  final String failedValue;
+  final T failedValue;
 
   @override
   String toString() {
@@ -287,8 +287,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String failedValue) invalidEmail,
-    required TResult Function(String failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
   }) {
     return shortPassword(failedValue);
   }
@@ -296,8 +296,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String failedValue)? invalidEmail,
-    TResult Function(String failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -330,11 +330,10 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 }
 
 abstract class ShortPassword<T> implements ValueFailure<T> {
-  const factory ShortPassword({required String failedValue}) =
-      _$ShortPassword<T>;
+  const factory ShortPassword({required T failedValue}) = _$ShortPassword<T>;
 
   @override
-  String get failedValue => throw _privateConstructorUsedError;
+  T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
