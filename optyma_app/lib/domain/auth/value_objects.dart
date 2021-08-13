@@ -4,11 +4,10 @@ import 'package:optyma_app/domain/core/value_objects.dart';
 import 'package:optyma_app/domain/core/value_validators.dart';
 
 class EmailAddress extends ValueObject<String> {
+  @override
   final Either<ValueFailure<String>, String> value;
 
   factory EmailAddress(String input) {
-    // ignore: unnecessary_null_comparison
-    assert(input != null);
     return EmailAddress._(
       validateEmailAddress(input),
     );
@@ -18,11 +17,10 @@ class EmailAddress extends ValueObject<String> {
 }
 
 class Password extends ValueObject<String> {
+  @override
   final Either<ValueFailure<String>, String> value;
 
   factory Password(String input) {
-    // ignore: unnecessary_null_comparison
-    assert(input != null);
     return Password._(
       validatePassword(input),
     );
