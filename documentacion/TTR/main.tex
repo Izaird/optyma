@@ -81,14 +81,26 @@ operatoria en  Aritmética, con el uso de la gamificación.
 \subsection{Propuesta de Solución}
 \section{Marco Teórico}
 \subsection{Motivación}
-La motivación se refiere a los procesos que influencian la incitación, fuerza y dirección del comportamiento. “Estar motivado significa estar movido a hacer algo” [26]. Los psicólogos distinguen la motivación intrínseca (hacer algo por gusto o interés propio) y la extrínseca (actuar porque lleva a un resultado separable).\\ 
-La motivación intrínseca ha sido estudiada exhaustivamente en las últimas décadas, particularmente sus aplicaciones en educación, resultando en evidencia de que la motivación intrínseca resulta en aprendizaje de alta calidad y creatividad  [28].\\
-En cuanto a la motivación extrínseca se suele tomar las ideas de la teoría del conductismo al condicionar un comportamiento a través de consecuencias. Se puede reforzar dicho comportamiento mediante premios, cuando una acción da un premio se repetirá esa acción [29].\\
+La motivación se refiere a los procesos que influencian la incitación, fuerza y dirección del comportamiento. “Estar motivado significa estar movido a hacer algo” \cite{ryan2000self}. Los psicólogos distinguen la motivación intrínseca (hacer algo por gusto o interés propio) y la extrínseca (actuar porque lleva a un resultado separable).
+La motivación intrínseca ha sido estudiada exhaustivamente en las últimas décadas, particularmente sus aplicaciones en educación, resultando en evidencia de que la motivación intrínseca resulta en aprendizaje de alta calidad y creatividad \cite{albrecht2018relevance}.
+En cuanto a la motivación extrínseca se suele tomar las ideas de la teoría del conductismo al condicionar un comportamiento a través de consecuencias. Se puede reforzar dicho comportamiento mediante premios, cuando una acción da un premio se repetirá esa acción \cite{escribano2010gamification}.
 Una de las teorías más populares y estudiadas es La Teoría de la Autodeterminación (SDT, por sus siglas en inglés), la cual presenta un marco amplio  para el estudio de la motivación y la personalidad humanas. SDT articula una metateoría para enmarcar estudios motivacionales. Establece también una teoría formal que define fuentes intrínsecas y extrínsecas de motivación, sus roles y los  tipos de motivación extrínseca en el desarrollo cognitivo y social. Los autores Deci y Ryan consideran que comprender los distintos tipos de motivación extrínseca y lo que las promueve, es un asunto importante para educadores, quienes no siempre pueden contar con motivación intrínseca para fomentar el aprendizaje. Principalmente porque muchas de las tareas que los educadores esperan de los alumnos no son inherentemente interesantes o disfrutables, por lo que saber cómo promover formas más activas y volicionales, en lugar de pasivas y controladoras, se vuelve una estrategia esencial para la enseñanza [27]\\.
 Dentro de SDT se encuentra la Teoría de la Integración Organísmica (OIT: Organismic integration Theory), la cual detalla las diferentes formas de motivación extrínseca y los factores contextuales que la promueven o dificultan.\\      
          
 La figura 3 ilustra los diferentes tipos de motivación propuestos por OIT. Al extremo izquierdo se tiene la desmotivación, la cual se define como “el estado de falta de intención de actuar”. El comportamiento de alguien desmotivado carece de intencionalidad y de un sentido de causalidad personal. La desmotivación es el resultado de no valorar una actividad, no sentirse competente para realizarla, o no creer que producirá el resultado deseado.\\
-\includegraphics[scale=1]{imgs/MotivacionDiagrama.png}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{imgs/MotivacionDiagrama.png}
+    \caption{Tipos de motivación}
+\end{figure}
+A la derecha de desmotivación se encuentra la categoría menos autónoma de motivación extrínseca denominada regulación externa. Estos comportamientos son realizados para satisfacer una demanda externa u obtener una recompensa.
+El segundo tipo de motivación extrínseca es la regulación introyectada. La introyección se refiere a un tipo de regulación interna que sigue siendo muy controladora porque la gente hace esas acciones con sentimientos de presión para evitar culpa o ansiedad o para lograr aumentar el ego u orgullo. 
+Una forma más autodeterminada de motivación extrínseca es regulación a través de identificación. La identificación ocurre cuando la persona ha identificado la importancia personal de un comportamiento y, por tanto, ha aceptado su regulación como propia.
+Finalmente, la forma más autónoma de motivación extrínseca es la regulación integrada.La integración ocurre a través de auto examinación y la asimilación de nuevas regulaciones con el resto de los valores y necesidades del individuo. Entre más se internalicen las razones para una acción y las asimile uno mismo, más se vuelven autodeterminadas las acciones motivadas extrínsecamente \cite{ryan2020intrinsic}.
+Es importante recalcar que esta escala no significa que la motivación empiece en desmotivación y progresivamente avance, se puede empezar en cualquier nivel y mover según distintos factores.
+Esta teoría es relevante para el proyecto en proceso y que se reporta en el presente documento,  porque explora los orígenes de la motivación. Si bien se planea atraer a los usuarios con recompensas, el objetivo es que conforme usen la aplicación los usuarios asimilen la utilidad del desarrollo de la destreza operatoria. 
+
 
 \subsection{Gamificación}
 \section{Análisis}
@@ -99,8 +111,60 @@ La figura 3 ilustra los diferentes tipos de motivación propuestos por OIT. Al e
 \section{Diseño}
 \subsection{Diseño de Base de Datos}
 \subsection{Casos de Uso}
+\subsubsection{Tabla descriptivad de Caso de Uso 1}
+\begin{tabular}{|M{5cm}|c|}
+\hline
+Caso de Uso & CU1 "Registrar Usuario"\\ \hline
+Versión & 1.1\\ \hline
+Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
+Revisor & Izaird Alexander Mothelet Delgado \\ \hline
+Actor(es) & Usuario Final \\ \hline
+Entradas & nickname, correo electrónico, contraseña, escolaridad\\ & Cuenta de Google \\ \hline
+Salidas & Cuenta de usuario creada \\ \hline
+Pre-condiciones & Instalar y abrir la aplicación \\ \hline
+Post-condiciones & Cuenta de usuario creada\\ \hline
+Mensajes & MSN1: "Ingrese un texto válido"\\
+		 & MSN2: "Bienvenido"\\ \hline
+Fuente & RF1 \\ \hline	
+	Trayectoria & Trayectoria A (principal)\\
+		& 1.   El usuario seleccionará la opción de registrarse.\\
+		& 2.   Se ingresarán los datos correspondientes.\\
+		& 3.   Se creará correctamente la cuenta del usuario\\
+	& Trayectoria B\\
+	& 1.   El usuario seleccionará la opción de registrarse.\\
+	& 2.   Se proporcionará una cuenta de Google\\
+	& 3.   Se confirma y se dan los permisos corresponddientes.\\
+	& 4   Se creará correctamente la cuenta del usuario.\\ \hline
+\end{tabular}
+\subsubsection{Tabla descriptivad de Caso de Uso 2}
+\begin{tabular}{|M{5cm}|c|}
+\hline
+Caso de Uso & CU2 "Iniciciar Sesión"\\ \hline
+Versión & 1.1\\ \hline
+Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
+Revisor & Izaird Alexander Mothelet Delgado \\ \hline
+Actor(es) & Usuario Final \\ & Administrador\\ \hline
+Entradas &  Correo electrónico, contraseña\\ & Cuenta de Google \\ \hline
+Salidas & Sesión de usuario \\ \hline
+Pre-condiciones & Instalar y abrir la aplicación \\ \hline
+Post-condiciones & Sesión iniciada\\ \hline
+Mensajes & MSN1: "Ingrese un texto válido"\\
+		   MSN2: "Bienvenido"\\ \hline
+Fuente & RF1 \\ \hline	
+	Trayectoria & Trayectoria A (principal)\\
+		& 1.   El usuario ingresa sus credenciales (correo y contraseña).\\
+		& 2.   Se valida si existen coincidencias de lasa credenciales proporcionadas\\
+		& 3. Se inicia sesión o se despliega un mensaaje de error.\\
+	& Trayectoria B\\
+	& 1.   El usuario seleccionará la opción de registrarse.\\
+	& 2.   Se proporcionará una cuenta de Google\\
+	& 3.   Se inicia sesión.\\ \hline
+\end{tabular}
 \subsection{Diseño de Interfaces}
 \subsection{Metodología}
 \subsection{Tecnologías usadas}
 %\section{•}
+\printbibliography
+
+
 \end{document}
