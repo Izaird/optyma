@@ -1,7 +1,9 @@
-import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:optyma_app/presentation/routes/router.gr.dart';
 
 class SignInForm extends StatelessWidget {
   @override
@@ -12,18 +14,28 @@ class SignInForm extends StatelessWidget {
           () {},
           (either) => either.fold(
             (failure) {
-              FlushbarHelper.createError(
-                message: failure.map(
+              final snackBar = SnackBar(
+                behavior: SnackBarBehavior.floating,
+                content: Text(failure.map(
                   cancelledByUser: (_) => 'Cancelado',
                   serverError: (_) => 'Error del servidor',
                   emailAlreadyInUse: (_) => 'Correo ya registrado',
                   invalidEmailAndPasswordCombination: (_) =>
                       'Combinancion invalida de correo y contraseña',
+                )),
+                action: SnackBarAction(  
+                  label: 'Action',
+                  onPressed: (){},
                 ),
-              ).show(context);
+              );
+
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
-              // TODO: Navigate
+              AutoRouter.of(context).replace(const HomePageRoute());
+              context
+                  .read<AuthBloc>()
+                  .add(const AuthEvent.authCheckRequested());
             },
           ),
         );
@@ -33,6 +45,7 @@ class SignInForm extends StatelessWidget {
           // autovalidateMode: state.showErrorMessages,
           autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: ListView(
+            padding: const EdgeInsets.all(8),
             children: [
               const Text(
                 '📝',
@@ -75,12 +88,12 @@ class SignInForm extends StatelessWidget {
                   .add(SignInFormEvent.passwordChanged(value)),
                 validator: (_) => BlocProvider.of<SignInFormBloc>(context)
                   .state.password.value.fold(
-                          (f) => f.maybeMap(
-                            shortPassword: (_) => 'Contraseña invalida',
-                            orElse: () => null,
-                          ),
-                          (_) => null,
-                ),
+                    (f) => f.maybeMap(
+                      shortPassword: (_) => 'Contraseña invalida',
+                      orElse: () => null,
+                    ),
+                    (_) => null,
+                  ),
               ),
               const SizedBox(height: 8),
               Row(
@@ -97,7 +110,7 @@ class SignInForm extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: TextButton(
+                     child: TextButton(
                       onPressed: () {
                         BlocProvider.of<SignInFormBloc>(context).add(
                               const SignInFormEvent
@@ -121,7 +134,12 @@ class SignInForm extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
+
+              if(state.isSubmitting)...[
+                const SizedBox(height: 8),
+                const LinearProgressIndicator(),  
+              ],
             ],
           ),
         );
