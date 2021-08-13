@@ -42,7 +42,6 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          // autovalidateMode: state.showErrorMessages,
           autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: ListView(
             padding: const EdgeInsets.all(8),
@@ -81,9 +80,6 @@ class SignInForm extends StatelessWidget {
                 ),
                 autocorrect: false,
                 obscureText: true,
-                // onChanged: (value) => context
-                //     .read<SignInFormBloc>()
-                //     .add(SignInFormEvent.passwordChanged(value)),
                 onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
                   .add(SignInFormEvent.passwordChanged(value)),
                 validator: (_) => BlocProvider.of<SignInFormBloc>(context)

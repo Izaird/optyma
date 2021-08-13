@@ -16,8 +16,10 @@ Future<void> main() async{
 
   runApp(MultiBlocProvider(
     providers: [
-      BlocProvider( create: (context) =>
-        getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested())),
+      BlocProvider(
+        create: (context) => getIt<AuthBloc>()
+        ..add(const AuthEvent.authCheckRequested())
+      ),
     ], 
     child: AppWidget()
   ));
