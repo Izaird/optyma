@@ -30,7 +30,8 @@ class SignInForm extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
-              BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
+              context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
+              Navigator.pop(context);
             },
           ),
         );
