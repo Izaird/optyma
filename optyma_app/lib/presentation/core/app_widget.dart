@@ -9,8 +9,9 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(
-        initialRoutes: [const app_router.SplashPageRoute()],
+        initialRoutes: [const app_router.LoginPageRoute()],
       ),
+      
       title: 'Optyma',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
