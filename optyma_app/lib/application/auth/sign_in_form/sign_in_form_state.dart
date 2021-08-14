@@ -16,5 +16,5 @@ abstract class SignInFormState with _$SignInFormState {
         showErrorMessages: false,
         isSubmitting: false,
         authFailureOrSuccessOption: none(),
-      );
+  );
 }

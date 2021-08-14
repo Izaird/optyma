@@ -1,9 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:optyma_app/presentation/routes/router.gr.dart';
 
 class SignInForm extends StatelessWidget {
   @override
@@ -23,19 +21,16 @@ class SignInForm extends StatelessWidget {
                   invalidEmailAndPasswordCombination: (_) =>
                       'Combinancion invalida de correo y contraseña',
                 )),
-                action: SnackBarAction(  
-                  label: 'Action',
-                  onPressed: (){},
-                ),
+                // action: SnackBarAction(  
+                //   label: 'Action',
+                //   onPressed: (){},
+                // ),
               );
 
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
-              AutoRouter.of(context).replace(const HomePageRoute());
-              context
-                  .read<AuthBloc>()
-                  .add(const AuthEvent.authCheckRequested());
+              BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
             },
           ),
         );
@@ -92,45 +87,15 @@ class SignInForm extends StatelessWidget {
                   ),
               ),
               const SizedBox(height: 8),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                      onPressed: () {
-                        BlocProvider.of<SignInFormBloc>(context).add(
-                              const SignInFormEvent
-                                  .signInWithEmailAndPasswordPressed(),
-                            );
-                      },
-                      child: const Text('Ingresar'),
-                    ),
-                  ),
-                  Expanded(
-                     child: TextButton(
-                      onPressed: () {
-                        BlocProvider.of<SignInFormBloc>(context).add(
-                              const SignInFormEvent
-                                  .registerWithEmailAndPasswordPressed(),
-                            );
-                      },
-                      child: const Text('Registrarse'),
-                    ),
-                  ),
-                ],
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  BlocProvider.of<SignInFormBloc>(context)
-                      .add(const SignInFormEvent.signInWithGooglePressed());
-                },
-                child: const Text(
-                  'Ingresar con Google',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+              TextButton(
+               onPressed: () {
+                 BlocProvider.of<SignInFormBloc>(context).add(
+                       const SignInFormEvent
+                           .registerWithEmailAndPasswordPressed(),
+                     );
+               },
+               child: const Text('Registrarse'),
                 ),
-              ),
 
               if(state.isSubmitting)...[
                 const SizedBox(height: 8),

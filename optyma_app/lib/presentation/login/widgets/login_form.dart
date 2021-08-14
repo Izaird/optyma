@@ -1,9 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/login_form/login_form_bloc.dart';
-import 'package:optyma_app/presentation/routes/router.gr.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -32,7 +30,7 @@ class LoginForm extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
-              AutoRouter.of(context).replace(const HomePageRoute());
+              // AutoRouter.of(context).replace(const HomePageRoute());
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
             },
           ),
@@ -92,7 +90,7 @@ class LoginForm extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   context.read<LoginFormBloc>().add(
-                    const LoginFormEvent.signInWithEmailAndPasswordPressed(),
+                    const LoginFormEvent.LoginWithEmailAndPasswordPressed(),
                   );
                 },
                 child: const Text('Ingresar'),
@@ -102,19 +100,20 @@ class LoginForm extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
+                  Navigator.pushNamed(context, 'sign-in');
                   // AutoRouter.of(context).pushNamed('sign-in-page');
                   // BlocProvider.of<LoginFormBloc>(context).add(
                   //       const LoginFormEvent
                   //           .registerWithEmailAndPasswordPressed(),
                   //     );
                 },
-                child: const Text('Registrarse xd'),
+                child: const Text('Registrarse'),
               ),
 
               ElevatedButton(
                 onPressed: () {
                   context.read<LoginFormBloc>()
-                    .add(const LoginFormEvent.signInWithGooglePressed()
+                    .add(const LoginFormEvent.LoginWithGooglePressed()
                   );
                 },
                 child: const Text(

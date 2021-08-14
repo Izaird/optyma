@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:optyma_app/presentation/routes/router.gr.dart'
-    as app_router;
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:optyma_app/application/auth/auth_bloc.dart';
+import 'package:optyma_app/presentation/home/home_page.dart';
+import 'package:optyma_app/presentation/login/login_page.dart';
+import 'package:optyma_app/presentation/routes/routes.dart';
+import 'package:optyma_app/presentation/splash/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    final _appRouter = app_router.Router();
-    return MaterialApp.router(
-      routeInformationParser: _appRouter.defaultRouteParser(),
-      routerDelegate: _appRouter.delegate(
-        initialRoutes: [const app_router.LoginPageRoute()],
-      ),
-      
+    return MaterialApp(
+      routes: getApplicationRoutes(),
       title: 'Optyma',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
@@ -25,6 +25,22 @@ class AppWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
         ),
+      ),
+
+      home: BlocBuilder<AuthBloc, AuthState>(
+        builder: (context, state){
+          if(state is Initial){
+            return SplashPage();
+          }
+          if(state is Aunthenticated){
+            return HomePage();
+          }
+          if (state is Unaunthenticated){
+            return LoginPage();
+          }
+
+          return Container();
+        }
       ),
     );
   }

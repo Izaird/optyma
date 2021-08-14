@@ -4,7 +4,6 @@ part of 'login_form_bloc.dart';
 class LoginFormEvent with _$LoginFormEvent {
   const factory LoginFormEvent.emailChanged(String emailStr) = EmailChanged;
   const factory LoginFormEvent.passwordChanged(String passwordStr) = PasswordString;
-  const factory LoginFormEvent.registerWithEmailAndPasswordPressed() = RegisterWithEmailAndPasswordPressed;
-  const factory LoginFormEvent.signInWithEmailAndPasswordPressed() = SignInWithEmailAndPasswordPressed;
-  const factory LoginFormEvent.signInWithGooglePressed() = SignInWithGooglePressed;
+  const factory LoginFormEvent.LoginWithEmailAndPasswordPressed() = LoginWithEmailAndPasswordPressed;
+  const factory LoginFormEvent.LoginWithGooglePressed() = LoginWithGooglePressed;
 }
