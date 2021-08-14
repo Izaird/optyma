@@ -90,7 +90,7 @@ class LoginForm extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   context.read<LoginFormBloc>().add(
-                    const LoginFormEvent.LoginWithEmailAndPasswordPressed(),
+                    const LoginFormEvent.loginWithEmailAndPasswordPressed(),
                   );
                 },
                 child: const Text('Ingresar'),
@@ -113,7 +113,7 @@ class LoginForm extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   context.read<LoginFormBloc>()
-                    .add(const LoginFormEvent.LoginWithGooglePressed()
+                    .add(const LoginFormEvent.loginWithGooglePressed()
                   );
                 },
                 child: const Text(

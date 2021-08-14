@@ -36,12 +36,12 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
           authFailureOrSuccessOption: none(),
         );
       },
-      LoginWithEmailAndPasswordPressed: (e) async* {
+      loginWithEmailAndPasswordPressed: (e) async* {
         yield* _performActionOnAuthFacadeWithEmailAndPassword(
           _authFacade.signInWithEmailAndPassword,
         );
       },
-      LoginWithGooglePressed: (e) async* {
+      loginWithGooglePressed: (e) async* {
         yield state.copyWith(
           isSubmitting: true,
           authFailureOrSuccessOption: none(),
