@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/auth/auth_failure.dart';
@@ -40,6 +41,17 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         yield* _performActionOnAuthFacadeWithEmailAndPassword(
           _authFacade.registerWithEmailAndPassword,
         );
+      }, 
+      confirmPasswordChanged: (e) async*{
+        if(e.originalPasswordStr == e.newPasswordStr){
+          yield state.copyWith(
+            samePassword: true,
+          );
+        }else{
+          yield state.copyWith(
+            samePassword: false,
+          );
+        }
       },
     );
   }
@@ -54,7 +66,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     Either<AuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.emailAddress.isValid();
-    final isPasswordValid = state.password.isValid();
+    final isPasswordValid = state.password.isValid() && state.samePassword;
 
     if (isEmailValid && isPasswordValid) {
       yield state.copyWith(

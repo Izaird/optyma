@@ -5,6 +5,7 @@ abstract class SignInFormState with _$SignInFormState {
   const factory SignInFormState({
     required EmailAddress emailAddress,
     required Password password,
+    required bool samePassword,
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
@@ -13,6 +14,7 @@ abstract class SignInFormState with _$SignInFormState {
   factory SignInFormState.initial() => SignInFormState(
         emailAddress: EmailAddress(''),
         password: Password(''),
+        samePassword: false,
         showErrorMessages: false,
         isSubmitting: false,
         authFailureOrSuccessOption: none(),

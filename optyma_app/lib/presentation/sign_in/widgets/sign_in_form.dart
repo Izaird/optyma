@@ -4,6 +4,8 @@ import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
 
 class SignInForm extends StatelessWidget {
+  final TextEditingController _password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
@@ -69,7 +71,10 @@ class SignInForm extends StatelessWidget {
                     ),
               ),
               const SizedBox(height: 8),
+
+
               TextFormField(
+                controller: _password,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.lock),
                   labelText: 'Contraseña',
@@ -88,6 +93,29 @@ class SignInForm extends StatelessWidget {
                   ),
               ),
               const SizedBox(height: 8),
+
+
+              TextFormField(
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.lock),
+                  labelText: 'Confirmar contraseña',
+                ),
+                autocorrect: false,
+                obscureText: true,
+                onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+                  .add(SignInFormEvent.confirmPasswordChanged(_password.text, value)),
+                      validator: (value) {
+                  if(value == _password.text){
+                    return null;
+                  }
+                  else{
+                    return 'Las contraseñas no coinciden';
+                  }
+                },
+              ),
+              const SizedBox(height: 8),
+
+
               TextButton(
                onPressed: () {
                  BlocProvider.of<SignInFormBloc>(context).add(
