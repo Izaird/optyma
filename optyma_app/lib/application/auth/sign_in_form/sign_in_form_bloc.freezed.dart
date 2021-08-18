@@ -28,11 +28,9 @@ class _$SignInFormEventTearOff {
     );
   }
 
-  ConfirmPasswordString confirmPasswordChanged(
-      String originalPasswordStr, String newPasswordStr) {
+  ConfirmPasswordString confirmPasswordChanged(String secondPasswordStr) {
     return ConfirmPasswordString(
-      originalPasswordStr,
-      newPasswordStr,
+      secondPasswordStr,
     );
   }
 
@@ -50,8 +48,7 @@ mixin _$SignInFormEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String originalPasswordStr, String newPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String secondPasswordStr) confirmPasswordChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,8 +56,7 @@ mixin _$SignInFormEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String originalPasswordStr, String newPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String secondPasswordStr)? confirmPasswordChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
   }) =>
@@ -172,8 +168,7 @@ class _$EmailChanged implements EmailChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String originalPasswordStr, String newPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String secondPasswordStr) confirmPasswordChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return emailChanged(emailStr);
@@ -184,8 +179,7 @@ class _$EmailChanged implements EmailChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String originalPasswordStr, String newPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String secondPasswordStr)? confirmPasswordChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
   }) {
@@ -302,8 +296,7 @@ class _$PasswordString implements PasswordString {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String originalPasswordStr, String newPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String secondPasswordStr) confirmPasswordChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return passwordChanged(passwordStr);
@@ -314,8 +307,7 @@ class _$PasswordString implements PasswordString {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String originalPasswordStr, String newPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String secondPasswordStr)? confirmPasswordChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
   }) {
@@ -369,7 +361,7 @@ abstract class $ConfirmPasswordStringCopyWith<$Res> {
   factory $ConfirmPasswordStringCopyWith(ConfirmPasswordString value,
           $Res Function(ConfirmPasswordString) then) =
       _$ConfirmPasswordStringCopyWithImpl<$Res>;
-  $Res call({String originalPasswordStr, String newPasswordStr});
+  $Res call({String secondPasswordStr});
 }
 
 /// @nodoc
@@ -385,17 +377,12 @@ class _$ConfirmPasswordStringCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? originalPasswordStr = freezed,
-    Object? newPasswordStr = freezed,
+    Object? secondPasswordStr = freezed,
   }) {
     return _then(ConfirmPasswordString(
-      originalPasswordStr == freezed
-          ? _value.originalPasswordStr
-          : originalPasswordStr // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPasswordStr == freezed
-          ? _value.newPasswordStr
-          : newPasswordStr // ignore: cast_nullable_to_non_nullable
+      secondPasswordStr == freezed
+          ? _value.secondPasswordStr
+          : secondPasswordStr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -404,35 +391,29 @@ class _$ConfirmPasswordStringCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ConfirmPasswordString implements ConfirmPasswordString {
-  const _$ConfirmPasswordString(this.originalPasswordStr, this.newPasswordStr);
+  const _$ConfirmPasswordString(this.secondPasswordStr);
 
   @override
-  final String originalPasswordStr;
-  @override
-  final String newPasswordStr;
+  final String secondPasswordStr;
 
   @override
   String toString() {
-    return 'SignInFormEvent.confirmPasswordChanged(originalPasswordStr: $originalPasswordStr, newPasswordStr: $newPasswordStr)';
+    return 'SignInFormEvent.confirmPasswordChanged(secondPasswordStr: $secondPasswordStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is ConfirmPasswordString &&
-            (identical(other.originalPasswordStr, originalPasswordStr) ||
+            (identical(other.secondPasswordStr, secondPasswordStr) ||
                 const DeepCollectionEquality()
-                    .equals(other.originalPasswordStr, originalPasswordStr)) &&
-            (identical(other.newPasswordStr, newPasswordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.newPasswordStr, newPasswordStr)));
+                    .equals(other.secondPasswordStr, secondPasswordStr)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(originalPasswordStr) ^
-      const DeepCollectionEquality().hash(newPasswordStr);
+      const DeepCollectionEquality().hash(secondPasswordStr);
 
   @JsonKey(ignore: true)
   @override
@@ -445,11 +426,10 @@ class _$ConfirmPasswordString implements ConfirmPasswordString {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String originalPasswordStr, String newPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String secondPasswordStr) confirmPasswordChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
-    return confirmPasswordChanged(originalPasswordStr, newPasswordStr);
+    return confirmPasswordChanged(secondPasswordStr);
   }
 
   @override
@@ -457,13 +437,12 @@ class _$ConfirmPasswordString implements ConfirmPasswordString {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String originalPasswordStr, String newPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String secondPasswordStr)? confirmPasswordChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
   }) {
     if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(originalPasswordStr, newPasswordStr);
+      return confirmPasswordChanged(secondPasswordStr);
     }
     return orElse();
   }
@@ -499,12 +478,10 @@ class _$ConfirmPasswordString implements ConfirmPasswordString {
 }
 
 abstract class ConfirmPasswordString implements SignInFormEvent {
-  const factory ConfirmPasswordString(
-          String originalPasswordStr, String newPasswordStr) =
+  const factory ConfirmPasswordString(String secondPasswordStr) =
       _$ConfirmPasswordString;
 
-  String get originalPasswordStr => throw _privateConstructorUsedError;
-  String get newPasswordStr => throw _privateConstructorUsedError;
+  String get secondPasswordStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ConfirmPasswordStringCopyWith<ConfirmPasswordString> get copyWith =>
       throw _privateConstructorUsedError;
@@ -557,8 +534,7 @@ class _$RegisterWithEmailAndPasswordPressed
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String originalPasswordStr, String newPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String secondPasswordStr) confirmPasswordChanged,
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return registerWithEmailAndPasswordPressed();
@@ -569,8 +545,7 @@ class _$RegisterWithEmailAndPasswordPressed
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String originalPasswordStr, String newPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String secondPasswordStr)? confirmPasswordChanged,
     TResult Function()? registerWithEmailAndPasswordPressed,
     required TResult orElse(),
   }) {
@@ -622,15 +597,17 @@ class _$SignInFormStateTearOff {
   _SignInFormState call(
       {required EmailAddress emailAddress,
       required Password password,
-      required bool samePassword,
+      required Password secondPassword,
       required bool showErrorMessages,
+      required bool isSamePassword,
       required bool isSubmitting,
       required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
     return _SignInFormState(
       emailAddress: emailAddress,
       password: password,
-      samePassword: samePassword,
+      secondPassword: secondPassword,
       showErrorMessages: showErrorMessages,
+      isSamePassword: isSamePassword,
       isSubmitting: isSubmitting,
       authFailureOrSuccessOption: authFailureOrSuccessOption,
     );
@@ -644,8 +621,9 @@ const $SignInFormState = _$SignInFormStateTearOff();
 mixin _$SignInFormState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
-  bool get samePassword => throw _privateConstructorUsedError;
+  Password get secondPassword => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isSamePassword => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
@@ -663,8 +641,9 @@ abstract class $SignInFormStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Password password,
-      bool samePassword,
+      Password secondPassword,
       bool showErrorMessages,
+      bool isSamePassword,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
@@ -682,8 +661,9 @@ class _$SignInFormStateCopyWithImpl<$Res>
   $Res call({
     Object? emailAddress = freezed,
     Object? password = freezed,
-    Object? samePassword = freezed,
+    Object? secondPassword = freezed,
     Object? showErrorMessages = freezed,
+    Object? isSamePassword = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
@@ -696,13 +676,17 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
-      samePassword: samePassword == freezed
-          ? _value.samePassword
-          : samePassword // ignore: cast_nullable_to_non_nullable
-              as bool,
+      secondPassword: secondPassword == freezed
+          ? _value.secondPassword
+          : secondPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSamePassword: isSamePassword == freezed
+          ? _value.isSamePassword
+          : isSamePassword // ignore: cast_nullable_to_non_nullable
               as bool,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
@@ -726,8 +710,9 @@ abstract class _$SignInFormStateCopyWith<$Res>
   $Res call(
       {EmailAddress emailAddress,
       Password password,
-      bool samePassword,
+      Password secondPassword,
       bool showErrorMessages,
+      bool isSamePassword,
       bool isSubmitting,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
@@ -747,8 +732,9 @@ class __$SignInFormStateCopyWithImpl<$Res>
   $Res call({
     Object? emailAddress = freezed,
     Object? password = freezed,
-    Object? samePassword = freezed,
+    Object? secondPassword = freezed,
     Object? showErrorMessages = freezed,
+    Object? isSamePassword = freezed,
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
@@ -761,13 +747,17 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
-      samePassword: samePassword == freezed
-          ? _value.samePassword
-          : samePassword // ignore: cast_nullable_to_non_nullable
-              as bool,
+      secondPassword: secondPassword == freezed
+          ? _value.secondPassword
+          : secondPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSamePassword: isSamePassword == freezed
+          ? _value.isSamePassword
+          : isSamePassword // ignore: cast_nullable_to_non_nullable
               as bool,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
@@ -783,23 +773,27 @@ class __$SignInFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInFormState implements _SignInFormState {
+class _$_SignInFormState extends _SignInFormState {
   const _$_SignInFormState(
       {required this.emailAddress,
       required this.password,
-      required this.samePassword,
+      required this.secondPassword,
       required this.showErrorMessages,
+      required this.isSamePassword,
       required this.isSubmitting,
-      required this.authFailureOrSuccessOption});
+      required this.authFailureOrSuccessOption})
+      : super._();
 
   @override
   final EmailAddress emailAddress;
   @override
   final Password password;
   @override
-  final bool samePassword;
+  final Password secondPassword;
   @override
   final bool showErrorMessages;
+  @override
+  final bool isSamePassword;
   @override
   final bool isSubmitting;
   @override
@@ -807,7 +801,7 @@ class _$_SignInFormState implements _SignInFormState {
 
   @override
   String toString() {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, samePassword: $samePassword, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, secondPassword: $secondPassword, showErrorMessages: $showErrorMessages, isSamePassword: $isSamePassword, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -820,12 +814,15 @@ class _$_SignInFormState implements _SignInFormState {
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)) &&
-            (identical(other.samePassword, samePassword) ||
+            (identical(other.secondPassword, secondPassword) ||
                 const DeepCollectionEquality()
-                    .equals(other.samePassword, samePassword)) &&
+                    .equals(other.secondPassword, secondPassword)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSamePassword, isSamePassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSamePassword, isSamePassword)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
@@ -841,8 +838,9 @@ class _$_SignInFormState implements _SignInFormState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(samePassword) ^
+      const DeepCollectionEquality().hash(secondPassword) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(isSamePassword) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(authFailureOrSuccessOption);
 
@@ -852,24 +850,28 @@ class _$_SignInFormState implements _SignInFormState {
       __$SignInFormStateCopyWithImpl<_SignInFormState>(this, _$identity);
 }
 
-abstract class _SignInFormState implements SignInFormState {
+abstract class _SignInFormState extends SignInFormState {
   const factory _SignInFormState(
       {required EmailAddress emailAddress,
       required Password password,
-      required bool samePassword,
+      required Password secondPassword,
       required bool showErrorMessages,
+      required bool isSamePassword,
       required bool isSubmitting,
       required Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$_SignInFormState;
+  const _SignInFormState._() : super._();
 
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
   Password get password => throw _privateConstructorUsedError;
   @override
-  bool get samePassword => throw _privateConstructorUsedError;
+  Password get secondPassword => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
+  @override
+  bool get isSamePassword => throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
   @override

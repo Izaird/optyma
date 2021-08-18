@@ -18,6 +18,6 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
   if (RegExp(passwordRegex).hasMatch(input)) {
     return right(input);
   } else {
-    return left(ValueFailure.shortPassword(failedValue: input));
+    return left(ValueFailure.invalidPassword(failedValue: input));
   }
 }

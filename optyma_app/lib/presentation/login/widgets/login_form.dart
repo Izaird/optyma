@@ -149,13 +149,15 @@ class PasswordField extends StatelessWidget {
       ),
       autocorrect: false,
       obscureText: true,
+
       onChanged: (value) => BlocProvider.of<LoginFormBloc>(context)
         .add(LoginFormEvent.passwordChanged(value)),
+
       validator: (_) => context.read<LoginFormBloc>()
         .state.password.value.fold(
           (f) => f.maybeMap(
-    shortPassword: (_) => 'Contraseña invalida',
-    orElse: () => null,
+            invalidPassword: (_) => 'Contraseña invalida',
+            orElse: () => null,
           ),
           (_) => null,
         ),

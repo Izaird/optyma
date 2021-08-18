@@ -22,7 +22,7 @@ class _$ValueFailureTearOff {
     );
   }
 
-  ShortPassword<T> shortPassword<T>({required T failedValue}) {
+  ShortPassword<T> invalidPassword<T>({required T failedValue}) {
     return ShortPassword<T>(
       failedValue: failedValue,
     );
@@ -39,26 +39,26 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(ShortPassword<T> value) invalidPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortPassword<T> value)? invalidPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -167,7 +167,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
   }) {
     return invalidEmail(failedValue);
   }
@@ -176,7 +176,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -189,7 +189,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(ShortPassword<T> value) invalidPassword,
   }) {
     return invalidEmail(this);
   }
@@ -198,7 +198,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortPassword<T> value)? invalidPassword,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -263,7 +263,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.shortPassword(failedValue: $failedValue)';
+    return 'ValueFailure<$T>.invalidPassword(failedValue: $failedValue)';
   }
 
   @override
@@ -288,20 +288,20 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
-    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidPassword,
   }) {
-    return shortPassword(failedValue);
+    return invalidPassword(failedValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
-    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidPassword,
     required TResult orElse(),
   }) {
-    if (shortPassword != null) {
-      return shortPassword(failedValue);
+    if (invalidPassword != null) {
+      return invalidPassword(failedValue);
     }
     return orElse();
   }
@@ -310,20 +310,20 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
-    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(ShortPassword<T> value) invalidPassword,
   }) {
-    return shortPassword(this);
+    return invalidPassword(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
-    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ShortPassword<T> value)? invalidPassword,
     required TResult orElse(),
   }) {
-    if (shortPassword != null) {
-      return shortPassword(this);
+    if (invalidPassword != null) {
+      return invalidPassword(this);
     }
     return orElse();
   }

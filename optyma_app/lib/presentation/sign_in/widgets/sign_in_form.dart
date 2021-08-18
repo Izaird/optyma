@@ -36,7 +36,7 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode: BlocProvider.of<SignInFormBloc>(context).state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: ListView(
             padding: const EdgeInsets.all(8),
             children: [
@@ -48,11 +48,11 @@ class SignInForm extends StatelessWidget {
               const SizedBox(height: 8),
 
 
-              PasswordField(password: _password),
+              const PasswordField(),
               const SizedBox(height: 8),
 
 
-              PasswordConfirmationField(password: _password),
+              const PasswordConfirmationField(),
               const SizedBox(height: 8),
 
 
@@ -89,49 +89,16 @@ class RegisterButton extends StatelessWidget {
   }
 }
 
-class PasswordConfirmationField extends StatelessWidget {
-  const PasswordConfirmationField({
-    Key? key,
-    required TextEditingController password,
-  }) : _password = password, super(key: key);
-
-  final TextEditingController _password;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: const InputDecoration(
-        prefixIcon: Icon(Icons.lock),
-        labelText: 'Confirmar contraseña',
-      ),
-      autocorrect: false,
-      obscureText: true,
-      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
-        .add(SignInFormEvent.confirmPasswordChanged(_password.text, value)),
-            validator: (value) {
-        if(value == _password.text){
-          return null;
-        }
-        else{
-          return 'Las contraseñas no coinciden';
-        }
-      },
-    );
-  }
-}
 
 class PasswordField extends StatelessWidget {
   const PasswordField({
     Key? key,
-    required TextEditingController password,
-  }) : _password = password, super(key: key);
+  }) :  super(key: key);
 
-  final TextEditingController _password;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: _password,
       decoration: const InputDecoration(
         prefixIcon: Icon(Icons.lock),
         labelText: 'Contraseña',
@@ -143,12 +110,46 @@ class PasswordField extends StatelessWidget {
       validator: (_) => BlocProvider.of<SignInFormBloc>(context)
         .state.password.value.fold(
           (f) => f.maybeMap(
-            shortPassword: (_) => 'Contraseña invalida',
+            invalidPassword: (_) => 'Contraseña invalida',
             orElse: () => null,
           ),
           (_) => null,
         ),
     );
+  }
+}
+
+
+class PasswordConfirmationField extends StatelessWidget {
+  const PasswordConfirmationField({
+    Key? key,
+  }) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.lock),
+        labelText: 'Confirmar contraseña',
+      ),
+      autocorrect: false,
+      obscureText: true,
+
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.confirmPasswordChanged(value)),
+
+      validator: (_) {
+        if(!BlocProvider.of<SignInFormBloc>(context).state.isSamePassword){
+          return 'Contraseña no coincide';
+        }
+        else{
+          return null;
+        }
+      }
+      
+    
+    ); 
   }
 }
 

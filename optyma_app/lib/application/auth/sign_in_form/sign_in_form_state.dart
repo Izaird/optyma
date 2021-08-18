@@ -1,12 +1,13 @@
 part of 'sign_in_form_bloc.dart';
 
 @freezed
-abstract class SignInFormState with _$SignInFormState {
+class SignInFormState with _$SignInFormState {
   const factory SignInFormState({
     required EmailAddress emailAddress,
     required Password password,
-    required bool samePassword,
+    required Password secondPassword,
     required bool showErrorMessages,
+    required bool isSamePassword,
     required bool isSubmitting,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _SignInFormState;
@@ -14,9 +15,12 @@ abstract class SignInFormState with _$SignInFormState {
   factory SignInFormState.initial() => SignInFormState(
         emailAddress: EmailAddress(''),
         password: Password(''),
-        samePassword: false,
+        secondPassword: Password(''),
+        isSamePassword: false,
         showErrorMessages: false,
         isSubmitting: false,
         authFailureOrSuccessOption: none(),
   );
+
+  const SignInFormState._();
 }

@@ -37,22 +37,27 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           authFailureOrSuccessOption: none(),
         );
       },
+      confirmPasswordChanged: (e) async*{
+
+        if(state.password == Password(e.secondPasswordStr)){
+          yield state.copyWith(
+            secondPassword: Password(e.secondPasswordStr),
+            authFailureOrSuccessOption : none(),
+            isSamePassword: true,
+          );
+        }else{
+          yield state.copyWith(
+            secondPassword: Password(e.secondPasswordStr),
+            authFailureOrSuccessOption : none(),
+            isSamePassword: false,
+          );
+        }
+      },
       registerWithEmailAndPasswordPressed: (e) async* {
         yield* _performActionOnAuthFacadeWithEmailAndPassword(
           _authFacade.registerWithEmailAndPassword,
         );
       }, 
-      confirmPasswordChanged: (e) async*{
-        if(e.originalPasswordStr == e.newPasswordStr){
-          yield state.copyWith(
-            samePassword: true,
-          );
-        }else{
-          yield state.copyWith(
-            samePassword: false,
-          );
-        }
-      },
     );
   }
 
@@ -66,9 +71,11 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     Either<AuthFailure, Unit>? failureOrSuccess;
 
     final isEmailValid = state.emailAddress.isValid();
-    final isPasswordValid = state.password.isValid() && state.samePassword;
+    final isPasswordValid = state.password.isValid() && state.isSamePassword;
 
-    if (isEmailValid && isPasswordValid) {
+    final isFormValid = isEmailValid && isPasswordValid;
+
+    if (isFormValid) {
       yield state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),
