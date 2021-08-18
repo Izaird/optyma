@@ -15,7 +15,6 @@ part 'login_form_bloc.freezed.dart';
 
 @injectable
 class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
-
   final IAuthFacade _authFacade;
 
   LoginFormBloc(this._authFacade) : super(LoginFormState.initial());
@@ -27,12 +26,16 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
       emailChanged: (e) async* {
         yield state.copyWith(
           emailAddress: EmailAddress(e.emailStr),
+          //Whe the value of email change the response from the server need to
+          //reseted as well.
           authFailureOrSuccessOption: none(),
         );
       },
       passwordChanged: (e) async* {
         yield state.copyWith(
           password: Password(e.passwordStr),
+          //Whe the value of password change the response from the server need to
+          //reseted as well.
           authFailureOrSuccessOption: none(),
         );
       },
@@ -59,15 +62,14 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
     Future<Either<AuthFailure, Unit>> Function({
       required EmailAddress emailAddress,
       required Password password,
-    })
-        forwardedCall,
+    }) forwardedCall,
   ) async* {
     Either<AuthFailure, Unit>? failureOrSuccess;
-
     final isEmailValid = state.emailAddress.isValid();
     final isPasswordValid = state.password.isValid();
+    final emailAndPassWordIsValid = isEmailValid && isPasswordValid;
 
-    if (isEmailValid && isPasswordValid) {
+    if (emailAndPassWordIsValid) {
       yield state.copyWith(
         isSubmitting: true,
         authFailureOrSuccessOption: none(),

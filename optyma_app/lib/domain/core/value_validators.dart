@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'failures.dart';
+import 'value_failure.dart';
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const emailRegex =

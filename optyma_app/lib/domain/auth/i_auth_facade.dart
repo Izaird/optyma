@@ -6,6 +6,7 @@ import 'value_objects.dart';
 abstract class IAuthFacade{
   Future<Option<User>> getSignedInUser();
 
+  //We cannot use void, so insted use Unit if you don't want to return 'anything'
   Future<Either<AuthFailure,Unit>> registerWithEmailAndPassword({
     required EmailAddress emailAddress,
     required Password password

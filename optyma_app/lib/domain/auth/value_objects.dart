@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:optyma_app/domain/core/failures.dart';
+import 'package:optyma_app/domain/core/value_failure.dart';
 import 'package:optyma_app/domain/core/value_objects.dart';
 import 'package:optyma_app/domain/core/value_validators.dart';
 

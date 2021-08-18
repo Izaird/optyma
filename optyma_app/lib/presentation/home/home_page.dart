@@ -8,13 +8,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Pagina principal'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.exit_to_app),
+            icon: const Icon(Icons.exit_to_app),
             onPressed: () {
               BlocProvider.of<AuthBloc>(context).add(const AuthEvent.signedOut());
-              // AutoRouter.of(context).replace(const SplashPageRoute());
             },
           )
         ],

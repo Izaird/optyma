@@ -38,7 +38,6 @@ class AppWidget extends StatelessWidget {
           if (state is Unaunthenticated){
             return LoginPage();
           }
-
           return Container();
         }
       ),

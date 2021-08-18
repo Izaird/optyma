@@ -1,4 +1,7 @@
 part of 'login_form_bloc.dart';
+//authFailureOrSuccesOption is an option type because at the
+//beging when the user has yet not interactuated with the system
+//so the option none() can be returned.
 
 @freezed
 abstract class LoginFormState with _$LoginFormState {

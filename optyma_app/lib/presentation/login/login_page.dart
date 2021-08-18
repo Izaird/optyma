@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Log in'),
+        title: const Text('Inicio de sesión'),
       ),
       body: BlocProvider(
         create: (context) => getIt<LoginFormBloc>(),

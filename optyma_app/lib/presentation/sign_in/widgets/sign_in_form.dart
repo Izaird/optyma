@@ -23,10 +23,6 @@ class SignInForm extends StatelessWidget {
                   invalidEmailAndPasswordCombination: (_) =>
                       'Combinancion invalida de correo y contraseña',
                 )),
-                // action: SnackBarAction(  
-                //   label: 'Action',
-                //   onPressed: (){},
-                // ),
               );
 
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -44,87 +40,23 @@ class SignInForm extends StatelessWidget {
           child: ListView(
             padding: const EdgeInsets.all(8),
             children: [
-              const Text(
-                '📝',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 130),
-              ),
-              const SizedBox(height: 8),
-              TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  labelText: 'Correo',
-                ),
-                autocorrect: false,
-                onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
-                  .add(SignInFormEvent.emailChanged(value)),
-                validator: (_) => BlocProvider.of<SignInFormBloc>(context)
-                    .state
-                    .emailAddress
-                    .value
-                    .fold(
-                      (f) => f.maybeMap(
-                        invalidEmail: (_) => 'Correo invalido',
-                        orElse: () => null,
-                      ),
-                      (_) => null,
-                    ),
-              ),
+              const Logo(),
               const SizedBox(height: 8),
 
 
-              TextFormField(
-                controller: _password,
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
-                  labelText: 'Contraseña',
-                ),
-                autocorrect: false,
-                obscureText: true,
-                onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
-                  .add(SignInFormEvent.passwordChanged(value)),
-                validator: (_) => BlocProvider.of<SignInFormBloc>(context)
-                  .state.password.value.fold(
-                    (f) => f.maybeMap(
-                      shortPassword: (_) => 'Contraseña invalida',
-                      orElse: () => null,
-                    ),
-                    (_) => null,
-                  ),
-              ),
+              const EmailField(),
               const SizedBox(height: 8),
 
 
-              TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
-                  labelText: 'Confirmar contraseña',
-                ),
-                autocorrect: false,
-                obscureText: true,
-                onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
-                  .add(SignInFormEvent.confirmPasswordChanged(_password.text, value)),
-                      validator: (value) {
-                  if(value == _password.text){
-                    return null;
-                  }
-                  else{
-                    return 'Las contraseñas no coinciden';
-                  }
-                },
-              ),
+              PasswordField(password: _password),
               const SizedBox(height: 8),
 
 
-              TextButton(
-               onPressed: () {
-                 BlocProvider.of<SignInFormBloc>(context).add(
-                       const SignInFormEvent
-                           .registerWithEmailAndPasswordPressed(),
-                     );
-               },
-               child: const Text('Registrarse'),
-                ),
+              PasswordConfirmationField(password: _password),
+              const SizedBox(height: 8),
+
+
+              const RegisterButton(),
 
               if(state.isSubmitting)...[
                 const SizedBox(height: 8),
@@ -134,6 +66,133 @@ class SignInForm extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class RegisterButton extends StatelessWidget {
+  const RegisterButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+     onPressed: () {
+       BlocProvider.of<SignInFormBloc>(context).add(
+             const SignInFormEvent
+                 .registerWithEmailAndPasswordPressed(),
+           );
+     },
+     child: const Text('Registrarse'),
+      );
+  }
+}
+
+class PasswordConfirmationField extends StatelessWidget {
+  const PasswordConfirmationField({
+    Key? key,
+    required TextEditingController password,
+  }) : _password = password, super(key: key);
+
+  final TextEditingController _password;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.lock),
+        labelText: 'Confirmar contraseña',
+      ),
+      autocorrect: false,
+      obscureText: true,
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.confirmPasswordChanged(_password.text, value)),
+            validator: (value) {
+        if(value == _password.text){
+          return null;
+        }
+        else{
+          return 'Las contraseñas no coinciden';
+        }
+      },
+    );
+  }
+}
+
+class PasswordField extends StatelessWidget {
+  const PasswordField({
+    Key? key,
+    required TextEditingController password,
+  }) : _password = password, super(key: key);
+
+  final TextEditingController _password;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: _password,
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.lock),
+        labelText: 'Contraseña',
+      ),
+      autocorrect: false,
+      obscureText: true,
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.passwordChanged(value)),
+      validator: (_) => BlocProvider.of<SignInFormBloc>(context)
+        .state.password.value.fold(
+          (f) => f.maybeMap(
+            shortPassword: (_) => 'Contraseña invalida',
+            orElse: () => null,
+          ),
+          (_) => null,
+        ),
+    );
+  }
+}
+
+class EmailField extends StatelessWidget {
+  const EmailField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.email),
+        labelText: 'Correo',
+      ),
+      autocorrect: false,
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.emailChanged(value)),
+      validator: (_) => BlocProvider.of<SignInFormBloc>(context)
+          .state
+          .emailAddress
+          .value
+          .fold(
+            (f) => f.maybeMap(
+              invalidEmail: (_) => 'Correo invalido',
+              orElse: () => null,
+            ),
+            (_) => null,
+          ),
+    );
+  }
+}
+
+class Logo extends StatelessWidget {
+  const Logo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      '📝',
+      textAlign: TextAlign.center,
+      style: TextStyle(fontSize: 130),
     );
   }
 }

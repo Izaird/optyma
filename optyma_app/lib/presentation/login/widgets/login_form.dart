@@ -21,17 +21,13 @@ class LoginForm extends StatelessWidget {
                   invalidEmailAndPasswordCombination: (_) =>
                       'Combinancion invalida de correo y contraseña',
                 )),
-                // action: SnackBarAction(  
-                //   label: 'Action',
-                //   onPressed: (){},
-                // ),
               );
 
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
-              // AutoRouter.of(context).replace(const HomePageRoute());
-              context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
+              BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
+              // context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
             },
           ),
         );
@@ -46,86 +42,21 @@ class LoginForm extends StatelessWidget {
               const Logo(),
               const SizedBox(height: 8),
 
-              TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  labelText: 'Correo',
-                ),
-                autocorrect: false,
-                onChanged: (value) => context.read<LoginFormBloc>()
-                  .add(LoginFormEvent.emailChanged(value)),
-                validator: (_) => BlocProvider.of<LoginFormBloc>(context)
-                    .state.emailAddress.value.fold(
-                      (f) => f.maybeMap(
-                        invalidEmail: (_) => 'Correo invalido',
-                        orElse: () => null,
-                      ),
-                      (_) => null,
-                    ),
-              ),
+              const EmailField(),
               const SizedBox(height:8),
 
 
-              TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: Icon(Icons.lock),
-                  labelText: 'Contraseña',
-                ),
-                autocorrect: false,
-                obscureText: true,
-                onChanged: (value) => context.read<LoginFormBloc>()
-                  .add(LoginFormEvent.passwordChanged(value)),
-                validator: (_) => context.read<LoginFormBloc>()
-                  .state.password.value.fold(
-                    (f) => f.maybeMap(
-                      shortPassword: (_) => 'Contraseña invalida',
-                      orElse: () => null,
-                    ),
-                    (_) => null,
-                  ),
-              ),
+              const PasswordField(),
               const SizedBox(height: 8),
 
-
-              TextButton(
-                onPressed: () {
-                  context.read<LoginFormBloc>().add(
-                    const LoginFormEvent.loginWithEmailAndPasswordPressed(),
-                  );
-                },
-                child: const Text('Ingresar'),
-              ),
+              const LogInButton(),
               const SizedBox(height: 8),
 
+              const SignInButton(),
 
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'sign-in');
-                  // AutoRouter.of(context).pushNamed('sign-in-page');
-                  // BlocProvider.of<LoginFormBloc>(context).add(
-                  //       const LoginFormEvent
-                  //           .registerWithEmailAndPasswordPressed(),
-                  //     );
-                },
-                child: const Text('Registrarse'),
-              ),
+              const LoginWithGoogleButton(),
 
-              ElevatedButton(
-                onPressed: () {
-                  context.read<LoginFormBloc>()
-                    .add(const LoginFormEvent.loginWithGooglePressed()
-                  );
-                },
-                child: const Text(
-                  'Ingresar con Google',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-
-              if(state.isSubmitting)...[
+              if(BlocProvider.of<LoginFormBloc>(context).state.isSubmitting)...[
                 const SizedBox(height: 8),
                 const LinearProgressIndicator(),  
               ],
@@ -133,6 +64,128 @@ class LoginForm extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+
+}
+
+class LogInButton extends StatelessWidget {
+  const LogInButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return     TextButton(
+    
+          onPressed: () {
+    
+            BlocProvider.of<LoginFormBloc>(context).add(
+    
+              const LoginFormEvent.loginWithEmailAndPasswordPressed(),
+    
+            );
+    
+          },
+    
+          child: const Text('Ingresar'),
+    
+        );
+  }
+}
+
+class SignInButton extends StatelessWidget {
+  const SignInButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        Navigator.pushNamed(context, 'sign-in');
+      },
+      child: const Text('Registrarse'),
+    );
+  }
+}
+
+class LoginWithGoogleButton extends StatelessWidget {
+  const LoginWithGoogleButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        BlocProvider.of<LoginFormBloc>(context)
+          .add(const LoginFormEvent.loginWithGooglePressed()
+        );
+      },
+      child: const Text(
+        'Ingresar con Google',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+}
+
+class PasswordField extends StatelessWidget {
+  const PasswordField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.lock),
+        labelText: 'Contraseña',
+      ),
+      autocorrect: false,
+      obscureText: true,
+      onChanged: (value) => BlocProvider.of<LoginFormBloc>(context)
+        .add(LoginFormEvent.passwordChanged(value)),
+      validator: (_) => context.read<LoginFormBloc>()
+        .state.password.value.fold(
+          (f) => f.maybeMap(
+    shortPassword: (_) => 'Contraseña invalida',
+    orElse: () => null,
+          ),
+          (_) => null,
+        ),
+    );
+  }
+}
+
+class EmailField extends StatelessWidget {
+  const EmailField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.email),
+        labelText: 'Correo',
+      ),
+      autocorrect: false,
+      onChanged: (value) => BlocProvider.of<LoginFormBloc>(context)
+        .add(LoginFormEvent.emailChanged(value)),
+      validator: (_) => BlocProvider.of<LoginFormBloc>(context)
+          .state.emailAddress.value.fold(
+            (f) => f.maybeMap(
+              invalidEmail: (_) => 'Correo invalido',
+              orElse: () => null,
+            ),
+            (_) => null,
+          ),
     );
   }
 }

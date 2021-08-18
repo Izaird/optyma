@@ -1,5 +1,5 @@
 
-import 'package:optyma_app/domain/core/failures.dart';
+import 'package:optyma_app/domain/core/value_failure.dart';
 
 class UnexpectedValueError extends Error {
   final ValueFailure valueFailure;

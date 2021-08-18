@@ -79,6 +79,7 @@ class FirebaseAuthFacade implements IAuthFacade{
         return left(const AuthFailure.cancelledByUser());
       }
 
+
       final googleAuthentication = await googleUser.authentication;
 
       final authCredential = firebase.GoogleAuthProvider.credential(
@@ -96,9 +97,6 @@ class FirebaseAuthFacade implements IAuthFacade{
 
   @override
   Future<void> signOut() => Future.wait([
-        _googleSignIn.signOut(),
-        _firebaseAuth.signOut(),
-      ]);
-
-
+    _googleSignIn.signOut(),
+    _firebaseAuth.signOut(), ]); 
 }
