@@ -29,11 +29,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^7.1.0
+  font_awesome_flutter: ^9.1.0
   freezed_annotation:
   get_it: ^7.2.0
   google_sign_in: ^5.0.7
-  math_expressions: ^2.1.0
   injectable: ^1.4.1
+  math_expressions: ^2.1.0
   uuid: ^3.0.4
 
 

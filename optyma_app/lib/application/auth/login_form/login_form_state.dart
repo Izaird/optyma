@@ -4,7 +4,7 @@ part of 'login_form_bloc.dart';
 //so the option none() can be returned.
 
 @freezed
-abstract class LoginFormState with _$LoginFormState {
+class LoginFormState with _$LoginFormState {
   const factory LoginFormState({
     required EmailAddress emailAddress,
     required Password password,
