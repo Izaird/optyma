@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       drawer: PlayerNavigationMenu(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children:[
+        children:const [
           Center(
             child: Text('Bienvenido usuario!')
           )

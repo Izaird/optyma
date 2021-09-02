@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class EvaluatedExpression{
@@ -11,6 +12,9 @@ class EvaluatedExpression{
     this.options
   );
 }
+
+
+
 class MathExpression{
   String exp;
   List<List<int>> ranges = [];
@@ -23,17 +27,17 @@ class MathExpression{
     );
     
   EvaluatedExpression makeExpression(){
-    Parser p = Parser();
-    Random rand = Random();
-    List<int> numbersToReplace = [0,0,0,0,0,0,0,0]; 
-    Expression expre = p.parse(this.exp);
-    for(int i = 0; i<this.ranges.length;i++){
+    final Parser p = Parser();
+    final Random rand = Random();
+    final List<int> numbersToReplace = [0,0,0,0,0,0,0,0]; 
+    final Expression expre = p.parse(exp);
+    for(int i = 0; i<ranges.length;i++){
       numbersToReplace[i] = ranges[i][0] + rand.nextInt(ranges[i][1] - ranges[i][0]);
     }
-    int variance = 2+rand.nextInt(5-1);
-      Variable a= Variable('a'), b=Variable('b') ;
-      Variable c= Variable('c'), d=Variable('d'), e=Variable('e'), f =Variable('f'), g=Variable('g');
-      ContextModel cm = ContextModel()
+    final int variance = 2+rand.nextInt(5-1);
+      final Variable a= Variable('a'), b=Variable('b') ;
+      final Variable c= Variable('c'), d=Variable('d'), e=Variable('e'), f =Variable('f'), g=Variable('g');
+      final ContextModel cm = ContextModel()
       ..bindVariable(a, Number(numbersToReplace[0]))
       ..bindVariable(b, Number(numbersToReplace[1]))
       ..bindVariable(c, Number(numbersToReplace[2]))
@@ -41,26 +45,24 @@ class MathExpression{
       ..bindVariable(e, Number(numbersToReplace[4]))
       ..bindVariable(f, Number(numbersToReplace[5]))
       ..bindVariable(g, Number(numbersToReplace[6]));
-      double result = expre.evaluate(EvaluationType.REAL, cm) as double;
-      print('Expression: $this.exp');
-      print('Evaluated expression: $result\n  (with context: $cm)');
-      print(result);
-      List<double> expOpc = [result,result-variance,result+variance+1,result+variance];
+      final double result = expre.evaluate(EvaluationType.REAL, cm) as double;
+      debugPrint('Expression: $this.exp');
+      debugPrint('Evaluated expression: $result\n  (with context: $cm)');
+      debugPrint(result.toString());
+      final List<double> expOpc = [result,result-variance,result+variance+1,result+variance];
       String operation = exp.toString();
-      operation=operation.replaceAll(RegExp(r'a'),numbersToReplace[0].toString() );
-      operation=operation.replaceAll(RegExp(r'b'),numbersToReplace[1].toString() );
-      operation=operation.replaceAll(RegExp(r'c'),numbersToReplace[2].toString() );
-      operation=operation.replaceAll(RegExp(r'd'),numbersToReplace[3].toString() );
-      // print("Operation:"+ operation);
+      operation=operation.replaceAll(RegExp('a'),numbersToReplace[0].toString() );
+      operation=operation.replaceAll(RegExp('b'),numbersToReplace[1].toString() );
+      operation=operation.replaceAll(RegExp('c'),numbersToReplace[2].toString() );
+      operation=operation.replaceAll(RegExp('d'),numbersToReplace[3].toString() );
       expOpc.shuffle();
-      expOpc.shuffle();
-      return EvaluatedExpression(operation, result,expOpc); 
+      return EvaluatedExpression(operation, result, expOpc); 
   }
   List<EvaluatedExpression> makeXNumberOfQuestions(int n, List<MathExpression> mathExp){
-    List<EvaluatedExpression> expressions =[];
+    final List<EvaluatedExpression> expressions =[];
     final _random = Random();
     for(int i = 0; i < n; i++){
-      EvaluatedExpression temp = mathExp[_random.nextInt(mathExp.length)].makeExpression();
+      final EvaluatedExpression temp = mathExp[_random.nextInt(mathExp.length)].makeExpression();
       expressions.add(temp);    
     }
     return expressions;
