@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:optyma_app/application/auth/auth_bloc.dart';
-
+import 'package:optyma_app/presentation/core/player_navigation_menu.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -9,15 +7,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pagina principal'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.exit_to_app),
-            onPressed: () {
-              BlocProvider.of<AuthBloc>(context).add(const AuthEvent.signedOut());
-            },
-          )
-        ],
       ),
+      drawer: PlayerNavigationMenu(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children:[

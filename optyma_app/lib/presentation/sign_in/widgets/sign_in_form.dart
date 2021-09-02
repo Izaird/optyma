@@ -4,7 +4,6 @@ import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
 
 class SignInForm extends StatelessWidget {
-  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
