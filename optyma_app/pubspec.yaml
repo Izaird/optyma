@@ -36,6 +36,8 @@ dependencies:
   injectable: ^1.4.1
   math_expressions: ^2.1.0
   uuid: ^3.0.4
+  kt_dart: ^0.9.1
+
 
 
 
