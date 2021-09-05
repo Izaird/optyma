@@ -1,12 +1,13 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:optyma_app/domain/expressions/expression.dart';
 
-class EvaluatedExpression{
+class EvaluatedExpressionV1{
   String evaluatedExpression;
   double result;
   List<double> options;
-  EvaluatedExpression(
+  EvaluatedExpressionV1(
     this.evaluatedExpression,
     this.result,
     this.options
@@ -56,8 +57,15 @@ class MathExpression{
       operation=operation.replaceAll(RegExp('c'),numbersToReplace[2].toString() );
       operation=operation.replaceAll(RegExp('d'),numbersToReplace[3].toString() );
       expOpc.shuffle();
-      return EvaluatedExpression(operation, result, expOpc); 
+      // return EvaluatedExpressionV1(operation, result, expOpc); 
+      return EvaluatedExpression(
+        evalutedExpression: operation, 
+        result: result, 
+        options: expOpc
+      );
   }
+
+
   List<EvaluatedExpression> makeXNumberOfQuestions(int n, List<MathExpression> mathExp){
     final List<EvaluatedExpression> expressions =[];
     final _random = Random();
