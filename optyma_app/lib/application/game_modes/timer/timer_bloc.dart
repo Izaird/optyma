@@ -13,7 +13,7 @@ part 'timer_bloc.freezed.dart';
 @injectable
 class TimerBloc extends Bloc<TimerEvent, TimerState> {
   final Ticker _ticker;
-  late StreamSubscription<int> _tickerSubscription;
+  StreamSubscription<int>? _tickerSubscription;
 
   TimerBloc({required Ticker ticker}) 
   : _ticker = ticker, super(const TimerState.noTime());
@@ -23,7 +23,7 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
     yield* event.map(
       started: (e) async*{
         yield TimerState.runInProgress(duration: e.duration);
-        _tickerSubscription.cancel();
+        _tickerSubscription?.cancel();
         _tickerSubscription = _ticker
           .tick(thicks: e.duration) 
           .listen((duration) => add(TimerEvent.ticked(duration)));
@@ -31,20 +31,20 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
 
       paused: (e)async*{
         if(state is RunInProgress){
-          _tickerSubscription.pause();
+          _tickerSubscription?.pause();
           yield TimerState.runPause(duration: state.duration);
         }
       }, 
 
       resumed: (e)async*{
         if(state is RunPause){
-          _tickerSubscription.resume();
+          _tickerSubscription?.resume();
           yield TimerState.runInProgress(duration: state.duration);
         }
       }, 
 
       newTime: (e)async*{
-        _tickerSubscription.cancel();
+        _tickerSubscription?.cancel();
         yield TimerState.initalTime(duration: e.newTime);
       }, 
 
@@ -54,5 +54,12 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
         : const TimerState.runComplete();
       }
     );
+  }
+
+
+  @override 
+  Future<void> close(){
+    _tickerSubscription?.cancel();
+    return super.close();
   }
 }
