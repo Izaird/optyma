@@ -51,7 +51,7 @@ class InfiniteMode extends StatelessWidget {
       title: const Text('Modo Infinito'),
       onTap: (){
         Navigator.pop(context);
-        Navigator.pushNamed(context, 'infinite-mode');
+        Navigator.pushNamed(context, 'endless-mode');
       },
     );
   }
