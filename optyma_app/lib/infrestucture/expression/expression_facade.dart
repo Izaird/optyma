@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/expressions/expression.dart';
 import 'package:optyma_app/domain/expressions/i_expression_facade.dart';
@@ -21,41 +22,40 @@ class ExpressionFacade implements IExpressionFacade{
   }
 
   @override
-  EvaluatedExpression questionInt(opt operationType, difficulty diff) {
-    // TODO: implement questionInt
-    Random rand= Random();
+  EvaluatedExpression questionInt(OperationType operationType, Difficulty difficulty) {
+    final Random rand= Random();
     int numberOfVars=0;
-    List<int>vars = [];
+    final List<int>vars = [];
     String operation='';
     List<int>listOfOptions=[];
     int result=0;
     int i=0;
-    if(operationType == opt.addition || operationType == opt.substraction){
+    if(operationType == OperationType.addition || operationType == OperationType.substraction){
       numberOfVars = 2 + rand.nextInt(3);
     }
-    else if(operationType==opt.multiplication){
+    else if(operationType==OperationType.multiplication){
       numberOfVars = 2 + rand.nextInt(2);
     }
     else{
       numberOfVars = 2;
     }
-    if(diff == difficulty.easy){
+    if(difficulty == Difficulty.easy){
       for(i=0;i<numberOfVars;i++){
         vars.add(rand.nextInt(25)+1);
       }
     }
-    else if(diff == difficulty.medium){
+    else if(difficulty == Difficulty.medium){
       for(i=0;i<numberOfVars;i++){
         vars.add(rand.nextInt(99)+10);
       }
     }
-    else if (diff == difficulty.hard){
+    else if (difficulty == Difficulty.hard){
        for(i=0;i<numberOfVars;i++){
         vars.add(rand.nextInt(979)+20);
       }
     }
 
-    if(operationType == opt.addition){
+    if(operationType == OperationType.addition){
       for(i=0;i<numberOfVars;i++){
         result= result + vars[i];
         if(i == numberOfVars - 1) {
@@ -65,7 +65,7 @@ class ExpressionFacade implements IExpressionFacade{
         }
       }
     }
-    else if(operationType == opt.substraction){
+    else if(operationType == OperationType.substraction){
       result=vars[0];
       for(i=0;i<vars.length;i++){
         if(i == vars.length - 1) {
@@ -78,7 +78,7 @@ class ExpressionFacade implements IExpressionFacade{
         }
       }
     }
-    else if(operationType == opt.multiplication){
+    else if(operationType == OperationType.multiplication){
       for(i=0;i<numberOfVars;i++){
         if(i == numberOfVars - 1) {
           operation = operation + vars[i].toString();
@@ -87,18 +87,18 @@ class ExpressionFacade implements IExpressionFacade{
         }
       }
     }
-    else if(operationType == opt.division){
+    else if(operationType == OperationType.division){
       int factor1=0;
       int factor2=0, num1=0;
 
-      if(diff==difficulty.easy){
+      if(difficulty==Difficulty.easy){
         factor1= rand.nextInt(12)+10;
         factor2 = rand.nextInt(10)+1;
       }
-      if(diff==difficulty.medium){
+      if(difficulty==Difficulty.medium){
         factor1= rand.nextInt(30)+10;
         factor2 = rand.nextInt(16)+2;
-      }if(diff==difficulty.hard){
+      }if(difficulty==Difficulty.hard){
         factor1= rand.nextInt(61)+10;
         factor2 = rand.nextInt(24)+2;
       }
@@ -106,10 +106,9 @@ class ExpressionFacade implements IExpressionFacade{
       operation = '$num1/$factor2';
     }
     else{
-      print("Unexpected operation type");
+      debugPrint("Unexpected operation type");
     }
     listOfOptions = _expressionOptions(result);
     return EvaluatedExpression(evalutedExpression: operation, result: result, options: listOfOptions);
-    //throw UnimplementedError();
   }
 } 
