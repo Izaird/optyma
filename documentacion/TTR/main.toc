@@ -31,26 +31,28 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3}Casos de Uso}{4}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Tabla descriptiva de Caso de Uso 1}{4}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Tabla descriptiva de Caso de Uso 1}{5}{subsubsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Tabla descriptivad de Caso de Uso 2}{4}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2}Tabla descriptiva de Caso de Uso 2}{5}{subsubsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Análisis de Interfaces}{5}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.3}Tabla descriptiva de Caso de Uso 3}{6}{subsubsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Análisis de la Base de Datos}{5}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.4}Análisis de Interfaces}{6}{subsection.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Tecnologías usadas}{5}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.5}Análisis de la Base de Datos}{6}{subsection.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Diseño}{6}{section.4}%
+\contentsline {subsection}{\numberline {3.6}Tecnologías usadas}{6}{subsection.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Arquitectura general del sistema}{6}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Diseño}{7}{section.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Arquitectura general del sistema}{7}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2}Diseño de Base de Datos}{7}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Diseño de Interfaces}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Diseño de Interfaces}{8}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Metodología}{9}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Metodología}{11}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Implementación}{10}{section.5}%
+\contentsline {section}{\numberline {5}Implementación}{12}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Pruebas}{11}{section.6}%
+\contentsline {section}{\numberline {6}Pruebas}{14}{section.6}%

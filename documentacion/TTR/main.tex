@@ -108,12 +108,19 @@ Esta teoría es relevante para el proyecto en proceso y que se reporta en el pre
 \subsection{Requisitos Funcionales}
 \begin{enumerate}
 %\item{Funcionalidad que se desarrolló}
-\item {El sistema permitirá el registro se realizará por medio de un correo y contraseña válidos}
-\item{El sistema permitirá el ingreso de un usuario al sistema mediante un correo y contraseña válidos previamente registrados}
-\item {}
+\item {El sistema permitirá el registro de usuarios, este se realizará por medio de un correo electrónico y contraseña válidos.}
+\item{El sistema permitirá el ingreso de un usuario al sistema mediante un correo y contraseña  previamente registrados.}
+\item {El sistema permitirá el registro y acceso mediante una cuenta de Google.}
+\item {El sistema contará con un modo de juego infinito}
 \end{enumerate}
 \subsection{Requisitos No Funcionales}
 \subsection{Casos de Uso}
+%diagrama de casos de uso
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{imgs/CasosDeUso}
+    \caption{Diagrama de Casos de Uso}
+\end{figure}
 \subsubsection{Tabla descriptiva de Caso de Uso 1}
 \begin{tabular}{|M{5cm}|c|}
 \hline
@@ -122,13 +129,13 @@ Versión & 1.1\\ \hline
 Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
 Revisor & Izaird Alexander Mothelet Delgado \\ \hline
 Actor(es) & Usuario Final \\ \hline
-Entradas & nickname, correo electrónico, contraseña, escolaridad\\ & Cuenta de Google \\ \hline
+Entradas & correo electrónico, contraseña, \\ & Cuenta de Google \\ \hline
 Salidas & Cuenta de usuario creada \\ \hline
 Pre-condiciones & Instalar y abrir la aplicación \\ \hline
 Post-condiciones & Cuenta de usuario creada\\ \hline
 Mensajes & MSN1: "Ingrese un texto válido"\\
 		 & MSN2: "Bienvenido"\\ \hline
-Fuente & RF1 \\ \hline	
+Fuente & RF1,RF3 \\ \hline	
 	Trayectoria & Trayectoria A (principal)\\
 		& 1.   El usuario seleccionará la opción de registrarse.\\
 		& 2.   Se ingresarán los datos correspondientes.\\
@@ -139,10 +146,10 @@ Fuente & RF1 \\ \hline
 	& 3.   Se confirma y se dan los permisos corresponddientes.\\
 	& 4   Se creará correctamente la cuenta del usuario.\\ \hline
 \end{tabular}
-\subsubsection{Tabla descriptivad de Caso de Uso 2}
+\subsubsection{Tabla descriptiva de Caso de Uso 2}
 \begin{tabular}{|M{5cm}|c|}
 \hline
-Caso de Uso & CU2 Iniciciar Sesión\\ \hline
+Caso de Uso & CU2 Iniciar Sesión\\ \hline
 Versión & 1.1\\ \hline
 Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
 Revisor & Izaird Alexander Mothelet Delgado \\ \hline
@@ -153,7 +160,7 @@ Pre-condiciones & Instalar y abrir la aplicación \\ \hline
 Post-condiciones & Sesión iniciada\\ \hline
 Mensajes & MSN1: "Ingrese un texto válido"\\
 		   & MSN2: "Bienvenido"\\ \hline
-Fuente & RF1 \\ \hline	
+Fuente & RF2,RF3 \\ \hline	
 	Trayectoria & Trayectoria A (principal)\\
 		& 1.   El usuario ingresa sus credenciales (correo y contraseña).\\
 		& 2.   Se valida si existen coincidencias de las credenciales proporcionadas\\
@@ -163,7 +170,26 @@ Fuente & RF1 \\ \hline
 	& 2.   Se proporcionará una cuenta de Google\\
 	& 3.   Se inicia sesión.\\ \hline
 \end{tabular}
-
+\subsubsection{Tabla descriptiva de Caso de Uso 3}
+\begin{tabular}{|M{5cm}|c|}
+\hline
+Caso de Uso & CU3 Modo infinito\\ \hline
+Versión & 1.1\\ \hline
+Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
+Revisor & Izaird Alexander Mothelet Delgado \\ \hline
+Actor(es) & Usuario Final \\ \hline
+Entradas &  respuesta \\ \hline
+Salidas & Puntuación \\ \hline
+Pre-condiciones & Iniciar Sesión \\ \hline
+Post-condiciones & Puntuación\\ \hline
+Mensajes & MSN1: "Ingrese un texto válido"\\
+		   & MSN2: "Bienvenido"\\ \hline
+Fuente & RF4 \\ \hline	
+	Trayectoria\\
+		& 1.	El usuario selecciona el Modo Infinito del menu lateral\\
+		& 2.    El usuario responde  las preguntas \\
+		& 3.	El usuario comete 3 errores o presiona el boton de regreso, terminando el juego.\\ \hline
+\end{tabular}
 \subsection{Análisis de Interfaces}
 %Descripcion de tipo de interfaz y por que
 Las interfaces deberán ser optimizadas para dispositivos móviles. Deberá considerarse la capacidad touch de dichos dispositivos. La primera pantalla será para Iniciar sesión por medio del correo y contraseña junto con un botón para registrarse. La pantalla de registro solicitará el correo, contraseña y confirmación de la contraseña. Se deberá contar con botones para acceder al perfil de usuario, leaderboards y logros en una barra de navegación, esta puede ser horizontal o vertical. La pantalla de ejercicios mostrará la puntuación en todo momento en una esquina y el número de respuestas correctas consecutivas junto un icono. En caso de haber tiempo para responder a una pregunta habrá una barra horizontal en la parte superior la cual irá desapareciendo conforme transcura el tiempo asignado al usuario para dar respuesta a la pregunta, la cual irá  desaapareciendo de derecha a izquierda.
@@ -173,10 +199,10 @@ Para desarrollar esta aplicación se cuenta con una entidad Usuario con campos c
 \pagebreak
 \section{Diseño}
 \subsection{Arquitectura general del sistema}%Imagen arquitectura y descripcion%Imagen arquitectura y descripcion
-La arquitectura se compone de 6 módulos (ver figura 2).  El primer módulo es el de Registro de Usuario y es el encargado de dar de alta y validar a los usuarios. El segundo módulo corresponde a la lista de ejercicios que el usuario puede realizar, los cuales se obtienen de la base de datos de ejercicios. El módulo evaluador de logros y mecánicas, que lleva el control de los logros y actividades gamificadas, lleva el control de la puntuación y los niveles de dificultad. Las estadísticas y progreso del usuario son registradas por el módulo correspondiente. El módulo generador de problemas es donde el administrador crea las plantillas de los ejercicios y actividades, los cuales son almacenados en su respectiva base de datos. Estas plantillas son usadas por dicho módulo para generar expresiones aritméticas las cuales son evaluadas por el módulo Evaluador de expresiones.  
+La arquitectura se compone de 4 subsistemas (ver figura 2).  El primer subsistema es el de Registro e inicio de sesión y es el encargado de dar de alta y permitir el acceso a los usuarios ya registrados. El segundo subsistema corresponde a los módulos que interactuan con el usuario, estos son el módulo de ejercicios, encargado de proporcionar ejercicios al usuario, y el módulo evaluador de logros y mecánicas, el cual se encarga de llevar el registro de la puntuación, logros y niveles. El Subsistema de administardor incluye los módulos generador de problemas y evaluador de expresiones, los cuales se usan para generar los ejercicios para el usuario. También se incluye un módulo de actualización y consulta de dichos ejercicios. El último subsistema es el de estadísticas y progreso, el cual lleva el registro de los logros globales del usuario.  
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.7]{imgs/Arquitectura}
+    \includegraphics[scale=0.65]{imgs/Arquitectura}
     \caption{Arquitectura}
 \end{figure}
 
@@ -187,18 +213,19 @@ La arquitectura se compone de 6 módulos (ver figura 2).  El primer módulo es e
     \caption{Diagrama entidad relación}
 \end{figure}
 \subsection{Diseño de Interfaces}%mock-ups
-En este apartado se presentarán los ddiseños de las interfaces previamente descritras.
+En este apartado se presentarán los diseños de las interfaces previamente descritras.
 \pagebreak
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{imgs/Figma/Registro2} 
+    \caption{Registro}
+\end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{imgs/Figma/Login}
     \caption{Login}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.9]{imgs/Figma/Registro2}
-    \caption{Registro}
-\end{figure}
+
 \subsection{Metodología}
 \pagebreak
 \section{Implementación}
@@ -206,13 +233,18 @@ En este apartado se presentarán los ddiseños de las interfaces previamente des
 El subsistema de registro e ingreso fue implementado con Firebase 
 \begin{figure}[H]
     \centering
+    \includegraphics[scale=0.8]{imgs/Imp/Registro}
+    \caption{Implementación Registro}
+\end{figure}
+\begin{figure}[H]
+    \centering
     \includegraphics[scale=0.8]{imgs/Imp/Login1}
     \caption{Implementación de Login}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.8]{imgs/Imp/Registro}
-    \caption{Implementación Registro}
+    \includegraphics[scale=0.8]{imgs/Imp/Endless}
+    \caption{Implementación de modo infinito}
 \end{figure}
 \section{Pruebas}%Que pruebas se le hicieron al sistema
 Se validó el correo con una expresión regular. Algunos ejemplos de correos validos

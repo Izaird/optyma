@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.7) (preloaded format=pdflatex 2021.8.2)  31 AUG 2021 14:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.7) (preloaded format=pdflatex 2021.8.2)  9 SEP 2021 10:55
 entering extended mode
 **./main.tex
 (main.tex
@@ -744,7 +744,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-<imgs/MotivacionDiagrama.png, id=77, 569.2467pt x 189.8292pt>
+<imgs/MotivacionDiagrama.png, id=79, 569.2467pt x 189.8292pt>
 File: imgs/MotivacionDiagrama.png Graphic file (type png)
 <use imgs/MotivacionDiagrama.png>
 Package pdftex.def Info: imgs/MotivacionDiagrama.png  used on input line 95.
@@ -754,51 +754,73 @@ Overfull \hbox (43.15402pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
-[2] [3 <./imgs/MotivacionDiagrama.png>] [4] [5]
-<imgs/Arquitectura.png, id=103, 853.23769pt x 497.75963pt>
-File: imgs/Arquitectura.png Graphic file (type png)
-<use imgs/Arquitectura.png>
-Package pdftex.def Info: imgs/Arquitectura.png  used on input line 179.
-(pdftex.def)             Requested size: 597.2623pt x 348.42935pt.
+[2]
+<imgs/CasosDeUso.png, id=88, 819.06pt x 367.3725pt>
+File: imgs/CasosDeUso.png Graphic file (type png)
+<use imgs/CasosDeUso.png>
+Package pdftex.def Info: imgs/CasosDeUso.png  used on input line 121.
+(pdftex.def)             Requested size: 737.14719pt x 330.63217pt.
 
-Overfull \hbox (71.171pt too wide) in paragraph at lines 179--180
+Overfull \hbox (211.0559pt too wide) in paragraph at lines 121--122
  [][] 
  []
 
-<imgs/BSD.png, id=104, 421.8159pt x 136.3494pt>
+[3 <./imgs/MotivacionDiagrama.png>] [4 <./imgs/CasosDeUso.png>]
+Overfull \hbox (2.51195pt too wide) in paragraph at lines 174--193
+[][] 
+ []
+
+[5] [6]
+<imgs/Arquitectura.png, id=114, 853.23769pt x 497.75963pt>
+File: imgs/Arquitectura.png Graphic file (type png)
+<use imgs/Arquitectura.png>
+Package pdftex.def Info: imgs/Arquitectura.png  used on input line 205.
+(pdftex.def)             Requested size: 554.59792pt x 323.53992pt.
+
+Overfull \hbox (28.50662pt too wide) in paragraph at lines 205--206
+ [][] 
+ []
+
+<imgs/BSD.png, id=115, 421.8159pt x 136.3494pt>
 File: imgs/BSD.png Graphic file (type png)
 <use imgs/BSD.png>
-Package pdftex.def Info: imgs/BSD.png  used on input line 186.
+Package pdftex.def Info: imgs/BSD.png  used on input line 212.
 (pdftex.def)             Requested size: 379.6308pt x 122.7133pt.
-[6 <./imgs/Arquitectura.png>]
-<imgs/Figma/Login.png, id=112, 348.55219pt x 719.68875pt>
-File: imgs/Figma/Login.png Graphic file (type png)
-<use imgs/Figma/Login.png>
-Package pdftex.def Info: imgs/Figma/Login.png  used on input line 194.
-(pdftex.def)             Requested size: 313.69405pt x 647.7139pt.
- [7 <./imgs/BSD.png>]
-<imgs/Figma/Registro2.png, id=119, 307.90031pt x 640.64343pt>
+<imgs/Figma/Registro2.png, id=116, 307.90031pt x 640.64343pt>
 File: imgs/Figma/Registro2.png Graphic file (type png)
 <use imgs/Figma/Registro2.png>
-Package pdftex.def Info: imgs/Figma/Registro2.png  used on input line 199.
+Package pdftex.def Info: imgs/Figma/Registro2.png  used on input line 220.
 (pdftex.def)             Requested size: 277.10771pt x 576.57376pt.
- [8 <./imgs/Figma/Login.png>] [9 <./imgs/Figma/Registro2.png>]
-<imgs/Imp/Login1.png, id=132, 318.43968pt x 627.09282pt>
-File: imgs/Imp/Login1.png Graphic file (type png)
-<use imgs/Imp/Login1.png>
-Package pdftex.def Info: imgs/Imp/Login1.png  used on input line 209.
-(pdftex.def)             Requested size: 254.75209pt x 501.67494pt.
-<imgs/Imp/Registro.png, id=133, 298.11375pt x 633.11531pt>
+[7 <./imgs/Arquitectura.png> <./imgs/BSD.png>] [8]
+<imgs/Figma/Login.png, id=129, 348.55219pt x 719.68875pt>
+File: imgs/Figma/Login.png Graphic file (type png)
+<use imgs/Figma/Login.png>
+Package pdftex.def Info: imgs/Figma/Login.png  used on input line 225.
+(pdftex.def)             Requested size: 313.69405pt x 647.7139pt.
+ [9 <./imgs/Figma/Registro2.png>] [10 <./imgs/Figma/Login.png>] [11]
+<imgs/Imp/Registro.png, id=146, 298.11375pt x 633.11531pt>
 File: imgs/Imp/Registro.png Graphic file (type png)
 <use imgs/Imp/Registro.png>
-Package pdftex.def Info: imgs/Imp/Registro.png  used on input line 214.
+Package pdftex.def Info: imgs/Imp/Registro.png  used on input line 236.
 (pdftex.def)             Requested size: 238.49132pt x 506.49294pt.
- [10 <./imgs/Imp/Login1.png>] [11 <./imgs/Imp/Registro.png>]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 22
-6.
- (B:\Program Files\MikTex\tex/latex/base\ulasy.fd
+<imgs/Imp/Login1.png, id=147, 318.43968pt x 627.09282pt>
+File: imgs/Imp/Login1.png Graphic file (type png)
+<use imgs/Imp/Login1.png>
+Package pdftex.def Info: imgs/Imp/Login1.png  used on input line 241.
+(pdftex.def)             Requested size: 254.75209pt x 501.67494pt.
+<imgs/Imp/Endless.png, id=148, 294.34969pt x 634.62094pt>
+File: imgs/Imp/Endless.png Graphic file (type png)
+<use imgs/Imp/Endless.png>
+Package pdftex.def Info: imgs/Imp/Endless.png  used on input line 246.
+(pdftex.def)             Requested size: 235.48006pt x 507.69743pt.
+ [12 <./imgs/Imp/Registro.png>] [13 <./imgs/Imp/Login1.png>] [14 <./imgs/Imp/En
+dless.png>]
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 25
+8.
+
+(B:\Program Files\MikTex\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [12] (main.aux
+) [15] (main.aux
 LaTeX Info: Redefining \sptext on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
@@ -808,10 +830,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18765 strings out of 478870
- 315408 string characters out of 2858700
- 1089699 words of memory out of 3000000
- 36406 multiletter control sequences out of 15000+600000
+ 18795 strings out of 478870
+ 315991 string characters out of 2858700
+ 1091699 words of memory out of 3000000
+ 36427 multiletter control sequences out of 15000+600000
  406533 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,13n,80p,1048b,1890s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -822,9 +844,9 @@ ype1/public/amsfonts/cm/cmr10.pfb><B:/Program Files/MikTex/fonts/type1/public/a
 msfonts/cm/cmr17.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cm
 ti10.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb><B:
 /Program Files/MikTex/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on main.pdf (13 pages, 764806 bytes).
+Output written on main.pdf (16 pages, 851054 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 310 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 275 words of extra memory for PDF output out of 10000 (max. 10000000)
 
