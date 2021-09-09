@@ -34,7 +34,7 @@ class ExpressionFacade implements IExpressionFacade{
       numberOfVars = 2 + rand.nextInt(3);
     }
     else if(operationType==OperationType.multiplication){
-      numberOfVars = 2 + rand.nextInt(2);
+      numberOfVars = 2 + rand.nextInt(1);
     }
     else{
       numberOfVars = 2;
@@ -79,12 +79,14 @@ class ExpressionFacade implements IExpressionFacade{
       }
     }
     else if(operationType == OperationType.multiplication){
+      result=1;
       for(i=0;i<numberOfVars;i++){
         if(i == numberOfVars - 1) {
           operation = operation + vars[i].toString();
         } else{
           operation = '$operation${vars[i]}*';
         }
+        result=result*vars[i];
       }
     }
     else if(operationType == OperationType.division){
@@ -104,6 +106,7 @@ class ExpressionFacade implements IExpressionFacade{
       }
       num1 = factor1*factor2;
       operation = '$num1/$factor2';
+      result =factor1;
     }
     else{
       debugPrint("Unexpected operation type");
