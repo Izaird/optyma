@@ -70,12 +70,14 @@ class ExpressionFacade implements IExpressionFacade{
       for(i=0;i<vars.length;i++){
         if(i == vars.length - 1) {
           operation = operation + vars[i].toString();
+          print(operation);
         } else{
           operation = '$operation${vars[i]}-';
-        }
-        for(i=1;i<vars.length;i++){
-          result=result-vars[i];
-        }
+          //operation = operation + vars[i].toString() + '-';
+        } 
+      }
+      for(i=1;i<vars.length;i++){
+        result=result-vars[i];
       }
     }
     else if(operationType == OperationType.multiplication){
