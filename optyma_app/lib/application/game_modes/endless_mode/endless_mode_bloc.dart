@@ -62,6 +62,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
           }
 
           yield state.copyWith(
+            lifes: _lifes,
             selectedAnswer: e.answer,
             answered: true,
             streak: _streak,
@@ -81,7 +82,18 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
 
 
       timeOver: (e) async*{
+        int _lifes = state.lifes;
+        bool _gameOver = state.gameOver;
+        if(_lifes > 1){
+          _lifes -= 1;
+        }else{
+          _lifes = 0;
+          _gameOver = true;
+        }
+
+
         yield state.copyWith(
+          lifes: _lifes,
           selectedAnswer: null,
           answered: true,
           streak: 0,
@@ -91,6 +103,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
           return state.copyWith(
             question: _expressionFacade.questionInt(state.operationType, state.difficulty),
             answered: false,
+            gameOver: _gameOver,
           );
         });
 

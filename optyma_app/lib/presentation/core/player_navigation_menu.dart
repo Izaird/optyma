@@ -47,11 +47,11 @@ class InfiniteMode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(FontAwesomeIcons.infinity, color: Colors.blue),
-      title: const Text('Modo Infinito'),
+      leading: const Icon(FontAwesomeIcons.gamepad, color: Colors.blue),
+      title: const Text('Juegos'),
       onTap: (){
         Navigator.pop(context);
-        Navigator.pushNamed(context, 'endless-mode');
+        Navigator.pushNamed(context, 'game-modes');
       },
     );
   }
