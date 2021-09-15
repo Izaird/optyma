@@ -18,8 +18,18 @@ class EndlessModeBody extends StatelessWidget {
       builder: (context, state){
         if(state.gameOver){
           return Column(
-            children: const[
-              Text('Se acabo el juego')
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text('Se acabo el juego \nTu puntuación: ${BlocProvider.of<EndlessModeBloc>(context).state.score}',
+                style: const TextStyle( 
+                  fontSize: 30,
+                  ),
+                ),
+              ),
+              Center(
+                child: BackButton(),
+              ),
             ],
           );
         }else{
@@ -28,6 +38,7 @@ class EndlessModeBody extends StatelessWidget {
               TopBar(),
               TimerText(),
               QuestionCard(),
+              BackButton()
             ],
               
           );
