@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.optyma_app">
+    package="io.flutter.optyma_app">
    <application
         android:label="optyma_app"
         android:icon="@mipmap/ic_launcher">
@@ -37,5 +37,14 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       //
+
+      <!-- <meta-data android:name="com.google.android.gms.games.APP_ID"
+           android:value="753121856899" /> -->
+       <meta-data android:name="com.google.android.gms.games.APP_ID"
+           android:value="@string/app_id" />
+       <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

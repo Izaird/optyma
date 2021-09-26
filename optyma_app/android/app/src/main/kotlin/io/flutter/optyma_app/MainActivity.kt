@@ -1,4 +1,4 @@
-package com.example.optyma_app
+package io.flutter.optyma_app
 
 import io.flutter.embedding.android.FlutterActivity
 
