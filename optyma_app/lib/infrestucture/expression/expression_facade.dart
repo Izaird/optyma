@@ -10,11 +10,11 @@ class ExpressionFacade implements IExpressionFacade{
 
   List<int> _expressionOptions(int result){
     final Random random = Random();
-    final int variance = 2+random.nextInt(7);
+    final int variance = 2+random.nextInt(8);
     final List<int> expressionOptions = [
       result, 
       result+10,
-      result+variance+1,
+      result+variance,
       result-variance,
     ];
     expressionOptions.shuffle();
