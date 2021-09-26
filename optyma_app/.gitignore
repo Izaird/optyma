@@ -10,6 +10,8 @@
 .svn/
 *.freezed.dart
 injection.config.dart
+key.properties
+upload-keystore.jks
 
 # IntelliJ related
 *.iml
