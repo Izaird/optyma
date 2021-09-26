@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:optyma_app/presentation/core/player_navigation_menu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:games_services/games_services.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,8 +29,15 @@ class HomePage extends StatelessWidget {
             leading: const Icon(FontAwesomeIcons.trophy, color: Colors.blue),
             title: const Text('Logros'),
             onTap: (){
+              try{
+                GamesServices.signIn();
+              }
+              catch(e){
+                print(e);
+              }
+              GamesServices.showAchievements();
               //Navigator.pop(context);
-              //Navigator.pushNamed(context, 'game-modes');
+              //Navigator.pushNamed(context, 'achievements');
             },
           ),
           ListTile(
@@ -37,7 +45,7 @@ class HomePage extends StatelessWidget {
             title: const Text('Leaderboards'),
             onTap: (){
               //Navigator.pop(context);
-              //Navigator.pushNamed(context, 'game-modes');
+              //Navigator.pushNamed(context, 'leaderboards');
             },
           ),
         ],
