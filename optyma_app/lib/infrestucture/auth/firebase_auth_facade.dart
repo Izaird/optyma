@@ -6,6 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:optyma_app/domain/auth/i_auth_facade.dart';
 import 'package:optyma_app/domain/auth/value_objects.dart';
 import 'package:optyma_app/domain/auth/user.dart';
+import 'package:optyma_app/domain/core/value_objects.dart';
 import './firebase_user_mapper.dart';
 
 @LazySingleton(as : IAuthFacade) 
@@ -20,7 +21,7 @@ class FirebaseAuthFacade implements IAuthFacade{
   );
 
   @override
-  Future<Option<User>> getSignedInUser() async =>
+  Future<Option<UniqueId>> getSignedInUserId() async =>
     optionOf(_firebaseAuth.currentUser?.toDomain()) ;
 
   @override
@@ -98,5 +99,6 @@ class FirebaseAuthFacade implements IAuthFacade{
   @override
   Future<void> signOut() => Future.wait([
     _googleSignIn.signOut(),
-    _firebaseAuth.signOut(), ]); 
+    _firebaseAuth.signOut(), ]);
+
 }
