@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:optyma_app/domain/auth/user.dart';
+import 'package:optyma_app/domain/core/value_objects.dart';
 import 'auth_failure.dart';
 import 'value_objects.dart';
 
 abstract class IAuthFacade{
-  Future<Option<User>> getSignedInUser();
+  Future<Option<UniqueId>> getSignedInUserId();
 
   //We cannot use void, so insted use Unit if you don't want to return 'anything'
   Future<Either<AuthFailure,Unit>> registerWithEmailAndPassword({

@@ -1,6 +1,9 @@
 
 import 'package:optyma_app/domain/core/value_failure.dart';
 
+class NotAuthenticatedError extends Error{}
+
+
 class UnexpectedValueError extends Error {
   final ValueFailure valueFailure;
 
