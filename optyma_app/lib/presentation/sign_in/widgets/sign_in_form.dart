@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:optyma_app/application/users/user_bloc.dart';
+import 'package:optyma_app/domain/core/value_objects.dart';
+import 'package:optyma_app/domain/users/user.dart';
 
 class SignInForm extends StatelessWidget {
 
@@ -27,6 +30,12 @@ class SignInForm extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
+              //*It's ok that this user doesn't have an unique id.
+              final user = User(
+                id: UniqueId.fromUniqueString(''), 
+                emailAddress: state.emailAddress
+              );
+              BlocProvider.of<UserBloc>(context).add(UserEvent.signedUp(user));
               context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
               Navigator.pop(context);
             },

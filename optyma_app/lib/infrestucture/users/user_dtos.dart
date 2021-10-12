@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:optyma_app/domain/auth/value_objects.dart';
 import 'package:optyma_app/domain/core/value_objects.dart';
 import 'package:optyma_app/domain/users/user.dart';
 
@@ -11,6 +12,7 @@ class UserDto with _$UserDto{
 
   const factory UserDto({
     @JsonKey(ignore: true) String? id,
+    required String emailAddress,
     required bool admin,
   }) = _UserDto;
 
@@ -18,6 +20,7 @@ class UserDto with _$UserDto{
 
   factory UserDto.fromDomain(User user){
     return UserDto(
+      emailAddress: user.emailAddress.getOrCrash(),
       admin: user.admin
     );
   }
@@ -32,6 +35,7 @@ class UserDto with _$UserDto{
   User toDomain(){
     return User(
       id: UniqueId.fromUniqueString(id!),
+      emailAddress: EmailAddress(emailAddress),
       admin: admin
     );
   }

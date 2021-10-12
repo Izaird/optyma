@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:optyma_app/domain/auth/value_objects.dart';
 import 'package:optyma_app/domain/core/value_objects.dart';
 part 'user.freezed.dart';
 
@@ -6,6 +7,7 @@ part 'user.freezed.dart';
 class User with _$User {
   const factory User({
     required UniqueId id,
+    required EmailAddress emailAddress,
     @Default(false) bool admin,
   }) = _User;
 }

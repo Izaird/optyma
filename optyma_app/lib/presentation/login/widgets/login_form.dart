@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/auth/login_form/login_form_bloc.dart';
+import 'package:optyma_app/application/users/user_bloc.dart';
 
 class LoginForm extends StatelessWidget {
   @override
@@ -26,8 +27,8 @@ class LoginForm extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
+              // BlocProvider.of<UserBloc>(context).add(const UserEvent.loggedIn());
               BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
-              // context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
             },
           ),
         );

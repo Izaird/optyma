@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/users/user_bloc.dart';
 
-class PlayerNavigationMenu extends StatelessWidget {
+class AdminNavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +16,7 @@ class PlayerNavigationMenu extends StatelessWidget {
         children: const [
           Header(),
           InfiniteMode(),
+          Users(),
           LogOut(),
         ],
       ),
@@ -58,6 +59,26 @@ class InfiniteMode extends StatelessWidget {
     );
   }
 }
+
+
+class Users extends StatelessWidget {
+  const Users({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: const Icon(FontAwesomeIcons.users, color: Colors.blue),
+      title: const Text('Usuarios'),
+      onTap: (){
+        Navigator.pop(context);
+        Navigator.pushNamed(context, 'users');
+      },
+    );
+  }
+}
+
 
 class Header extends StatelessWidget {
   const Header({
