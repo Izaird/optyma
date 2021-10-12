@@ -19,7 +19,7 @@ class Category with _$Category{
 
 const List<Category> gameCategories = [
   Category(id: 'endless-mode', name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
-  // Category(id: 2, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
+  Category(id: 'PvPLocal', name: 'Jugador Vs Jugador' , icon: Icon(FontAwesomeIcons.peopleArrows)),
   // Category(id: 3, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
   // Category(id: 4, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
 ];

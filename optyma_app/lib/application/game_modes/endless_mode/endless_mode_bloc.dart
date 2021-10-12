@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/expressions/expression.dart';
@@ -24,6 +25,18 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
           operationType: e.operationType,
           difficulty: e.difficulty,
           question: _expressionFacade.questionInt(e.operationType, e.difficulty),
+        );
+      },
+
+      gameOver: (e) async*{
+        int _streak = state.streak;
+        int _score = state.score;
+        bool _gameOver = true;
+
+        yield state.copyWith(
+          streak: _streak,
+          score: _score,
+          gameOver: _gameOver,
         );
       },
 

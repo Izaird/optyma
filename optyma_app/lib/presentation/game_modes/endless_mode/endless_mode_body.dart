@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:games_services/games_services.dart';
 import 'package:optyma_app/application/game_modes/endless_mode/endless_mode_bloc.dart';
 import 'package:optyma_app/application/game_modes/timer/timer_bloc.dart';
 import 'package:optyma_app/presentation/game_modes/endless_mode/question_card.dart';
@@ -17,28 +18,36 @@ class EndlessModeBody extends StatelessWidget {
     return BlocConsumer<EndlessModeBloc,EndlessModeState>(
       builder: (context, state){
         if(state.gameOver){
+          int endlessScore = BlocProvider.of<EndlessModeBloc>(context).state.score;
+          if(GamesServices.isSignedIn==false){
+            GamesServices.signIn();
+          }
+          GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg", value: endlessScore));
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Text('Se acabo el juego \nTu puntuación: ${BlocProvider.of<EndlessModeBloc>(context).state.score}',
+                child: Text('Se acabo el juego \nTu puntuación: $endlessScore',
                 style: const TextStyle( 
                   fontSize: 30,
                   ),
                 ),
               ),
-              Center(
+              const Center(
                 child: BackButton(),
               ),
             ],
           );
+          
         }else{
           return Column(
             children:[
               TopBar(),
               TimerText(),
               QuestionCard(),
-              BackButton()
+              //BackButton()
+               ElevatedButton(onPressed: (){BlocProvider.of<EndlessModeBloc>(context).add(GameOver());},
+                child: const Text("Finalizar"))
             ],
               
           );
