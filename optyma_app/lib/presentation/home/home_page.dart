@@ -28,13 +28,9 @@ class HomePage extends StatelessWidget {
           ListTile(
             leading: const Icon(FontAwesomeIcons.trophy, color: Colors.blue),
             title: const Text('Logros'),
-            onTap: (){
-              try{
-                GamesServices.signIn();
-              }
-              catch(e){
-                print(e);
-              }
+            onTap: () async{
+              final result = GamesServices.signIn();
+              //print(result);
               GamesServices.showAchievements();
               //Navigator.pop(context);
               //Navigator.pushNamed(context, 'achievements');
@@ -43,9 +39,12 @@ class HomePage extends StatelessWidget {
           ListTile(
             leading: const Icon(FontAwesomeIcons.table, color: Colors.blue),
             title: const Text('Leaderboards'),
-            onTap: (){
+            onTap: () async{
+              final result = GamesServices.signIn();
+              print(result);
+              GamesServices.showLeaderboards(androidLeaderboardID:"CgkIg5u-zPUVEAIQBg" );
               //Navigator.pop(context);
-              //Navigator.pushNamed(context, 'leaderboards');
+              //Navigator.pushNamed(context, 'achievements');
             },
           ),
         ],
