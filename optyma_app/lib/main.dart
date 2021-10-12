@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
+import 'package:optyma_app/application/core/my_bloc_observer.dart';
+import 'package:optyma_app/application/users/user_bloc.dart';
 import 'package:optyma_app/presentation/core/app_widget.dart';
-import 'application/core/my_bloc_observer.dart';
 import 'injection.dart';
 
 Future<void> main() async{
@@ -17,9 +18,13 @@ Future<void> main() async{
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(
+        create: (context) => getIt<UserBloc>()
+      ),
+      BlocProvider(
         create: (context) => getIt<AuthBloc>()
         ..add(const AuthEvent.authCheckRequested())
       ),
+
     ], 
     child: AppWidget()
   ));

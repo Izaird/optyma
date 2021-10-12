@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/auth/i_auth_facade.dart';
 import 'package:optyma_app/domain/core/errors.dart';
+import 'package:optyma_app/domain/core/value_objects.dart';
 import 'package:optyma_app/domain/users/i_user_repository.dart';
 import 'package:optyma_app/domain/users/user.dart';
 import 'package:optyma_app/domain/users/user_failure.dart';
@@ -83,6 +84,20 @@ class UserRepository implements IUserRepository{
         debugPrint(e.toString());
         return left(const UserFailure.unexpected());
       }
+    }
+  }
+
+
+  @override
+  Future<Option<User>> getUser(String userId) async{
+    final usersRef = await _firestore.userReference();
+    final DocumentSnapshot userDoc = await usersRef.doc(userId).get();
+
+    if(userDoc.exists){
+      final User user = UserDto.fromFirestore(userDoc).toDomain();
+      return some(user);
+    }else{
+      return none();
     }
   }
 
@@ -173,10 +188,6 @@ class UserRepository implements IUserRepository{
     );   
   }
 
-  @override
-  Future<bool> isAdmin(String userId) {
-    // TODO: implement isAdmin
-    throw UnimplementedError();
-  }
+
 
 }

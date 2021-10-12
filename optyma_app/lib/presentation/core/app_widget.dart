@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
+import 'package:optyma_app/application/users/user_bloc.dart';
 import 'package:optyma_app/presentation/home/home_page.dart';
 import 'package:optyma_app/presentation/login/login_page.dart';
 import 'package:optyma_app/presentation/routes/routes.dart';
@@ -33,6 +34,7 @@ class AppWidget extends StatelessWidget {
             return SplashPage();
           }
           if(state is Aunthenticated){
+            BlocProvider.of<UserBloc>(context).add(const UserEvent.loggedIn());
             return HomePage();
           }
           if (state is Unaunthenticated){
