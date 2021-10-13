@@ -11,8 +11,9 @@ class QuestionCard extends StatelessWidget {
     final questionModel = BlocProvider.of<EndlessModeBloc>(context).state.question;
     final selectedAnswer = BlocProvider.of<EndlessModeBloc>(context).state.selectedAnswer;
     final answered = BlocProvider.of<EndlessModeBloc>(context).state.answered;
-    final duration = BlocProvider.of<TimerBloc>(context).state.duration;
+    
 
+    int duration;
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(25)),
@@ -27,7 +28,10 @@ class QuestionCard extends StatelessWidget {
               isSelected: answer == selectedAnswer, 
               isCorrect: answer == questionModel.result, 
               isDisplayingAnswer: answered == true, 
-              onTap: () => BlocProvider.of<EndlessModeBloc>(context).add(EndlessModeEvent.answerSelected(answer, duration, duration)),
+              onTap: () => {
+              duration = BlocProvider.of<TimerBloc>(context).state.duration,
+              BlocProvider.of<EndlessModeBloc>(context).add(EndlessModeEvent.answerSelected(answer, duration, 30)),}
+
             )).toList(),
           ),
         ],
