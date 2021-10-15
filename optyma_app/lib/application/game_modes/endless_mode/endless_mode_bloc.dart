@@ -50,7 +50,16 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
 
         if(_questionHasCorrectAnswer){
           _streak += 1;
-          _score += ((e.duration/e.time)*1000).round();
+          if(state.difficulty==Difficulty.easy){
+            _score += ((e.duration/e.time)*500).round();
+          }
+          else if(state.difficulty==Difficulty.medium){
+            _score += ((e.duration/e.time)*1000).round();
+          }
+          else if(state.difficulty==Difficulty.hard){
+            _score += ((e.duration/e.time)*2000).round();
+          }
+          
 
           yield state.copyWith(
             selectedAnswer: e.answer,

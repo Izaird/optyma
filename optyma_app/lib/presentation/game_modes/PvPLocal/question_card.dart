@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/game_modes/endless_mode/endless_mode_bloc.dart';
 import 'package:optyma_app/application/game_modes/timer/timer_bloc.dart';
-
+import 'package:optyma_app/application/game_modes/pvp_mode/pvp_mode_bloc.dart';
 class QuestionCard extends StatelessWidget {
   const QuestionCard() : super();
 
   @override
   Widget build(BuildContext context) {
-    final questionModel = BlocProvider.of<EndlessModeBloc>(context).state.question;
-    final selectedAnswer = BlocProvider.of<EndlessModeBloc>(context).state.selectedAnswer;
-    final answered = BlocProvider.of<EndlessModeBloc>(context).state.answered;
+    final questionModel = BlocProvider.of<PvpModeBloc>(context).state.question;
+    final selectedAnswer = BlocProvider.of<PvpModeBloc>(context).state.selectedAnswer;
+    final answered = BlocProvider.of<PvpModeBloc>(context).state.answered;
     int duration;
+
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(25)),
       child: Column(
         children: [
@@ -28,9 +29,8 @@ class QuestionCard extends StatelessWidget {
               isDisplayingAnswer: answered == true, 
               onTap: () => {
                 duration = BlocProvider.of<TimerBloc>(context).state.duration,
-                BlocProvider.of<EndlessModeBloc>(context).add(EndlessModeEvent.answerSelected(answer, duration, 30)),
+                BlocProvider.of<PvpModeBloc>(context).add(PvpModeEvent.answer1Selected(answer, duration, 30)),
               }
-
             )).toList(),
           ),
         ],
@@ -61,11 +61,11 @@ class CreateOption extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(
-          vertical: 12.0,
+          vertical: 7.0,
           horizontal: 20.0,
         ),
         padding: const EdgeInsets.symmetric(
-          vertical: 12.0,
+          vertical: 7.0,
           horizontal: 20.0,
         ),
         width: double.infinity,
@@ -75,7 +75,9 @@ class CreateOption extends StatelessWidget {
           border: Border.all(
             color: isDisplayingAnswer
                 ? isCorrect
-                    ? Colors.green
+                    ? isSelected 
+                      ? Colors.green
+                      : Colors.white
                     : isSelected
                         ? Colors.red
                         : Colors.white
@@ -93,14 +95,14 @@ class CreateOption extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16.0,
-                  fontWeight: isDisplayingAnswer && isCorrect
+                  fontWeight: isDisplayingAnswer && isCorrect && isSelected
                       ? FontWeight.bold
                       : FontWeight.w400,
                 ),
               ),
             ),
             if (isDisplayingAnswer)
-              isCorrect
+              isCorrect && isSelected
                   ? const CircularIcon(icon: Icons.check, color: Colors.green)
                   : isSelected
                       ? const CircularIcon(

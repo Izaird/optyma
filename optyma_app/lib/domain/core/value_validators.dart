@@ -13,7 +13,7 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
   const passwordRegex = 
-  r"""^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$""";
+  r"""^[a-zA-Z0-9!"#\$%&'\(\)\*\+,-\.\/:;<=>\?@[\]\^_`\{\|}~]{8,}$""";
 
   if (RegExp(passwordRegex).hasMatch(input)) {
     return right(input);

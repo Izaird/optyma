@@ -118,7 +118,7 @@ class PasswordField extends StatelessWidget {
       validator: (_) => BlocProvider.of<SignInFormBloc>(context)
         .state.password.value.fold(
           (f) => f.maybeMap(
-            invalidPassword: (_) => 'Contraseña invalida',
+            invalidPassword: (_) => 'Contraseña invalida. La contraseña debe contener 8 caracteres',
             orElse: () => null,
           ),
           (_) => null,

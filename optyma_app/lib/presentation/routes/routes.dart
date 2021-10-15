@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:optyma_app/presentation/game_modes/PvPLocal/pvp_mode_page.dart';
 import 'package:optyma_app/presentation/game_modes/endless_mode/endless_mode_page.dart';
 import 'package:optyma_app/presentation/game_modes/game_modes_page.dart';
 import 'package:optyma_app/presentation/home/home_page.dart';
@@ -16,5 +17,6 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'game-modes'            : (_) => GameModesPage(),
     'endless-mode'          : (_) => EndlessModePage(),
     'users'                 : (_) => UsersPage(),
+    'pvp'                   : (_) => PvPPage(),
   };
 }

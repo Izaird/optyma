@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:games_services/games_services.dart';
+import 'package:optyma_app/application/game_modes/game_modes_bloc.dart';
 import 'package:optyma_app/presentation/core/player_navigation_menu.dart';
 
 
 class HomePlayer extends StatelessWidget {
-
+  
     @override
     Widget build(BuildContext context) {
-
+    GamesServices.signIn();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pagina principal'),
@@ -47,8 +48,10 @@ class HomePlayer extends StatelessWidget {
             leading: const Icon(FontAwesomeIcons.table, color: Colors.blue),
             title: const Text('Leaderboards'),
             onTap: (){
-              //Navigator.pop(context);
-              //Navigator.pushNamed(context, 'leaderboards');
+              if(GamesServices.isSignedIn==false){
+                GamesServices.signIn();
+              }
+              GamesServices.showLeaderboards(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg");
             },
           ),
         ],
@@ -56,3 +59,4 @@ class HomePlayer extends StatelessWidget {
     );
   }
 }
+

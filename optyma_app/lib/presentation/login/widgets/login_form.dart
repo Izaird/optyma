@@ -157,7 +157,7 @@ class PasswordField extends StatelessWidget {
       validator: (_) => context.read<LoginFormBloc>()
         .state.password.value.fold(
           (f) => f.maybeMap(
-            invalidPassword: (_) => 'Contraseña invalida',
+            invalidPassword: (_) => 'Contraseña invalida.\n La contraseña debe contener 8 caracteres',
             orElse: () => null,
           ),
           (_) => null,
