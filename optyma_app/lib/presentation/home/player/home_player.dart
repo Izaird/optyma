@@ -4,9 +4,15 @@ import 'package:games_services/games_services.dart';
 import 'package:optyma_app/application/game_modes/game_modes_bloc.dart';
 import 'package:optyma_app/presentation/core/player_navigation_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePlayer extends StatelessWidget {
-  
+  final firebaseAuth = FirebaseAuth.instance;
+  final snackBar = const SnackBar(
+     content: Text("Se envio el correo para reestaablecer contraseña"),
+     duration: Duration(seconds: 15),
+     backgroundColor: Colors.green,
+   );
     @override
     Widget build(BuildContext context) {
     GamesServices.signIn();
@@ -40,8 +46,6 @@ class HomePlayer extends StatelessWidget {
                 print(e);
               }
               GamesServices.showAchievements();
-              //Navigator.pop(context);
-              //Navigator.pushNamed(context, 'achievements');
             },
           ),
           ListTile(
@@ -52,6 +56,14 @@ class HomePlayer extends StatelessWidget {
                 GamesServices.signIn();
               }
               GamesServices.showLeaderboards(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg");
+            },
+          ),
+          ListTile(
+            leading: const Icon(FontAwesomeIcons.table, color: Colors.blue),
+            title: const Text('Resetear contraseña'),
+            onTap: (){
+              firebaseAuth.sendPasswordResetEmail(email: firebaseAuth.currentUser?.email ?? "mothtotheflame.dev@gmail.com");
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:optyma_app/domain/auth/value_objects.dart';
 import 'package:optyma_app/presentation/game_modes/PvPLocal/pvp_mode_page.dart';
 import 'package:optyma_app/presentation/game_modes/endless_mode/endless_mode_page.dart';
 import 'package:optyma_app/presentation/game_modes/game_modes_page.dart';
@@ -7,6 +8,7 @@ import 'package:optyma_app/presentation/login/login_page.dart';
 import 'package:optyma_app/presentation/sign_in/sign_in_page.dart';
 import 'package:optyma_app/presentation/splash/splash_page.dart';
 //import 'package:optyma_app/presentation/users/home/player/verify.dart';
+import 'package:optyma_app/presentation/login/password_forgotten_page.dart';
 import 'package:optyma_app/presentation/users/users_page.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes(){
@@ -19,6 +21,6 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'endless-mode'          : (_) => EndlessModePage(),
     'users'                 : (_) => UsersPage(),
     'pvp'                   : (_) => PvPPage(),
-    //'verify'                : (_) => Verify(),
+    'password-forgotten'    : (_) => PasswordForgottenPage(),
   };
 }

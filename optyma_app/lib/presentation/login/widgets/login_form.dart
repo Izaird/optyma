@@ -56,7 +56,12 @@ class LoginForm extends StatelessWidget {
               const SignInButton(),
 
               const LoginWithGoogleButton(),
-
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'password-forgotten');
+                },
+                child: const Text('¿Olvidaste tu contraseña?'),
+              ),
               if(BlocProvider.of<LoginFormBloc>(context).state.isSubmitting)...[
                 const SizedBox(height: 8),
                 const LinearProgressIndicator(),  
