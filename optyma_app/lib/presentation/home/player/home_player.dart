@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:games_services/games_services.dart';
 import 'package:optyma_app/application/game_modes/game_modes_bloc.dart';
 import 'package:optyma_app/presentation/core/player_navigation_menu.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePlayer extends StatelessWidget {
   
@@ -18,8 +18,8 @@ class HomePlayer extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const Center(
-            child: Text('Bienvenido usuario!')
+          Center(
+            child: Text('Bienvenido usuario!' )
           ),
           ListTile(
             leading: const Icon(FontAwesomeIcons.gamepad, color: Colors.blue),
@@ -58,5 +58,7 @@ class HomePlayer extends StatelessWidget {
       ),
     );
   }
+  
+  
 }
 

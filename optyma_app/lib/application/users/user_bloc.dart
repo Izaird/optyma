@@ -1,4 +1,7 @@
+import 'dart:isolate';
+
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/auth/i_auth_facade.dart';
@@ -38,7 +41,23 @@ class UserBloc extends Bloc<UserEvent, UserState> {
             _userRepository.create(user);
             return UserState.playerLogged(user);
           }, 
-          (user) => user.admin ? UserState.adminLogged(user) : UserState.playerLogged(user),
+          (user) {
+            final firebaseUser = _authFacade.getFirebaseUser();
+            final isVerified = firebaseUser?.emailVerified;
+            if(user.admin){
+              return UserState.adminLogged(user);
+            }
+            else{
+              if(isVerified!=null && isVerified){
+                return UserState.playerLogged(user);
+              }
+              else if(isVerified!=null && isVerified==false){
+                return UserState.playerUnverified(user);
+              }
+            }
+            throw UnimplementedError();
+            //user.admin ? UserState.adminLogged(user) : UserState.playerLogged(user);
+          } 
         );
       }, loggedOut: (e) async* {
         yield const UserState.loggedOut();

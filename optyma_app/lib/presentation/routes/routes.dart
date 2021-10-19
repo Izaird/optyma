@@ -6,6 +6,7 @@ import 'package:optyma_app/presentation/home/home_page.dart';
 import 'package:optyma_app/presentation/login/login_page.dart';
 import 'package:optyma_app/presentation/sign_in/sign_in_page.dart';
 import 'package:optyma_app/presentation/splash/splash_page.dart';
+//import 'package:optyma_app/presentation/users/home/player/verify.dart';
 import 'package:optyma_app/presentation/users/users_page.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes(){
@@ -18,5 +19,6 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'endless-mode'          : (_) => EndlessModePage(),
     'users'                 : (_) => UsersPage(),
     'pvp'                   : (_) => PvPPage(),
+    //'verify'                : (_) => Verify(),
   };
 }

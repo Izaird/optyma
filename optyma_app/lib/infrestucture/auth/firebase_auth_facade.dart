@@ -37,6 +37,15 @@ class FirebaseAuthFacade implements IAuthFacade{
         email: emailAddressStr, 
         password: passwordStr
       );
+      try {
+        final firebase.User? user = _firebaseAuth.currentUser;
+        await user?.sendEmailVerification();
+      }
+      catch(e){
+        print("An error occured while trying to send email verification");
+        print(e);
+      }
+      
       return right(unit);
     } on firebase.FirebaseAuthException catch (e){
       if(e.code == 'email-already-in-use'){

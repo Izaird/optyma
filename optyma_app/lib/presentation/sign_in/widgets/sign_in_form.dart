@@ -23,7 +23,7 @@ class SignInForm extends StatelessWidget {
                   serverError: (_) => 'Error del servidor',
                   emailAlreadyInUse: (_) => 'Correo ya registrado',
                   invalidEmailAndPasswordCombination: (_) =>
-                      'Combinancion invalida de correo y contraseña',
+                      'Combinación invalida de correo y contraseña',
                 )),
               );
 
