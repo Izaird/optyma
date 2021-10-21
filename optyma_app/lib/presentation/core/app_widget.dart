@@ -30,17 +30,14 @@ class AppWidget extends StatelessWidget {
 
       home: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state){
-          if(state is Initial){
-            return SplashPage();
-          }
-          if(state is Aunthenticated){
-            BlocProvider.of<UserBloc>(context).add(const UserEvent.loggedIn());
-            return HomePage();
-          }
-          if (state is Unaunthenticated){
-            return LoginPage();
-          }
-          return Container();
+          return state.map(
+            initial: (_) => SplashPage(), 
+            authenticated: (_) {
+              BlocProvider.of<UserBloc>(context).add(const UserEvent.loggedIn());
+              return HomePage();
+            }, 
+            unauthenticated: (_) => LoginPage(),
+          );
         }
       ),
     );
