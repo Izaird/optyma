@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/auth/i_auth_facade.dart';
 import 'package:optyma_app/domain/core/errors.dart';
-import 'package:optyma_app/domain/core/value_objects.dart';
 import 'package:optyma_app/domain/users/i_user_repository.dart';
 import 'package:optyma_app/domain/users/user.dart';
 import 'package:optyma_app/domain/users/user_failure.dart';
@@ -103,17 +102,21 @@ class UserRepository implements IUserRepository{
 
   @override
   Stream<Either<UserFailure, List<User>>> watchAll() async*{
-    final userDoc = await _firestore.userReference();
+    final userReference = await _firestore.userReference();
     final userIdOption = await getIt<IAuthFacade>().getSignedInUserId();
     final userId = userIdOption.getOrElse(() => throw NotAuthenticatedError());
-    yield* userDoc.where('userId', isNotEqualTo: userId)
+    yield* userReference
       .snapshots()
       .map(
-        (snapshot) => right<UserFailure, List<User>>(
-          snapshot.docs.map((doc) {
-            return UserDto.fromFirestore(doc).toDomain();
-          }).toList(),
-        ),
+        (snapshot) => snapshot.docs
+          .map((doc) => UserDto.fromFirestore(doc).toDomain()),
+      )
+      .map(
+        (users) => right<UserFailure, List<User>>(
+          users
+          .where((user) => user.id.getOrCrash() != userId.getOrCrash())
+            .toList()
+        )
       )
       .onErrorReturnWith(
         (e, s) {
@@ -125,15 +128,15 @@ class UserRepository implements IUserRepository{
             return left(const UserFailure.unexpected());
           }
         },
-    );
+    );   
   }
 
   @override
   Stream<Either<UserFailure, List<User>>> watchAdmins() async*{
-    final userDoc = await _firestore.userReference();
+    final userReference = await _firestore.userReference();
     final userIdOption = await getIt<IAuthFacade>().getSignedInUserId();
     final userId = userIdOption.getOrElse(() => throw NotAuthenticatedError());
-    yield* userDoc.where('userId', isNotEqualTo: userId)
+    yield* userReference
       .snapshots()
       .map(
         (snapshot) => snapshot.docs
@@ -141,7 +144,9 @@ class UserRepository implements IUserRepository{
       )
       .map(
         (users) => right<UserFailure, List<User>>(
-          users.where((user) => user.admin == true)
+          users
+          .where((user) => user.id.getOrCrash() != userId.getOrCrash())
+          .where((user) => user.admin == true)
             .toList()
         )
       )
@@ -163,7 +168,7 @@ class UserRepository implements IUserRepository{
     final userDoc = await _firestore.userReference();
     final userIdOption = await getIt<IAuthFacade>().getSignedInUserId();
     final userId = userIdOption.getOrElse(() => throw NotAuthenticatedError());
-    yield* userDoc.where('userId', isNotEqualTo: userId)
+    yield* userDoc
       .snapshots()
       .map(
         (snapshot) => snapshot.docs
@@ -171,7 +176,9 @@ class UserRepository implements IUserRepository{
       )
       .map(
         (users) => right<UserFailure, List<User>>(
-          users.where((user) => user.admin == false)
+          users
+          .where((user) => user.id.getOrCrash() != userId.getOrCrash())
+          .where((user) => user.admin == false)
             .toList()
         )
       )
