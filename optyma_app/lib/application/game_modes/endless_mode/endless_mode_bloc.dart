@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/expressions/expression.dart';
@@ -27,7 +28,20 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
         );
       },
 
+      gameOver: (e) async*{
+        int _streak = state.streak;
+        int _score = state.score;
+        bool _gameOver = true;
+
+        yield state.copyWith(
+          streak: _streak,
+          score: _score,
+          gameOver: _gameOver,
+        );
+      },
+
       answerSelected: (e) async*{
+        int _time = e.time;
         int _streak = state.streak;
         int _score = state.score;
         int _lifes = state.lifes;
@@ -36,7 +50,16 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
 
         if(_questionHasCorrectAnswer){
           _streak += 1;
-          _score += (e.duration~/e.time)*1000;
+          if(state.difficulty==Difficulty.easy){
+            _score += ((e.duration/e.time)*500).round();
+          }
+          else if(state.difficulty==Difficulty.medium){
+            _score += ((e.duration/e.time)*1000).round();
+          }
+          else if(state.difficulty==Difficulty.hard){
+            _score += ((e.duration/e.time)*2000).round();
+          }
+          
 
           yield state.copyWith(
             selectedAnswer: e.answer,

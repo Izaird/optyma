@@ -20,7 +20,7 @@ class LoginForm extends StatelessWidget {
                   serverError: (_) => 'Error del servidor',
                   emailAlreadyInUse: (_) => 'Correo ya registrado',
                   invalidEmailAndPasswordCombination: (_) =>
-                      'Combinancion invalida de correo y contraseña',
+                      'Combinación invalida de correo y contraseña',
                 )),
               );
 
@@ -56,7 +56,12 @@ class LoginForm extends StatelessWidget {
               const SignInButton(),
 
               const LoginWithGoogleButton(),
-
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'password-forgotten');
+                },
+                child: const Text('¿Olvidaste tu contraseña?'),
+              ),
               if(BlocProvider.of<LoginFormBloc>(context).state.isSubmitting)...[
                 const SizedBox(height: 8),
                 const LinearProgressIndicator(),  
@@ -157,7 +162,7 @@ class PasswordField extends StatelessWidget {
       validator: (_) => context.read<LoginFormBloc>()
         .state.password.value.fold(
           (f) => f.maybeMap(
-            invalidPassword: (_) => 'Contraseña invalida',
+            invalidPassword: (_) => 'Contraseña invalida.\n La contraseña debe contener 8 caracteres',
             orElse: () => null,
           ),
           (_) => null,

@@ -5,4 +5,5 @@ class EndlessModeEvent with _$EndlessModeEvent {
   const factory EndlessModeEvent.started(OperationType operationType, Difficulty difficulty) = Started;
   const factory EndlessModeEvent.answerSelected(int answer, int duration, int time) = AnswerSelected;
   const factory EndlessModeEvent.timeOver() = TimeOver;
+  const factory EndlessModeEvent.gameOver() = GameOver;
 }

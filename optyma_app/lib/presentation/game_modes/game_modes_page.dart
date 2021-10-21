@@ -13,9 +13,9 @@ class GameModesPage extends StatelessWidget {
       create: (context) => getIt<GameModesBloc>(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Juegos'),
+          title: const Text('Juegos'),
         ),
-        body: Padding(
+        body: const Padding(
           padding: EdgeInsets.all(8.0),
           child: GameModesBody(),
         )

@@ -23,7 +23,7 @@ class SignInForm extends StatelessWidget {
                   serverError: (_) => 'Error del servidor',
                   emailAlreadyInUse: (_) => 'Correo ya registrado',
                   invalidEmailAndPasswordCombination: (_) =>
-                      'Combinancion invalida de correo y contraseña',
+                      'Combinación invalida de correo y contraseña',
                 )),
               );
 
@@ -118,7 +118,7 @@ class PasswordField extends StatelessWidget {
       validator: (_) => BlocProvider.of<SignInFormBloc>(context)
         .state.password.value.fold(
           (f) => f.maybeMap(
-            invalidPassword: (_) => 'Contraseña invalida',
+            invalidPassword: (_) => 'Contraseña invalida. La contraseña debe contener 8 caracteres',
             orElse: () => null,
           ),
           (_) => null,

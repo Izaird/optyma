@@ -40,6 +40,9 @@ class ExpressionFacade implements IExpressionFacade{
       numberOfVars = 2;
     }
     if(difficulty == Difficulty.easy){
+      if(numberOfVars>=4){
+        numberOfVars -= 1;
+      }
       for(i=0;i<numberOfVars;i++){
         vars.add(rand.nextInt(25)+1);
       }
