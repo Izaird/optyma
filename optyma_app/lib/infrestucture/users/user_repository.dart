@@ -17,8 +17,6 @@ import 'package:rxdart/rxdart.dart';
 @LazySingleton(as: IUserRepository)
 class UserRepository implements IUserRepository{
 
-  CollectionReference usersReference = FirebaseFirestore.instance.collection('users');
-
   final FirebaseFirestore _firestore;
   UserRepository(this._firestore);
 
@@ -26,10 +24,10 @@ class UserRepository implements IUserRepository{
   @override
   Future<Either<UserFailure, Unit>> create(User user) async{
     try{
-      final userDoc = await _firestore.userDocument();
+      final usersRef = await _firestore.userReference();
       final userDto =  UserDto.fromDomain(user);
 
-      await userDoc.set(userDto.toJson());
+      await usersRef.doc(user.id.getOrCrash()).set(userDto.toJson());
 
       return right(unit);
 
@@ -46,10 +44,10 @@ class UserRepository implements IUserRepository{
   @override
   Future<Either<UserFailure, Unit>> update(User user) async{
     try{
-      final userDoc = await _firestore.userDocument();
+      final usersRef = await _firestore.userReference();
       final userDto =  UserDto.fromDomain(user);
 
-      await userDoc.update(userDto.toJson());
+      await usersRef.doc(user.id.getOrCrash()).update(userDto.toJson());
 
       return right(unit);
 
@@ -68,9 +66,9 @@ class UserRepository implements IUserRepository{
   @override
   Future<Either<UserFailure, Unit>> delete(User user) async{
     try{
-      final userDoc = await _firestore.userDocument();
+      final usersRef = await _firestore.userReference();
 
-      await userDoc.delete();
+      await usersRef.doc(user.id.getOrCrash()).delete();
 
       return right(unit);
 
