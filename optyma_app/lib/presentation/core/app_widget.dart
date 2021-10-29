@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
 import 'package:optyma_app/application/users/user_bloc.dart';
+import 'package:optyma_app/presentation/auth/login/login_page.dart';
 import 'package:optyma_app/presentation/home/home_page.dart';
-import 'package:optyma_app/presentation/login/login_page.dart';
 import 'package:optyma_app/presentation/routes/routes.dart';
 import 'package:optyma_app/presentation/splash/splash_page.dart';
 

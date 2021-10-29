@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/auth/auth_bloc.dart';
-import 'package:optyma_app/application/auth/login_form/login_form_bloc.dart';
+import 'package:optyma_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:optyma_app/application/users/user_bloc.dart';
+import 'package:optyma_app/domain/core/value_objects.dart';
+import 'package:optyma_app/domain/users/user.dart';
 
-class LoginForm extends StatelessWidget {
+class SignInForm extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginFormBloc, LoginFormState>(
+    return BlocConsumer<SignInFormBloc, SignInFormState>(
       listener: (context, state) {
         state.authFailureOrSuccessOption.fold(
           () {},
@@ -21,48 +24,50 @@ class LoginForm extends StatelessWidget {
                   emailAlreadyInUse: (_) => 'Correo ya registrado',
                   invalidEmailAndPasswordCombination: (_) =>
                       'Combinación invalida de correo y contraseña',
+                  userNotFound: (_) => '', 
                 )),
               );
 
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             (_) {
-              // BlocProvider.of<UserBloc>(context).add(const UserEvent.loggedIn());
-              BlocProvider.of<AuthBloc>(context).add(const AuthEvent.authCheckRequested());
+              //*It's ok that this user doesn't have an unique id.
+              final user = User(
+                id: UniqueId.fromUniqueString(''), 
+                emailAddress: state.emailAddress
+              );
+              BlocProvider.of<UserBloc>(context).add(UserEvent.signedUp(user));
+              context.read<AuthBloc>().add(const AuthEvent.authCheckRequested());
+              Navigator.pop(context);
             },
           ),
         );
       },
       builder: (context, state) {
         return Form(
-          autovalidateMode: state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode: BlocProvider.of<SignInFormBloc>(context).state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: ListView(
             padding: const EdgeInsets.all(8),
             children: [
-
               const Logo(),
               const SizedBox(height: 8),
 
+
               const EmailField(),
-              const SizedBox(height:8),
+              const SizedBox(height: 8),
 
 
               const PasswordField(),
               const SizedBox(height: 8),
 
-              const LogInButton(),
+
+              const PasswordConfirmationField(),
               const SizedBox(height: 8),
 
-              const SignInButton(),
 
-              const LoginWithGoogleButton(),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'password-forgotten');
-                },
-                child: const Text('¿Olvidaste tu contraseña?'),
-              ),
-              if(BlocProvider.of<LoginFormBloc>(context).state.isSubmitting)...[
+              const RegisterButton(),
+
+              if(state.isSubmitting)...[
                 const SizedBox(height: 8),
                 const LinearProgressIndicator(),  
               ],
@@ -72,79 +77,33 @@ class LoginForm extends StatelessWidget {
       },
     );
   }
-
-
 }
 
-class LogInButton extends StatelessWidget {
-  const LogInButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return     TextButton(
-    
-          onPressed: () {
-    
-            BlocProvider.of<LoginFormBloc>(context).add(
-    
-              const LoginFormEvent.loginWithEmailAndPasswordPressed(),
-    
-            );
-    
-          },
-    
-          child: const Text('Ingresar'),
-    
-        );
-  }
-}
-
-class SignInButton extends StatelessWidget {
-  const SignInButton({
+class RegisterButton extends StatelessWidget {
+  const RegisterButton({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        Navigator.pushNamed(context, 'sign-in');
-      },
-      child: const Text('Registrarse'),
-    );
+     onPressed: () {
+       BlocProvider.of<SignInFormBloc>(context).add(
+             const SignInFormEvent
+                 .registerWithEmailAndPasswordPressed(),
+           );
+     },
+     child: const Text('Registrarse'),
+      );
   }
 }
 
-class LoginWithGoogleButton extends StatelessWidget {
-  const LoginWithGoogleButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        BlocProvider.of<LoginFormBloc>(context)
-          .add(const LoginFormEvent.loginWithGooglePressed()
-        );
-      },
-      child: const Text(
-        'Ingresar con Google',
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
-}
 
 class PasswordField extends StatelessWidget {
   const PasswordField({
     Key? key,
-  }) : super(key: key);
+  }) :  super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -155,19 +114,51 @@ class PasswordField extends StatelessWidget {
       ),
       autocorrect: false,
       obscureText: true,
-
-      onChanged: (value) => BlocProvider.of<LoginFormBloc>(context)
-        .add(LoginFormEvent.passwordChanged(value)),
-
-      validator: (_) => context.read<LoginFormBloc>()
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.passwordChanged(value)),
+      validator: (_) => BlocProvider.of<SignInFormBloc>(context)
         .state.password.value.fold(
           (f) => f.maybeMap(
-            invalidPassword: (_) => 'Contraseña invalida.\n La contraseña debe contener 8 caracteres',
+            invalidPassword: (_) => 'Contraseña invalida. La contraseña debe contener 8 caracteres',
             orElse: () => null,
           ),
           (_) => null,
         ),
     );
+  }
+}
+
+
+class PasswordConfirmationField extends StatelessWidget {
+  const PasswordConfirmationField({
+    Key? key,
+  }) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: const InputDecoration(
+        prefixIcon: Icon(Icons.lock),
+        labelText: 'Confirmar contraseña',
+      ),
+      autocorrect: false,
+      obscureText: true,
+
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.confirmPasswordChanged(value)),
+
+      validator: (_) {
+        if(!BlocProvider.of<SignInFormBloc>(context).state.isSamePassword){
+          return 'Contraseña no coincide';
+        }
+        else{
+          return null;
+        }
+      }
+      
+    
+    ); 
   }
 }
 
@@ -184,10 +175,13 @@ class EmailField extends StatelessWidget {
         labelText: 'Correo',
       ),
       autocorrect: false,
-      onChanged: (value) => BlocProvider.of<LoginFormBloc>(context)
-        .add(LoginFormEvent.emailChanged(value)),
-      validator: (_) => BlocProvider.of<LoginFormBloc>(context)
-          .state.emailAddress.value.fold(
+      onChanged: (value) => BlocProvider.of<SignInFormBloc>(context)
+        .add(SignInFormEvent.emailChanged(value)),
+      validator: (_) => BlocProvider.of<SignInFormBloc>(context)
+          .state
+          .emailAddress
+          .value
+          .fold(
             (f) => f.maybeMap(
               invalidEmail: (_) => 'Correo invalido',
               orElse: () => null,
