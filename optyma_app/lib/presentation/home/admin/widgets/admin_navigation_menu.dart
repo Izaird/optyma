@@ -17,6 +17,7 @@ class AdminNavigationMenu extends StatelessWidget {
           Header(),
           InfiniteMode(),
           Users(),
+          TemplatesOverview(),
           LogOut(),
         ],
       ),
@@ -79,6 +80,23 @@ class Users extends StatelessWidget {
   }
 }
 
+class TemplatesOverview extends StatelessWidget {
+  const TemplatesOverview({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: const Icon(FontAwesomeIcons.users, color: Colors.blue),
+      title: const Text('Plantillas'),
+      onTap: (){
+        Navigator.pop(context);
+        Navigator.pushNamed(context, 'templates-overview');
+      },
+    );
+  }
+}
 
 class Header extends StatelessWidget {
   const Header({

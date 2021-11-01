@@ -7,6 +7,8 @@ import 'package:optyma_app/presentation/game_modes/endless_mode/endless_mode_pag
 import 'package:optyma_app/presentation/game_modes/game_modes_page.dart';
 import 'package:optyma_app/presentation/home/home_page.dart';
 import 'package:optyma_app/presentation/splash/splash_page.dart';
+import 'package:optyma_app/presentation/templates/template_form/template_form_page.dart';
+import 'package:optyma_app/presentation/templates/templates_overviews/templates_overview_page.dart';
 import 'package:optyma_app/presentation/users/user_form/user_form_page.dart';
 import 'package:optyma_app/presentation/users/users_overview/users_overview_page.dart';
 
@@ -20,6 +22,8 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'endless-mode'          : (_) => EndlessModePage(),
     'users'                 : (_) => UsersOverviewPage(),
     'usersForm'             : (_) => UserFormPage(),
+    'templates-overview'    : (_) => TemplatesOverviewPage(),
+    'template-form'         : (_) => TemplateFormPage(),
     'pvp'                   : (_) => PvPPage(),
     'password-forgotten'    : (_) => PasswordForgottenPage(),
   };
