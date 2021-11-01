@@ -55,3 +55,14 @@ Either<ValueFailure<String>, String> validateSingleLine(String input) {
   }
 }
 
+Either<ValueFailure<String>, String> validateExpression(String input){
+  const expressionRegex = 
+  r"""^[(]*\w(?:[+/*-][()]*\w[)]*)+$""";
+
+  if(RegExp(expressionRegex).hasMatch(input)){
+    return right(input);
+  }else{
+    return left(ValueFailure.invalidExpression(failedValue: input));
+  }
+}
+
