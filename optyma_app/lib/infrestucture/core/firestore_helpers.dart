@@ -5,4 +5,9 @@ extension FirestoreX on FirebaseFirestore{
     return FirebaseFirestore.instance
       .collection('users');
   }
+
+  Future<CollectionReference> templateReference() async{
+    return FirebaseFirestore.instance
+      .collection('templates');
+  }
 }
