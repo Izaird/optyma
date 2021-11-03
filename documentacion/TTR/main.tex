@@ -107,7 +107,6 @@ Esta teoría es relevante para el proyecto en proceso y que se reporta en el pre
 \section{Análisis}
 \subsection{Requisitos Funcionales}
 \begin{enumerate}
-%\item{Funcionalidad que se desarrolló}
 \item {El sistema permitirá el registro de usuarios, este se realizará por medio de un correo electrónico y contraseña válidos.}
 \item{El sistema permitirá el ingreso de un usuario al sistema mediante un correo y contraseña  previamente registrados.}
 \item {El sistema permitirá el registro y acceso mediante una cuenta de Google.}
@@ -118,7 +117,7 @@ Esta teoría es relevante para el proyecto en proceso y que se reporta en el pre
 %diagrama de casos de uso
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.9]{imgs/CasosDeUso}
+    \includegraphics[scale=0.7]{imgs/CasosDeUso}
     \caption{Diagrama de Casos de Uso}
 \end{figure}
 \subsubsection{Tabla descriptiva de Caso de Uso 1}
@@ -140,10 +139,11 @@ Fuente & RF1,RF3 \\ \hline
 		& 1.   El usuario seleccionará la opción de registrarse.\\
 		& 2.   Se ingresarán los datos correspondientes.\\
 		& 3.   Se creará correctamente la cuenta del usuario\\
+		& 4.   Se envia un correo de confirmación al email proporcionado \\	
 	& Trayectoria B\\
 	& 1.   El usuario seleccionará la opción de registrarse.\\
 	& 2.   Se proporcionará una cuenta de Google\\
-	& 3.   Se confirma y se dan los permisos corresponddientes.\\
+	& 3.   Se confirma y se dan los permisos correspondientes.\\
 	& 4   Se creará correctamente la cuenta del usuario.\\ \hline
 \end{tabular}
 \subsubsection{Tabla descriptiva de Caso de Uso 2}
@@ -173,7 +173,27 @@ Fuente & RF2,RF3 \\ \hline
 \subsubsection{Tabla descriptiva de Caso de Uso 3}
 \begin{tabular}{|M{5cm}|c|}
 \hline
-Caso de Uso & CU3 Modo infinito\\ \hline
+Caso de Uso & CU3 Cambiar Contraseña\\ \hline
+Versión & 1.1\\ \hline
+Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
+Revisor & Izaird Alexander Mothelet Delgado \\ \hline
+Actor(es) & Usuario Final \\ \hline
+Entradas &  Correo y contraseña nueva \\ \hline
+Salidas & Cuenta con ccontraeña nueva \\ \hline
+Pre-condiciones & Iniciar Sesión \\ \hline
+Post-condiciones & \\ \hline
+Mensajes & MSN1: "Se envio el correo para reestablecer contraseña"\\
+		   & MSN2: "Bienvenido"\\ \hline
+Fuente & RF4 \\ \hline	
+	Trayectoria\\
+		& 1.	El usuario selecciona el Modo Infinito del menu lateral\\
+		& 2.    El usuario responde  las preguntas \\
+		& 3.	El usuario comete 3 errores o presiona el boton de regreso, terminando el juego.\\ \hline
+\end{tabular}
+\subsubsection{Tabla descriptiva de Caso de Uso 4}
+\begin{tabular}{|M{5cm}|c|}
+\hline
+Caso de Uso & CU3 Jugar\\ \hline
 Versión & 1.1\\ \hline
 Autor(es) & Itzcoatl Rodrigo Pineda Vieyra\\ \hline
 Revisor & Izaird Alexander Mothelet Delgado \\ \hline
@@ -182,19 +202,19 @@ Entradas &  respuesta \\ \hline
 Salidas & Puntuación \\ \hline
 Pre-condiciones & Iniciar Sesión \\ \hline
 Post-condiciones & Puntuación\\ \hline
-Mensajes & MSN1: "Ingrese un texto válido"\\
-		   & MSN2: "Bienvenido"\\ \hline
+Mensajes & \\
 Fuente & RF4 \\ \hline	
 	Trayectoria\\
 		& 1.	El usuario selecciona el Modo Infinito del menu lateral\\
-		& 2.    El usuario responde  las preguntas \\
-		& 3.	El usuario comete 3 errores o presiona el boton de regreso, terminando el juego.\\ \hline
+		& 2. El usuario selecciona el modo de juego, el tipo de operaciones y la dificultad.\\
+		& 3.    El usuario responde  las preguntas \\
+		& 4.	El usuario comete 3 errores o presiona el boton de Finalizar o completa la ronda de preguntas, terminando el juego.\\ \hline
 \end{tabular}
 \subsection{Análisis de Interfaces}
 %Descripcion de tipo de interfaz y por que
 Las interfaces deberán ser optimizadas para dispositivos móviles. Deberá considerarse la capacidad touch de dichos dispositivos. La primera pantalla será para Iniciar sesión por medio del correo y contraseña junto con un botón para registrarse. La pantalla de registro solicitará el correo, contraseña y confirmación de la contraseña. Se deberá contar con botones para acceder al perfil de usuario, leaderboards y logros en una barra de navegación, esta puede ser horizontal o vertical. La pantalla de ejercicios mostrará la puntuación en todo momento en una esquina y el número de respuestas correctas consecutivas junto un icono. En caso de haber tiempo para responder a una pregunta habrá una barra horizontal en la parte superior la cual irá desapareciendo conforme transcura el tiempo asignado al usuario para dar respuesta a la pregunta, la cual irá  desaapareciendo de derecha a izquierda.
 \subsection{Análisis de la Base de Datos}%Narrativa
-Para desarrollar esta aplicación se cuenta con una entidad Usuario con campos correo (llave primaria) y contraseña, con el correo como identificador de la entidad, pues no se permiten correos duplicados.
+Para desarrollar esta aplicación se cuenta con una entidad Usuario con campos correo (llave primaria) y contraseña, con el correo como identificador de la entidad, pues no se permiten correos duplicados. Los Logros y leaderboards son manejaados por el servicio externo de Google Play Juegos por lo cual no se incluyen en nuestra base de datos
 \subsection{Tecnologías usadas}
 \pagebreak
 \section{Diseño}

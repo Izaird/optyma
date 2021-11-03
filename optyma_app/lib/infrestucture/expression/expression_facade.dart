@@ -31,30 +31,54 @@ class ExpressionFacade implements IExpressionFacade{
     int result=0;
     int i=0;
     if(operationType == OperationType.addition || operationType == OperationType.substraction){
-      numberOfVars = 2 + rand.nextInt(3);
+      numberOfVars = 2 + rand.nextInt(2);
     }
-    else if(operationType==OperationType.multiplication){
+    else if(operationType==OperationType.multiplication ){
       numberOfVars = 2 + rand.nextInt(1);
     }
     else{
       numberOfVars = 2;
     }
     if(difficulty == Difficulty.easy){
-      if(numberOfVars>=4){
-        numberOfVars -= 1;
+      
+      if(operationType == OperationType.addition || operationType == OperationType.substraction){
+        for(i=0;i<numberOfVars;i++){
+          vars.add(rand.nextInt(99)+1);
+        }
       }
-      for(i=0;i<numberOfVars;i++){
-        vars.add(rand.nextInt(25)+1);
+      else if(operationType == OperationType.multiplication || operationType == OperationType.division){
+        for(i=0;i<numberOfVars;i++){
+          vars.add(rand.nextInt(9)+1);
+        }
       }
+
     }
     else if(difficulty == Difficulty.medium){
-      for(i=0;i<numberOfVars;i++){
-        vars.add(rand.nextInt(99)+10);
+      
+      if(operationType == OperationType.addition || operationType == OperationType.substraction){
+        for(i=0;i<numberOfVars;i++){
+          vars.add(rand.nextInt(999)+1);
+        }
+      }
+      else if(operationType == OperationType.multiplication || operationType == OperationType.division){
+        for(i=0;i<numberOfVars;i++){
+          vars.add(rand.nextInt(90)+10);
+        }
       }
     }
     else if (difficulty == Difficulty.hard){
        for(i=0;i<numberOfVars;i++){
-        vars.add(rand.nextInt(979)+20);
+        vars.add(rand.nextInt(9980)+20);
+      }
+      if(operationType == OperationType.addition || operationType == OperationType.substraction){
+        for(i=0;i<numberOfVars;i++){
+          vars.add(rand.nextInt(100)+1);
+        }
+      }
+      else if(operationType == OperationType.multiplication || operationType == OperationType.division){
+        for(i=0;i<numberOfVars;i++){
+          vars.add(rand.nextInt(90)+10);
+        }
       }
     }
 

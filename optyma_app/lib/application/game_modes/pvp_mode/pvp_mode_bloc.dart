@@ -158,6 +158,21 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
       }        
     },
 
+    timeOver: (e) async*{
+      bool _gameOver = state.gameOver;
+      yield state.copyWith(
+        gameOver: _gameOver
+      );
+      yield await Future.delayed(const Duration(seconds: 2), (){
+        return state.copyWith(
+          question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+          answered: false,
+          answeredj2: false,
+          gameOver: _gameOver,
+        );
+      });
+    }
     );//yield event map
   }
+
 }

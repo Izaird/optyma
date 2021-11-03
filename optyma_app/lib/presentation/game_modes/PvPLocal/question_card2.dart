@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/game_modes/endless_mode/endless_mode_bloc.dart';
 import 'package:optyma_app/application/game_modes/timer/timer_bloc.dart';
 import 'package:optyma_app/application/game_modes/pvp_mode/pvp_mode_bloc.dart';
+import 'package:optyma_app/presentation/game_modes/PvPLocal/timer_text.dart';
 class QuestionCard2 extends StatelessWidget {
   const QuestionCard2() : super();
 
@@ -33,6 +34,7 @@ class QuestionCard2 extends StatelessWidget {
               }
             )).toList(),
           ),
+          TimerText(),
         ],
       ),
     );
