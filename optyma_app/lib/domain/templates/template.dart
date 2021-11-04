@@ -11,11 +11,13 @@ class Template with _$Template{
   const factory Template({
     required UniqueId id,
     required Expression expression,
+    required Values values,
   }) = _Template;
 
   factory Template.empty() => Template(
     id: UniqueId.fromUniqueString(''), 
-    expression: Expression('')
+    expression: Expression(''),
+    values: Values(''),
   );
 
 }

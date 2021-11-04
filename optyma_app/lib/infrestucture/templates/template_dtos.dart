@@ -14,6 +14,7 @@ class TemplateDto with _$TemplateDto{
   const factory TemplateDto({
     @JsonKey(ignore: true) String? id,
     required String expression,
+    //required String values
   }) = _TemplateDto;
 
   const TemplateDto._();
@@ -21,6 +22,7 @@ class TemplateDto with _$TemplateDto{
   factory TemplateDto.fromDomain(Template template){
     return TemplateDto(
       expression: template.expression.getOrCrash(),
+      //values: '',
     );
   }
 
@@ -35,7 +37,8 @@ class TemplateDto with _$TemplateDto{
   Template toDomain(){
     return Template(
       id: UniqueId.fromUniqueString(id!), 
-      expression: Expression(expression)
+      expression: Expression(expression),
+      values: Values(''),
     );
   }
 }

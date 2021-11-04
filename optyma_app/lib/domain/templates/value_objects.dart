@@ -16,3 +16,14 @@ class Expression extends ValueObject<String>{
   const Expression._(this.value);
 
 }
+
+class Values extends ValueObject<String>{
+  @override 
+  final Either<ValueFailure<String>,String> value;
+  factory Values(String input){
+    return Values._(
+      validateValues(input)
+    );
+  }
+  const Values._(this.value);
+}

@@ -28,4 +28,8 @@ class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidExpression({
     required T failedValue,
   }) = InvalidExpression<T>;
+
+  const factory ValueFailure.invalidValues({
+    required T failedValue,
+  }) = InvalidValues<T>;
 }

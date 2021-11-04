@@ -66,3 +66,13 @@ Either<ValueFailure<String>, String> validateExpression(String input){
   }
 }
 
+Either<ValueFailure<String>, String> validateValues(String input){
+  const expressionRegex = 
+  r"^(\d*-\d*;)+$";
+
+  if(RegExp(expressionRegex).hasMatch(input)){
+    return right(input);
+  }else{
+    return left(ValueFailure.invalidValues(failedValue: input));
+  }
+}

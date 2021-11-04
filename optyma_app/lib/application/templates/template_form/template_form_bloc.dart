@@ -37,6 +37,12 @@ class TemplateFormBloc extends Bloc<TemplateFormEvent, TemplateFormState> {
           saveFailureOrSuccessOption: none()
         );
       }, 
+      valuesChanged: (e) async*{
+        yield state.copyWith(
+          //values: e.valuesStr,
+          template: state.template.copyWith(values: Values(e.valuesStr)),
+        );
+      },
       saved: (e) async* {
         Either<TemplateFailure, Unit>? failureOrSuccess;
 
@@ -50,6 +56,7 @@ class TemplateFormBloc extends Bloc<TemplateFormEvent, TemplateFormState> {
           failureOrSuccess = state.isEditing
             ? await _templateRepository.update(state.template)
             : await _templateRepository.create(state.template);
+          
         }
 
         yield state.copyWith(
