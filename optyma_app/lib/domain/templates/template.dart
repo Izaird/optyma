@@ -11,13 +11,17 @@ class Template with _$Template{
   const factory Template({
     required UniqueId id,
     required Expression expression,
-    required Values values,
+    required Values valuesEasy,
+    required Values valuesMedium,
+    required Values valuesHard,
   }) = _Template;
 
   factory Template.empty() => Template(
     id: UniqueId.fromUniqueString(''), 
     expression: Expression(''),
-    values: Values(''),
+    valuesEasy: Values(''),
+    valuesMedium: Values(''),
+    valuesHard: Values(''),
   );
 
 }

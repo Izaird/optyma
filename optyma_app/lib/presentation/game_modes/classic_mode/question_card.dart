@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:optyma_app/application/game_modes/endless_mode/endless_mode_bloc.dart';
+import 'package:optyma_app/application/game_modes/classic_mode/classic_mode_bloc.dart';
 import 'package:optyma_app/application/game_modes/timer/timer_bloc.dart';
 
 class QuestionCard extends StatelessWidget {
@@ -8,9 +8,9 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final questionModel = BlocProvider.of<EndlessModeBloc>(context).state.question;
-    final selectedAnswer = BlocProvider.of<EndlessModeBloc>(context).state.selectedAnswer;
-    final answered = BlocProvider.of<EndlessModeBloc>(context).state.answered;
+    final questionModel = BlocProvider.of<ClassicModeBloc>(context).state.question;
+    final selectedAnswer = BlocProvider.of<ClassicModeBloc>(context).state.selectedAnswer;
+    final answered = BlocProvider.of<ClassicModeBloc>(context).state.answered;
     int duration;
     return Container(
       padding: const EdgeInsets.all(20),
@@ -28,7 +28,7 @@ class QuestionCard extends StatelessWidget {
               isDisplayingAnswer: answered == true, 
               onTap: () => {
                 duration = BlocProvider.of<TimerBloc>(context).state.duration,
-                BlocProvider.of<EndlessModeBloc>(context).add(EndlessModeEvent.answerSelected(answer, duration)),
+                BlocProvider.of<ClassicModeBloc>(context).add(ClassicModeEvent.answerSelected(answer, duration)),
               }
 
             )).toList(),

@@ -6,19 +6,20 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/expressions/expression.dart';
 import 'package:optyma_app/domain/expressions/i_expression_facade.dart';
+import 'package:optyma_app/domain/templates/template.dart';
 
-part 'endless_mode_event.dart';
-part 'endless_mode_state.dart';
-part 'endless_mode_bloc.freezed.dart';
+part 'classic_mode_event.dart';
+part 'classic_mode_state.dart';
+part 'classic_mode_bloc.freezed.dart';
 
 @injectable
-class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
-  final IExpressionFacade _expressionFacade;
+class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
+ final IExpressionFacade _expressionFacade;
 
-  EndlessModeBloc(this._expressionFacade) : super(EndlessModeState.initial());
+  ClassicModeBloc(this._expressionFacade) : super(ClassicModeState.initial());
 
   @override
-  Stream<EndlessModeState> mapEventToState( EndlessModeEvent event,) async* {
+  Stream<ClassicModeState> mapEventToState( ClassicModeEvent event,) async* {
     yield* event.map(
       started: (e) async*{
         yield state.copyWith(
@@ -43,12 +44,13 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
       answerSelected: (e) async*{
         int _streak = state.streak;
         int _score = state.score;
-        int _lifes = state.lifes;
+        int _lifes = state.nquestions;
         bool _gameOver = false;
         final bool _questionHasCorrectAnswer = e.answer == state.question.result;
 
         if(_questionHasCorrectAnswer){
           _streak += 1;
+          _lifes -= 1;
           if(state.difficulty==Difficulty.easy){
             _score += ((e.duration/30)*500).round();
           }
@@ -65,6 +67,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
             answered: true,
             streak: _streak,
             score: _score,
+            nquestions: _lifes,
           );
 
           yield await Future.delayed(const Duration(seconds: 2), (){
@@ -84,7 +87,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
           }
 
           yield state.copyWith(
-            lifes: _lifes,
+            nquestions: _lifes,
             selectedAnswer: e.answer,
             answered: true,
             streak: _streak,
@@ -104,7 +107,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
 
 
       timeOver: (e) async*{
-        int _lifes = state.lifes;
+        int _lifes = state.nquestions;
         bool _gameOver = state.gameOver;
         if(_lifes > 1){
           _lifes -= 1;
@@ -115,7 +118,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
 
 
         yield state.copyWith(
-          lifes: _lifes,
+          nquestions: _lifes,
           selectedAnswer: null,
           answered: true,
           streak: 0,
@@ -133,3 +136,4 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
     );
   }
 }
+

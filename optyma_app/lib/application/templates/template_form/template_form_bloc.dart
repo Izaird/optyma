@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:optyma_app/domain/templates/i_template_repository.dart';
@@ -37,10 +38,19 @@ class TemplateFormBloc extends Bloc<TemplateFormEvent, TemplateFormState> {
           saveFailureOrSuccessOption: none()
         );
       }, 
-      valuesChanged: (e) async*{
+      valuesEasyChanged: (e) async*{
         yield state.copyWith(
-          template: state.template.copyWith(values: Values(e.valuesStr)),
-          saveFailureOrSuccessOption: none()
+          template: state.template.copyWith(valuesEasy: Values(e.valuesStr)),
+        );
+      },
+      valuesMediumChanged: (e) async*{
+        yield state.copyWith(
+          template: state.template.copyWith(valuesMedium: Values(e.valuesStr)),
+        );
+      },
+      valuesHardChanged: (e) async*{
+        yield state.copyWith(
+          template: state.template.copyWith(valuesHard: Values(e.valuesStr)),
         );
       },
       saved: (e) async* {
@@ -52,7 +62,7 @@ class TemplateFormBloc extends Bloc<TemplateFormEvent, TemplateFormState> {
         );
         
 
-        if(state.template.expression.isValid() && state.template.values.isValid()){
+        if(state.template.expression.isValid()){
           failureOrSuccess = state.isEditing
             ? await _templateRepository.update(state.template)
             : await _templateRepository.create(state.template);

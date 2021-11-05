@@ -20,7 +20,7 @@ class Category with _$Category{
 const List<Category> gameCategories = [
   Category(id: 'endless-mode', name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
   Category(id: 'pvp', name: 'Jugador Vs Jugador' , icon: Icon(FontAwesomeIcons.peopleArrows)),
-  // Category(id: 3, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
+  Category(id:'classic-mode' , name: 'Clasico' , icon: Icon(FontAwesomeIcons.plusSquare)),
   // Category(id: 4, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
 ];
 
@@ -46,6 +46,10 @@ List<Category> operationsCategories = [
     name: 'Division' , 
     icon: const Icon(FontAwesomeIcons.divide)
   ),
+  Category(
+    id: EnumToString.convertToString(OperationType.combined),
+    name: 'Combinado', 
+    icon: const Icon(FontAwesomeIcons.question)),
 ];
 
 

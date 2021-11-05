@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:optyma_app/presentation/game_modes/classic_mode/classic_mode_page.dart';
 import 'package:optyma_app/presentation/auth/login/login_page.dart';
 import 'package:optyma_app/presentation/auth/password_forgotten/password_forgotten_page.dart';
 import 'package:optyma_app/presentation/auth/sign_in/sign_in_page.dart';
@@ -19,6 +20,7 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'home'                  : (_) => HomePage(),
     'splash'                : (_) => SplashPage(),
     'game-modes'            : (_) => GameModesPage(),
+    'classic-mode'          : (_) => ClassicModePage(),
     'endless-mode'          : (_) => EndlessModePage(),
     'users'                 : (_) => UsersOverviewPage(),
     'usersForm'             : (_) => UserFormPage(),

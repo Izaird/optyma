@@ -12,7 +12,9 @@ class TemplateDto with _$TemplateDto{
   const factory TemplateDto({
     @JsonKey(ignore: true) String? id,
     required String expression,
-    required String values
+    required String valuesEasy,
+    required String valuesMedium,
+    required String valuesHard,
   }) = _TemplateDto;
 
   const TemplateDto._();
@@ -20,7 +22,9 @@ class TemplateDto with _$TemplateDto{
   factory TemplateDto.fromDomain(Template template){
     return TemplateDto(
       expression: template.expression.getOrCrash(),
-      values: template.values.getOrCrash(),
+      valuesEasy: template.valuesEasy.getOrCrash(),
+      valuesMedium: template.valuesMedium.getOrCrash(),
+      valuesHard: template.valuesHard.getOrCrash(),
     );
   }
 
@@ -36,7 +40,9 @@ class TemplateDto with _$TemplateDto{
     return Template(
       id: UniqueId.fromUniqueString(id!), 
       expression: Expression(expression),
-      values: Values(values),
+      valuesEasy: Values(valuesEasy),
+      valuesMedium: Values(valuesMedium),
+      valuesHard: Values(valuesHard),
     );
   }
 }

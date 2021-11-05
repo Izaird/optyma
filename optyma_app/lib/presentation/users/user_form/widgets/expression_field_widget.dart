@@ -9,11 +9,15 @@ class ExpressionField extends HookWidget{
   Widget build(BuildContext context) {
     final textEditingController = useTextEditingController();
     final textEditingController2 = useTextEditingController();
+    final textEditingController3 = useTextEditingController();
+    final textEditingController4 = useTextEditingController();
     return BlocListener<TemplateFormBloc, TemplateFormState>(
       listenWhen: (p, c) => p.isEditing != c.isEditing,
       listener: (context, state){
         textEditingController.text = state.template.expression.getOrCrash();
-        //textEditingController2.text = state.template.values.getOrCrash();
+        textEditingController2.text = state.template.valuesEasy.getOrCrash();
+        textEditingController3.text = state.template.valuesMedium.getOrCrash();
+        textEditingController4.text = state.template.valuesHard.getOrCrash();
       },
       child: Column(
         children: [
@@ -48,12 +52,12 @@ class ExpressionField extends HookWidget{
             child: TextFormField(  
               controller: textEditingController2,
               decoration: const InputDecoration(
-                labelText: 'Valores',
+                labelText: 'Valores Fácil',
                 counterText: ''
               ),
               maxLines: null,
               onChanged: (value) => BlocProvider.of<TemplateFormBloc>(context)
-                .add(TemplateFormEvent.valuesChanged(value)),
+                .add(TemplateFormEvent.valuesEasyChanged(value)),
               validator: (_) => BlocProvider.of<TemplateFormBloc>(context)
                 .state
                 .template
@@ -61,7 +65,59 @@ class ExpressionField extends HookWidget{
                 .value
                 .fold(
                   (f) => f.maybeMap(
-                    invalidExpression: (f) => 'Expresion no es valida',
+                    invalidExpression: (f) => 'Valores no son validos',
+                    empty: (f) => 'Este campo no puede estar vacio',
+                    orElse: () => null,
+                  ), 
+                  (r) => null
+                ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(  
+              controller: textEditingController3,
+              decoration: const InputDecoration(
+                labelText: 'Valores Medio',
+                counterText: ''
+              ),
+              maxLines: null,
+              onChanged: (value) => BlocProvider.of<TemplateFormBloc>(context)
+                .add(TemplateFormEvent.valuesMediumChanged(value)),
+              validator: (_) => BlocProvider.of<TemplateFormBloc>(context)
+                .state
+                .template
+                .expression
+                .value
+                .fold(
+                  (f) => f.maybeMap(
+                    invalidExpression: (f) => 'Valores no son validos',
+                    empty: (f) => 'Este campo no puede estar vacio',
+                    orElse: () => null,
+                  ), 
+                  (r) => null
+                ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextFormField(  
+              controller: textEditingController4,
+              decoration: const InputDecoration(
+                labelText: 'Valores Difícil',
+                counterText: ''
+              ),
+              maxLines: null,
+              onChanged: (value) => BlocProvider.of<TemplateFormBloc>(context)
+                .add(TemplateFormEvent.valuesHardChanged(value)),
+              validator: (_) => BlocProvider.of<TemplateFormBloc>(context)
+                .state
+                .template
+                .expression
+                .value
+                .fold(
+                  (f) => f.maybeMap(
+                    invalidExpression: (f) => 'Valores no son validos',
                     empty: (f) => 'Este campo no puede estar vacio',
                     orElse: () => null,
                   ), 
