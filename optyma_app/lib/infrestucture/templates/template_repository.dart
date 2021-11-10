@@ -103,4 +103,30 @@ class TemplateRepository implements ITemplateRepository{
       });
   }
 
+  @override
+  Future<Either<TemplateFailure, List<Template>>> getAllTemplates() async{
+    try {
+      final templatesRef = await _firestore.templateReference();
+      final QuerySnapshot templatesSnap = await templatesRef.get();
+
+      if(templatesSnap.docs.isNotEmpty){
+        return right<TemplateFailure, List<Template>>(
+          templatesSnap.docs.map((doc) => TemplateDto.fromFirestore(doc).toDomain())
+          .toList()
+        );
+      }else{
+        return left(const TemplateFailure.noTemplates());
+      }
+
+    } on FirebaseException catch (e) {
+      if(e.message!.contains('PERMISSION_DENIED')){
+        return left(const TemplateFailure.insufficientPermission());
+      }else{
+        debugPrint(e.toString());
+        return left(const TemplateFailure.unexpected());
+      }
+    }
+   
+  }
+
 }
