@@ -33,14 +33,15 @@ class TemplateFormPage extends StatelessWidget {
               either.fold(
                 (failure) {
                   FlushbarHelper.createError(
-                    message: failure.map(
+                    message: failure.maybeMap(
                       unexpected: (_) => 
                         'Permisos innecesarios ❌', 
                       unableToUpdate: (_) =>
                         'No se pudo actualizar la plantilla', 
                       insufficientPermission: (_) =>
-                        'Error inesperado.'
-                    )
+                        'Error inesperado.', 
+                        orElse: () => '',
+                    ),
                   );
                 }, 
                 (_) => {

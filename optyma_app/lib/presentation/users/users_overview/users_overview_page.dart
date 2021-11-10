@@ -17,7 +17,10 @@ class UsersOverviewPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Usuarios"),
           actions: [
-            AdminsSwitch(),
+            Row(children: [
+              const Text('Filtrar administradores'),
+              AdminsSwitch(),
+            ])
           ],
         ),
         body: UsersOverviewBody(),
