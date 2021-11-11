@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:optyma_app/application/game_modes/classic_mode/classic_mode_bloc.dart';
 import 'package:optyma_app/application/game_modes/timer/timer_bloc.dart';
+import 'package:optyma_app/domain/templates/template.dart';
 
 class QuestionCard extends StatelessWidget {
   const QuestionCard() : super();
@@ -11,6 +12,7 @@ class QuestionCard extends StatelessWidget {
     final questionModel = BlocProvider.of<ClassicModeBloc>(context).state.question;
     final selectedAnswer = BlocProvider.of<ClassicModeBloc>(context).state.selectedAnswer;
     final answered = BlocProvider.of<ClassicModeBloc>(context).state.answered;
+    //final List<Template> templ = BlocProvider.of<ClassicModeBloc>(context).state.templates;
     int duration;
     return Container(
       padding: const EdgeInsets.all(20),

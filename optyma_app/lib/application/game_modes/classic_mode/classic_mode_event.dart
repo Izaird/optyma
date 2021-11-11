@@ -6,4 +6,4 @@ class ClassicModeEvent with _$ClassicModeEvent {
   const factory ClassicModeEvent.answerSelected(int answer, int duration) = AnswerSelected;
   const factory ClassicModeEvent.timeOver() = TimeOver;
   const factory ClassicModeEvent.gameOver() = GameOver;
-}
+ }

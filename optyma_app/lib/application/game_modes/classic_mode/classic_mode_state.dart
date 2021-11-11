@@ -13,7 +13,6 @@ class ClassicModeState with _$ClassicModeState {
     required bool gameOver,
     required bool answered,
     required bool timeOver,
-    required Template template,
   }) = _ClassicModeState;
 
   factory ClassicModeState.initial() => ClassicModeState(
@@ -26,6 +25,5 @@ class ClassicModeState with _$ClassicModeState {
     gameOver: false, 
     answered: false, 
     timeOver: false,
-    template: Template.empty()
     );
 }

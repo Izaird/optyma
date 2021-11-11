@@ -27,7 +27,6 @@ class ClassicModePage extends StatelessWidget {
           child: Padding(  
             padding: EdgeInsets.all(8.0),
             child: ClassicModeBody(),
-            //child: Text("Hello"),
           ),
         ),
       )

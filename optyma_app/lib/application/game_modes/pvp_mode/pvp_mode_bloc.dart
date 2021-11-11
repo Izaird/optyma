@@ -25,7 +25,7 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
         yield state.copyWith(
           operationType: e.operationType,
           difficulty: e.difficulty,
-          question: _expressionFacade.questionInt(e.operationType, e.difficulty),
+          question: await _expressionFacade.questionInt(e.operationType, e.difficulty),
         );
       },
 
@@ -69,9 +69,9 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
           nquestions: _nquestions,
           gameOver: _gameOver,
         );
-        yield await Future.delayed(const Duration(seconds: 2), (){
+        yield await Future.delayed(const Duration(seconds: 2), () async {
           return state.copyWith(
-            question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+            question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
             answered: false,
             answeredj2: false,
           );
@@ -87,9 +87,9 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
 
           if(_answered1 && _answered2){
             _nquestions=_nquestions-1;
-            yield await Future.delayed(const Duration(seconds: 2), (){
+            yield await Future.delayed(const Duration(seconds: 2), () async {
               return state.copyWith(
-                question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+                question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
                 answered: false,
                 answeredj2: false,
                 gameOver: _gameOver,
@@ -129,9 +129,9 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
           nquestions: _nquestions,
           gameOver: _gameOver,
         );
-        yield await Future.delayed(const Duration(seconds: 2), (){
+        yield await Future.delayed(const Duration(seconds: 2), () async {
           return state.copyWith(
-            question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+            question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
             answered: false,
             answeredj2: false,
           );
@@ -146,9 +146,9 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
 
           if(_answered1 && _answered2){
             _nquestions=_nquestions-1;
-            yield await Future.delayed(const Duration(seconds: 2), (){
+            yield await Future.delayed(const Duration(seconds: 2), () async {
               return state.copyWith(
-                question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+                question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
                 answered: false,
                 answeredj2: false,
                 gameOver: _gameOver,
@@ -163,9 +163,9 @@ class PvpModeBloc extends Bloc<PvpModeEvent, PvpModeState> {
       yield state.copyWith(
         gameOver: _gameOver
       );
-      yield await Future.delayed(const Duration(seconds: 2), (){
+      yield await Future.delayed(const Duration(seconds: 2), () async {
         return state.copyWith(
-          question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+          question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
           answered: false,
           answeredj2: false,
           gameOver: _gameOver,

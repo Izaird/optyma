@@ -4,7 +4,7 @@ enum OperationType{none, addition, substraction, multiplication, division, combi
 enum Difficulty{none, easy, medium, hard}
 
 abstract class IExpressionFacade{
-  EvaluatedExpression questionInt(
+  Future<EvaluatedExpression> questionInt(
     OperationType operationType, 
     Difficulty difficulty, 
   );

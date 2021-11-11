@@ -24,7 +24,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
         yield state.copyWith(
           operationType: e.operationType,
           difficulty: e.difficulty,
-          question: _expressionFacade.questionInt(e.operationType, e.difficulty),
+          question: await _expressionFacade.questionInt(e.operationType, e.difficulty),
         );
       },
 
@@ -67,9 +67,9 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
             score: _score,
           );
 
-          yield await Future.delayed(const Duration(seconds: 2), (){
+          yield await Future.delayed(const Duration(seconds: 2), () async{
             return state.copyWith(
-              question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+              question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
               answered: false,
             );
           });
@@ -92,9 +92,9 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
           );
 
 
-          yield await Future.delayed(const Duration(seconds: 2), (){
+          yield await Future.delayed(const Duration(seconds: 2), ()async{
             return state.copyWith(
-              question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+              question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
               answered: false,
               gameOver: _gameOver,
             );
@@ -121,9 +121,9 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
           streak: 0,
         );
 
-        yield await Future.delayed(const Duration(seconds: 2), (){
+        yield await Future.delayed(const Duration(seconds: 2), ()async{
           return state.copyWith(
-            question: _expressionFacade.questionInt(state.operationType, state.difficulty),
+            question: await _expressionFacade.questionInt(state.operationType, state.difficulty),
             answered: false,
             gameOver: _gameOver,
           );
