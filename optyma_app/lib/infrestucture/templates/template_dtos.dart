@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:optyma_app/domain/core/value_objects.dart';
@@ -14,7 +12,7 @@ class TemplateDto with _$TemplateDto{
   const factory TemplateDto({
     @JsonKey(ignore: true) String? id,
     required String expression,
-    //required String values
+    required String values
   }) = _TemplateDto;
 
   const TemplateDto._();
@@ -22,7 +20,7 @@ class TemplateDto with _$TemplateDto{
   factory TemplateDto.fromDomain(Template template){
     return TemplateDto(
       expression: template.expression.getOrCrash(),
-      //values: '',
+      values: template.values.getOrCrash(),
     );
   }
 
@@ -38,7 +36,7 @@ class TemplateDto with _$TemplateDto{
     return Template(
       id: UniqueId.fromUniqueString(id!), 
       expression: Expression(expression),
-      values: Values(''),
+      values: Values(values),
     );
   }
 }
