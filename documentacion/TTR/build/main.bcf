@@ -2344,10 +2344,20 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">ryan2000self</bcf:citekey>
-    <bcf:citekey order="2">albrecht2018relevance</bcf:citekey>
-    <bcf:citekey order="3">escribano2010gamification</bcf:citekey>
-    <bcf:citekey order="4">ryan2020intrinsic</bcf:citekey>
+    <bcf:citekey order="1">coronado2014estudio</bcf:citekey>
+    <bcf:citekey order="2">oecd2014what</bcf:citekey>
+    <bcf:citekey order="2">oecd2016low</bcf:citekey>
+    <bcf:citekey order="3">coronado2016academic</bcf:citekey>
+    <bcf:citekey order="3">mullis2016timss</bcf:citekey>
+    <bcf:citekey order="4">orrantia2006dificultades</bcf:citekey>
+    <bcf:citekey order="5">rodriguez2017marcadores</bcf:citekey>
+    <bcf:citekey order="6">tariq2002decline</bcf:citekey>
+    <bcf:citekey order="6">carpenter2017psychology</bcf:citekey>
+    <bcf:citekey order="6">huang2013gamification</bcf:citekey>
+    <bcf:citekey order="7">martin2003loss</bcf:citekey>
+    <bcf:citekey order="8">larrazolo2013habilidades</bcf:citekey>
+    <bcf:citekey order="8">ryan1997should</bcf:citekey>
+    <bcf:citekey order="9">hunt2006feature</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
@@ -2379,4 +2389,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

@@ -382,7 +382,62 @@ Fuente &  \\ \hline
 Las interfaces deberán ser optimizadas para dispositivos móviles. Deberá considerarse la capacidad touch de dichos dispositivos. La primera pantalla será para Iniciar sesión por medio del correo y contraseña junto con un botón para registrarse. La pantalla de registro solicitará el correo, contraseña y confirmación de la contraseña. Se deberá contar con botones para acceder al perfil de usuario, leaderboards y logros en una barra de navegación, esta puede ser horizontal o vertical. La pantalla de ejercicios mostrará la puntuación en todo momento en una esquina y el número de respuestas correctas consecutivas junto un icono. En caso de haber tiempo para responder a una pregunta habrá una barra horizontal en la parte superior la cual irá desapareciendo conforme transcura el tiempo asignado al usuario para dar respuesta a la pregunta, la cual irá  desaapareciendo de derecha a izquierda.
 \subsection{Análisis de la Base de Datos}%Narrativa
 Para desarrollar esta aplicación se cuenta con una entidad Usuario con campos correo (llave primaria) y contraseña, con el correo como identificador de la entidad, pues no se permiten correos duplicados. Los Logros y leaderboards son manejaados por el servicio externo de Google Play Juegos por lo cual no se incluyen en nuestra base de datos
+
 \subsection{Tecnologías usadas}
+\subsubsection{Dart}
+Dart es un lenguaje optimizado para el cliente que permite desarrollar 
+aplicaciones rápidas en cualquier plataforma. Su objetivo es ofrecer el 
+lenguaje de programación más productivo para el desarrollo multiplataforma, 
+junto con una plataforma de ejecución flexible para marcos de aplicaciones.
+
+Uno de los principales beneficios de usar Dart es su compilación AOT 
+(Ahead-of-Time). AOT permite la capacidad de compilar código en código de 
+máquina nativo. Como resultado, esto permite a los archivos binarios la 
+capacidad de ejecutarse de forma nativa.
+
+Además de ser muy flexible, fácil de usar y altamente compatible con Javascript, 
+Dart permite que un programa se ejecute incluso si hay errores en otros lugares 
+de la compilación. Esto permite a los desarrolladores la facilidad de edición 
+ya que pueden probar sólo una pequeña sección del código sin importar si el 
+resto de la aplicación está completa o no. 
+
+Dart es un lenguaje rápido. Casi siempre compila más rápido, utilizando 
+un compilador fuente a fuente. Puede esperar que tenga una interfaz de 
+usuario más eficiente que muchos de los otros lenguajes principales.
+
+
+\subsubsection{Flutter}
+Flutter es un kit de herramientas de interfaz de usuario portátil para crear 
+aplicaciones de tipo nativo en móviles, web y escritorio, a partir de una 
+única base de código. Utiliza el lenguaje de programación Dart e incorpora 
+Material Design y los widgets de Cupertino. Los desarrolladores de Flutter 
+pueden crear una interfaz de usuario espectacular que se ve y se siente 
+nativa. Se comporta de forma natural en cualquier plataforma, a pesar de 
+que está utilizando una sola base de código.
+
+Flutter es el único framework con un SDK para móviles que proporciona un 
+estilo responsive sin utilizar un puente Javascript, alcanzando así un 
+nivel de rendimiento que rivaliza con su primo y competidor directo 
+React Native. Se integra fácilmente con las diferentes plataformas como 
+Android, IOS y Linux, MAC, Windows y aplicaciones de Google Fuchsia.
+
+
+\subsubsection{Firestore}
+Firebase es un Backend-as-a-Service (Baas). Proporciona a los desarrolladores 
+una variedad de herramientas y servicios para ayudarles a desarrollar aplicaciones 
+de calidad. Está construido sobre la infraestructura de Google.
+
+Firebase está categorizado como un programa de base de datos NoSQL, que almacena 
+datos en documentos tipo JSON.
+
+Firebase auth tiene un sistema de autenticación de correo electrónico/contraseña 
+incorporado. También soporta OAuth2 para Google, Facebook, Twitter y GitHub. 
+Nos centraremos en la autenticación de correo electrónico/contraseña en su mayor 
+parte. 
+
+
+\subsubsection{Google Play Servicies}
+
 \pagebreak
 \section{Diseño}
 \subsection{Arquitectura general del sistema}%Imagen arquitectura y descripcion%Imagen arquitectura y descripcion

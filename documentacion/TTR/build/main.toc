@@ -1,46 +1,76 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {spanish}{}\relax 
+\babel@toc {spanish}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Introducción}{2}{}%
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Motivación}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Motivación}{3}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Plantamiento del Problema}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Plantamiento del Problema}{3}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}Objetivos}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Objetivos}{3}{subsection.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.1}Objetivo General}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Objetivo General}{3}{subsubsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.2}Objetivos Específicos}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}Objetivos Específicos}{3}{subsubsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Estado del Arte}{2}{}%
+\contentsline {subsection}{\numberline {1.4}Estado del Arte}{4}{subsection.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5}Propuesta de Solución}{2}{}%
+\contentsline {subsection}{\numberline {1.5}Propuesta de Solución}{4}{subsection.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Marco Teórico}{2}{}%
+\contentsline {section}{\numberline {2}Marco Teórico}{5}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Motivación}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Aritmética y sus dificultades}{5}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Gamificación}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Gamificación}{5}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Análisis}{4}{}%
+\contentsline {section}{\numberline {3}Análisis}{5}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Requisitos Funcionales}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Requisitos Funcionales}{5}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Requisitos No Funcionales}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Requisitos No Funcionales}{5}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Analisis de Interfaces}{4}{}%
+\contentsline {subsection}{\numberline {3.3}Casos de Uso}{6}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Narrativa de la Base de Datos}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Tabla descriptiva de Caso de Uso 1}{7}{subsubsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Diseño}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Tabla descriptiva de Caso de Uso 2}{7}{subsubsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Diseño de Base de Datos}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Tabla descriptiva de Caso de Uso 3}{8}{subsubsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Casos de Uso}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Tabla descriptiva de Caso de Uso 4}{8}{subsubsection.3.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Diseño de Interfaces}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}Tabla descriptiva de Caso de Uso 5}{8}{subsubsection.3.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Metodología}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.6}Tabla descriptiva de Caso de Uso 6}{9}{subsubsection.3.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}Tecnologías usadas}{4}{}%
+\contentsline {subsubsection}{\numberline {3.3.7}Tabla descriptiva de Caso de Uso 7}{9}{subsubsection.3.3.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.3.8}Tabla descriptiva de Caso de Uso 8}{9}{subsubsection.3.3.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Análisis de Interfaces}{10}{subsection.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5}Análisis de la Base de Datos}{10}{subsection.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.6}Tecnologías usadas}{10}{subsection.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.6.1}Dart}{10}{subsubsection.3.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.6.2}Flutter}{10}{subsubsection.3.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.6.3}Firestore}{10}{subsubsection.3.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.6.4}Google Play Servicies}{11}{subsubsection.3.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Diseño}{12}{section.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Arquitectura general del sistema}{12}{subsection.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Diseño de Base de Datos}{13}{subsection.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Diseño de Interfaces}{13}{subsection.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Metodología}{21}{subsection.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Implementación}{22}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Pruebas}{29}{section.6}%

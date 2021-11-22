@@ -19,132 +19,469 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{albrecht2018relevance}{misc}{}
+    \entry{carpenter2017psychology}{article}{}
       \name{author}{2}{}{%
-        {{hash=f3b72c11da29bd9c9fd95af5751fd3eb}{%
-           family={Albrecht},
-           familyi={A\bibinitperiod},
-           given={Jeffrey\bibnamedelima R},
-           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=35fd3bdf73c017a6b5e48adae0234ac5}{%
-           family={Karabenick},
+        {{hash=83eb03f3a1eabc8932b85f412150774c}{%
+           family={Carpenter},
+           familyi={C\bibinitperiod},
+           given={Thomas\bibnamedelima P},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=b3268edc1cd3a3bcc77c1771025af17d}{%
+           family={Kirk},
            familyi={K\bibinitperiod},
-           given={Stuart\bibnamedelima A},
-           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+           given={Roger\bibnamedelima E},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Taylor \& Francis}%
       }
-      \strng{namehash}{05d18d34b4fe5e3c8ff50911586b8765}
-      \strng{fullhash}{05d18d34b4fe5e3c8ff50911586b8765}
-      \strng{bibnamehash}{05d18d34b4fe5e3c8ff50911586b8765}
-      \strng{authorbibnamehash}{05d18d34b4fe5e3c8ff50911586b8765}
-      \strng{authornamehash}{05d18d34b4fe5e3c8ff50911586b8765}
-      \strng{authorfullhash}{05d18d34b4fe5e3c8ff50911586b8765}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \strng{namehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{fullhash}{fbdc8230f88f036011fdce025262d088}
+      \strng{bibnamehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{authorbibnamehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{authornamehash}{fbdc8230f88f036011fdce025262d088}
+      \strng{authorfullhash}{fbdc8230f88f036011fdce025262d088}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Relevance for learning and motivation in education}
-      \field{year}{2018}
+      \field{journaltitle}{Educational Studies}
+      \field{number}{3}
+      \field{title}{Are psychology students getting worse at math?: Trends in the math skills of psychology statistics students across 21 years}
+      \field{volume}{43}
+      \field{year}{2017}
+      \field{pages}{282\bibrangedash 295}
+      \range{pages}{14}
     \endentry
-    \entry{escribano2010gamification}{article}{}
-      \name{author}{2}{}{%
-        {{hash=9a90261cad5ef2e3a9e974d57541a8e1}{%
-           family={Escribano},
-           familyi={E\bibinitperiod},
-           given={Flavio},
-           giveni={F\bibinitperiod}}}%
-        {{hash=a2a8d4a837e745cbbbef7b972b8588e0}{%
-           family={Cp},
-           familyi={C\bibinitperiod},
-           given={A},
+    \entry{coronado2016academic}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cad81796d6612a62d9f17138cdf287b4}{%
+           family={Coronado-Hijón},
+           familyi={C\bibinithyphendelim H\bibinitperiod},
+           given={Antonio},
            giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{d6b166a4d150fd671788e67cbafd33da}
-      \strng{fullhash}{d6b166a4d150fd671788e67cbafd33da}
-      \strng{bibnamehash}{d6b166a4d150fd671788e67cbafd33da}
-      \strng{authorbibnamehash}{d6b166a4d150fd671788e67cbafd33da}
-      \strng{authornamehash}{d6b166a4d150fd671788e67cbafd33da}
-      \strng{authorfullhash}{d6b166a4d150fd671788e67cbafd33da}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \strng{namehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{fullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{bibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorbibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authornamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorfullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Fundación Iberoamericana Del Conocimiento}
-      \field{title}{Gamification Model Canvas Evolution for Design Improvement: Player Profiling and Decision Support Models}
-      \field{year}{2010}
-      \field{pages}{1\bibrangedash 6}
-      \range{pages}{6}
+      \field{journaltitle}{Elsevier Ltd}
+      \field{title}{Academic resilience: a transcultural perspective. Procedia - Social and Behavioral Sciences}
+      \field{year}{2016}
+      \verb{doi}
+      \verb http://doi.org/10.1016/j.sbspro.2017.02.013
+      \endverb
     \endentry
-    \entry{ryan2020intrinsic}{article}{}
+    \entry{coronado2014estudio}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cad81796d6612a62d9f17138cdf287b4}{%
+           family={Coronado-Hijón},
+           familyi={C\bibinithyphendelim H\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{fullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{bibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorbibnamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authornamehash}{cad81796d6612a62d9f17138cdf287b4}
+      \strng{authorfullhash}{cad81796d6612a62d9f17138cdf287b4}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0210-5934}
+      \field{journaltitle}{Bordón: Revista de pedagogía}
+      \field{title}{Estudio de prevalencia de dificultades de aprendizaje en el cálculo aritmético}
+      \field{year}{2014}
+      \field{pages}{36\bibrangedash 60}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.13042/Bordon.2014.66303
+      \endverb
+    \endentry
+    \entry{huang2013gamification}{article}{}
       \name{author}{2}{}{%
-        {{hash=49ad03aeb3155f395016c49dd507c027}{%
-           family={Ryan},
-           familyi={R\bibinitperiod},
-           given={Richard\bibnamedelima M},
-           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=d733c22238af349bac296bb1e5b60deb}{%
-           family={Deci},
-           familyi={D\bibinitperiod},
-           given={Edward\bibnamedelima L},
-           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=93cb8e12219440d30efdaafd6bb7493c}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Wendy\bibnamedelima Hsin-Yuan},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=d373b0815505a8f81e90ce6f5aef06a0}{%
+           family={Soman},
+           familyi={S\bibinitperiod},
+           given={Dilip},
+           giveni={D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Elsevier}%
+        {Rotman School of Management, University of Toronto Toronto, Canada}%
       }
-      \strng{namehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{fullhash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{bibnamehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{authorbibnamehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{authornamehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{authorfullhash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
+      \strng{namehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{fullhash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{bibnamehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{authorbibnamehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{authornamehash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \strng{authorfullhash}{ff8d09bc4cccb12fdb260d9605fd0f0b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Report Series: Behavioural Economics in Action}
+      \field{title}{Gamification of education}
+      \field{volume}{29}
+      \field{year}{2013}
+    \endentry
+    \entry{hunt2006feature}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7d9273fa2a92b56a830259d34dfda8fd}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{fullhash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{bibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authorbibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authornamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authorfullhash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Agile Software Construction}
+      \field{title}{Feature-driven development}
+      \field{year}{2006}
+      \field{pages}{161\bibrangedash 182}
+      \range{pages}{22}
+    \endentry
+    \entry{mullis2016timss}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7d1c87889dac62f05e0df41fd59e883c}{%
+           family={Ina\bibnamedelimb V.S.\bibnamedelimi Mullis},
+           familyi={I\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Pierre\bibnamedelima Foy},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod},
+           suffix={Michael\bibnamedelimb O.\bibnamedelimi Martin},
+           suffixi={M\bibinitperiod\bibinitdelim O\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=b43e36e1e415243e31a04323b39e1c39}{%
+           family={Hooper},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Boston College , Chestnut Hill, MA}%
+      }
+      \strng{namehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{fullhash}{c495183acd4be5d14273cee8739407f4}
+      \strng{bibnamehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{authorbibnamehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{authornamehash}{c495183acd4be5d14273cee8739407f4}
+      \strng{authorfullhash}{c495183acd4be5d14273cee8739407f4}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{TIMSS 2015 International Results in Mathematics}
+      \field{year}{2016}
+    \endentry
+    \entry{larrazolo2013habilidades}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5814c367deb86b5fe338d27f283f572f}{%
+           family={Larrazolo},
+           familyi={L\bibinitperiod},
+           given={Norma},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a0920124687fc4367b1a43e0fe01aeba}{%
+           family={Backhoff},
+           familyi={B\bibinitperiod},
+           given={Eduardo},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bf0356f0774eeb7ef5d70c4b021d6977}{%
+           family={Tirado},
+           familyi={T\bibinitperiod},
+           given={Felipe},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Consejo Mexicano de Investigación Educativa AC}%
+      }
+      \strng{namehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{fullhash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{bibnamehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{authorbibnamehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{authornamehash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \strng{authorfullhash}{93f08aa8ad13b3b15b98d6ea6bdaf92a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista mexicana de investigación educativa}
+      \field{number}{59}
+      \field{title}{Habilidades de razonamiento matemático de estudiantes de educación media superior en México}
+      \field{volume}{18}
+      \field{year}{2013}
+      \field{pages}{1137\bibrangedash 1163}
+      \range{pages}{27}
+    \endentry
+    \entry{martin2003loss}{article}{}
+      \name{author}{6}{}{%
+        {{hash=5ecc21bbaa7f6778251e8e5ebc6d9ca6}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={Roy\bibnamedelima C},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=6b91d637e348eb82d067a1bee2423614}{%
+           family={Annis},
+           familyi={A\bibinitperiod},
+           given={Shannon\bibnamedelima M},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=23fe3731d297c4702fa41f0f98445559}{%
+           family={Darling},
+           familyi={D\bibinitperiod},
+           given={Laurie\bibnamedelima Z},
+           giveni={L\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=0a2d2532149c3904f3aa88e57de05922}{%
+           family={Wadley},
+           familyi={W\bibinitperiod},
+           given={Virginia},
+           giveni={V\bibinitperiod}}}%
+        {{hash=67367cac33995135f91cc43a86e6f336}{%
+           family={Harrell},
+           familyi={H\bibinitperiod},
+           given={Lindy},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3f7a730667ecaf8e8a6f532344e18faf}{%
+           family={Marson},
+           familyi={M\bibinitperiod},
+           given={Daniel\bibnamedelima C},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Medical Association}%
+      }
+      \strng{namehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{fullhash}{e71f3f4a0ab1fcb56ef402b128384eed}
+      \strng{bibnamehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{authorbibnamehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{authornamehash}{52cfee974294ac5494996b7312d001d9}
+      \strng{authorfullhash}{e71f3f4a0ab1fcb56ef402b128384eed}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archives of neurology}
+      \field{number}{11}
+      \field{title}{Loss of calculation abilities in patients with mild and moderate Alzheimer disease}
+      \field{volume}{60}
+      \field{year}{2003}
+      \field{pages}{1585\bibrangedash 1589}
+      \range{pages}{5}
+    \endentry
+    \entry{oecd2016low}{article}{}
+      \name{author}{1}{}{%
+        {{hash=bdbed435a416a918aa494017fda4c7fb}{%
+           family={OECD},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{fullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{bibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorbibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authornamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorfullhash}{bdbed435a416a918aa494017fda4c7fb}
       \field{extraname}{1}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{OECD Publishing, Paris}
+      \field{subtitle}{PISA}
+      \field{title}{Low-Performing Students: Why They Fall Behind and How to Help Them Succeed}
+      \field{year}{2016}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1787/9789264250246-en
+      \endverb
+    \endentry
+    \entry{oecd2014what}{article}{}
+      \name{author}{1}{}{%
+        {{hash=bdbed435a416a918aa494017fda4c7fb}{%
+           family={OECD},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{fullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{bibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorbibnamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authornamehash}{bdbed435a416a918aa494017fda4c7fb}
+      \strng{authorfullhash}{bdbed435a416a918aa494017fda4c7fb}
+      \field{extraname}{2}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{OECD Publishing}
+      \field{subtitle}{PISA}
+      \field{title}{PISA 2012 Results: What Students Know and Can Do – Student Performance in Mathematics, Reading and Science (Volume I, Revised edition, February 2014)}
+      \field{year}{2014}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1787/9789264201118-en
+      \endverb
+    \endentry
+    \entry{orrantia2006dificultades}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9f442f97a35b450c9260bd239700f7d7}{%
+           family={Orrantia},
+           familyi={O\bibinitperiod},
+           given={Josetxu},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{fullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{bibnamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authorbibnamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authornamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authorfullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Psi- copedagogía}
+      \field{number}{71}
+      \field{title}{Dificultades en el aprendizaje de las matemáticas: una perspectiva evolutiva}
+      \field{volume}{23}
+      \field{year}{2006}
+      \field{pages}{158\bibrangedash 180}
+      \range{pages}{23}
+    \endentry
+    \entry{rodriguez2017marcadores}{article}{}
+      \name{author}{6}{}{%
+        {{hash=e3315767fcbd966faa970dacf11539f1}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={José\bibnamedelima Orrantia},
+           giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=46c16b69d13022113c07040e9226a81c}{%
+           family={Corral},
+           familyi={C\bibinitperiod},
+           given={Sara\bibnamedelimb San\bibnamedelima Romualdo},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2b63fe75d61499bcc15894c5ce12925d}{%
+           family={Cordero},
+           familyi={C\bibinitperiod},
+           given={Laura\bibnamedelima Matilla},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a792f1c6f80de4fc390a9b0de3c6b00e}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={María\bibnamedelimb del\bibnamedelimb Rosario\bibnamedelima Sánchez},
+           giveni={M\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=7e2a50b232593d73b59b675207852c8a}{%
+           family={Méndez},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima Múñez},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=feaf222635ac484b4e9733fb17407012}{%
+           family={Verschaffel},
+           familyi={V\bibinitperiod},
+           given={Lieven},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Universidad de Almería}%
+      }
+      \strng{namehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{fullhash}{a4001a122c316df65fc2f5e9f96e4095}
+      \strng{bibnamehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{authorbibnamehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{authornamehash}{b6c08838512497db3aa314abe23efc9b}
+      \strng{authorfullhash}{a4001a122c316df65fc2f5e9f96e4095}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Contemporary Educational Psychology}
-      \field{title}{Intrinsic and extrinsic motivation from a self-determination theory perspective: Definitions, theory, practices, and future directions}
-      \field{volume}{61}
-      \field{year}{2020}
-      \field{pages}{101860}
-      \range{pages}{1}
+      \field{journaltitle}{Psychology, Society \& Education}
+      \field{number}{1}
+      \field{title}{Marcadores nucleares de la competencia aritmética en preescolares}
+      \field{volume}{9}
+      \field{year}{2017}
+      \field{pages}{121\bibrangedash 134}
+      \range{pages}{14}
     \endentry
-    \entry{ryan2000self}{article}{}
+    \entry{ryan1997should}{article}{}
       \name{author}{2}{}{%
-        {{hash=49ad03aeb3155f395016c49dd507c027}{%
+        {{hash=bba6f5d229b4d6579bbd97c82b3aedeb}{%
            family={Ryan},
            familyi={R\bibinitperiod},
-           given={Richard\bibnamedelima M},
-           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=d733c22238af349bac296bb1e5b60deb}{%
-           family={Deci},
-           familyi={D\bibinitperiod},
-           given={Edward\bibnamedelima L},
-           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+           given={Allison\bibnamedelima M},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=5880022ff76d400400020113d377e6b0}{%
+           family={Pintrich},
+           familyi={P\bibinitperiod},
+           given={Paul\bibnamedelima R},
+           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {American Psychological Association}%
       }
-      \strng{namehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{fullhash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{bibnamehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{authorbibnamehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{authornamehash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \strng{authorfullhash}{b8fdaf35d2ee9a085c4bd58b7f47fcc4}
-      \field{extraname}{2}
+      \strng{namehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{fullhash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{bibnamehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{authorbibnamehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{authornamehash}{ecc32b60df606bf67b2dbd2ca8424469}
+      \strng{authorfullhash}{ecc32b60df606bf67b2dbd2ca8424469}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{American psychologist}
-      \field{number}{1}
-      \field{title}{Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being.}
-      \field{volume}{55}
-      \field{year}{2000}
-      \field{pages}{68}
+      \field{journaltitle}{Journal of educational psychology}
+      \field{number}{2}
+      \field{title}{" Should I ask for help?" The role of motivation and attitudes in adolescents' help seeking in math class.}
+      \field{volume}{89}
+      \field{year}{1997}
+      \field{pages}{329}
       \range{pages}{1}
+    \endentry
+    \entry{tariq2002decline}{article}{}
+      \name{author}{1}{}{%
+        {{hash=92a39a57024cb0322eb4004b0e760025}{%
+           family={Tariq},
+           familyi={T\bibinitperiod},
+           given={Vicki\bibnamedelima N},
+           giveni={V\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{fullhash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{bibnamehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{authorbibnamehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{authornamehash}{92a39a57024cb0322eb4004b0e760025}
+      \strng{authorfullhash}{92a39a57024cb0322eb4004b0e760025}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Biological Education}
+      \field{number}{2}
+      \field{title}{A decline in numeracy skills among bioscienceunder graduates}
+      \field{volume}{36}
+      \field{year}{2002}
+      \field{pages}{76\bibrangedash 83}
+      \range{pages}{8}
     \endentry
   \enddatalist
 \endrefsection
