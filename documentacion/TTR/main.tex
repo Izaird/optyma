@@ -12,8 +12,10 @@
 \usepackage[
 backend=biber,
 style=numeric,
+sorting=none
 ]{biblatex}
-\addbibresource{references.bib} 
+\bibliography{references}
+%\addbibresource{references.bib} 
 \setlength{\parskip}{1em}
 \parindent 0px
 
@@ -43,7 +45,7 @@ style=numeric,
             %\normalsize {\textit{Ingeniería en Sistemas Computacionales}}\\
             %%%%  TITULO Y NÚMERO DE TRABAJO   %%%%
     		\LARGE \textbf{ Aplicación móvil gamificada de aritmética\\}
-    		\LARGE \textbf {\emph{Trabajo Terminal No }} 
+    		\LARGE \textbf {\emph{Trabajo Terminal No 2021-1-007}} 
     		\vspace{1cm} %Espacio vertical
     	\LARGE \textbf{\\ Ingeniería en Sistemas Computacionales\\}
     	Alumnos: *Pineda Vieyra Itzcoatl Rodrigo, Mothelet Delgado Izaird Alexander\\
@@ -78,15 +80,10 @@ Su utilización funcional es requerida para las personas que participamos de est
 Los niveles de fracaso en el aprendizaje matemático son preocupantes, especialmente en los últimos cursos de escolaridad obligatoria (secundaria). Los resultados de estudios internacionales como el Programa Internacional para la Evaluación de Alumnos de la OCDE (PISA)\cite{oecd2014what,oecd2016low} muestran que el aprendizaje matemático es el que presenta mayor porcentaje de fracaso \cite{coronado2016academic, mullis2016timss}. El cálculo es un componente esencial en la resolución de problemas aritméticos, y éste es uno de los contenidos más importantes de las matemáticas, junto a la geometría, la medida o la probabilidad. 
 Es por ello que un elevado porcentaje de las dificultades de aprendizaje de las matemáticas tiene un origen aritmético, donde el cálculo representa un papel esencial \cite{orrantia2006dificultades}. Las habilidades numéricas y aritméticas son predictores críticos del futuro éxito o fracaso académico matemático\cite{rodriguez2017marcadores}. 
 
-Se ha observado en declive las habilidades operatorias aritméticas de estudiantes 
-universitarios\cite{tariq2002decline,carpenter2017psychology,huang2013gamification}. 
-El estudiante cree que podrá contar con la calculadora de su celular en todo momento, 
-pero cuando esto no se le permite, como en los exámenes de admisión, la falta del 
-entrenamiento del cálculo mental entorpece la solución correcta de los reactivos 
-de dichos exámenes. Por otra parte, el no fortalecer la destreza operatoria, afecta 
-diferentes procesos cognitivos al llegar a la edad adulta\cite{martin2003loss}.
-El presentar al estudiante los ejercicios de una forma rutinaria muchas veces provoca 
-aburrimiento y desmotivación. 
+Se ha observado en declive las habilidades operatorias aritméticas de estudiantes universitarios\cite{tariq2002decline,carpenter2017psychology,huang2013gamification}. 
+El estudiante cree que podrá contar con la calculadora de su celular en todo momento, pero cuando esto no se le permite, como en los exámenes de admisión, la falta del entrenamiento del cálculo mental entorpece la solución correcta de los reactivos 
+de dichos exámenes. Por otra parte, el no fortalecer la destreza operatoria, afecta diferentes procesos cognitivos al llegar a la edad adulta\cite{martin2003loss}.
+El presentar al estudiante los ejercicios de una forma rutinaria muchas veces provoca aburrimiento y desmotivación. 
 También es fundamental la motivación y el estado emocional de los estudiantes en su desempeño académico. La motivación y estado emocional de los estudiantes es un factor clave en su desempeño académico\cite{larrazolo2013habilidades,ryan1997should}. Si deseamos que los jóvenes 
 mexicanos tengan un mejor desempeño en el área de las Matemáticas, se requiere presentarles 
 distintas formas de aprender y practicar sus conocimientos. Para ello una estrategia de 
@@ -108,6 +105,16 @@ operatoria en  Aritmética, con el uso de la gamificación.
 	\item Validar la aplicación móvil. 
 \end{itemize}
 \subsection{Estado del Arte}
+El trabajo realizado en torno a la gamificación en los últimos años es considerablemente extenso, siendo aplicado en diferentes ambientes, demográficas y propósitos. Para el presente documento nos enfocaremos en el trabajo relacionado a su aplicación en el ámbito matemático.
+
+En Brazil se creó una platofortma interactiva en linea enfocada a ayudar a estudiantes de nivel medio en sus lecciones de matemáticas y como entrenamiento para la Olimpiada Brazileña de Escuelas Públicas (Olimpiada Brasileira de Matematica das Escolas Pablicas - OBMEP). El sistema permite a los alumnos resolver problemas generados aleatoriamente y divididos en tres temas principales, que son: Aritmética, Geometría y Combinatoria. El sistema pretende que el alumno resuelva un número determinado de problemas para entender los algoritmos y la lógica que hay detrás. También está vinculado con conceptos de gamificación para involucrar a los estudiantes en las actividades propuestas \cite{toda2014project}.
+
+En un estudio canadiense propone una familia de rompecabezas que gamifican la práctica de la aritmética. Los rompecabezas se diseñan con un algoritmo evolutivo que constituye una instancia de generación automática de contenidos. Se definieron dos clases de rompecabezas: aquellos en los que la solución óptima utiliza todas las piezas y aquellos en los que la solución óptima no utiliza al menos una pieza.\cite{foxcroft2020polyomino}.
+
+En el siguiente estudio se experimentó con tres tipos diferentes de actividades de aprendizaje gamificado(competitivo, colaborativo y adaptativo), en alummnos de segundo grado y de tercero que utilizaban tabletas y lecciones de aprendizaje digital para aprender matemáticas.Los niveles de rendimiento fueron significativamente más altos en una condición de gamificación que combinaba competición, narrativa y adaptabilidad con elementos de juego de rendimiento individual. Concluyen con el hecho de que la gamificación funcione o no no es el resultado de los elementos individuales del juego, sino la consecuencia de su combinación equilibrada. \cite{jaguvst2018examining}.
+ 
+Un estudio argentino desarrolló una aplicación Android llamada Moravec con 150 niveles con 20 problemas cada uno, donde se requieren 15 respuestas correctas en determinado tiempo para avanzar al ssiguiente nivel. Concluyen que se puede motivar a los participantes a realizar un entrenamiento aritmético sustancial simplemente presentándolo en un formato gamificado \cite{zimmerman2016arithmetic}.
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|M{6cm}|M{5cm}|}
@@ -175,12 +182,31 @@ con la puntuación cambiando correspondientemente. Se contará con un sistema de
 respuesta para medir el desempeño. Esto con el propósito de fomentar la competitividad, permitiendo al estudiante llevar
 un registro del progreso de su puntuación.
 \section{Marco Teórico}
-\subsection{Aritmética y sus dificultades}
+\subsection{Aritmética}
 La aritmética es la parte de la matemática, referida a los números y a las operaciones y cálculos básicos que pueden realizarse con ellos: adición, sustracción, multiplicación y división. Su desarrollo es fruto de la madurez cognitiva del sujeto en la interacción con los objetos y la mediación de los instrumentos socioculturales de su contexto. El conocimiento de las operaciones básicas surge a partir de los aprendizajes informales y formales del conocimiento matemático.
 Las investigaciones cognitivas que han estudiado el desarrollo de las habilidades para el cálculo, han establecido que esta competencia requiere de la integración de una serie de esquemas protocuantitativos [8], [9] con la experiencia de contar [10].
 Esas estrategias de conteo que se utilizan inicialmente para sumar y restar, se van haciendo más complejas con el uso y la práctica, ampliándose a las operaciones de multiplicar y dividir, cuya práctica las hace interiorizarse en esquemas de memoria que posibilitarán posteriormente la recuperación de hechos numéricos (desde la memoria a largo plazo semántica) para la solución de operaciones de cálculo [10]-[12].
 
+
 \subsection{Gamificación}
+La Gamificación es comúnmente definida como “El uso de técnicas, elementos y dinámicas propias de los juegos en contextos que no son de juego, con el fin de potenciar la motivación, así como de reforzar la conducta para solucionar un problema, mejorar la productividad, obtener un objetivo, activar el aprendizaje” \cite{robson2015all}. Donde un juego está definido como “un sistema formal basado en reglas con un resultado variable y cuantificable, donde a los diferentes resultados se les asignan valores diferentes, el jugador se esfuerza para influir en el resultado, el jugador se siente apegado al resultado y las consecuencias de la actividad son opcionales y negociables” \cite{zichermann2011gamification}.
+La gamificación emplea distintos tipos de recompensas para fomentar los comportamientos deseados. Estas recompensas pueden generalizarse con el acrónimo SAPS.
+\begin{itemize}
+	\item Status, reconocimiento. Las tablas de puntuación (leaderboards) son un ejemplo.
+	\item Acceso,ofrecen la posibilidad de acceder a un punto o a algo a lo que los otros individuos no pueden.
+	\item Poder, ejemplo en foros donde aquellos con más puntos no tienen que pasar por la revisión.
+	\item Cosas (Stuff), recompensas tangibles. 
+\end{itemize}
+
+La gamificación ha sido explorada principalmente para su aplicación en empresas, definiendo dinámicas y estrategias que aumenten la productividad de los empleados. Sin embargo, la aplicación que nos compete es su potencial dentro de la educación. Como ya se mencionó anteriormente, la mayoría de estudios y aplicaciones han trabajado en los niveles más elementales de educación (primaria)\cite{rodrigues2017math}. Esto no quiere decir que no se haya intentado a niveles superiores o que hayan fracasado \cite{wiggins2016overview,sanchez2017classcraft,tan2018}, incluso se ha usado
+en carreras afines a la de Ingeniería a Sistemas Computacionales \cite{ibanez2014gamification}. Sin importar el nivel académico, si
+se cuenta con un buen diseño, la gamificación puede resultar una estrategia muy útil. Los elementos de
+gamificación que se busca integrar a este Trabajo Terminal, son:
+Tablas de liderato.
+Sistema de puntuación.
+Logros.
+Dichos elementos son algunos de los más comunes y que han demostrado impactan la motivación de los
+estudiantes en los estudios revisados \cite{wiggins2016overview,sanchez2017classcraft,ibanez2014gamification,tan2018}
 \section{Análisis}
 \subsection{Requisitos Funcionales}
 \begin{enumerate}
@@ -189,13 +215,17 @@ Esas estrategias de conteo que se utilizan inicialmente para sumar y restar, se 
 \item {El sistema permitirá el registro y acceso mediante una cuenta de Google.}
 \item {El sistema contará con un modo de juego infinito, un modo por tiempo y un modo de jugador contraa jugador local}
 \item{El sistema permitirá a los uuarios elegir que tipo de operaciones realizar asi como la dificultad}
-\item{Los administradores podrán añadir plantillas con los respectivoss vaaalores que se usarán}
+\item{Los administradores podrán añadir plantillas con los respectivoss valores que se usarán}
 \end{enumerate}
 \subsection{Requisitos No Funcionales}
 \begin{enumerate}
 \item {La aplicación no deberá exceder 2 GB de almacenamiento}
 \item {La aplicación deberá ser compatible con Android 8.1 en adelante}
-\item {}
+\item {Los ejercicios deberán generarse en menos de 2 segundos}
+\item {La aplicación podrá ser usada por cualquier usuario con al menos 10 minutos de instruccción}
+\item {Se requerirá conexión a internet.}
+\item {La aplicación contará con escabilidad para otros temas.}
+\item {Las interfaaces deberán estar optimizadas para dispositivos móviles.}
 \end{enumerate}
 \subsection{Casos de Uso}
 %diagrama de casos de uso
@@ -380,8 +410,14 @@ Fuente &  \\ \hline
 \subsection{Análisis de Interfaces}
 %Descripcion de tipo de interfaz y por que
 Las interfaces deberán ser optimizadas para dispositivos móviles. Deberá considerarse la capacidad touch de dichos dispositivos. La primera pantalla será para Iniciar sesión por medio del correo y contraseña junto con un botón para registrarse. La pantalla de registro solicitará el correo, contraseña y confirmación de la contraseña. Se deberá contar con botones para acceder al perfil de usuario, leaderboards y logros en una barra de navegación, esta puede ser horizontal o vertical. La pantalla de ejercicios mostrará la puntuación en todo momento en una esquina y el número de respuestas correctas consecutivas junto un icono. En caso de haber tiempo para responder a una pregunta habrá una barra horizontal en la parte superior la cual irá desapareciendo conforme transcura el tiempo asignado al usuario para dar respuesta a la pregunta, la cual irá  desaapareciendo de derecha a izquierda.
+
 \subsection{Análisis de la Base de Datos}%Narrativa
-Para desarrollar esta aplicación se cuenta con una entidad Usuario con campos correo (llave primaria) y contraseña, con el correo como identificador de la entidad, pues no se permiten correos duplicados. Los Logros y leaderboards son manejaados por el servicio externo de Google Play Juegos por lo cual no se incluyen en nuestra base de datos
+Para desarrollar esta aplicación se cuenta con una entidad Usuario con campos correo (llave primaria) y contraseña, con el correo como identificador de la entidad, pues no se permiten correos duplicados. Los Logros y leaderboards son manejaados por el servicio externo de Google Play Juegos por lo cual no se incluyen en nuestra base de datos.
+
+\subsection{Análisis de Logros}
+Los logros son una manera de inncentivar al jugador a cumplir ciertas metas, se decidió enfocarnos en pocos logros pero con un nivel de dificultad medio a difícil por recomedaación del siguiente estudio \cite{groening2019achievement}.
+Los logros se desbloquearán automáticamente al llegar a cierta puntuación, racha, o  responder rápido. Al completar todos los logros el progreso no se reestableccerá. 
+
 
 \subsection{Tecnologías usadas}
 \subsubsection{Dart}
@@ -436,7 +472,7 @@ Nos centraremos en la autenticación de correo electrónico/contraseña en su ma
 parte. 
 
 
-\subsubsection{Google Play Servicies}
+%\subsubsection{Google Play Servicies}
 
 \pagebreak
 \section{Diseño}
@@ -454,6 +490,28 @@ La arquitectura se compone de 4 subsistemas (ver figura 2).  El primer subsistem
     \includegraphics[scale=0.9]{imgs/BSD}
     \caption{Diagrama entidad relación}
 \end{figure}
+\subsection{Diseño de Base de Logros}
+Los logros que se incluyeron fueron los siguienntes.
+
+\begin{table}[H]
+
+\begin{tabular}{|M{5cm}|c|}
+\hline
+Logro & Descripción\\ \hline
+Inspirado & Consigue una racha de al menos 5 en el modo Infinito\\ \hline
+Asendido & Consigue una racha de al menos 10 respuestas correctas en el modo Infinito\\ \hline
+Perfeccioninsta & Responde correctamente todas las preguntas en una ronda del modo Clásico\\ \hline
+Ágil &  Responde correctamente todas las preguntas en una ronda del modo Clásico\\ \hline
+Veloz & En el modo Clásico, termina una partida en menos de 2 minutos con al menos 7 respuestas correctas.\\ \hline
+Sub60s &   En el modo Clásico, termina una partida en menos de 1 minuto con al menos 7 respuestas correctas.\\ \hline
+Académico & Consigue una puntuación de al menos 2,500 en el modo Clásico, dificultad Fácil\\ \hline
+Estudioso & Consigue una puntuación de al menos 5,000 en el modo Clásico, dificultad Medio\\ \hline
+Erudito & Consigue una puntuación de al menos 10,000 en el modo Clásico, dificultad Difícil\\ \hline
+	
+\end{tabular}
+\label{tab:Logros}
+\caption{Tabla de Logros}	
+\end{table}
 \subsection{Diseño de Interfaces}%mock-ups
 En este apartado se presentarán los diseños de las interfaces previamente descritras.
 \pagebreak
@@ -492,7 +550,11 @@ En este apartado se presentarán los diseños de las interfaces previamente desc
     \includegraphics[scale=0.9]{imgs/Figma/Leaderboard}
     \caption{Leaderboard}
 \end{figure}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{imgs/Figma/Logros}
+    \caption{Logros}
+\end{figure}
 \subsection{Metodología}
 La metodología que se ha elegido para el desarrollo de este proyecto es Feature planninig 
 \cite{hunt2006feature}, también conocida como Feature Driven 
@@ -507,14 +569,14 @@ La lista de características sería la siguiente:
 	\item Sistema de puntuación.
 	\item Ejercicios de Aritmética.
 	\begin{enumerate}
-		\item Adición y sustracción.
-		\item multiplicación.
+		\item Adición 
+		\item Sustracción.
+		\item Multiplicación.
 		\item División.
 	\end{enumerate}
 	\item Evaluador de expresiones.
 	\item Niveles de dificultades.
 	\item Leaderboards.
-	\item Títulos, Iconos para desbloquear con puntos.
 	\item Estadísticas del jugador.
 \end{enumerate}
 \pagebreak
@@ -555,6 +617,16 @@ El subsistema de registro e ingreso fue implementado con Firebase
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Usuarios}
     \caption{Implementación de Usuarios}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{imgs/Imp/Logros}
+    \caption{Implementación de Logros}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{imgs/Imp/Leaderboards}
+    \caption{Implementación de Leadorboards}
 \end{figure}
 \section{Pruebas}%Que pruebas se le hicieron al sistema
 Se validó el correo con una expresión regular. Algunos ejemplos de correos validos

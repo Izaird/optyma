@@ -54,7 +54,10 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
         int _streak = state.streak;
         int _score = state.score;
         int _nquest = state.nquestions;
+        int _totaltime = state.streak;
         bool _gameOver = false;
+        int temp = 0;
+        _totaltime = state.totalTime;
         final bool _questionHasCorrectAnswer = e.answer == state.question.result;
 
         if(_questionHasCorrectAnswer){
@@ -64,12 +67,18 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
             _gameOver=true;
           }
           if(state.difficulty==Difficulty.easy){
+            temp = 30 - e.duration;
+            _totaltime = _totaltime + temp;
             _score += ((e.duration/30)*500).round();
           }
           else if(state.difficulty==Difficulty.medium){
+            temp = 45 - e.duration;
+            _totaltime = _totaltime + temp; 
             _score += ((e.duration/45)*1000).round();
           }
           else if(state.difficulty==Difficulty.hard){
+            temp = 60 - e.duration;
+            _totaltime = _totaltime + temp; 
             _score += ((e.duration/60)*2000).round();
           }
           
@@ -80,7 +89,8 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
             streak: _streak,
             score: _score,
             nquestions: _nquest,
-            gameOver: _gameOver
+            gameOver: _gameOver,
+            totalTime: _totaltime,
           );
 
           yield await Future.delayed(const Duration(seconds: 2), ()async{
@@ -98,6 +108,18 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
             _nquest = 0;
             _gameOver = true;
           }
+          if(state.difficulty==Difficulty.easy){
+            temp = 30 - e.duration;
+            _totaltime = _totaltime + temp;
+          }
+          else if(state.difficulty==Difficulty.medium){
+            temp = 45 - e.duration;
+            _totaltime = _totaltime + temp;
+          }
+          else if(state.difficulty==Difficulty.hard){
+            temp = 60 - e.duration;
+            _totaltime = _totaltime + temp;
+          }
 
           yield state.copyWith(
             nquestions: _nquest,
@@ -105,6 +127,7 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
             answered: true,
             streak: _streak,
             score: _score,
+            totalTime: _totaltime,
           );
 
 
@@ -122,19 +145,29 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
       timeOver: (e) async*{
         int _lifes = state.nquestions;
         bool _gameOver = state.gameOver;
+        int _totaltime = state.totalTime;
         if(_lifes > 1){
           _lifes -= 1;
         }else{
           _lifes = 0;
           _gameOver = true;
         }
-
+        if(state.difficulty==Difficulty.easy){
+            _totaltime = _totaltime + 30;
+          }
+          else if(state.difficulty==Difficulty.medium){
+            _totaltime = _totaltime + 45;
+          }
+          else if(state.difficulty==Difficulty.hard){
+            _totaltime = _totaltime + 60;
+          }
 
         yield state.copyWith(
           nquestions: _lifes,
           selectedAnswer: null,
           answered: true,
           streak: 0,
+          totalTime: _totaltime
         );
 
         yield await Future.delayed(const Duration(seconds: 2), ()async{

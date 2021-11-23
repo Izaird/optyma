@@ -15,54 +15,64 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4}Estado del Arte}{4}{subsection.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5}Propuesta de Solución}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5}Propuesta de Solución}{5}{subsection.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Marco Teórico}{5}{section.2}%
+\contentsline {section}{\numberline {2}Marco Teórico}{6}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Aritmética y sus dificultades}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Aritmética}{6}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Gamificación}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Gamificación}{6}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Análisis}{5}{section.3}%
+\contentsline {section}{\numberline {3}Análisis}{6}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Requisitos Funcionales}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Requisitos Funcionales}{6}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Requisitos No Funcionales}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Requisitos No Funcionales}{7}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Casos de Uso}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Casos de Uso}{7}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Tabla descriptiva de Caso de Uso 1}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Tabla descriptiva de Caso de Uso 1}{8}{subsubsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Tabla descriptiva de Caso de Uso 2}{7}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2}Tabla descriptiva de Caso de Uso 2}{8}{subsubsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.3}Tabla descriptiva de Caso de Uso 3}{8}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3}Tabla descriptiva de Caso de Uso 3}{9}{subsubsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.4}Tabla descriptiva de Caso de Uso 4}{8}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4}Tabla descriptiva de Caso de Uso 4}{9}{subsubsection.3.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.5}Tabla descriptiva de Caso de Uso 5}{8}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.5}Tabla descriptiva de Caso de Uso 5}{9}{subsubsection.3.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.6}Tabla descriptiva de Caso de Uso 6}{9}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.6}Tabla descriptiva de Caso de Uso 6}{10}{subsubsection.3.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.7}Tabla descriptiva de Caso de Uso 7}{9}{subsubsection.3.3.7}%
+\contentsline {subsubsection}{\numberline {3.3.7}Tabla descriptiva de Caso de Uso 7}{10}{subsubsection.3.3.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.8}Tabla descriptiva de Caso de Uso 8}{9}{subsubsection.3.3.8}%
+\contentsline {subsubsection}{\numberline {3.3.8}Tabla descriptiva de Caso de Uso 8}{10}{subsubsection.3.3.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Análisis de Interfaces}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Análisis de Interfaces}{11}{subsection.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Análisis de la Base de Datos}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Análisis de la Base de Datos}{11}{subsection.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Tecnologías usadas}{10}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Análisis de Logros}{11}{subsection.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Diseño}{11}{section.4}%
+\contentsline {subsection}{\numberline {3.7}Tecnologías usadas}{11}{subsection.3.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Arquitectura general del sistema}{11}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {3.7.1}Dart}{11}{subsubsection.3.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Diseño de Base de Datos}{12}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {3.7.2}Flutter}{11}{subsubsection.3.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Diseño de Interfaces}{12}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {3.7.3}Firestore}{12}{subsubsection.3.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Metodología}{20}{subsection.4.4}%
+\contentsline {section}{\numberline {4}Diseño}{13}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Implementación}{21}{section.5}%
+\contentsline {subsection}{\numberline {4.1}Arquitectura general del sistema}{13}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Pruebas}{28}{section.6}%
+\contentsline {subsection}{\numberline {4.2}Diseño de Base de Datos}{14}{subsection.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Diseño de Base de Logros}{14}{subsection.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Diseño de Interfaces}{14}{subsection.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Metodología}{22}{subsection.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Implementación}{24}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Pruebas}{32}{section.6}%

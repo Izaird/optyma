@@ -13,17 +13,19 @@ class ClassicModeState with _$ClassicModeState {
     required bool gameOver,
     required bool answered,
     required bool timeOver,
+    required int totalTime,
   }) = _ClassicModeState;
 
   factory ClassicModeState.initial() => ClassicModeState(
     difficulty: Difficulty.none,
     operationType: OperationType.none,
-    nquestions: 3, 
+    nquestions: 4, 
     streak: 0, 
     score: 0, 
     question: EvaluatedExpression.empty(),
     gameOver: false, 
     answered: false, 
     timeOver: false,
+    totalTime: 0,
     );
 }

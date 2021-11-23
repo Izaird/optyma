@@ -59,7 +59,7 @@ class HomePlayer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(FontAwesomeIcons.table, color: Colors.blue),
+            leading: const Icon(FontAwesomeIcons.key, color: Colors.blue),
             title: const Text('Resetear contraseña'),
             onTap: (){
               firebaseAuth.sendPasswordResetEmail(email: firebaseAuth.currentUser?.email ?? "mothtotheflame.dev@gmail.com");

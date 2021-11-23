@@ -20,7 +20,7 @@ class Category with _$Category{
 const List<Category> gameCategories = [
   Category(id: 'endless-mode', name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
   Category(id: 'pvp', name: 'Jugador Vs Jugador' , icon: Icon(FontAwesomeIcons.peopleArrows)),
-  Category(id:'classic-mode' , name: 'Clasico' , icon: Icon(FontAwesomeIcons.plusSquare)),
+  Category(id:'classic-mode' , name: 'Clásico' , icon: Icon(FontAwesomeIcons.plusSquare)),
   // Category(id: 4, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
 ];
 
@@ -38,12 +38,12 @@ List<Category> operationsCategories = [
   ),
   Category(
     id: EnumToString.convertToString(OperationType.multiplication), 
-    name: 'Multiplicacion' ,
+    name: 'Multiplicación' ,
     icon: const Icon(FontAwesomeIcons.times)
   ),
   Category(
     id: EnumToString.convertToString(OperationType.division), 
-    name: 'Division' , 
+    name: 'División' , 
     icon: const Icon(FontAwesomeIcons.divide)
   ),
   Category(
@@ -56,7 +56,7 @@ List<Category> operationsCategories = [
 List<Category> difficultysCategories = [
   Category(
     id: EnumToString.convertToString(Difficulty.easy), 
-    name: 'Facil' , 
+    name: 'Fácil' , 
     icon: const Icon(Icons.no_encryption)
   ),
   Category(
@@ -67,7 +67,7 @@ List<Category> difficultysCategories = [
   ),
   Category(
     id: EnumToString.convertToString(Difficulty.hard), 
-    name: 'Dificil' ,
+    name: 'Difícil' ,
     icon: const Icon(FontAwesomeIcons.blackTie)
   ),
 ];
