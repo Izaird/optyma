@@ -20,6 +20,7 @@ class ClassicModeBody extends StatelessWidget {
       builder: (context, state){
         if(state.gameOver){
           int endlessScore = BlocProvider.of<ClassicModeBloc>(context).state.score;
+          int time = BlocProvider.of<ClassicModeBloc>(context).state.totalTime;
           if(GamesServices.isSignedIn==false){
             GamesServices.signIn();
           }
@@ -28,12 +29,13 @@ class ClassicModeBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Text('Se acabo el juego \nTu puntuación: $endlessScore',
+                child: Text('Se acabo el juego \nTu puntuación: $endlessScore\nTu tiempo: $time',
                 style: const TextStyle( 
                   fontSize: 30,
                   ),
                 ),
               ),
+              
               const Center(
                 child: BackButton(),
               ),

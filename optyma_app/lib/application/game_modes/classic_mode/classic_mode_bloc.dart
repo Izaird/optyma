@@ -54,7 +54,7 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
         int _streak = state.streak;
         int _score = state.score;
         int _nquest = state.nquestions;
-        int _totaltime = state.streak;
+        int _totaltime = state.totalTime;
         bool _gameOver = false;
         int temp = 0;
         _totaltime = state.totalTime;
