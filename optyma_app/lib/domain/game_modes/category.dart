@@ -23,6 +23,11 @@ const List<Category> gameCategories = [
   Category(id:'classic-mode' , name: 'Clásico' , icon: Icon(FontAwesomeIcons.plusSquare)),
   // Category(id: 4, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
 ];
+const List<Category> gameCategoriesLeader = [
+  Category(id: 'endless-mode', name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
+  Category(id:'classic-mode' , name: 'Clásico' , icon: Icon(FontAwesomeIcons.plusSquare)),
+  // Category(id: 4, name: 'Infinito' , icon: Icon(FontAwesomeIcons.infinity)),
+];
 
 
 List<Category> operationsCategories = [

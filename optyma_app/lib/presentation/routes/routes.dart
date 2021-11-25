@@ -21,7 +21,7 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     'home'                  : (_) => HomePage(),
     'splash'                : (_) => SplashPage(),
     'game-modes'            : (_) => GameModesPage(),
-    //'leaderboards'          :(_) => LeaderbordsPage(),
+    'leaderboards'          : (_) => LeaderbordsPage(),
     'classic-mode'          : (_) => ClassicModePage(),
     'endless-mode'          : (_) => EndlessModePage(),
     'users'                 : (_) => UsersOverviewPage(),

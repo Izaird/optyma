@@ -19,17 +19,59 @@ class ClassicModeBody extends StatelessWidget {
     return BlocConsumer<ClassicModeBloc,ClassicModeState>(
       builder: (context, state){
         if(state.gameOver){
-          int endlessScore = BlocProvider.of<ClassicModeBloc>(context).state.score;
+          int classicScore = BlocProvider.of<ClassicModeBloc>(context).state.score;
           int time = BlocProvider.of<ClassicModeBloc>(context).state.totalTime;
+          int bestStreak = BlocProvider.of<ClassicModeBloc>(context).state.bestStreak;
+          int correctAns = BlocProvider.of<ClassicModeBloc>(context).state.correctAnswers;
           if(GamesServices.isSignedIn==false){
             GamesServices.signIn();
           }
-          //GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg", value: endlessScore));
+          if(state.operationType==OperationType.addition){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQEw", value: classicScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.substraction){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQFA", value: classicScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.multiplication){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQFQ", value: classicScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.division){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQFg", value: classicScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.combined){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQFw", value: classicScore));
+              print("Submitted score");
+            }
+            if(bestStreak>=10){//Perfeccionista
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQCw'));
+            }
+            /*if(correctAns>=7 && time<180){//Agil
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQDA'));
+            }
+            if(correctAns>=7 && time<120){//Veloz
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQDQ'));
+            }*/
+            if(correctAns>=7 && time<60){//Sub60
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQDg'));
+            }
+            if(state.difficulty==Difficulty.easy && classicScore>2500){//Academico
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQDw'));
+            }
+            if(state.difficulty==Difficulty.medium && classicScore>5000){//Estudioso
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQEA'));
+            }
+            if(state.difficulty==Difficulty.hard && classicScore>10000){//Erudito
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQEQ'));
+            }
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Text('Se acabo el juego \nTu puntuación: $endlessScore\nTu tiempo: $time',
+                child: Text('Se acabo el juego \nTu puntuación: $classicScore\nTu tiempo: $time s\nTu mejor racha: $bestStreak',
                 style: const TextStyle( 
                   fontSize: 30,
                   ),

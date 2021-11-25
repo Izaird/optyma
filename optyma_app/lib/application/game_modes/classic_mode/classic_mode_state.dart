@@ -14,6 +14,8 @@ class ClassicModeState with _$ClassicModeState {
     required bool answered,
     required bool timeOver,
     required int totalTime,
+    required int bestStreak,
+    required int correctAnswers
   }) = _ClassicModeState;
 
   factory ClassicModeState.initial() => ClassicModeState(
@@ -27,5 +29,7 @@ class ClassicModeState with _$ClassicModeState {
     answered: false, 
     timeOver: false,
     totalTime: 0,
+    bestStreak: 0,
+    correctAnswers: 0,
     );
 }

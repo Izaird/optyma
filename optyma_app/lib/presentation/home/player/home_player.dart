@@ -55,7 +55,8 @@ class HomePlayer extends StatelessWidget {
               if(GamesServices.isSignedIn==false){
                 GamesServices.signIn();
               }
-              GamesServices.showLeaderboards(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg");
+              //GamesServices.showLeaderboards(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg");
+              Navigator.pushNamed(context, 'leaderboards');
             },
           ),
           ListTile(

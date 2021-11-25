@@ -59,10 +59,16 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
         int temp = 0;
         _totaltime = state.totalTime;
         final bool _questionHasCorrectAnswer = e.answer == state.question.result;
+        int _beststreak = state.bestStreak; 
+        int _ncorrectans = state.correctAnswers;
 
         if(_questionHasCorrectAnswer){
           _streak += 1;
           _nquest -= 1;
+          _ncorrectans++; 
+          if(_streak>_beststreak){
+            _beststreak = _streak;
+          }
           if(_nquest<=0){
             _gameOver=true;
           }
@@ -91,6 +97,8 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
             nquestions: _nquest,
             gameOver: _gameOver,
             totalTime: _totaltime,
+            bestStreak: _beststreak,
+            correctAnswers: _ncorrectans,
           );
 
           yield await Future.delayed(const Duration(seconds: 2), ()async{
@@ -102,6 +110,9 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
 
         }else{
           _streak = 0;
+          if(_streak>_beststreak){
+            _beststreak = _streak;
+          }
           if(_nquest > 1){
             _nquest -= 1;
           }else{
@@ -128,6 +139,8 @@ class ClassicModeBloc extends Bloc<ClassicModeEvent, ClassicModeState> {
             streak: _streak,
             score: _score,
             totalTime: _totaltime,
+            bestStreak: _beststreak,
+            correctAnswers: _ncorrectans,
           );
 
 

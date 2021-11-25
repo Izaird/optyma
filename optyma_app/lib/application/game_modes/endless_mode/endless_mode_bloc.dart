@@ -46,9 +46,13 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
         int _lifes = state.lifes;
         bool _gameOver = false;
         final bool _questionHasCorrectAnswer = e.answer == state.question.result;
-
+        int _beststreak = state.bestStreak;
+        
         if(_questionHasCorrectAnswer){
           _streak += 1;
+          if(_streak>_beststreak){
+            _beststreak = _streak;
+          }
           if(state.difficulty==Difficulty.easy){
             _score += ((e.duration/30)*500).round();
           }
@@ -65,6 +69,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
             answered: true,
             streak: _streak,
             score: _score,
+            bestStreak: _beststreak,
           );
 
           yield await Future.delayed(const Duration(seconds: 2), () async{
@@ -76,6 +81,9 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
 
         }else{
           _streak = 0;
+          if(_streak>_beststreak){
+            _beststreak = _streak;
+          }
           if(_lifes > 1){
             _lifes -= 1;
           }else{
@@ -89,6 +97,7 @@ class EndlessModeBloc extends Bloc<EndlessModeEvent, EndlessModeState> {
             answered: true,
             streak: _streak,
             score: _score,
+            bestStreak: _beststreak,
           );
 
 

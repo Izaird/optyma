@@ -1,6 +1,6 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:optyma_app/application/game_modes/leaderbordsbloc.dart';
+import 'package:optyma_app/application/leaderboard/leaderboard_bloc.dart';
 import 'package:optyma_app/injection.dart';
 import 'package:optyma_app/presentation/leaderboards/leaderboard_body.dart';
 
@@ -10,7 +10,7 @@ class LeaderbordsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<LeaderbordsBloc>(),
+      create: (context) => getIt<LeaderboardBloc>(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Leaderboards'),
@@ -22,4 +22,4 @@ class LeaderbordsPage extends StatelessWidget {
       ),
     );
   }
-}*/
+}

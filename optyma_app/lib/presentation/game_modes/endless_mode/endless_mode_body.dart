@@ -20,15 +20,41 @@ class EndlessModeBody extends StatelessWidget {
       builder: (context, state){
         if(state.gameOver){
           int endlessScore = BlocProvider.of<EndlessModeBloc>(context).state.score;
+          int bestStreak = BlocProvider.of<EndlessModeBloc>(context).state.bestStreak;
           if(GamesServices.isSignedIn==false){
             GamesServices.signIn();
           }
-          GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg", value: endlessScore));
+          if(state.operationType==OperationType.addition){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQBg", value: endlessScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.substraction){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQCA", value: endlessScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.multiplication){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQCQ", value: endlessScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.division){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQCg", value: endlessScore));
+              print("Submitted score");
+            }
+            else if(state.operationType==OperationType.combined){
+              GamesServices.submitScore(score: Score(androidLeaderboardID: "CgkIg5u-zPUVEAIQEg", value: endlessScore));
+              print("Submitted score");
+            }
+            if(bestStreak>=5){
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQAg'));
+            }
+            if(bestStreak>=10){
+              GamesServices.unlock(achievement: Achievement(androidID: 'CgkIg5u-zPUVEAIQBw'));
+            }
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Text('Se acabo el juego \nTu puntuación: $endlessScore',
+                child: Text('Se acabo el juego \nTu puntuación: $endlessScore\nTu mejor racha: $bestStreak',
                 style: const TextStyle( 
                   fontSize: 30,
                   ),

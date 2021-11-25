@@ -13,6 +13,7 @@ class EndlessModeState with _$EndlessModeState {
     required bool gameOver,
     required bool answered,
     required bool timeOver,
+    required int bestStreak,
   }) = _EndlessModeState;
 
   factory EndlessModeState.initial() => EndlessModeState(
@@ -24,6 +25,7 @@ class EndlessModeState with _$EndlessModeState {
     question: EvaluatedExpression.empty(),
     gameOver: false, 
     answered: false, 
-    timeOver: false
+    timeOver: false,
+    bestStreak: 0,
   );
 }
