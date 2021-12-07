@@ -1,8 +1,10 @@
 \documentclass{article}
 \usepackage[table]{xcolor}
+\usepackage{amsmath}
 \usepackage{float}
 \usepackage{array}
 \usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
@@ -14,8 +16,8 @@ backend=biber,
 style=numeric,
 sorting=none
 ]{biblatex}
-\bibliography{references}
-%\addbibresource{references.bib} 
+\bibliography{references.bib}
+% \addbibresource{references.bib} 
 \setlength{\parskip}{1em}
 \parindent 0px
 
@@ -66,19 +68,36 @@ sorting=none
 \tableofcontents
 \pagebreak
 \section{Introducción}
-La intervención educativa requiere de una previa comprensión de la adquisición y desarrollo de la competencia aritmética
-que está en la base de todas las posteriores dificultades y trastornos del aprendizaje matemático. Hay dificultades que
-pueden surgir a lo largo de este proceso(desde nivel básico), lo que repercute en la resolución de ejercicios y problemas matemáticos avanzados.
-Por lo que el desarrollo de la destreza operatoria aritmética es fundamental para que el estudiante, tanto de nivel básico como medio superior, pueda enfrentar con
-éxito situaciones más complejas en el campo de la Matemática. Además, se requiere motivar al estudiante al desarrollar
-trabajo operatorio aritmético, ya que en ocasiones su desarrollo puede resultar monótono y aburrido. Para ayudar al desarrollo de la destreza operatoria de los estudiantes se propone una aplicación gamificada móvil que promueva la
-resolución de ejercicios aritméticos.
+La intervención educativa requiere de una previa comprensión de la adquisición y desarrollo de 
+la competencia aritmética que está en la base de todas las posteriores dificultades y 
+trastornos del aprendizaje matemático. Hay dificultades que pueden surgir a lo largo de 
+este proceso(desde nivel básico), lo que repercute en la resolución de ejercicios y 
+problemas matemáticos avanzados. Por lo que el desarrollo de la destreza operatoria aritmética 
+es fundamental para que el estudiante, tanto de nivel básico como medio superior, pueda 
+enfrentar con éxito situaciones más complejas en el campo de la Matemática. Además, se 
+requiere motivar al estudiante al desarrollar trabajo operatorio aritmético, ya que en 
+ocasiones su desarrollo puede resultar monótono y aburrido. Para ayudar al desarrollo de 
+la destreza operatoria de los estudiantes se propone una aplicación gamificada móvil que 
+promueva la resolución de ejercicios aritméticos.
 
 \subsection{Motivación}
-La Aritmética como la Geometría son de las disciplinas matemáticas más antiguas y necesarias en la historia del género humano \cite{coronado2014estudio}. 
-Su utilización funcional es requerida para las personas que participamos de esta sociedad, como medio de comunicación y comprensión de multitud de fenómenos que nos rodean, es por ello que el desarrollo de la destreza operatoria aritmética es una de las habilidades más necesitadas en la alfabetización socio instrumental.
-Los niveles de fracaso en el aprendizaje matemático son preocupantes, especialmente en los últimos cursos de escolaridad obligatoria (secundaria). Los resultados de estudios internacionales como el Programa Internacional para la Evaluación de Alumnos de la OCDE (PISA)\cite{oecd2014what,oecd2016low} muestran que el aprendizaje matemático es el que presenta mayor porcentaje de fracaso \cite{coronado2016academic, mullis2016timss}. El cálculo es un componente esencial en la resolución de problemas aritméticos, y éste es uno de los contenidos más importantes de las matemáticas, junto a la geometría, la medida o la probabilidad. 
-Es por ello que un elevado porcentaje de las dificultades de aprendizaje de las matemáticas tiene un origen aritmético, donde el cálculo representa un papel esencial \cite{orrantia2006dificultades}. Las habilidades numéricas y aritméticas son predictores críticos del futuro éxito o fracaso académico matemático\cite{rodriguez2017marcadores}. 
+La Aritmética como la Geometría son de las disciplinas matemáticas más antiguas y necesarias
+ en la historia del género humano \cite{coronado2014estudio}. 
+Su utilización funcional es requerida para las personas que participamos de esta sociedad, 
+como medio de comunicación y comprensión de multitud de fenómenos que nos rodean, es por ello 
+que el desarrollo de la destreza operatoria aritmética es una de las habilidades más necesitadas 
+en la alfabetización socio instrumental.
+Los niveles de fracaso en el aprendizaje matemático son preocupantes, especialmente en los 
+últimos cursos de escolaridad obligatoria (secundaria). Los resultados de estudios internacionales 
+como el Programa Internacional para la Evaluación de Alumnos de la OCDE 
+(PISA)\cite{oecd2014what,oecd2016low} muestran que el aprendizaje matemático es el que 
+presenta mayor porcentaje de fracaso \cite{coronado2016academic, mullis2016timss}. El cálculo 
+es un componente esencial en la resolución de problemas aritméticos, y éste es uno de los 
+contenidos más importantes de las matemáticas, junto a la geometría, la medida o la probabilidad. 
+Es por ello que un elevado porcentaje de las dificultades de aprendizaje de las matemáticas 
+tiene un origen aritmético, donde el cálculo representa un papel 
+esencial \cite{orrantia2006dificultades}. Las habilidades numéricas y aritméticas son predictores 
+críticos del futuro éxito o fracaso académico matemático\cite{rodriguez2017marcadores}. 
 
 Se ha observado en declive las habilidades operatorias aritméticas de estudiantes universitarios\cite{tariq2002decline,carpenter2017psychology,huang2013gamification}. 
 El estudiante cree que podrá contar con la calculadora de su celular en todo momento, pero cuando esto no se le permite, como en los exámenes de admisión, la falta del entrenamiento del cálculo mental entorpece la solución correcta de los reactivos 
@@ -467,8 +486,6 @@ datos en documentos tipo JSON.
 
 Firebase auth tiene un sistema de autenticación de correo electrónico/contraseña 
 incorporado. También soporta OAuth2 para Google, Facebook, Twitter y GitHub. 
-Nos centraremos en la autenticación de correo electrónico/contraseña en su mayor 
-parte. 
 
 
 %\subsubsection{Google Play Servicies}
@@ -632,7 +649,17 @@ El subsistema de registro e ingreso fue implementado con Firebase
     \includegraphics[scale=0.8]{imgs/Imp/Leaderboards}
     \caption{Implementación de Leadorboards}
 \end{figure}
-\section{Pruebas}%Que pruebas se le hicieron al sistema
+
+
+\section{Pruebas}
+En esta sección se reportan los resultados obtenidos de las pruebas realizadas a la 
+aplicación.
+
+Las primeras pruebas fueron las correspondientes a la funcionalidad del sistema y 
+un segundo tipo de pruebas efectuadas fueron las de experiencia de usuario y las 
+de usabilidad.
+
+\subsection{Pruebas de funcionalidad}
 Se validó el correo con una expresión regular. Algunos ejemplos de correos validos
 \begin{itemize}
 	\item itz80@kla.co
@@ -655,7 +682,228 @@ Se valido la capacidad de desbloquear logros
     \includegraphics[scale=0.8]{imgs/Test/LogroDes2}
     \caption{Logros Desbloqueado}
 \end{figure}
-\pagebreak
+
+\subsection{Pruebas de experiencia de usuario y de usabilidad}
+La experiencia de usuario (expresada como UX por su nombre en inglés user experience), 
+describe los sentimientos subjetivos de los usuarios hacia los productos que utilizan. 
+Diferentes usuarios pueden tener diferentes impresiones con respecto a la UX del mismo 
+producto. Por lo que es necesario medir la UX de un grupo para tener mayor confianza 
+en los resultados [1].
+
+Para realizar dichas mediciones, Lewis menciona [2] que el cuestionario de la Escala 
+de Usabilidad de Sistemas o SUS por sus siglas en inglés (System Usability Scale), 
+se ha vuelto una valiosa herramienta, ya que permite evaluar la usabilidad y la 
+experiencia del usuario. Por su parte, Sauro mostró [3] que SUS es un cuestionario 
+de usabilidad válido y confiable. 
+
+El SUS es un cuestionario estandarizado de diez preguntas con cinco opciones 
+para responder, el rango de medición de las respuestas va de totalmente en desacuerdo 
+a totalmente de acuerdo y los valores van de 1 a 5 respetivamente. Los valores 
+obtenidos se homogenizan  usando las siguientes fórmulas: 
+
+\begin{center}
+$ V_{i}-1 \textrm{ , si el reactivo es impar (1)} $
+
+$ 5-V_{i} \textrm{ , si el reactivo es par (2)} $
+\end{center}
+
+Donde: $V_{i}$ representa el valor obtenido inicialmente, indexado por i.
+
+La evaluación del cuestionario permite clasificar la usabilidad de la herramienta 
+tecnológica educativa, empleando las siguientes operaciones: Los valores transformados 
+de las respuestas obtenidas, primeramente se suman, para después multiplicarse por 
+el factor 2.5. Los resultados obtenidos que sean mayores a 68, pero menores de 80.3, 
+se consideran superiores al promedio o se califican con el adjetivo “Bueno”, lo que 
+implica que la herramienta evaluada cumple con los atributos de calidad requeridos. 
+Si se obtiene una puntuación mayor a 80.3 es considerada como “Excelente” [4]. 
+Obsérvese la tabla 1.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Evaluación SUS Rango & Evaluación SUS en Adjetivo \\ \hline
+$>$80.3 & Excelente \\ \hline
+68 – 80.3 & Bueno \\ \hline
+68	& Suficiente \\ \hline 
+51 – 68 & Pobre \\ \hline 
+$<$51 & Muy deficiente \\ \hline
+\end{tabular}
+\caption{Rango de evaluación del cuestionario SUS}
+\end{table}
+
+
+Los valores obtenidos inicialmente de las preguntas pares se encuentran en “código inverso” 
+con respeto a los valor	es obtenidos inicialmente por las preguntas pares, es por esto por 
+lo que se requieren homogenizar. 
+
+El cuestionario SUS mide los atributos de la usabilidad, y de acuerdo con Nielsen [14], 
+la usabilidad es definida por 5 componentes de calidad: 
+
+\begin{enumerate}[a)] % a), b), c), ...
+\item Aprendizaje. Se refiere a la facilidad que tienen los usuarios para realizar las 
+tareas básicas desde la primera vez que trabajan con el sistema. 
+\item Eficiencia. Consiste en lo que los usuarios han aprendido para usar el sistema, 
+así como a la rapidez con la que realizan las tareas. 
+\item Memorabilidad. Facilidad con la que el usuario recuerda el funcionamiento del 
+sistema después de un periodo de tiempo de no usarlo.
+\item Tasa de errores. Es la cantidad de errores cometidos por los usuarios durante 
+el empleo del sistema, enfocándose en la gravedad de los mismos, así como en la 
+facilidad con la que pueden recuperarse después de haber cometido un error.
+\item Satisfacción. Implica lo agradable que representa para el usuario el uso del 
+sistema.
+\end{enumerate}
+
+Para la realización de este estudio se trabajó con un grupo de 18 estudiantes de nivel 
+superior de segundo semestre, quienes trabajaron con la aplicación durante dos días, 
+en sus tiempos libres, y al tercer día resolvieron el cuestionario SUS. Es importante 
+señalar que todas las indicaciones se dieron a distancia empleando la plataforma de 
+zoom (figuras 1, 2 y 3). Se agregó una pregunta al cuestionario SUS, lo que brindó 
+información extra sobre la aplicación. Los participantes resolvieron el cuestionario 
+vía online a través de Google Forms. Para el análisis de los datos se empleó Excel. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{imgs/pruebas/pruebas_01.png}
+    \caption{Explicación de la navegación por la aplicación}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{imgs/pruebas/pruebas_02.png}
+    \caption{Explicación de la realización de operaciones en la aplicación}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{imgs/pruebas/pruebas_03.png}
+    \caption{Explicación de las instrucciones para trabajar con la aplicación}
+\end{figure}
+
+Después de haber aplicado el cuestionario se descargó el archivo generado por la plataforma 
+Google Forms con extensión .csv y se convirtió en uno .xls para comenzar con el tratamiento 
+de los datos. Para la evaluación del cuestionario SUS, primeramente, se usaron las fórmulas 
+1 y 2 para homogenizar los datos de los valores obtenidos inicialmente por los reactivos de 
+cada pregunta, a continuación, se sumaron los resultados de cada participante, para luego 
+multiplicarse por 2.5. Se continúo el cálculo, sumando los puntajes de los participantes y 
+promediándolos. 
+
+Por último, se comparó el resultado final con la clasificación de los rangos de evaluación 
+en la escala de usabilidad del cuestionario SUS, obteniéndose una puntuación de 79.58 de 
+aceptación, en relación a la usabilidad que los participantes tuvieron al trabajar con la 
+aplicación, por lo que está en el rango de “Bueno”. En el tabla 2 se aprecian los valores 
+obtenidos.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+P1 & P2 & P3 & P4 & P5 & P6 & P7 & P8 & P9 & P10 & SUMA & PRODCUTO CON 2.5\\ \hline
+2 & 1 & 2 & 2 & 2 & 4 & 4 & 4 & 2 & 3 & 26 & 65\\ \hline
+2 & 1 & 3 & 4 & 3 & 4 & 3 & 4 & 2 & 4 & 30 & 75\\ \hline
+2 & 1 & 4 & 4 & 2 & 4 & 4 & 4 & 1 & 4 & 30 & 75\\ \hline
+2 & 1 & 4 & 4 & 3 & 4 & 4 & 4 & 0 & 4 & 30 & 75\\ \hline
+2 & 2 & 4 & 4 & 4 & 4 & 4 & 4 & 3 & 4 & 35 & 87.5\\ \hline
+2 & 2 & 4 & 4 & 3 & 2 & 4 & 4 & 2 & 4 & 31 & 77.5\\ \hline
+3 & 4 & 4 & 4 & 3 & 4 & 4 & 4 & 4 & 4 & 38 & 95\\ \hline
+3 & 0 & 4 & 3 & 3 & 3 & 4 & 4 & 4 & 4 & 32 & 80\\ \hline
+2 & 4 & 4 & 3 & 3 & 4 & 3 & 4 & 4 & 3 & 34 & 85\\ \hline
+3 & 3 & 4 & 3 & 3 & 4 & 4 & 4 & 4 & 3 & 35 & 87.5\\ \hline
+3 & 4 & 3 & 4 & 3 & 4 & 3 & 4 & 3 & 4 & 35 & 87.5\\ \hline
+3 & 3 & 4 & 3 & 3 & 3 & 4 & 4 & 4 & 3 & 34 & 85\\ \hline
+3 & 1 & 3 & 1 & 3 & 4 & 3 & 1 & 3 & 1 & 23 & 57.5\\ \hline
+2 & 3 & 2 & 3 & 2 & 3 & 3 & 4 & 1 & 3 & 26 & 65\\ \hline
+2 & 4 & 3 & 3 & 3 & 2 & 3 & 3 & 3 & 2 & 28 & 70\\ \hline
+2 & 2 & 3 & 3 & 4 & 4 & 4 & 4 & 4 & 3 & 33 & 82.5\\ \hline
+4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 40 & 100\\ \hline
+1 & 2 & 3 & 4 & 2 & 3 & 4 & 4 & 4 & 4 & 33 & 82.5\\ \hline
+2 & 1 & 2 & 2 & 2 & 4 & 4 & 4 & 2 & 3 & 26 & 65\\ \hline
+  &   &   &   &   &   &   &   &   &   &    & 79.58\\ \hline
+\end{tabular}
+\caption{Valores de las respuestas a los reactivos del cuestionario SUS}
+\end{table}
+
+
+Con el anterior resultado se evaluaron 4 de los 5 componentes de calidad que integran 
+a la usabilidad, que son: fácil de aprender, fácil de recordar, baja taza de errores 
+y satisfacción. Esta información aparece en la Tabla 3.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|M{10cm}|l|}
+\hline
+\multicolumn{3}{|c|}{Cuestionario de Escala de Usabilidad de Sistemas (SUS)} \\ \hline
+Clave & Preguntas & Atributo \\ \hline
+R1 & Creo que usaré esta plataforma o sistema frecuentemente. & Satisfacción\\ \hline
+R2 & Encuentro la plataforma o sistema innecesariamente complejo. & Memoria\\ \hline
+R3 & Pienso que la plataforma o sistema fue fácil de usar.  & Memoria\\ \hline
+R4 & Pienso que voy a necesitar soporte técnico para poder usar esta plataforma o sistema. & Error\\ \hline
+R5 & Encontré varias funciones en la plataforma o sistema bien integradas.  & Aprendizaje\\ \hline
+R6 & Pienso que hubo muchas inconsistencias en el sistema o plataforma. & Error \\ \hline
+R7 & Imagino que la mayoría de las personas podrían aprender a usar esta plataforma o sistema bastante rápido.   & Aprendizaje\\ \hline
+R8 & Encuentro la plataforma o sistema muy molesto de usar. & Satisfacción\\ \hline
+R9 & Me siento muy seguro al usar la plataforma o sistema.  & Satisfacción\\ \hline
+R10 & Siento que necesitaré que aprender muchas cosas antes de que pueda utilizar correctamente la plataforma o sistema. & Aprendizaje\\ \hline
+\end{tabular}
+\caption{Cuestionario de Escala de Usabilidad de Sistemas (SUS)}
+\end{table}
+
+
+Los ítems que representan al atributo de Satisfacción son R1, R8 y R9. En la tabla 3 
+se observa que los estudiantes consideran emplear frecuentemente la aplicación, debido, 
+entre otros factores, a que es segura y se sienten a gusto con ella. La puntuación 
+obtenida es de 3.3 para el uso frecuente de la plataforma, en una escala de 1 a 5, 
+en donde 1 es muy en desacuerdo y 5 es muy de acuerdo. La seguridad que les causa 
+el empleo de la aplicación tiene un valor de 3.7 y la del gusto que les causa su 
+uso también es de 3.7, en la misma escala de 1 a 5. Los puntajes obtenidos del 
+promedio, sobre pasan el valor de 3 y la variabilidad de los datos con respecto a 
+la media no pasa de 1, por lo que se considera que el nivel de satisfacción de la 
+aplicación es bueno.
+
+Con respecto al atributo de Aprendizaje, los reactivos que lo evaluaron son R5, R7 y R10. 
+Los estudiantes de la muestra consideran que la curva de aprendizaje del uso de la 
+aplicación, es baja debido a que las funciones están bien integradas, así como a la 
+rapidez con la que aprendieron a usar los distintos componentes de la aplicación. 
+Los valores de los promedios referidos a una buena integración de las funciones y 
+de la rapidez de su uso puntuó en 3.9 cada una en una escala de 1 a 5. Concluyéndose 
+que la forma de trabajar con la aplicación es prácticamente intuitiva.
+
+En cuanto al atributo de Memoria, este fue evaluado a través de los reactivos R2 y R3, 
+los estudiantes de la muestra estuvieron de acuerdo en que la aplicación fue fácil de 
+usar con una puntuación de 4.4 y estuvieron en desacuerdo en que la plataforma fuera 
+innecesariamente compleja con una puntuación de 1.78 en la misma escala empleada de 
+1 a 5, por lo que ambos resultados se consideran buenos para la aplicación.
+
+Finalmente, los reactivos restantes que son R4 y R6, los cuales evalúan la cantidad 
+de errores que se pueden generar al interactuar con la aplicación. Los valores 
+obtenidos en el cuestionario fueron 1.67 y 1.16 en una escala de 1 a 5, por lo que 
+se interpreta que los estudiantes estuvieron muy en desacuerdo en necesitar soporte 
+técnico como el que existieran inconsistencias en la aplicación.
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Clave & Promedio por Pregunta & & Rango en la evaluación \\ \hline
+R1 & 3.33 & 0.77 & De acuerdo \\ \hline
+R2 & 1.78 & 1.22 & En desacuerdo\\ \hline
+R3 & 4.44 & 0.70 & De acuerdo \\ \hline
+R4 & 1.67 & 0.84 & Muy de acuerdo \\ \hline
+R5 & 3.94 & 0.64 & De acuerdo \\ \hline
+R6 & 1.16 & 0.92 & Totalmente en descuerdo \\ \hline
+R7 & 4.67 & 0.49 & Totalmente de acuerdo \\ \hline
+R8 & 1.22 & 0.73 & Muy en desacuerdo \\ \hline
+R9 & 3.689 & 1.28 & De acuerdo \\ \hline
+R10 & 1.61 & 0.85 & En desacuerdo \\ \hline
+\end{tabular}
+\caption{Valores estadísticos del cuestionario SUS}
+\end{table}
+
+
+
 \printbibliography
 
 
