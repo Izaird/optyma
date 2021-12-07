@@ -169,6 +169,7 @@
       \strng{authorbibnamehash}{9f442f97a35b450c9260bd239700f7d7}
       \strng{authornamehash}{9f442f97a35b450c9260bd239700f7d7}
       \strng{authorfullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \field{extraname}{1}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -635,6 +636,422 @@
       \field{pages}{e0168431}
       \range{pages}{-1}
     \endentry
+    \entry{pisa2010results}{article}{}
+      \name{author}{1}{}{%
+        {{hash=46f946464a767ed73d366b95d090b05e}{%
+           family={Pisa},
+           familyi={P\bibinitperiod},
+           given={OECD},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{46f946464a767ed73d366b95d090b05e}
+      \strng{fullhash}{46f946464a767ed73d366b95d090b05e}
+      \strng{bibnamehash}{46f946464a767ed73d366b95d090b05e}
+      \strng{authorbibnamehash}{46f946464a767ed73d366b95d090b05e}
+      \strng{authornamehash}{46f946464a767ed73d366b95d090b05e}
+      \strng{authorfullhash}{46f946464a767ed73d366b95d090b05e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Paris: Organisation for Economic Cooperation and Development}
+      \field{title}{Results: What students know and can do—Student performance in reading, mathematics and science (Volume I)}
+      \field{year}{2010}
+    \endentry
+    \entry{piaget2015psicologia}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=0de69f950249ded0b4f8d5ef77700459}{%
+           family={Piaget},
+           familyi={P\bibinitperiod},
+           given={J},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a6426e7626a7cff53df45a71e33de5ce}{%
+           family={Inhelder},
+           familyi={I\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Madrid: Ediciones Morata. Recuperado de https://bit.ly/2FDHmqt}%
+      }
+      \strng{namehash}{03aba72ca9ad3ecb3c793106d093f399}
+      \strng{fullhash}{03aba72ca9ad3ecb3c793106d093f399}
+      \strng{bibnamehash}{03aba72ca9ad3ecb3c793106d093f399}
+      \strng{authorbibnamehash}{03aba72ca9ad3ecb3c793106d093f399}
+      \strng{authornamehash}{03aba72ca9ad3ecb3c793106d093f399}
+      \strng{authorfullhash}{03aba72ca9ad3ecb3c793106d093f399}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Psicología del nino.}
+      \field{year}{2015}
+    \endentry
+    \entry{german1978child}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=1ab7a61a00d0e5fe45b1ed539a8f4381}{%
+           family={German},
+           familyi={G\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7af659f26450964540eb3cf055a816e5}{%
+           family={Gallistel},
+           familyi={G\bibinitperiod},
+           given={C},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MA Harvard Unversity Press}%
+      }
+      \strng{namehash}{3421801fae3e9aece736e6220b676342}
+      \strng{fullhash}{3421801fae3e9aece736e6220b676342}
+      \strng{bibnamehash}{3421801fae3e9aece736e6220b676342}
+      \strng{authorbibnamehash}{3421801fae3e9aece736e6220b676342}
+      \strng{authornamehash}{3421801fae3e9aece736e6220b676342}
+      \strng{authorfullhash}{3421801fae3e9aece736e6220b676342}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The child's understanding of number Cambridge}
+      \field{year}{1978}
+    \endentry
+    \entry{carpenter2020development}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=83eb03f3a1eabc8932b85f412150774c}{%
+           family={Carpenter},
+           familyi={C\bibinitperiod},
+           given={Thomas\bibnamedelima P},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=6b7e0fe62648754e92cdf2a90d0481da}{%
+           family={Moser},
+           familyi={M\bibinitperiod},
+           given={James\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{4731bb617badd35d4b40ca20af0f8780}
+      \strng{fullhash}{4731bb617badd35d4b40ca20af0f8780}
+      \strng{bibnamehash}{4731bb617badd35d4b40ca20af0f8780}
+      \strng{authorbibnamehash}{4731bb617badd35d4b40ca20af0f8780}
+      \strng{authornamehash}{4731bb617badd35d4b40ca20af0f8780}
+      \strng{authorfullhash}{4731bb617badd35d4b40ca20af0f8780}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Addition and subtraction}
+      \field{title}{The development of addition and subtraction problem-solving skills}
+      \field{year}{2020}
+      \field{pages}{9\bibrangedash 24}
+      \range{pages}{16}
+    \endentry
+    \entry{kintsch1985understanding}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fc241d89c9c072ed89db07cbb09e6107}{%
+           family={Kintsch},
+           familyi={K\bibinitperiod},
+           given={Walter},
+           giveni={W\bibinitperiod}}}%
+        {{hash=320906912e9c122420d0a4201468cdbd}{%
+           family={Greeno},
+           familyi={G\bibinitperiod},
+           given={James\bibnamedelima G},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{3361549596a4407fc91d004d7b8ed144}
+      \strng{fullhash}{3361549596a4407fc91d004d7b8ed144}
+      \strng{bibnamehash}{3361549596a4407fc91d004d7b8ed144}
+      \strng{authorbibnamehash}{3361549596a4407fc91d004d7b8ed144}
+      \strng{authornamehash}{3361549596a4407fc91d004d7b8ed144}
+      \strng{authorfullhash}{3361549596a4407fc91d004d7b8ed144}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Psychological review}
+      \field{number}{1}
+      \field{title}{Understanding and solving word arithmetic problems.}
+      \field{volume}{92}
+      \field{year}{1985}
+      \field{pages}{109}
+      \range{pages}{1}
+    \endentry
+    \entry{orrantia2003rol}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9f442f97a35b450c9260bd239700f7d7}{%
+           family={Orrantia},
+           familyi={O\bibinitperiod},
+           given={Josetxu},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{fullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{bibnamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authorbibnamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authornamehash}{9f442f97a35b450c9260bd239700f7d7}
+      \strng{authorfullhash}{9f442f97a35b450c9260bd239700f7d7}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Infancia y aprendizaje}
+      \field{number}{4}
+      \field{title}{El rol del conocimiento conceptual en la resolución de problemas aritméticos con estructura aditiva}
+      \field{volume}{26}
+      \field{year}{2003}
+      \field{pages}{451\bibrangedash 468}
+      \range{pages}{18}
+    \endentry
+    \entry{resnick2020protoquantities}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a6bb0eee32af1aa58a9f7bbe1d08543e}{%
+           family={Resnick},
+           familyi={R\bibinitperiod},
+           given={Lauren\bibnamedelima B},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{fullhash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{bibnamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authorbibnamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authornamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authorfullhash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From protoquantities to operators: Building mathematical competence on a foundation of everyday knowledge}
+      \field{year}{2020}
+    \endentry
+    \entry{resnick1989developing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a6bb0eee32af1aa58a9f7bbe1d08543e}{%
+           family={Resnick},
+           familyi={R\bibinitperiod},
+           given={Lauren\bibnamedelima B},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{fullhash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{bibnamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authorbibnamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authornamehash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \strng{authorfullhash}{a6bb0eee32af1aa58a9f7bbe1d08543e}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Psychologist}
+      \field{number}{2}
+      \field{title}{Developing mathematical knowledge}
+      \field{volume}{44}
+      \field{year}{1989}
+      \field{pages}{162}
+      \range{pages}{1}
+    \endentry
+    \entry{fuson1996levels}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b035ab339a4b40323c54947047c3f9eb}{%
+           family={Fuson},
+           familyi={F\bibinitperiod},
+           given={Karen\bibnamedelima C},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=1b7db32c893b4eaeb4b0eb474365d9ea}{%
+           family={Carroll},
+           familyi={C\bibinitperiod},
+           given={William\bibnamedelima M},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=94b7fa774485083f0f52adafd135feb2}{%
+           family={Landis},
+           familyi={L\bibinitperiod},
+           given={Judith},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{146370a7e531e33f1056054a5e9d15dd}
+      \strng{fullhash}{146370a7e531e33f1056054a5e9d15dd}
+      \strng{bibnamehash}{146370a7e531e33f1056054a5e9d15dd}
+      \strng{authorbibnamehash}{146370a7e531e33f1056054a5e9d15dd}
+      \strng{authornamehash}{146370a7e531e33f1056054a5e9d15dd}
+      \strng{authorfullhash}{146370a7e531e33f1056054a5e9d15dd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cognition and Instruction}
+      \field{number}{3}
+      \field{title}{Levels in conceptualizing and solving addition and subtraction compare word problems}
+      \field{volume}{14}
+      \field{year}{1996}
+      \field{pages}{345\bibrangedash 371}
+      \range{pages}{27}
+    \endentry
+    \entry{orrantia2002dificultades}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9f442f97a35b450c9260bd239700f7d7}{%
+           family={Orrantia},
+           familyi={O\bibinitperiod},
+           given={Josetxu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=87b9589f90ff1fa3f14e6bc1df3b75cf}{%
+           family={Martı́nez},
+           familyi={M\bibinitperiod},
+           given={Jesús\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5c58194386ead0aa87852a4236db0557}{%
+           family={Carmen\bibnamedelima Morán},
+           familyi={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           prefix={del},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=cbf2db008061c326f20ba5d01dda64a9}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={Juan\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Fundación Infancia y Aprendizaje}%
+      }
+      \strng{namehash}{2cf9e99abdf0ff63667cb79c86963337}
+      \strng{fullhash}{e0a5ad6f946bd6c7029276d619705c16}
+      \strng{bibnamehash}{2cf9e99abdf0ff63667cb79c86963337}
+      \strng{authorbibnamehash}{2cf9e99abdf0ff63667cb79c86963337}
+      \strng{authornamehash}{2cf9e99abdf0ff63667cb79c86963337}
+      \strng{authorfullhash}{e0a5ad6f946bd6c7029276d619705c16}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cognitiva}
+      \field{title}{Dificultades en el aprendizaje de la aritmética: Un análisis desde los modelos cronométricos.}
+      \field{year}{2002}
+    \endentry
+    \entry{riley1984development}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=2514f0f4b62127e90a6a0f22eeaf77db}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={Mary\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ERIC}%
+      }
+      \strng{namehash}{9095d9dd782c3adc83f4be7c3ac3e9d7}
+      \strng{fullhash}{9095d9dd782c3adc83f4be7c3ac3e9d7}
+      \strng{bibnamehash}{9095d9dd782c3adc83f4be7c3ac3e9d7}
+      \strng{authorbibnamehash}{9095d9dd782c3adc83f4be7c3ac3e9d7}
+      \strng{authornamehash}{9095d9dd782c3adc83f4be7c3ac3e9d7}
+      \strng{authorfullhash}{9095d9dd782c3adc83f4be7c3ac3e9d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Development of children's problem-solving ability in arithmetic.}
+      \field{year}{1984}
+    \endentry
+    \entry{geary1991cognitive}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2ec9207319ceb12c41fe9d52ba8350b2}{%
+           family={Geary},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima C},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=335db1caa6aa916d2b814a4b8cbd55ea}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Sam\bibnamedelima C},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=78b8b8a2cd0f16f62cfb25396a26917b}{%
+           family={Samaranayake},
+           familyi={S\bibinitperiod},
+           given={Vb\bibnamedelima A},
+           giveni={V\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{fdb514ac2e8b6bd57f519f3fb12f8665}
+      \strng{fullhash}{fdb514ac2e8b6bd57f519f3fb12f8665}
+      \strng{bibnamehash}{fdb514ac2e8b6bd57f519f3fb12f8665}
+      \strng{authorbibnamehash}{fdb514ac2e8b6bd57f519f3fb12f8665}
+      \strng{authornamehash}{fdb514ac2e8b6bd57f519f3fb12f8665}
+      \strng{authorfullhash}{fdb514ac2e8b6bd57f519f3fb12f8665}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Developmental psychology}
+      \field{number}{5}
+      \field{title}{Cognitive addition: A short longitudinal study of strategy choice and speed-of-processing differences in normal and mathematically disabled children.}
+      \field{volume}{27}
+      \field{year}{1991}
+      \field{pages}{787}
+      \range{pages}{1}
+    \endentry
+    \entry{geary1999numerical}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2ec9207319ceb12c41fe9d52ba8350b2}{%
+           family={Geary},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima C},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=5af5a4557a20126bb3eb5f38d02c3560}{%
+           family={Hoard},
+           familyi={H\bibinitperiod},
+           given={Mary\bibnamedelima K},
+           giveni={M\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=4a45c5244af688210b5c92425cfd8425}{%
+           family={Hamson},
+           familyi={H\bibinitperiod},
+           given={Carmen\bibnamedelima O},
+           giveni={C\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{535e1759ae83ef08ac8ad5daa734217a}
+      \strng{fullhash}{535e1759ae83ef08ac8ad5daa734217a}
+      \strng{bibnamehash}{535e1759ae83ef08ac8ad5daa734217a}
+      \strng{authorbibnamehash}{535e1759ae83ef08ac8ad5daa734217a}
+      \strng{authornamehash}{535e1759ae83ef08ac8ad5daa734217a}
+      \strng{authorfullhash}{535e1759ae83ef08ac8ad5daa734217a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of experimental child psychology}
+      \field{number}{3}
+      \field{title}{Numerical and arithmetical cognition: Patterns of functions and deficits in children at risk for a mathematical disability}
+      \field{volume}{74}
+      \field{year}{1999}
+      \field{pages}{213\bibrangedash 239}
+      \range{pages}{27}
+    \endentry
     \entry{robson2015all}{article}{}
       \name{author}{5}{}{%
         {{hash=5a499d08d9fc691015e96fcd1b0fa5e3}{%
@@ -672,8 +1089,8 @@
       \strng{authorbibnamehash}{d107a38ab03b3841edbd4e49b5375e84}
       \strng{authornamehash}{d107a38ab03b3841edbd4e49b5375e84}
       \strng{authorfullhash}{11dc643f79014648c94d087aa17991e4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Business horizons}
@@ -706,8 +1123,8 @@
       \strng{authorbibnamehash}{efb8037e33469a05e32de14b3a9116c1}
       \strng{authornamehash}{efb8037e33469a05e32de14b3a9116c1}
       \strng{authorfullhash}{efb8037e33469a05e32de14b3a9116c1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Gamification by design: Implementing game mechanics in web and mobile apps}
@@ -737,8 +1154,8 @@
       \strng{authorbibnamehash}{f5cefafa7b926e6942f4c23b37c86059}
       \strng{authornamehash}{f5cefafa7b926e6942f4c23b37c86059}
       \strng{authorfullhash}{f5cefafa7b926e6942f4c23b37c86059}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Brazilian Symposium on Computers in Education (Simpósio Brasileiro de Informática na Educação-SBIE)}
@@ -766,8 +1183,8 @@
       \strng{authorbibnamehash}{6c899b3c28413adc8450d45b192a2cfb}
       \strng{authornamehash}{6c899b3c28413adc8450d45b192a2cfb}
       \strng{authorfullhash}{6c899b3c28413adc8450d45b192a2cfb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Game-Based Learning (IJGBL)}
@@ -805,8 +1222,8 @@
       \strng{authorbibnamehash}{b10c81e4ac89db4da5c0a12922e7d290}
       \strng{authornamehash}{b10c81e4ac89db4da5c0a12922e7d290}
       \strng{authorfullhash}{b10c81e4ac89db4da5c0a12922e7d290}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Education and Information Technologies}
@@ -841,8 +1258,8 @@
       \strng{authorbibnamehash}{3e9d2809cb4edc0756226629cfdfb2f0}
       \strng{authornamehash}{3e9d2809cb4edc0756226629cfdfb2f0}
       \strng{authorfullhash}{3e9d2809cb4edc0756226629cfdfb2f0}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Pertanika Journal of Social Science and Humanities}
@@ -880,8 +1297,8 @@
       \strng{authorbibnamehash}{788761df53241af91baa43ad34a00d56}
       \strng{authornamehash}{788761df53241af91baa43ad34a00d56}
       \strng{authorfullhash}{788761df53241af91baa43ad34a00d56}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on learning technologies}
@@ -914,8 +1331,8 @@
       \strng{authorbibnamehash}{e9f581c6ccabaf4393c4abf1d32cd0dc}
       \strng{authornamehash}{e9f581c6ccabaf4393c4abf1d32cd0dc}
       \strng{authorfullhash}{e9f581c6ccabaf4393c4abf1d32cd0dc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Computers in Human Behavior}
@@ -942,8 +1359,8 @@
       \strng{authorbibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
       \strng{authornamehash}{7d9273fa2a92b56a830259d34dfda8fd}
       \strng{authorfullhash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Agile Software Construction}

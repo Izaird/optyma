@@ -19,7 +19,7 @@ class ExpressionFacade implements IExpressionFacade{
       result, 
       result+10,
       result+variance,
-      result-variance,
+      result+variance-10,
     ];
     expressionOptions.shuffle();
     return expressionOptions;

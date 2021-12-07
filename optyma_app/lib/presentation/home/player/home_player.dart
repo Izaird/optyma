@@ -61,7 +61,7 @@ class HomePlayer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(FontAwesomeIcons.key, color: Colors.blue),
-            title: const Text('Resetear contraseña'),
+            title: const Text('Reestablecer contraseña'),
             onTap: (){
               firebaseAuth.sendPasswordResetEmail(email: firebaseAuth.currentUser?.email ?? "mothtotheflame.dev@gmail.com");
               ScaffoldMessenger.of(context).showSnackBar(snackBar);

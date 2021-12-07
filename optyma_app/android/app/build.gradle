@@ -44,8 +44,10 @@ android {
         applicationId "io.flutter.optyma_app"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        //versionCode flutterVersionCode.toInteger() https://play.google.com/apps/internaltest/4700013802145507311
+        versionCode 2
+        //versionName flutterVersionName
+        versionName "1.1"
         multiDexEnabled true
     }
 
