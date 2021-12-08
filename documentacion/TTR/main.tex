@@ -488,7 +488,7 @@ Con base en lo presentado en el marco teórico sobre la aritmética y la gamific
 \subsubsection{Tabla descriptiva de Caso de Uso 1}
 \begin{table}[H]
 \caption{Caso de Uso 1.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 
 \hline
 Caso de Uso & CU1 Registrar Usuario\\ \hline
@@ -503,23 +503,33 @@ Post-condiciones & Cuenta de usuario creada\\ \hline
 Mensajes & MSN1: "Ingrese un texto válido"\\
 		 & MSN2: "Bienvenido"\\ \hline
 Fuente & RF1,RF3 \\ \hline	
-	Trayectoria & Trayectoria A (principal)\\
-		& 1.   El usuario seleccionará la opción de registrarse.\\
-		& 2.   Se ingresarán los datos correspondientes.\\
-		& 3.   Se creará correctamente la cuenta del usuario\\
-		& 4.   Se envia un correo de confirmación al email proporcionado \\	
-	& Trayectoria B\\
-	& 1.   El usuario seleccionará la opción de registrarse.\\
-	& 2.   Se proporcionará una cuenta de Google\\
-	& 3.   Se confirma y se dan los permisos correspondientes.\\
-	& 4   Se creará correctamente la cuenta del usuario.\\ \hline
+Trayectoria & 
+
+Trayectoria A (principal)
+
+\begin{enumerate}
+\item El usuario seleccionará la opción de registrarse.
+\item Se ingresarán los datos correspondientes.
+\item Se creará correctamente la cuenta del usuario
+\item Se envia un correo de confirmación al email proporcionado
+\end{enumerate}
+
+Trayectoria B
+
+\begin{enumerate}
+\item El usuario seleccionará la opción de registrarse.
+\item Se proporcionará una cuenta de Google
+\item Se confirma y se dan los permisos correspondientes.
+\item Se creará correctamente la cuenta del usuario.
+\end{enumerate}
+\\ \hline
 \end{tabular}
 \end{table}
 
 \subsubsection{Tabla descriptiva de Caso de Uso 2}
 \begin{table}[H]
 \caption{Caso de Uso 2.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 \hline
 Caso de Uso & CU2 Iniciar Sesión\\ \hline
 Versión & 1.1\\ \hline
@@ -533,21 +543,31 @@ Post-condiciones & Sesión iniciada\\ \hline
 Mensajes & MSN1: "Ingrese un texto válido"\\
 		   & MSN2: "Bienvenido"\\ \hline
 Fuente & RF2,RF3 \\ \hline	
-	Trayectoria & Trayectoria A (principal)\\
-		& 1.   El usuario ingresa sus credenciales (correo y contraseña).\\
-		& 2.   Se valida si existen coincidencias de las credenciales proporcionadas\\
-		& 3. Se inicia sesión o se despliega un mensaje de error.\\
-	& Trayectoria B\\
-	& 1.   El usuario seleccionará la opción de registrarse.\\
-	& 2.   Se proporcionará una cuenta de Google\\
-	& 3.   Se inicia sesión.\\ \hline
+Trayectoria & 
+
+Trayectoria A (principal)
+
+\begin{enumerate}
+\item El usuario ingresa sus credenciales (correo y contraseña).
+\item Se valida si existen coincidencias de las credenciales proporcionadas
+\item Se inicia sesión o se despliega un mensaje de error.
+\end{enumerate}
+
+Trayectoria B
+
+\begin{enumerate}
+\item El usuario seleccionará la opción de registrarse.
+\item Se proporcionará una cuenta de Google
+\item Se inicia sesión.
+\end{enumerate}
+\\ \hline
 \end{tabular}
 \end{table}
 
 \subsubsection{Tabla descriptiva de Caso de Uso 3}
 \begin{table}[H]
 \caption{Caso de Uso 3.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 \hline
 Caso de Uso & CU3 Cambiar Contraseña\\ \hline
 Versión & 1.1\\ \hline
@@ -561,17 +581,20 @@ Post-condiciones & \\ \hline
 Mensajes & MSN1: "Se envió el correo para restablecer contraseña"\\
 		   & MSN2: "Bienvenido"\\ \hline
 Fuente & RF4 \\ \hline	
-	Trayectoria
-		& 1.	El usuario selecciona Reestablecer contraseña desde la pantalla principal.\\
-		& 2.    Se envia el correo .\\
-		& 3.	El usuario recibe un correo con una liga que le permita cambiar su contraseña.\\ \hline
+Trayectoria &
+\begin{enumerate}
+\item El usuario selecciona Restablecer contraseña desde la pantalla principal.
+\item Se envia el correo.
+\item El usuario recibe un correo con una liga que le permita cambiar su contraseña.
+\end{enumerate}
+\\ \hline
 \end{tabular}
 \end{table}
 
 \subsubsection{Tabla descriptiva de Caso de Uso 4}
 \begin{table}[H]
 \caption{Caso de Uso 4.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 \hline
 Caso de Uso & CU4 Jugar\\ \hline
 Versión & 1.1\\ \hline
@@ -582,32 +605,45 @@ Entradas &  Respuesta, modo de juego, operación, dificultad \\ \hline
 Salidas & Puntuación \\ \hline
 Pre-condiciones & Iniciar Sesión \\ \hline
 Post-condiciones & Puntuación\\ \hline
-Mensajes & \\
+Mensajes & \\ \hline
 Fuente & RF4, RF5 \\ \hline	
-	Trayectoria
-		& 1.	El usuario selecciona Juegos del menú lateral o de la pantalla principal\\
-		& 2. El usuario selecciona el modo de juego, el tipo de operaciones y la dificultad.\\
-		& Trayectoria A Modo Clásico\\
-		& 3.    El usuario responde  las preguntas \\
-		& 4.	Al completar una ronda de 10 preguntas o seleccionar el botón de finalizar termina el juego.\\ 
-		& 5. 	Se informa al usuario de su puntuación, mejor racha y tiempo y se registra la puntuación en el leaberboard\\ 
-		& Trayectoria B Modo Infinito\\
-		& 3.    El usuario responde  las preguntas \\
-		& 4.  Al cometer 3 errores o seleccionar el botón de finalizar, termina el juego.\\ 
-		& 5. 	Se informa al usuario de su puntuación, mejor racha y tiempo y se registra la puntuación en el leaberboard\\ 
-		& Trayectoria C Modo Jugador versus Jugador\\
-		& 3.    Los usuarios responden las preguntas, el primero en responder correctamente recibe los puntos. \\
-		& 4. Se informa a los usarios de su puntuación.\\
-		
-		
-		\hline
+Trayectoria & 
+\begin{enumerate}
+\item El usuario selecciona Juegos del menú lateral o de la pantalla principal
+\item El usuario selecciona el modo de juego, el tipo de operaciones y la dificultad.
+\end{enumerate}
+
+Trayectoria A Modo Clásico
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item El usuario responde  las preguntas 
+\item Al completar una ronda de 10 preguntas o seleccionar el botón de finalizar termina el juego.
+\item Se informa al usuario de su puntuación, mejor racha y tiempo y se registra la puntuación en el leaberboard
+\end{enumerate}
+
+Trayectoria B Modo Infinito
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item El usuario responde  las preguntas 
+\item Al cometer 3 errores o seleccionar el botón de finalizar, termina el juego.
+\item Se informa al usuario de su puntuación, mejor racha y tiempo y se registra la puntuación en el leaberboard
+\end{enumerate} 
+
+Trayectoria C Modo Jugador versus Jugador
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Los usuarios responden las preguntas, el primero en responder correctamente recibe los puntos. 
+\item Se informa a los usarios de su puntuación.
+\end{enumerate} \\ \hline 
 \end{tabular}
 \end{table}
 
 \subsubsection{Tabla descriptiva de Caso de Uso 5}
 \begin{table}[H]
 \caption{Caso de Uso 5.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 \hline
 Caso de Uso & CU5 Consultar \emph{Leaderboard}\\ \hline
 Versión & 1.1\\ \hline
@@ -618,19 +654,22 @@ Entradas &  Modo de juego, operacion \\ \hline
 Salidas & \emph{Leaderboard} \\ \hline
 Pre-condiciones & Iniciar Sesión\\ \hline
 Post-condiciones & \\ \hline
-Mensajes & \\
+Mensajes & \\ \hline 
 Fuente &  \\ \hline	
-	Trayectoria
-		& 1.	El usuario selecciona \emph{leaderboards} del menu lateral o de la pantalla principal \\
-		& 2. El usuario selecciona el modo de juego, el tipo de operaciones.\\
-		& 3.	Se despliega el \emph{leaderboard} correspondiente\\ \hline
+Trayectoria &
+\begin{enumerate}
+\item El usuario selecciona \emph{leaderboards} del menu lateral o de la pantalla principal 
+\item El usuario selecciona el modo de juego, el tipo de operaciones.
+\item Se despliega el \emph{leaderboard} correspondiente
+\end{enumerate}
+\\ \hline
 \end{tabular}
 \end{table}
 
 \subsubsection{Tabla descriptiva de Caso de Uso 6}
 \begin{table}[H]
 \caption{Caso de Uso 6.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 \hline
 Caso de Uso & CU6 Consultar Logros\\ \hline
 Versión & 1.1\\ \hline
@@ -641,18 +680,21 @@ Entradas &  Modo de juego, operación \\ \hline
 Salidas & Logros \\ \hline
 Pre-condiciones & Iniciar Sesión,  \\ \hline
 Post-condiciones & \\ \hline
-Mensajes & \\
+Mensajes & \\ \hline 
 Fuente &  \\ \hline	
-	Trayectoria
-		& 1. El usuario selecciona Logros del menú lateral o de la pantalla principal \\
-		& 2. Se despliega la lista de logros \\ \hline
+Trayectoria &
+\begin{enumerate}
+\item El usuario selecciona Logros del menú lateral o de la pantalla principal.
+\item Se despliega la lista de logros 
+\end{enumerate}
+\\ \hline 
 \end{tabular}
 \end{table}
 
 \subsubsection{Tabla descriptiva de Caso de Uso 7}
 \begin{table}[H]
 \caption{Caso de Uso 7.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 
 \hline
 Caso de Uso & CU7 Subir Plantilla\\ \hline
@@ -664,14 +706,17 @@ Entradas &  Plantilla, valores \\ \hline
 Salidas & Plantilla \\ \hline
 Pre-condiciones & Iniciar Sesión \\ \hline
 Post-condiciones & Plantilla en Base de Datos\\ \hline
-Mensajes & \\
+Mensajes & \\ \hline
 Fuente &  \\ \hline	
-	Trayectoria
-		& 1. El administrador selecciona Plantillas del menú lateral o de la pantalla principal \\
-		& 2. Se despliega la lista de plantillas\\ 
-		& 3. Se presiona el botón de + para agregar plantilla\\
-		& 4. Se rellenan los campos de plantilla y valores respectivos a  cada dificultad \\		
-		\hline
+Trayectoria &
+
+\begin{enumerate}
+\item El administrador selecciona Plantillas del menú lateral o de la pantalla principal.
+\item Se despliega la lista de plantillas.
+\item Se presiona el botón de + para agregar plantilla.
+\item Se rellenan los campos de plantilla y valores respectivos a  cada dificultad.
+\end{enumerate}
+\\ \hline
 		
 \end{tabular}
 \end{table}
@@ -679,7 +724,7 @@ Fuente &  \\ \hline
 \subsubsection{Tabla descriptiva de Caso de Uso 8}
 \begin{table}[H]
 \caption{Caso de Uso 8.}
-\begin{tabular}{|M{5cm}|c|}
+\begin{tabular}{|M{4cm}|M{12cm}|}
 
 \hline
 Caso de Uso & CU7 Otorgar permisos\\ \hline
@@ -691,15 +736,18 @@ Entradas &  Plantilla, valores \\ \hline
 Salidas & 1 \\ \hline
 Pre-condiciones & Iniciar Sesión  \\ \hline
 Post-condiciones & Usuario con permisos de administrador\\ \hline
-Mensajes & \\
+Mensajes & \\ \hline
 Fuente &  \\ \hline	
-	Trayectoria
-		& 1. El administrador selecciona Usuarios del menu lateral o de la pantalla principal \\
-		& 2. Se despliega la lista de usuarios\\ 
-		& 3. Se selecciona el usuario al que se desea otorgar o revocar permisos \\
-		& 4. Se checa la checkbox para otorgar permisos\\
-		& 5. Se selecciona la paloma para confirmar\\		
-		\hline
+Trayectoria &
+
+\begin{enumerate}
+\item El administrador selecciona Usuarios del menu lateral o de la pantalla principal.
+\item Se despliega la lista de usuarios.
+\item Se selecciona el usuario al que se desea otorgar o revocar permisos.
+\item Se checa la checkbox para otorgar permisos.
+\item Se selecciona la paloma para confirmar.
+\end{enumerate}
+\\ \hline
 \end{tabular}
 
 \end{table}
@@ -921,8 +969,8 @@ En esta sección se reportan los resultados obtenidos de las pruebas realizadas 
 aplicación.
 
 Las primeras pruebas fueron las correspondientes a la funcionalidad del sistema y 
-un segundo tipo de pruebas efectuadas fueron las de experiencia de usuario y las 
-de usabilidad.
+un segundo tipo de pruebas fueron efectuadas, con el objetivo de tener una mejor 
+visión acerca de la experiencia de usuario y la usabilidad de la aplicación.
 
 \subsection{Pruebas de funcionalidad}
 Se validó el correo con una expresión regular. Algunos ejemplos de correos validos
@@ -931,21 +979,25 @@ Se validó el correo con una expresión regular. Algunos ejemplos de correos val
 	\item \verb |itz!&*%^7@protonmail.net|
 	\item 1A!e@protonmail.com
 \end{itemize}
-Se valido la capacidad de desbloquear logros
+Se valido la capacidad de desbloquear logros como se puede observar en las figuras
+\ref{fig:pruebas_01}, \ref{fig:pruebas_02} y \ref{fig:pruebas_03}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Logros}
     \caption{Logros sin desbloquear}
+    \label{fig:pruebas_01}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Test/LogroDes}
     \caption{Cumpliendo la condición}
+    \label{fig:pruebas_02}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Test/LogroDes2}
     \caption{Logros Desbloqueado}
+    \label{fig:pruebas_03}
 \end{figure}
 
 \subsection{Pruebas de experiencia de usuario y de usabilidad}
@@ -1005,7 +1057,7 @@ Los valores obtenidos inicialmente de las preguntas pares se encuentran en “c�
 con respeto a los valor	es obtenidos inicialmente por las preguntas pares, es por esto por 
 lo que se requieren homogenizar. 
 
-El cuestionario SUS mide los atributos de la usabilidad, y de acuerdo con Nielsen [14]%!que referencia es esta?, 
+El cuestionario SUS mide los atributos de la usabilidad, y de acuerdo con Nielsen \cite{nielsen1994usability}
 la usabilidad es definida por 5 componentes de calidad: 
 
 \begin{enumerate}[a)] % a), b), c), ...
