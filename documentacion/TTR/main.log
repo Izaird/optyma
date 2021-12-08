@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.7) (preloaded format=pdflatex 2021.8.2)  6 DEC 2021 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.7) (preloaded format=pdflatex 2021.8.2)  7 DEC 2021 19:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -729,194 +729,195 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 ...de Caso de Uso 3}{19}{subsubsection.4.4.3}
+l.62 ...de Caso de Uso 3}{20}{subsubsection.4.4.3}
                                                   % [1])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
  [2] [3] [4] [5]
-[6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
-<imgs/CasosDeUso.png, id=288, 753.5653pt x 484.81125pt>
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+<imgs/CasosDeUso.png, id=307, 753.5653pt x 484.81125pt>
 File: imgs/CasosDeUso.png Graphic file (type png)
 <use imgs/CasosDeUso.png>
-Package pdftex.def Info: imgs/CasosDeUso.png  used on input line 447.
+Package pdftex.def Info: imgs/CasosDeUso.png  used on input line 477.
 (pdftex.def)             Requested size: 527.49211pt x 339.36555pt.
 
-Overfull \hbox (27.00812pt too wide) in paragraph at lines 447--448
+Overfull \hbox (27.00812pt too wide) in paragraph at lines 477--478
  [][] 
  []
 
-[16] [17 <./imgs/CasosDeUso.png>]
-Overfull \hbox (23.31369pt too wide) in paragraph at lines 512--531
-[][] 
- []
-
-[18]
-Overfull \hbox (81.70273pt too wide) in paragraph at lines 536--562
-[][] 
- []
-
-
-Overfull \hbox (12.74512pt too wide) in paragraph at lines 567--585
+[17] [18 <./imgs/CasosDeUso.png>]
+Overfull \hbox (23.31369pt too wide) in paragraph at lines 542--561
 [][] 
  []
 
 [19]
-Overfull \hbox (30.3138pt too wide) in paragraph at lines 612--634
+Overfull \hbox (147.98067pt too wide) in paragraph at lines 566--597
+[][] 
+ []
+
+
+Overfull \hbox (12.74512pt too wide) in paragraph at lines 602--620
 [][] 
  []
 
 [20]
-Overfull \hbox (26.6471pt too wide) in paragraph at lines 639--661
+Overfull \hbox (30.3138pt too wide) in paragraph at lines 647--669
 [][] 
  []
 
-[21] [22] [23]
-<imgs/Arquitectura.png, id=351, 853.23769pt x 497.75963pt>
+[21]
+Overfull \hbox (26.6471pt too wide) in paragraph at lines 674--696
+[][] 
+ []
+
+[22] [23] [24]
+<imgs/Arquitectura.png, id=367, 853.23769pt x 497.75963pt>
 File: imgs/Arquitectura.png Graphic file (type png)
 <use imgs/Arquitectura.png>
-Package pdftex.def Info: imgs/Arquitectura.png  used on input line 738.
+Package pdftex.def Info: imgs/Arquitectura.png  used on input line 774.
 (pdftex.def)             Requested size: 554.59792pt x 323.53992pt.
 
-Overfull \hbox (54.11392pt too wide) in paragraph at lines 738--739
+Overfull \hbox (54.11392pt too wide) in paragraph at lines 774--775
  [][] 
  []
 
-<imgs/BSD.png, id=352, 384.9582pt x 179.2296pt>
+<imgs/BSD.png, id=368, 384.9582pt x 179.2296pt>
 File: imgs/BSD.png Graphic file (type png)
 <use imgs/BSD.png>
-Package pdftex.def Info: imgs/BSD.png  used on input line 745.
+Package pdftex.def Info: imgs/BSD.png  used on input line 781.
 (pdftex.def)             Requested size: 346.45918pt x 161.30513pt.
-[24 <./imgs/Arquitectura.png>]
-Overfull \hbox (8.41283pt too wide) in paragraph at lines 753--768
+[25 <./imgs/Arquitectura.png>]
+Overfull \hbox (8.41283pt too wide) in paragraph at lines 789--804
 [][]
  []
 
-<imgs/Figma/Registro2.png, id=360, 307.90031pt x 640.64343pt>
+[26 <./imgs/BSD.png>]
+<imgs/Figma/Registro2.png, id=382, 307.90031pt x 640.64343pt>
 File: imgs/Figma/Registro2.png Graphic file (type png)
 <use imgs/Figma/Registro2.png>
-Package pdftex.def Info: imgs/Figma/Registro2.png  used on input line 775.
-(pdftex.def)             Requested size: 277.10771pt x 576.57376pt.
-[25 <./imgs/BSD.png>]
-<imgs/Figma/Login.png, id=368, 348.55219pt x 719.68875pt>
+Package pdftex.def Info: imgs/Figma/Registro2.png  used on input line 813.
+(pdftex.def)             Requested size: 215.52873pt x 448.44734pt.
+<imgs/Figma/Login.png, id=383, 348.55219pt x 719.68875pt>
 File: imgs/Figma/Login.png Graphic file (type png)
 <use imgs/Figma/Login.png>
-Package pdftex.def Info: imgs/Figma/Login.png  used on input line 780.
-(pdftex.def)             Requested size: 313.69405pt x 647.7139pt.
-<imgs/Figma/Admins.png, id=369, 341.02406pt x 718.18312pt>
+Package pdftex.def Info: imgs/Figma/Login.png  used on input line 818.
+(pdftex.def)             Requested size: 278.8421pt x 575.75179pt.
+ [27 <./imgs/Figma/Registro2.png>]
+<imgs/Figma/Admins.png, id=390, 341.02406pt x 718.18312pt>
 File: imgs/Figma/Admins.png Graphic file (type png)
 <use imgs/Figma/Admins.png>
-Package pdftex.def Info: imgs/Figma/Admins.png  used on input line 785.
-(pdftex.def)             Requested size: 306.91881pt x 646.35884pt.
- [26 <./imgs/Figma/Registro2.png>]
-<imgs/Figma/Plantilla.png, id=376, 305.64188pt x 640.64343pt>
+Package pdftex.def Info: imgs/Figma/Admins.png  used on input line 824.
+(pdftex.def)             Requested size: 272.81961pt x 574.54727pt.
+ [28 <./imgs/Figma/Login.png>]
+<imgs/Figma/Plantilla.png, id=397, 305.64188pt x 640.64343pt>
 File: imgs/Figma/Plantilla.png Graphic file (type png)
 <use imgs/Figma/Plantilla.png>
-Package pdftex.def Info: imgs/Figma/Plantilla.png  used on input line 790.
-(pdftex.def)             Requested size: 275.07513pt x 576.57376pt.
- [27 <./imgs/Figma/Login.png>]
-<imgs/Figma/Temas.png, id=383, 303.38344pt x 642.14906pt>
+Package pdftex.def Info: imgs/Figma/Plantilla.png  used on input line 830.
+(pdftex.def)             Requested size: 244.51381pt x 512.51544pt.
+ [29 <./imgs/Figma/Admins.png>]
+<imgs/Figma/Temas.png, id=404, 310.91156pt x 640.64343pt>
 File: imgs/Figma/Temas.png Graphic file (type png)
 <use imgs/Figma/Temas.png>
-Package pdftex.def Info: imgs/Figma/Temas.png  used on input line 795.
-(pdftex.def)             Requested size: 273.04256pt x 577.92882pt.
- [28 <./imgs/Figma/Admins.png>]
-<imgs/Figma/Ejemplo.png, id=390, 351.56343pt x 718.93594pt>
+Package pdftex.def Info: imgs/Figma/Temas.png  used on input line 836.
+(pdftex.def)             Requested size: 248.72957pt x 512.51544pt.
+ [30 <./imgs/Figma/Plantilla.png>]
+<imgs/Figma/Ejemplo.png, id=412, 351.56343pt x 718.93594pt>
 File: imgs/Figma/Ejemplo.png Graphic file (type png)
 <use imgs/Figma/Ejemplo.png>
-Package pdftex.def Info: imgs/Figma/Ejemplo.png  used on input line 800.
-(pdftex.def)             Requested size: 316.40414pt x 647.03638pt.
- [29 <./imgs/Figma/Plantilla.png>]
-<imgs/Figma/Leaderboard.png, id=397, 349.305pt x 717.43031pt>
+Package pdftex.def Info: imgs/Figma/Ejemplo.png  used on input line 842.
+(pdftex.def)             Requested size: 281.25111pt x 575.14954pt.
+<imgs/Figma/Leaderboard.png, id=413, 349.305pt x 717.43031pt>
 File: imgs/Figma/Leaderboard.png Graphic file (type png)
 <use imgs/Figma/Leaderboard.png>
-Package pdftex.def Info: imgs/Figma/Leaderboard.png  used on input line 805.
-(pdftex.def)             Requested size: 314.37158pt x 645.68132pt.
+Package pdftex.def Info: imgs/Figma/Leaderboard.png  used on input line 847.
+(pdftex.def)             Requested size: 279.44437pt x 573.94502pt.
 
-[30 <./imgs/Figma/Temas.png>]
-<imgs/Figma/Logros.png, id=405, 305.64188pt x 636.87938pt>
+[31 <./imgs/Figma/Temas.png>]
+<imgs/Figma/Logros.png, id=420, 305.64188pt x 636.87938pt>
 File: imgs/Figma/Logros.png Graphic file (type png)
 <use imgs/Figma/Logros.png>
-Package pdftex.def Info: imgs/Figma/Logros.png  used on input line 810.
+Package pdftex.def Info: imgs/Figma/Logros.png  used on input line 852.
 (pdftex.def)             Requested size: 275.07513pt x 573.18614pt.
- [31 <./imgs/Figma/Ejemplo.png>] [32 <./imgs/Figma/Leaderboard.png>] [33 <./img
-s/Figma/Logros.png>] [34]
-<imgs/Imp/Registro.png, id=440, 353.06906pt x 749.80125pt>
+ [32 <./imgs/Figma/Ejemplo.png>] [33 <./imgs/Figma/Leaderboard.png>] [34 <./img
+s/Figma/Logros.png>]
+<imgs/Imp/Registro.png, id=439, 353.06906pt x 749.80125pt>
 File: imgs/Imp/Registro.png Graphic file (type png)
 <use imgs/Imp/Registro.png>
-Package pdftex.def Info: imgs/Imp/Registro.png  used on input line 843.
+Package pdftex.def Info: imgs/Imp/Registro.png  used on input line 862.
 (pdftex.def)             Requested size: 282.45563pt x 599.84181pt.
-<imgs/Imp/Login1.png, id=441, 356.83313pt x 749.80125pt>
+<imgs/Imp/Login1.png, id=440, 356.83313pt x 749.80125pt>
 File: imgs/Imp/Login1.png Graphic file (type png)
 <use imgs/Imp/Login1.png>
-Package pdftex.def Info: imgs/Imp/Login1.png  used on input line 848.
+Package pdftex.def Info: imgs/Imp/Login1.png  used on input line 867.
 (pdftex.def)             Requested size: 285.46687pt x 599.84181pt.
-<imgs/Imp/MainUsuario.png, id=442, 298.11375pt x 629.35126pt>
+ [35 <./imgs/Imp/Registro.png>]
+<imgs/Imp/MainUsuario.png, id=447, 299.61937pt x 630.85687pt>
 File: imgs/Imp/MainUsuario.png Graphic file (type png)
 <use imgs/Imp/MainUsuario.png>
-Package pdftex.def Info: imgs/Imp/MainUsuario.png  used on input line 853.
-(pdftex.def)             Requested size: 238.49132pt x 503.48169pt.
- [35 <./imgs/Imp/Registro.png>]
-<imgs/Imp/Pvp.png, id=449, 372.64218pt x 777.65532pt>
+Package pdftex.def Info: imgs/Imp/MainUsuario.png  used on input line 873.
+(pdftex.def)             Requested size: 239.69582pt x 504.68619pt.
+ [36 <./imgs/Imp/Login1.png>]
+<imgs/Imp/Pvp.png, id=455, 372.64218pt x 777.65532pt>
 File: imgs/Imp/Pvp.png Graphic file (type png)
 <use imgs/Imp/Pvp.png>
-Package pdftex.def Info: imgs/Imp/Pvp.png  used on input line 858.
+Package pdftex.def Info: imgs/Imp/Pvp.png  used on input line 879.
 (pdftex.def)             Requested size: 298.11414pt x 622.1251pt.
- [36 <./imgs/Imp/Login1.png>]
-<imgs/Imp/Endless.png, id=457, 294.34969pt x 634.62094pt>
+ [37 <./imgs/Imp/MainUsuario.png>]
+<imgs/Imp/Endless.png, id=462, 294.34969pt x 634.62094pt>
 File: imgs/Imp/Endless.png Graphic file (type png)
 <use imgs/Imp/Endless.png>
-Package pdftex.def Info: imgs/Imp/Endless.png  used on input line 863.
+Package pdftex.def Info: imgs/Imp/Endless.png  used on input line 885.
 (pdftex.def)             Requested size: 235.48006pt x 507.69743pt.
- [37 <./imgs/Imp/MainUsuario.png>]
-<imgs/Imp/Plantillas.png, id=464, 371.13657pt x 773.89125pt>
+<imgs/Imp/Plantillas.png, id=463, 371.13657pt x 773.89125pt>
 File: imgs/Imp/Plantillas.png Graphic file (type png)
 <use imgs/Imp/Plantillas.png>
-Package pdftex.def Info: imgs/Imp/Plantillas.png  used on input line 868.
+Package pdftex.def Info: imgs/Imp/Plantillas.png  used on input line 890.
 (pdftex.def)             Requested size: 296.90965pt x 619.11385pt.
  [38 <./imgs/Imp/Pvp.png>]
-<imgs/Imp/Plantillas2.png, id=471, 368.1253pt x 773.89125pt>
+<imgs/Imp/Plantillas2.png, id=470, 368.1253pt x 773.89125pt>
 File: imgs/Imp/Plantillas2.png Graphic file (type png)
 <use imgs/Imp/Plantillas2.png>
-Package pdftex.def Info: imgs/Imp/Plantillas2.png  used on input line 873.
+Package pdftex.def Info: imgs/Imp/Plantillas2.png  used on input line 895.
 (pdftex.def)             Requested size: 294.50064pt x 619.11385pt.
  [39 <./imgs/Imp/Endless.png>]
-<imgs/Imp/Usuarios.png, id=478, 362.10281pt x 775.39688pt>
+<imgs/Imp/Usuarios.png, id=477, 362.10281pt x 775.39688pt>
 File: imgs/Imp/Usuarios.png Graphic file (type png)
 <use imgs/Imp/Usuarios.png>
-Package pdftex.def Info: imgs/Imp/Usuarios.png  used on input line 878.
+Package pdftex.def Info: imgs/Imp/Usuarios.png  used on input line 900.
 (pdftex.def)             Requested size: 289.68263pt x 620.31834pt.
  [40 <./imgs/Imp/Plantillas.png>]
-<imgs/Imp/Logros.png, id=485, 301.8778pt x 633.11531pt>
+<imgs/Imp/Logros.png, id=484, 301.8778pt x 633.11531pt>
 File: imgs/Imp/Logros.png Graphic file (type png)
 <use imgs/Imp/Logros.png>
-Package pdftex.def Info: imgs/Imp/Logros.png  used on input line 883.
+Package pdftex.def Info: imgs/Imp/Logros.png  used on input line 905.
 (pdftex.def)             Requested size: 241.50256pt x 506.49294pt.
+
 [41 <./imgs/Imp/Plantillas2.png>]
-<imgs/Imp/Leaderboards.png, id=492, 299.61937pt x 627.84563pt>
+<imgs/Imp/Leaderboards.png, id=491, 299.61937pt x 627.84563pt>
 File: imgs/Imp/Leaderboards.png Graphic file (type png)
 <use imgs/Imp/Leaderboards.png>
-Package pdftex.def Info: imgs/Imp/Leaderboards.png  used on input line 888.
+Package pdftex.def Info: imgs/Imp/Leaderboards.png  used on input line 910.
 (pdftex.def)             Requested size: 239.69582pt x 502.27718pt.
  [42 <./imgs/Imp/Usuarios.png>] [43 <./imgs/Imp/Logros.png>]
 File: imgs/Imp/Logros.png Graphic file (type png)
 <use imgs/Imp/Logros.png>
-Package pdftex.def Info: imgs/Imp/Logros.png  used on input line 901.
+Package pdftex.def Info: imgs/Imp/Logros.png  used on input line 923.
 (pdftex.def)             Requested size: 241.50256pt x 506.49294pt.
  [44 <./imgs/Imp/Leaderboards.png>]
-<imgs/Test/LogroDes.png, id=513, 292.09125pt x 634.62094pt>
+<imgs/Test/LogroDes.png, id=512, 292.09125pt x 634.62094pt>
 File: imgs/Test/LogroDes.png Graphic file (type png)
 <use imgs/Test/LogroDes.png>
-Package pdftex.def Info: imgs/Test/LogroDes.png  used on input line 906.
+Package pdftex.def Info: imgs/Test/LogroDes.png  used on input line 928.
 (pdftex.def)             Requested size: 233.6733pt x 507.69743pt.
-<imgs/Test/LogroDes2.png, id=514, 298.11375pt x 636.87938pt>
+<imgs/Test/LogroDes2.png, id=513, 298.11375pt x 636.87938pt>
 File: imgs/Test/LogroDes2.png Graphic file (type png)
 <use imgs/Test/LogroDes2.png>
-Package pdftex.def Info: imgs/Test/LogroDes2.png  used on input line 911.
+Package pdftex.def Info: imgs/Test/LogroDes2.png  used on input line 933.
 (pdftex.def)             Requested size: 238.49132pt x 509.5042pt.
  [45] [46 <./imgs/Test/LogroDes.png>] [47 <./imgs/Test/LogroDes2.png>]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 91
-9.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 94
+0.
 
 (B:\Program Files\MikTex\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -930,13 +931,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19255 strings out of 478870
- 326523 string characters out of 2858700
- 1096152 words of memory out of 3000000
- 36718 multiletter control sequences out of 15000+600000
+ 19250 strings out of 478870
+ 326549 string characters out of 2858700
+ 1096224 words of memory out of 3000000
+ 36713 multiletter control sequences out of 15000+600000
  408134 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,13n,80p,1300b,2230s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 74i,13n,80p,1296b,2230s stack positions out of 5000i,500n,10000p,200000b,80000s
 <B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><B:/Progra
 m Files/MikTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><B:/Program Files/MikT
 ex/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><B:/Program Files/MikTex/fonts/t
@@ -944,14 +945,14 @@ ype1/public/amsfonts/cm/cmcsc10.pfb><B:/Program Files/MikTex/fonts/type1/public
 /amsfonts/cm/cmmi10.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm
 /cmr10.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr17.pfb><B
 :/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmr5.pfb><B:/Program File
-s/MikTex/fonts/type1/public/amsfonts/cm/cmr7.pfb><B:/Program Files/MikTex/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><B:/Program Files/MikTex/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/c
-m/cmti12.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-><B:/Program Files/MikTex/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on main.pdf (50 pages, 2508898 bytes).
+s/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><B:/Program Files/MikTex/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><B:/Program Files/MikTex/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb><B:/Program Files/MikTex/fonts/type1/public/amsfonts/latxfont/la
+sy10.pfb>
+Output written on main.pdf (50 pages, 2506548 bytes).
 PDF statistics:
- 807 PDF objects out of 1000 (max. 8388607)
+ 799 PDF objects out of 1000 (max. 8388607)
  216 named destinations out of 1000 (max. 500000)
- 529 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 521 words of extra memory for PDF output out of 10000 (max. 10000000)
 

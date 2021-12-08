@@ -1309,6 +1309,59 @@
       \field{pages}{291\bibrangedash 301}
       \range{pages}{11}
     \endentry
+    \entry{hunt2006feature}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7d9273fa2a92b56a830259d34dfda8fd}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{fullhash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{bibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authorbibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authornamehash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \strng{authorfullhash}{7d9273fa2a92b56a830259d34dfda8fd}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Agile Software Construction}
+      \field{title}{Feature-driven development}
+      \field{year}{2006}
+      \field{pages}{161\bibrangedash 182}
+      \range{pages}{22}
+    \endentry
+    \entry{aprendizajes2018clave}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d058cd16b7aa45d0b4c7b7ee721ed00a}{%
+           family={Educación\bibnamedelima Pública},
+           familyi={E\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Secretaría},
+           giveni={S\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Secretaría de Educación Pública}%
+      }
+      \strng{namehash}{d058cd16b7aa45d0b4c7b7ee721ed00a}
+      \strng{fullhash}{d058cd16b7aa45d0b4c7b7ee721ed00a}
+      \strng{bibnamehash}{d058cd16b7aa45d0b4c7b7ee721ed00a}
+      \strng{authorbibnamehash}{d058cd16b7aa45d0b4c7b7ee721ed00a}
+      \strng{authornamehash}{d058cd16b7aa45d0b4c7b7ee721ed00a}
+      \strng{authorfullhash}{d058cd16b7aa45d0b4c7b7ee721ed00a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aprendizajes clave para la educacion integral}
+      \field{year}{2018}
+    \endentry
     \entry{groening2019achievement}{article}{}
       \name{author}{2}{}{%
         {{hash=3919dac562e3e6c380c3e7082186c4a2}{%
@@ -1341,33 +1394,6 @@
       \field{year}{2019}
       \field{pages}{151\bibrangedash 166}
       \range{pages}{16}
-    \endentry
-    \entry{hunt2006feature}{article}{}
-      \name{author}{1}{}{%
-        {{hash=7d9273fa2a92b56a830259d34dfda8fd}{%
-           family={Hunt},
-           familyi={H\bibinitperiod},
-           given={John},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \strng{fullhash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \strng{bibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \strng{authorbibnamehash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \strng{authornamehash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \strng{authorfullhash}{7d9273fa2a92b56a830259d34dfda8fd}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Agile Software Construction}
-      \field{title}{Feature-driven development}
-      \field{year}{2006}
-      \field{pages}{161\bibrangedash 182}
-      \range{pages}{22}
     \endentry
   \enddatalist
 \endrefsection
