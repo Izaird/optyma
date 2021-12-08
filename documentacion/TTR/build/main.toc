@@ -1,76 +1,102 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {spanish}{}
+\babel@toc {spanish}{}\relax 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1}Motivación}{3}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Plantamiento del Problema}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}Planteamiento del Problema}{3}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3}Objetivos}{3}{subsection.1.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.3.1}Objetivo General}{3}{subsubsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.2}Objetivos Específicos}{3}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.2}Objetivos Específicos}{4}{subsubsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4}Estado del Arte}{4}{subsection.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5}Propuesta de Solución}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5}Propuesta de Solución}{5}{subsection.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Marco Teórico}{5}{section.2}%
+\contentsline {section}{\numberline {2}Importancia de la Aritmética}{6}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Aritmética y sus dificultades}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}El desarrollo de la Aritmética desde el aspecto cognitivo}{6}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Gamificación}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.1.1}Aritmética informal: las primeras nociones aritméticas}{6}{subsubsection.2.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Análisis}{5}{section.3}%
+\contentsline {subsubsection}{\numberline {2.1.2}El conteo verbal}{7}{subsubsection.2.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Requisitos Funcionales}{5}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {2.1.3}Los esquemas protocuantitativos}{8}{subsubsection.2.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Requisitos No Funcionales}{5}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {2.1.4}Estrategias de conteo}{9}{subsubsection.2.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Casos de Uso}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {2.2}Aritmética formal}{10}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Tabla descriptiva de Caso de Uso 1}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Operaciones básicas}{10}{subsubsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Tabla descriptiva de Caso de Uso 2}{7}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.2}Dificultades en la Aritmética}{11}{subsubsection.2.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.3}Tabla descriptiva de Caso de Uso 3}{8}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3}Dificultades en el aprendizaje del cálculo aritmético}{11}{subsubsection.2.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.4}Tabla descriptiva de Caso de Uso 4}{8}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {2.3}El conjunto de los número Naturales}{12}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.5}Tabla descriptiva de Caso de Uso 5}{8}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.1}Propiedades de las operaciones de adición y multiplicación de los números naturales}{13}{subsubsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.6}Tabla descriptiva de Caso de Uso 6}{9}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {2.3.2}Comentarios finales del capítulo}{14}{subsubsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.7}Tabla descriptiva de Caso de Uso 7}{9}{subsubsection.3.3.7}%
+\contentsline {section}{\numberline {3}Gamificación}{15}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.8}Tabla descriptiva de Caso de Uso 8}{9}{subsubsection.3.3.8}%
+\contentsline {section}{\numberline {4}Análisis}{16}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Análisis de Interfaces}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {4.1}Descripción general}{16}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Análisis de la Base de Datos}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {4.2}Requisitos Funcionales}{16}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Tecnologías usadas}{10}{subsection.3.6}%
+\contentsline {subsection}{\numberline {4.3}Requisitos No Funcionales}{17}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.1}Dart}{10}{subsubsection.3.6.1}%
+\contentsline {subsection}{\numberline {4.4}Casos de Uso}{18}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.2}Flutter}{10}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {4.4.1}Tabla descriptiva de Caso de Uso 1}{19}{subsubsection.4.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.3}Firestore}{10}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {4.4.2}Tabla descriptiva de Caso de Uso 2}{19}{subsubsection.4.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.4}Google Play Servicies}{11}{subsubsection.3.6.4}%
+\contentsline {subsubsection}{\numberline {4.4.3}Tabla descriptiva de Caso de Uso 3}{20}{subsubsection.4.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Diseño}{12}{section.4}%
+\contentsline {subsubsection}{\numberline {4.4.4}Tabla descriptiva de Caso de Uso 4}{20}{subsubsection.4.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Arquitectura general del sistema}{12}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.5}Tabla descriptiva de Caso de Uso 5}{21}{subsubsection.4.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Diseño de Base de Datos}{13}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.6}Tabla descriptiva de Caso de Uso 6}{21}{subsubsection.4.4.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Diseño de Interfaces}{13}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.7}Tabla descriptiva de Caso de Uso 7}{22}{subsubsection.4.4.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Metodología}{21}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.8}Tabla descriptiva de Caso de Uso 8}{22}{subsubsection.4.4.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Implementación}{22}{section.5}%
+\contentsline {subsection}{\numberline {4.5}Análisis de Interfaces}{22}{subsection.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Pruebas}{29}{section.6}%
+\contentsline {subsection}{\numberline {4.6}Análisis de la Base de Datos}{23}{subsection.4.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7}Análisis de Logros}{23}{subsection.4.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8}Tecnologías usadas}{23}{subsection.4.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.8.1}Dart}{23}{subsubsection.4.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.8.2}Flutter}{23}{subsubsection.4.8.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.8.3}Firestore}{24}{subsubsection.4.8.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Diseño}{25}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Arquitectura general del sistema}{25}{subsection.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Diseño de Base de Datos}{26}{subsection.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Diseño de Logros}{26}{subsection.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Diseño de Interfaces}{26}{subsection.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Implementación}{35}{section.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Pruebas}{44}{section.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Referencias}{48}{section.8}%
