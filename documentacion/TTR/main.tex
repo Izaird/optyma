@@ -4,7 +4,7 @@
 \usepackage{float}
 \usepackage{array}
 \usepackage{graphicx}
-%\usepackage[shortlabels]{enumitem}
+\usepackage[shortlabels]{enumitem}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
@@ -89,7 +89,7 @@ Es por ello que un elevado porcentaje de las dificultades de aprendizaje de las 
 
 Se ha observado en declive las habilidades operatorias aritméticas de estudiantes universitarios  \cite{tariq2002decline,carpenter2017psychology,huang2013gamification}. 
 El estudiante cree que podrá contar con la calculadora de su celular en todo momento, pero cuando esto no se le permite, como en los exámenes de admisión, la falta del entrenamiento del cálculo mental entorpece la solución correcta de los reactivos 
-de dichos exámenes. Por otra parte, el no fortalecer la destreza operatoria, afecta diferentes procesos cognitivos al llegar a la edad adulta \cite{martin2003loss}.
+de dichos exámenes. Por otra parte, el no fortalecer la destreza operatoria, afecta diferentes procesos cognitivos al llegar a la edad adulta\cite{martin2003loss}.
 El presentar al estudiante los ejercicios de una forma rutinaria muchas veces provoca aburrimiento y desmotivación. 
 También es fundamental la motivación y el estado emocional de los estudiantes en su desempeño académico. La motivación y estado emocional de los estudiantes es un factor clave en su desempeño académico \cite{larrazolo2013habilidades,ryan1997should}. Si deseamos que los jóvenes 
 mexicanos tengan un mejor desempeño en el área de las Matemáticas, se requiere presentarles 
@@ -98,7 +98,7 @@ apoyo es la gamificación, la cual se empleará para incentivar a los estudiante
 media superior a desarrollar su destreza operatoria.
 
 \subsection{Planteamiento del Problema}
-La problemática que se pretende atacar es la necesidad de fortalecer la destreza operatoria aritmética de los estudiantes de medio superior, a través del desarrollo de aplicaciones móviles que incorporen conceptos de gamificación, lo cual es importante para el desarrollo del pensamiento matemático de los estudiantes. 
+La problemática que se pretende atacar es la necesidad de fortalecer la destreza operatoria aritmética de los estudiantes de medio superior, a través del desarrollo de aplicaciones móviles que incorporen conceptos de gamificacion, lo cual es importante para el desarrollo del pensamiento matemático de los estudiantes. 
 \subsection{Objetivos}
 \subsubsection{Objetivo General}
 Desarrollar una aplicación móvil para fortalecer la destreza operatoria en Aritmética, con el uso de la gamificación, con el fin de apoyar al estudiante de medio superior en la adquisición de habilidades y conocimientos elementales.
@@ -448,8 +448,11 @@ Estas caracteristicas fueron tomadas en cuenta en las 4 etapas empleadas para el
 En esta sección del reporte se presenta la primera etapa que corresponde al análisis, en la que se incluye la recolección de requerimientos y los casos de uso de la aplicación.
 
 \subsection{Descripción general}
+Con base en lo presentado en el marco teórico sobre la aritmética y la gamificación (capitulos 2 y 3),
+se establecen los requisitos de la aplicación. Se penso en las estrategias de conteo que emplea un 
+estudiante, asi como 
 
-Con base en lo presentado en el marco teórico sobre la aritmética y la gamificación (capítulos 2 y 3), se establecen los requisitos de la aplicación.  Se pensó en las estrategias de conteo que emplea un estudiante, así como las propiedades conmutativa y asociativa de la adición y multiplicación, de los números naturales. También se consideró la propiedad distributiva que se emplea en operaciones combinadas de adición y multiplicación. Para los niveles de dificultad, se tomó en cuenta la cantidad de dígitos que aparecen en las operaciones. Se decidió que se incluirían dos dígitos para un  nivel fácil, tres dígitos para un nivel medio y cuatro dígitos para un nivel avanzado, esto para las operaciones de adición y sustracción. Para la multiplicación y división se redujo un dígito. Esto fue con base en lo establecido en los programas de Educación Primaria de la SEP \cite{aprendizajes2018clave}, ya que de forma gradual se van introduciendo las operaciones básicas tomando en consideración el número de dígitos que tienen las cifras a operar.
+Con base en lo presentado en el marco teórico sobre la aritmética y la gamificación (capítulos 2 y 3), se establecen los requisitos de la aplicación.  Se pensó en las estrategias de conteo que emplea un estudiante, así como las propiedades conmutativa y asociativa de la adición y multiplicación, de los números naturales. También se consideró la propiedad dsitributiva que se emplea en operaciones combinadas de adición y multiplicación. Para los niveles de dificultad, se tomó en cuenta la cantidad de dígitos que aparecen en las operaciones. Se decidió que se incluirían dos dígitos para un  nivel fácil, tres dígitos para un nivel medio y cuatro dígitos para un nivel avanzado, esto para las operacciones de adición y substracción. Para la multiplicación y división se redujo un dígito. Esto fue con base en lo establecido en los programas de Educación Primaria de la SEP \cite{aprendizajes2018clave}, ya que de forma gradual se van introduciendo las operaciones básicas tomando en consideración el número de dígitos que tienen las cifras a operar.
 
 
 \subsection{Requisitos Funcionales}
@@ -475,13 +478,19 @@ Con base en lo presentado en el marco teórico sobre la aritmética y la gamific
 \item {La aplicación contará con escalabilidad para otros temas.}
 \item {Las interfaces deberán estar optimizadas para dispositivos móviles.}
 \end{enumerate}
+
 \subsection{Casos de Uso}
-%diagrama de casos de uso
-\begin{figure}[H]
+
+En la Figura \ref{fig:analisis_01} se muestra el diagrama de casos de uso.
+
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.7]{imgs/CasosDeUso}
-    \caption{Diagrama de Casos de Uso}
+    \caption{Diagrama de Casos de Usos}
+    \label{fig:analisis_01}
 \end{figure}
+
+
 \subsubsection{Tabla descriptiva de Caso de Uso 1}
 \begin{table}[H]
 \caption{Caso de Uso 1.}
@@ -817,18 +826,25 @@ Se describieron los requerimientos y casos de uso pertinentes a la aplicación l
 \section{Diseño}
 El diseño del sistema se centra en proporcionar la funcionalidad del sistema a través de sus diversos componentes, lo cual se expresa mediante diferentes diagramas, como se muestra en esta sección.
 \subsection{Arquitectura general del sistema}%Imagen arquitectura y descripcion%Imagen arquitectura y descripcion
-La arquitectura se compone de 4 subsistemas (ver figura 2).  El primer subsistema es el de Registro e inicio de sesión y es el encargado de dar de alta y permitir el acceso a los usuarios ya registrados. El segundo subsistema corresponde a los módulos que interactúan con el usuario, estos son el módulo de ejercicios, encargado de proporcionar ejercicios al usuario, y el módulo evaluador de logros y mecánicas, el cual se encarga de llevar el registro de la puntuación, logros y niveles. El Subsistema de administrador incluye los módulos generador de problemas y evaluador de expresiones, los cuales se usan para generar los ejercicios para el usuario. También se incluye un módulo de actualización y consulta de dichos ejercicios. El último subsistema es el de estadísticas y progreso, el cual lleva el registro de los logros globales del usuario.  
+La arquitectura se compone de 4 subsistemas (ver Figura \ref{fig:diseno_01}). El primer subsistema es el de Registro e inicio de sesión y es el encargado de dar de alta y permitir el acceso a los usuarios ya registrados. El segundo subsistema corresponde a los módulos que interactúan con el usuario, estos son el módulo de ejercicios, encargado de proporcionar ejercicios al usuario, y el módulo evaluador de logros y mecánicas, el cual se encarga de llevar el registro de la puntuación, logros y niveles. El Subsistema de administrador incluye los módulos generador de problemas y evaluador de expresiones, los cuales se usan para generar los ejercicios para el usuario. También se incluye un módulo de actualización y consulta de dichos ejercicios. El último subsistema es el de estadísticas y progreso, el cual lleva el registro de los logros globales del usuario.  
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.65]{imgs/Arquitectura}
     \caption{Arquitectura}
+    \label{fig:diseno_01}
 \end{figure}
 
 \subsection{Diseño de Base de Datos}%diagrama entidad relacion pk subrayada
+Para el deiseño de la base de datos se opto por la opción de una base de datos no
+relacional como se menciono en el capitulo 4, en la Figura \ref{fig:diseno_02} se
+muestra el diagrama que describe la base de datos.
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{imgs/BSD}
     \caption{Diagrama entidad relación}
+    \label{fig:diseno_02}
 \end{figure}
 \subsection{Diseño de Logros}
 Los logros que se incluyeron se muestran en la tabla 10.
@@ -839,8 +855,8 @@ Los logros que se incluyeron se muestran en la tabla 10.
 \hline
 Logro & Descripción\\ \hline
 Inspirado & Consigue una racha de al menos 5 en el modo Infinito\\ \hline
-Ascendido & Consigue una racha de al menos 10 respuestas correctas en el modo Infinito\\ \hline
-Perfeccionista & Responde correctamente todas las preguntas en una ronda del modo Clásico\\ \hline
+Asendido & Consigue una racha de al menos 10 respuestas correctas en el modo Infinito\\ \hline
+Perfeccioninsta & Responde correctamente todas las preguntas en una ronda del modo Clásico\\ \hline
 Ágil &  En el modo Clásico, termina una partida en menos de 3 minutos con al menos 7 respuestas correctas.\\ \hline
 Veloz & En el modo Clásico, termina una partida en menos de 2 minutos con al menos 7 respuestas correctas.\\ \hline
 Sub60s &   En el modo Clásico, termina una partida en menos de 1 minuto con al menos 7 respuestas correctas.\\ \hline
@@ -856,108 +872,181 @@ Erudito & Consigue una puntuación de al menos 10,000 en el modo Clásico, dific
 En este apartado se presentan los diseños de las interfaces previamente descritas.
 \pagebreak
 
-En la figura 4 se muestra la pantalla de registro donde se piden los datos necesarios para crear una cuenta
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7]{imgs/Figma/Registro2} 
-    \caption{Registro}
-\end{figure}
+La primera pantalla que se vera al iniciar la aplicación sera la de inicio de sesión
+como se muestra en la Figura \ref{fig:diseno_03} si es que no se cuenta con una cuenta
+se debera procedar a la pantalla de registro que se muestra en la Figura 
+\ref{fig:diseno_04} donde el usuario ingresara los datos necesarios para crear una 
+cuenta nueva.
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Figma/Login}
     \caption{Login}
+    \label{fig:diseno_03}
 \end{figure}
-En la figura 6 se presenta la pantalla en la que se otorgan permisos al administrador.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{imgs/Figma/Registro2} 
+    \caption{Registro}
+    \label{fig:diseno_04}
+\end{figure}
+
+En la figura \ref{fig:diseno_05} se presenta la pantalla en la que se otorgan 
+permisos al administrador.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Figma/Admins}
     \caption{Administrador}
+    \label{fig:diseno_05}
 \end{figure}
-En la figura 7 se muestra que datos se requieren para crear una plantilla.
+
+En la Figura \ref{fig:diseno_06} se muestra que datos se requieren para crear 
+una plantilla.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Figma/Plantilla}
     \caption{Plantillas}
+    \label{fig:diseno_06}
 \end{figure}
+
+En la Figura \ref{fig:diseno_07} se muestra el menu para seleccionar un tema 
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Figma/Temas}
     \caption{Selección de tema}
+    \label{fig:diseno_07}
 \end{figure}
-Esta pantalla es un ejemplo del modo de juego
+
+En la Figura \ref{fig:diseno_08} se muestra un ejemplo del modo de juego.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Figma/Ejemplo}
     \caption{Ejemplo}
+    \label{fig:diseno_08}
 \end{figure}
+
+En la figura \ref{fig:diseno_09} se muestra un ejemplo del liderboard.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Figma/Leaderboard}
     \caption{Leaderboard}
+    \label{fig:diseno_09}
 \end{figure}
+
+En la figura \ref{fig:diseno_10} se muestra un ejemplo de la pantalla de logros.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{imgs/Figma/Logros}
     \caption{Logros}
+    \label{fig:diseno_10}
 \end{figure}
 
 \pagebreak
 \section{Implementación}
 %Subsistema de registro e ingreso Captura de pantalla con descripcion citar mock up de la pantalla
-El subsistema de registro e ingreso fue implementado con Firebase 
+El subsistema de registro e ingreso fue implementado con Firebase, en la Figura 
+\ref{fig:implementacion_01} se muestra la pantalla de registro y en la Figura 
+\ref{fig:implementacion_02} se muestra la pantalla de inicio de sesión.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.8]{imgs/Imp/Registro}
+    \includegraphics[scale=0.7]{imgs/Imp/Registro}
     \caption{Implementación Registro}
+    \label{fig:implementacion_01}
 \end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Login1}
     \caption{Implementación de Login}
+    \label{fig:implementacion_02}
 \end{figure}
-Pantalla principal de usuario.
+
+En la Figura \ref{fig:implementacion_03} se muestra la pantalla principal de usuario.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/MainUsuario}
     \caption{Pantalla Principal de Usuario}
+    \label{fig:implementacion_03}
 \end{figure}
-Ejemplo de modo de juego Jugador versus Jugador, el modo esta diseñado para que dos usuarios jueguen en el mismo dispositivo.
+
+En la Figura \ref{fig:implementacion_04} se muestra un ejemplo de modo de juego 
+Jugador versus Jugador, el modo esta diseñado para que dos usuarios jueguen en 
+el mismo dispositivo.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Pvp}
     \caption{Implementación de modo jugador contra jugador}
+    \label{fig:implementacion_04}
 \end{figure}
-Ejemplo de modo infinito.
+
+En la figura \ref{fig:implementacion_05} se muestra un ejemplo del modo infinito.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Endless}
     \caption{Implementación de modo infinito}
+    \label{fig:implementacion_05}
 \end{figure}
+
+En la figura \ref{fig:implementacion_06} se muestra la pantalla de plantillas en la 
+que se mostrara una lista de las plantillas que se encuentren en la base de datos. 
+Estas plantillas seran ingresadas en la pantalla de creacion de plantilla mostrada en
+la Figura \ref{fig:implementacion_07} donde el administrador ingresara los campos 
+necesarios para la creación de la plantilla.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Plantillas}
     \caption{Implementación de Plantillas}
+    \label{fig:implementacion_06}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Plantillas2}
     \caption{Implementación de Plantillas}
+    \label{fig:implementacion_07}
 \end{figure}
+
+Tambien se contara con una pantalla con la lista de los usuarios con la posibilidad 
+de mostrar solamente a aquellos que cuente con permiso de administrador como se muestra
+en la Figura \ref{fig:implementacion_08}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Usuarios}
     \caption{Implementación de Usuarios}
+    \label{fig:implementacion_08}
 \end{figure}
+
+En la Figura \ref{fig:implementacion_09} se muestra la pantalla de logros en la cual
+el usuario podra saber que logros a obtenido.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Logros}
     \caption{Implementación de Logros}
+    \label{fig:implementacion_09}
 \end{figure}
+
+En la Figura \ref{fig:implementacion_10} se muestra la pantalla leaderboard donde 
+el usuario podra saber en que puesto se encuentra con respecto a otros usuarios.
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{imgs/Imp/Leaderboards}
     \caption{Implementación de Leadorboards}
+    \label{fig:implementacion_10}
 \end{figure}
 
 
@@ -1057,7 +1146,7 @@ lo que se requieren homogenizar.
 El cuestionario SUS mide los atributos de la usabilidad, y de acuerdo con Nielsen \cite{nielsen1994usability}
 la usabilidad es definida por 5 componentes de calidad: 
 
-\begin{enumerate}
+\begin{enumerate}[a)] % a), b), c), ...
 \item Aprendizaje. Se refiere a la facilidad que tienen los usuarios para realizar las 
 tareas básicas desde la primera vez que trabajan con el sistema. 
 \item Eficiencia. Consiste en lo que los usuarios han aprendido para usar el sistema, 
@@ -1222,6 +1311,8 @@ R10 & 1.61 & 0.85 & En desacuerdo \\ \hline
 \label{tab:pruebas04}
 \end{table}
 
+
+	
 
 \pagebreak\section{Referencias}
 
