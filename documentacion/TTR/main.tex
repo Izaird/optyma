@@ -4,7 +4,7 @@
 \usepackage{float}
 \usepackage{array}
 \usepackage{graphicx}
-\usepackage[shortlabels]{enumitem}
+%\usepackage[shortlabels]{enumitem}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes}
@@ -227,7 +227,7 @@ Para una comprensión plena del número para tareas de cuantificación se requie
 
 \textbf{El principio de correspondencia uno-a-uno}  implica etiquetar cada elemento de un conjunto una vez y solo una. Conlleva, por tanto, la coordinación de dos procesos: partición y etiquetación, de tal manera que los niños mediante la partición van controlando los elementos contados y los que quedan por contar, bien separándolos o bien señalándolos, a la vez que disponen de una serie de etiquetas de modo que cada una de ellas corresponda con un objeto del conjunto contado. 
 
-\textbf{El principio de orden estable}estipula que para contar es imprescindible el establecimiento de una secuencia coherente, aunque, como indican Gelman y Gallistel \cite{german1978child}, este principio se puede aplicar sin necesidad de tener que utilizar la secuencia numérica convencional, pudiéndose utilizar una secuencia propia no convencional, pero siempre de manera coherente.
+\textbf{El principio de orden estable} estipula que para contar es imprescindible el establecimiento de una secuencia coherente, aunque, como indican Gelman y Gallistel \cite{german1978child}, este principio se puede aplicar sin necesidad de tener que utilizar la secuencia numérica convencional, pudiéndose utilizar una secuencia propia no convencional, pero siempre de manera coherente.
 
 \textbf{El principio de cardinalidad} establece que la última etiqueta de la secuencia numérica representa el cardinal del conjunto, esto es, la cantidad de elementos que contiene el conjunto. Gelman y Gallistel \cite{german1978child} consideran que los niños comprenden este principio si repiten o ponen un énfasis especial en el último elemento de la secuencia de conteo.
 
@@ -394,7 +394,21 @@ Lo mostrado en este segundo capítulo permitió revisar dificultades que present
 
 \pagebreak
 \section{Gamificación}
+Las tendencias e inquietudes actuales exigen cada día más una respuesta a las generaciones de jóvenes que necesitan encontrar respuesta en el contexto educativo a sus expectativas tecnológicas y necesidades más inmediatas. Esto trae consigo la responsabilidad de profesores e instituciones, a la hora de innovar en metodologías emergentes que intenten incorporar en sus clases, estrategias que aumenten la motivación y el compromiso por parte del estudiante. Además, ha quedado constancia de que los estudiantes alcanza un gran nivel de compromiso cuando se encuentran motivados, incluso prefiriendo seguir con la actividad lúdica a dar por finalizada la clase \cite{fernandez2016pedagogical}. Dentro de estas nuevas demandas surgen nuevas estrategias docentes. 
+
+Esta tendencia, aparece recogida en el informe Horizon Report \cite{johnson2016nmc} cuyas recomendaciones se plantean en un plazo de dos a tres años en referencia al aprendizaje basado en juegos y la gamificación como estrategia didáctica, integrando aspectos de la dinámica del juego en contextos no lúdicos que ayuden a potenciar la motivación de los estudiantes, así como otros valores positivos que son usuales en la mayoría de los juegos que se utilizan actualmente para el aprendizaje.
+
+
 La Gamificación es comúnmente definida como “El uso de técnicas, elementos y dinámicas propias de los juegos en contextos que no son de juego, con el fin de potenciar la motivación, así como de reforzar la conducta para solucionar un problema, mejorar la productividad, obtener un objetivo, activar el aprendizaje” \cite{robson2015all}. Donde un juego está definido como “un sistema formal basado en reglas con un resultado variable y cuantificable, donde a los diferentes resultados se les asignan valores diferentes, el jugador se esfuerza para influir en el resultado, el jugador se siente apegado al resultado y las consecuencias de la actividad son opcionales y negociables” \cite{zichermann2011gamification}.
+Los tres elementos intervinientes en la gamificación son: \cite{hunter2012win} las dinámicas, las mecánicas y los componentes. 
+
+Las dinámicas son los aspectos globales relacionados con los efectos motivacionales y deseos que se pretenden generar en el participantes. Algunas dinámicas son: La narrativa, restricciones del juego, posibilidad de resolver un problema en un entorno limitado, emociones como la curiosidad o competetividad.
+
+Las mecánicas son la reglas que generan un cierto compromiso para los usuarios. Destacan retos, competición, colaboración.
+
+Los componentes son elementos concretos o instancias específicas, pueden variar de tipo y cantidad, todo depedende de la creatividad en la que se dessarrolla el juego, algunas son: los avatares, insignias, logros.
+
+Las dinamicas empleadas 
 La gamificación emplea distintos tipos de recompensas para fomentar los comportamientos deseados. Estas recompensas pueden generalizarse con el acrónimo SAPS.
 \begin{itemize}
 	\item Status, reconocimiento. Las tablas de puntuación (\emph{leaderboards}) son un ejemplo.
@@ -931,7 +945,7 @@ En la Figura \ref{fig:diseno_08} se muestra un ejemplo del modo de juego.
     \label{fig:diseno_08}
 \end{figure}
 
-En la figura \ref{fig:diseno_09} se muestra un ejemplo del liderboard.
+En la figura \ref{fig:diseno_09} se muestra un ejemplo del leaderboard.
 
 \begin{figure}[H]
     \centering
@@ -1097,7 +1111,7 @@ Para realizar dichas mediciones, Lewis menciona \cite{lewis2018item} que el
 cuestionario de la Escala de Usabilidad de Sistemas o SUS por sus siglas en 
 inglés (System Usability Scale), se ha vuelto una valiosa herramienta, ya que permite 
 evaluar la usabilidad y la experiencia del usuario. Por su parte, Sauro 
-mostró\cite{ng2011measuring} que SUS es un cuestionario de usabilidad válido y 
+mostró \cite{sauro2011measuring} que SUS es un cuestionario de usabilidad válido y 
 confiable. 
 
 El SUS es un cuestionario estandarizado de diez preguntas con cinco opciones 
@@ -1124,6 +1138,7 @@ Si se obtiene una puntuación mayor a 80.3 es considerada como “Excelente”
 Obsérvese la tabla \ref{tab:pruebas01}.
 
 \begin{table}[H]
+\caption{Rango de evaluación del cuestionario SUS}
 \centering
 \begin{tabular}{|c|c|}
 \hline
@@ -1134,7 +1149,7 @@ $>$80.3 & Excelente \\ \hline
 51 – 68 & Pobre \\ \hline 
 $<$51 & Muy deficiente \\ \hline
 \end{tabular}
-\caption{Rango de evaluación del cuestionario SUS}
+
 \label{tab:pruebas01}
 \end{table}
 
@@ -1146,7 +1161,7 @@ lo que se requieren homogenizar.
 El cuestionario SUS mide los atributos de la usabilidad, y de acuerdo con Nielsen \cite{nielsen1994usability}
 la usabilidad es definida por 5 componentes de calidad: 
 
-\begin{enumerate}[a)] % a), b), c), ...
+\begin{enumerate}
 \item Aprendizaje. Se refiere a la facilidad que tienen los usuarios para realizar las 
 tareas básicas desde la primera vez que trabajan con el sistema. 
 \item Eficiencia. Consiste en lo que los usuarios han aprendido para usar el sistema, 
@@ -1164,7 +1179,7 @@ Para la realización de este estudio se trabajó con un grupo de 18 estudiantes 
 superior de segundo semestre, quienes trabajaron con la aplicación durante dos días, 
 en sus tiempos libres, y al tercer día resolvieron el cuestionario SUS. Es importante 
 señalar que todas las indicaciones se dieron a distancia empleando la plataforma de 
-zoom (figuras 1, 2 y 3). Se agregó una pregunta al cuestionario SUS, lo que brindó 
+zoom (figuras 25, 26 y 27). Se agregó una pregunta al cuestionario SUS, lo que brindó 
 información extra sobre la aplicación. Los participantes resolvieron el cuestionario 
 vía online a través de Google Forms. Para el análisis de los datos se empleó Excel. 
 
@@ -1202,6 +1217,7 @@ aplicación, por lo que está en el rango de “Bueno”. En el tabla \ref{tab:p
 obtenidos.
 
 \begin{table}[H]
+\caption{Valores de las respuestas a los reactivos del cuestionario SUS}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
@@ -1227,7 +1243,7 @@ P1 & P2 & P3 & P4 & P5 & P6 & P7 & P8 & P9 & P10 & SUMA & PRODCUTO CON 2.5\\ \hl
 2 & 1 & 2 & 2 & 2 & 4 & 4 & 4 & 2 & 3 & 26 & 65\\ \hline
   &   &   &   &   &   &   &   &   &   &    & 79.58\\ \hline
 \end{tabular}
-\caption{Valores de las respuestas a los reactivos del cuestionario SUS}
+
 \label{tab:pruebas02}
 \end{table}
 
@@ -1237,6 +1253,7 @@ a la usabilidad, que son: fácil de aprender, fácil de recordar, baja taza de e
 y satisfacción. Esta información aparece en la Tabla \ref{tab:pruebas03}.
 
 \begin{table}[H]
+\caption{Cuestionario de Escala de Usabilidad de Sistemas (SUS)}
 \centering
 \begin{tabular}{|l|M{10cm}|l|}
 \hline
@@ -1253,7 +1270,7 @@ R8 & Encuentro la plataforma o sistema muy molesto de usar. & Satisfacción\\ \h
 R9 & Me siento muy seguro al usar la plataforma o sistema.  & Satisfacción\\ \hline
 R10 & Siento que necesitaré que aprender muchas cosas antes de que pueda utilizar correctamente la plataforma o sistema. & Aprendizaje\\ \hline
 \end{tabular}
-\caption{Cuestionario de Escala de Usabilidad de Sistemas (SUS)}
+
 \label{tab:pruebas03}
 \end{table}
 
@@ -1292,6 +1309,7 @@ técnico como el que existieran inconsistencias en la aplicación.
 
 
 \begin{table}[H]
+\caption{Valores estadísticos del cuestionario SUS}
 \centering
 \begin{tabular}{|l|l|l|l|}
 \hline
@@ -1307,8 +1325,8 @@ R8 & 1.22 & 0.73 & Muy en desacuerdo \\ \hline
 R9 & 3.689 & 1.28 & De acuerdo \\ \hline
 R10 & 1.61 & 0.85 & En desacuerdo \\ \hline
 \end{tabular}
-\caption{Valores estadísticos del cuestionario SUS}
-\label{tab:pruebas04}
+
+
 \end{table}
 
 
